@@ -27,11 +27,6 @@
             <artifactId>commons-csv</artifactId>
             <version>1.9.0</version>
         </dependency>
-        <dependency>
-            <groupId>edu.duke</groupId>
-            <artifactId>edu-duke</artifactId>
-            <version>1.0</version>
-        </dependency>
 
     </dependencies>
 

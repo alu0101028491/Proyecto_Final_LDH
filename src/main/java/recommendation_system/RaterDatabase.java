@@ -9,7 +9,7 @@ package recommendation_system; /************************************************
  *
  ****************************************************************/
 
-import edu.duke.FileResource;
+import recommendation_system.edu.duke.FileResource;
 import org.apache.commons.csv.CSVParser;
 import org.apache.commons.csv.CSVRecord;
 import recommendation_system.raters.EfficientRater;
