@@ -3,18 +3,27 @@ package recommendation_system.raters;
 import recommendation_system.Rating;
 import java.util.ArrayList;
 
-/***************************************************************************
- *  Name:    Wei Xu
+/**
+ * <p>
+ *  Keeps track of one rater and all their ratings
+ *  </p>
  *
- *  Date: Dec 12th, 2019
+ *  <p>
+ *  The class contains the necessary methods for:
+ *  <ul>
+ *  <li> A constructor with one parameter of the ID for the rater. </li>
+ *  <li> A method addRating that has two parameters, a String named item and a double
+ * named rating </li>
+ *  <li> A method getID with no parameters to get the ID of the rater. </li>
+ *  <li> A method getRating that has one parameter item. </li>
+ *  <li> A method numRatings that returns the number of ratings this rater has. </li>
+ *  <li> A method getItemsRated that has no parameters. </li>
+ *  </ul>
+ *  </p>
  *
- *  Description:  -------------------STEP Three--------
- *                Change the name of the class Rater.java to PlainRater.java.
- *                Be sure to compile it to make sure your newly named class
- *                works—that you've made the changes necessary for the class
- *                to function with the name PlainRater.
- *
- ***************************************************************************/
+ *  @since 30/11/22
+ *  @version 1.0
+ */
 public class PlainRater implements Rater {
     private String myID;
     private ArrayList<Rating> myRatings;

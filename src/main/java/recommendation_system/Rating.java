@@ -1,7 +1,24 @@
 package recommendation_system;
 
-//a POJO class for storing the data about one rating of an item
-// An immutable passive data object (PDO) to represent the rating data
+/**
+ * <p>
+ *  Plain Old Java Object (POJO) class for storing the data about one rating of an item
+ *  An immutable passive data object (PDO) to represent the rating data
+ *  </p>
+ *
+ *  <p>
+ *  The class contains the necessary methods for:
+ *  <ul>
+ *  <li> A constructor with two parameters to initialize the private variables. </li>
+ *  <li> Two getter methods getItem and getValue. </li>
+ *  <li> A toString method to represent rating information as a String. </li>
+ *  <li> A compareTo method to compare this rating with another rating. </li>
+ *  </ul>
+ *  </p>
+ *
+ *  @since 30/11/22
+ *  @version 1.0
+ */
 public class Rating implements Comparable<Rating> {
     private String item;
     private double value;
