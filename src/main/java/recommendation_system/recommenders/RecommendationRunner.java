@@ -1,9 +1,6 @@
 package recommendation_system.recommenders;
 
-import recommendation_system.FourthRatingsOptimizedByWeiXu;
-import recommendation_system.MovieDatabase;
-import recommendation_system.RaterDatabase;
-import recommendation_system.Rating;
+import recommendation_system.*;
 import recommendation_system.filters.TrueFilter;
 
 import java.util.ArrayList;
@@ -60,7 +57,8 @@ public class RecommendationRunner implements Recommender {
     public void printRecommendationsFor(String webRaterID) {
         MovieDatabase.initialize("ratedmoviesfull.csv");
         RaterDatabase.initialize("ratings.csv");
-        FourthRatingsOptimizedByWeiXu fr = new FourthRatingsOptimizedByWeiXu();
+        //FourthRatingsOptimizedByWeiXu fr = new FourthRatingsOptimizedByWeiXu();
+        FourthRatings fr = new FourthRatings();
         ArrayList<Rating> ratingList = fr.getSimilarRatings(webRaterID, 20, 5);
         //System.out.println("Found ratings for movies : " + ratingList.size());
         if (ratingList.size() == 0) {
@@ -164,11 +162,11 @@ public class RecommendationRunner implements Recommender {
     }
     
     
-    //    public static void main(String[] args) {
-    //        RecommendationRunner a = new RecommendationRunner();
-    //        a.getItemsToRate();
-    //        a.printRecommendationsFor("65");
-    //
-    //    }
+        public static void main(String[] args) {
+            RecommendationRunner a = new RecommendationRunner();
+            a.getItemsToRate();
+            a.printRecommendationsFor("30");
+
+        }
     
 }
