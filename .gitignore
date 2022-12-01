@@ -2,3 +2,6 @@
 out/
 target/
 *.log
+.settings/
+.classpath
+.project
