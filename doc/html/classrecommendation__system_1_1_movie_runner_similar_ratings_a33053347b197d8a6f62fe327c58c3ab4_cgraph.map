@@ -1,0 +1,12 @@
+<map id="recommendation_system.MovieRunnerSimilarRatings.printSimilarRatingsByYearAfterAndMinutes" name="recommendation_system.MovieRunnerSimilarRatings.printSimilarRatingsByYearAfterAndMinutes">
+<area shape="rect" id="node1" title=" " alt="" coords="5,91,221,146"/>
+<area shape="rect" id="node2" href="$classrecommendation__system_1_1filters_1_1_all_filters.html#a9c7af7444bacd948ef1f479091d2cb6d" title=" " alt="" coords="276,12,483,52"/>
+<area shape="rect" id="node3" href="$classrecommendation__system_1_1_movie_database.html#a6c8482e67d11c424c6548e9bfeb9f071" title=" " alt="" coords="539,5,745,45"/>
+<area shape="rect" id="node5" href="$classrecommendation__system_1_1_fourth_ratings.html#a9f3868c9a86a3b7c89c82cda2e7ecd0d" title=" " alt="" coords="271,127,488,167"/>
+<area shape="rect" id="node10" href="$classrecommendation__system_1_1_movie.html#ae931c31a8d82e79675151deb06b5b408" title=" " alt="" coords="269,191,489,231"/>
+<area shape="rect" id="node4" href="$classrecommendation__system_1_1_movie_database.html#a2372e6d70352ba2b00ab1f393e59074a" title=" " alt="" coords="795,20,1001,60"/>
+<area shape="rect" id="node6" href="$classrecommendation__system_1_1_movie_database.html#a360197fe699048b18c9f355c9a58b55a" title=" " alt="" coords="539,69,745,109"/>
+<area shape="rect" id="node7" href="$interfacerecommendation__system_1_1filters_1_1_filter.html#a2f211cef0e51ea3968b42098db9e79cb" title=" " alt="" coords="795,99,1001,139"/>
+<area shape="rect" id="node8" href="$classrecommendation__system_1_1_rater_database.html#a480e67eaae24e716de5f99aec4967a24" title=" " alt="" coords="541,184,743,224"/>
+<area shape="rect" id="node9" href="$interfacerecommendation__system_1_1raters_1_1_rater.html#aa3569c3f91611d471a43674cf59d61e2" title=" " alt="" coords="537,248,747,288"/>
+</map>
