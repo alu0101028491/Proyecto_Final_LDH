@@ -9,6 +9,10 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -46,6 +50,23 @@ $(function() {
 /* @license-end */
 </script>
 <div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('classrecommendation__system_1_1_rater_database.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -67,11 +88,6 @@ $(function() {
 </div>
 </div>
 
-<div id="nav-path" class="navpath">
-  <ul>
-<li class="navelem"><a class="el" href="namespacerecommendation__system.html">recommendation_system</a></li><li class="navelem"><a class="el" href="classrecommendation__system_1_1_rater_database.html">RaterDatabase</a></li>  </ul>
-</div>
-</div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="#pub-static-methods">Static Public Member Functions</a> &#124;
@@ -185,9 +201,10 @@ Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classrecommendation__system_1_1_rater_database_a783237b49ae9c4c80af4dd8c21c33c8a_cgraph.png" border="0" usemap="#aclassrecommendation__system_1_1_rater_database_a783237b49ae9c4c80af4dd8c21c33c8a_cgraph" alt=""/></div>
 <map name="aclassrecommendation__system_1_1_rater_database_a783237b49ae9c4c80af4dd8c21c33c8a_cgraph" id="aclassrecommendation__system_1_1_rater_database_a783237b49ae9c4c80af4dd8c21c33c8a_cgraph">
-<area shape="rect" title=" " alt="" coords="5,5,208,45"/>
-<area shape="rect" href="classrecommendation__system_1_1_rater_database.html#a43129cfe483b3689a71274b2ed8379c9" title=" " alt="" coords="256,5,459,45"/>
-<area shape="rect" href="interfacerecommendation__system_1_1raters_1_1_rater.html#addbc0bb87bc350e1aa83cbcfaeba016a" title=" " alt="" coords="507,5,716,45"/>
+<area shape="rect" title=" " alt="" coords="5,49,208,89"/>
+<area shape="rect" href="classrecommendation__system_1_1_rater_database.html#a43129cfe483b3689a71274b2ed8379c9" title=" " alt="" coords="269,5,472,45"/>
+<area shape="rect" href="classrecommendation__system_1_1edu_1_1duke_1_1_file_resource.html#a05860992c8309d5ecc09b6911281a2bf" title=" " alt="" coords="256,93,485,133"/>
+<area shape="rect" href="interfacerecommendation__system_1_1raters_1_1_rater.html#addbc0bb87bc350e1aa83cbcfaeba016a" title=" " alt="" coords="533,5,743,45"/>
 </map>
 </div>
 <div class="dynheader">
@@ -230,22 +247,23 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classrecommendation__system_1_1_rater_database_a480e67eaae24e716de5f99aec4967a24_icgraph.png" border="0" usemap="#aclassrecommendation__system_1_1_rater_database_a480e67eaae24e716de5f99aec4967a24_icgraph" alt=""/></div>
 <map name="aclassrecommendation__system_1_1_rater_database_a480e67eaae24e716de5f99aec4967a24_icgraph" id="aclassrecommendation__system_1_1_rater_database_a480e67eaae24e716de5f99aec4967a24_icgraph">
-<area shape="rect" title=" " alt="" coords="932,325,1135,365"/>
-<area shape="rect" href="classrecommendation__system_1_1_fourth_ratings.html#a6080fe45518587c06bb53a3331bfe2f7" title=" " alt="" coords="659,285,869,325"/>
-<area shape="rect" href="classrecommendation__system_1_1_fourth_ratings_optimized_by_wei_xu.html#ab41670cce05da366225deff8916a36e8" title=" " alt="" coords="644,109,884,164"/>
-<area shape="rect" href="classrecommendation__system_1_1_fourth_ratings.html#a9f3868c9a86a3b7c89c82cda2e7ecd0d" title=" " alt="" coords="655,403,873,443"/>
-<area shape="rect" href="classrecommendation__system_1_1_fourth_ratings_optimized_by_wei_xu.html#a486fa6ab1a2c3a8a89f791053e4afb80" title=" " alt="" coords="644,468,884,523"/>
-<area shape="rect" href="classrecommendation__system_1_1_fourth_ratings.html#aca8e174c07b6ce34364799033cdf751a" title=" " alt="" coords="331,213,541,253"/>
-<area shape="rect" href="classrecommendation__system_1_1_movie_runner_similar_ratings.html#af98fd7bd3dcd7348a7228faa534cbad9" title=" " alt="" coords="328,277,544,332"/>
-<area shape="rect" href="classrecommendation__system_1_1_movie_runner_similar_ratings.html#ac1dd5e2044c7a31d02c5c62b3a1667b5" title=" " alt="" coords="14,442,219,482"/>
-<area shape="rect" href="classrecommendation__system_1_1_fourth_ratings_optimized_by_wei_xu.html#a480d6d04b619ce80ae864041b9e5ed04" title=" " alt="" coords="331,85,541,125"/>
-<area shape="rect" href="classrecommendation__system_1_1recommenders_1_1_recommendation_runner.html#aeac38552a75d2d16ea077bf4a6f7e798" title=" " alt="" coords="276,149,596,189"/>
-<area shape="rect" href="classrecommendation__system_1_1_movie_runner_similar_ratings_optimized_by_wei_xu.html#a1f15ce797e8791c285222e1f5af2ba63" title=" " alt="" coords="325,5,547,60"/>
-<area shape="rect" href="classrecommendation__system_1_1_movie_runner_similar_ratings_optimized_by_wei_xu.html#a6601e984e6db176c2675dcc69cf3f1e9" title=" " alt="" coords="5,5,228,60"/>
-<area shape="rect" href="classrecommendation__system_1_1_movie_runner_similar_ratings.html#a220a3ebc9c966341527b2dc3fa8b2a24" title=" " alt="" coords="328,435,544,489"/>
-<area shape="rect" href="classrecommendation__system_1_1_movie_runner_similar_ratings.html#a4426d76efa585fe4c74be9615b380667" title=" " alt="" coords="328,513,544,568"/>
-<area shape="rect" href="classrecommendation__system_1_1_movie_runner_similar_ratings.html#ab25e498c19cf8a49da01db5bde00b8a1" title=" " alt="" coords="328,592,544,647"/>
-<area shape="rect" href="classrecommendation__system_1_1_movie_runner_similar_ratings.html#a33053347b197d8a6f62fe327c58c3ab4" title=" " alt="" coords="328,356,544,411"/>
+<area shape="rect" title=" " alt="" coords="972,416,1175,456"/>
+<area shape="rect" href="classrecommendation__system_1_1_fourth_ratings.html#a6080fe45518587c06bb53a3331bfe2f7" title=" " alt="" coords="699,105,909,145"/>
+<area shape="rect" href="classrecommendation__system_1_1_fourth_ratings_optimized_by_wei_xu.html#ab41670cce05da366225deff8916a36e8" title=" " alt="" coords="684,483,924,538"/>
+<area shape="rect" href="classrecommendation__system_1_1_fourth_ratings.html#a9f3868c9a86a3b7c89c82cda2e7ecd0d" title=" " alt="" coords="695,377,913,417"/>
+<area shape="rect" href="classrecommendation__system_1_1_fourth_ratings_optimized_by_wei_xu.html#a486fa6ab1a2c3a8a89f791053e4afb80" title=" " alt="" coords="684,562,924,617"/>
+<area shape="rect" href="classrecommendation__system_1_1_fourth_ratings.html#aca8e174c07b6ce34364799033cdf751a" title=" " alt="" coords="371,5,581,45"/>
+<area shape="rect" href="classrecommendation__system_1_1recommenders_1_1_recommendation_runner.html#aeac38552a75d2d16ea077bf4a6f7e798" title=" " alt="" coords="316,69,636,109"/>
+<area shape="rect" href="classrecommendation__system_1_1_movie_runner_similar_ratings.html#af98fd7bd3dcd7348a7228faa534cbad9" title=" " alt="" coords="368,134,584,189"/>
+<area shape="rect" href="classrecommendation__system_1_1recommenders_1_1_recommendation_runner.html#a7d0b51866a0b356e6bc7d2b475c5e386" title=" " alt="" coords="5,69,268,109"/>
+<area shape="rect" href="classrecommendation__system_1_1_movie_runner_similar_ratings.html#ac1dd5e2044c7a31d02c5c62b3a1667b5" title=" " alt="" coords="34,299,239,339"/>
+<area shape="rect" href="classrecommendation__system_1_1_fourth_ratings_optimized_by_wei_xu.html#a480d6d04b619ce80ae864041b9e5ed04" title=" " alt="" coords="371,528,581,568"/>
+<area shape="rect" href="classrecommendation__system_1_1_movie_runner_similar_ratings_optimized_by_wei_xu.html#a1f15ce797e8791c285222e1f5af2ba63" title=" " alt="" coords="365,593,587,647"/>
+<area shape="rect" href="classrecommendation__system_1_1_movie_runner_similar_ratings_optimized_by_wei_xu.html#a6601e984e6db176c2675dcc69cf3f1e9" title=" " alt="" coords="25,593,248,647"/>
+<area shape="rect" href="classrecommendation__system_1_1_movie_runner_similar_ratings.html#a220a3ebc9c966341527b2dc3fa8b2a24" title=" " alt="" coords="368,213,584,267"/>
+<area shape="rect" href="classrecommendation__system_1_1_movie_runner_similar_ratings.html#a4426d76efa585fe4c74be9615b380667" title=" " alt="" coords="368,291,584,346"/>
+<area shape="rect" href="classrecommendation__system_1_1_movie_runner_similar_ratings.html#ab25e498c19cf8a49da01db5bde00b8a1" title=" " alt="" coords="368,370,584,425"/>
+<area shape="rect" href="classrecommendation__system_1_1_movie_runner_similar_ratings.html#a33053347b197d8a6f62fe327c58c3ab4" title=" " alt="" coords="368,449,584,503"/>
 </map>
 </div>
 
@@ -304,10 +322,11 @@ Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classrecommendation__system_1_1_rater_database_ae97371f970e5876b060f0ae7c2cee57b_cgraph.png" border="0" usemap="#aclassrecommendation__system_1_1_rater_database_ae97371f970e5876b060f0ae7c2cee57b_cgraph" alt=""/></div>
 <map name="aclassrecommendation__system_1_1_rater_database_ae97371f970e5876b060f0ae7c2cee57b_cgraph" id="aclassrecommendation__system_1_1_rater_database_ae97371f970e5876b060f0ae7c2cee57b_cgraph">
-<area shape="rect" title=" " alt="" coords="5,5,208,45"/>
-<area shape="rect" href="classrecommendation__system_1_1_rater_database.html#a783237b49ae9c4c80af4dd8c21c33c8a" title=" " alt="" coords="256,5,459,45"/>
-<area shape="rect" href="classrecommendation__system_1_1_rater_database.html#a43129cfe483b3689a71274b2ed8379c9" title=" " alt="" coords="507,5,709,45"/>
-<area shape="rect" href="interfacerecommendation__system_1_1raters_1_1_rater.html#addbc0bb87bc350e1aa83cbcfaeba016a" title=" " alt="" coords="757,5,967,45"/>
+<area shape="rect" title=" " alt="" coords="5,49,208,89"/>
+<area shape="rect" href="classrecommendation__system_1_1_rater_database.html#a783237b49ae9c4c80af4dd8c21c33c8a" title=" " alt="" coords="256,49,459,89"/>
+<area shape="rect" href="classrecommendation__system_1_1_rater_database.html#a43129cfe483b3689a71274b2ed8379c9" title=" " alt="" coords="520,5,723,45"/>
+<area shape="rect" href="classrecommendation__system_1_1edu_1_1duke_1_1_file_resource.html#a05860992c8309d5ecc09b6911281a2bf" title=" " alt="" coords="507,93,736,133"/>
+<area shape="rect" href="interfacerecommendation__system_1_1raters_1_1_rater.html#addbc0bb87bc350e1aa83cbcfaeba016a" title=" " alt="" coords="784,5,993,45"/>
 </map>
 </div>
 
@@ -352,9 +371,13 @@ Here is the caller graph for this function:</div>
 <li>src/main/java/recommendation_system/<a class="el" href="_rater_database_8java.html">RaterDatabase.java</a></li>
 </ul>
 </div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="namespacerecommendation__system.html">recommendation_system</a></li><li class="navelem"><a class="el" href="classrecommendation__system_1_1_rater_database.html">RaterDatabase</a></li>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5 </li>
+  </ul>
+</div>
 </body>
 </html>

@@ -1,8 +1,9 @@
 <map id="recommendation_system.MovieDatabase.getYear" name="recommendation_system.MovieDatabase.getYear">
-<area shape="rect" id="node1" title=" " alt="" coords="627,127,832,167"/>
-<area shape="rect" id="node2" href="$classrecommendation__system_1_1_movie_runner_with_filters.html#ae0b75b05234c33b7cc61a5a2e65e1298" title=" " alt="" coords="296,5,541,60"/>
-<area shape="rect" id="node4" href="$classrecommendation__system_1_1_movie_runner_with_filters.html#ae3638a5314127e2f7d6d15573f54616f" title=" " alt="" coords="296,84,541,139"/>
-<area shape="rect" id="node5" href="$classrecommendation__system_1_1recommenders_1_1_recommendation_runner.html#aeac38552a75d2d16ea077bf4a6f7e798" title=" " alt="" coords="259,163,579,203"/>
-<area shape="rect" id="node6" href="$classrecommendation__system_1_1filters_1_1_year_after_filter.html#a86fadfe3003a031f0110f9967ceff91a" title=" " alt="" coords="315,227,522,267"/>
-<area shape="rect" id="node3" href="$classrecommendation__system_1_1_movie_runner_with_filters.html#a1ef14b0d67f7a799270a349a59bfab5a" title=" " alt="" coords="5,53,211,93"/>
+<area shape="rect" id="node1" title=" " alt="" coords="684,127,889,167"/>
+<area shape="rect" id="node2" href="$classrecommendation__system_1_1_movie_runner_with_filters.html#ae0b75b05234c33b7cc61a5a2e65e1298" title=" " alt="" coords="353,5,599,60"/>
+<area shape="rect" id="node4" href="$classrecommendation__system_1_1_movie_runner_with_filters.html#ae3638a5314127e2f7d6d15573f54616f" title=" " alt="" coords="353,84,599,139"/>
+<area shape="rect" id="node5" href="$classrecommendation__system_1_1recommenders_1_1_recommendation_runner.html#aeac38552a75d2d16ea077bf4a6f7e798" title=" " alt="" coords="316,163,636,203"/>
+<area shape="rect" id="node7" href="$classrecommendation__system_1_1filters_1_1_year_after_filter.html#a86fadfe3003a031f0110f9967ceff91a" title=" " alt="" coords="373,227,579,267"/>
+<area shape="rect" id="node3" href="$classrecommendation__system_1_1_movie_runner_with_filters.html#a1ef14b0d67f7a799270a349a59bfab5a" title=" " alt="" coords="34,53,239,93"/>
+<area shape="rect" id="node6" href="$classrecommendation__system_1_1recommenders_1_1_recommendation_runner.html#a7d0b51866a0b356e6bc7d2b475c5e386" title=" " alt="" coords="5,163,268,203"/>
 </map>

@@ -1,6 +1,7 @@
 <map id="recommendation_system.SecondRatings.SecondRatings" name="recommendation_system.SecondRatings.SecondRatings">
-<area shape="rect" id="node1" title=" " alt="" coords="5,37,221,77"/>
-<area shape="rect" id="node2" href="$classrecommendation__system_1_1_first_ratings.html#a61ad159dc91fae7c18350fab315e913f" title=" " alt="" coords="269,5,468,45"/>
-<area shape="rect" id="node3" href="$classrecommendation__system_1_1_first_ratings.html#adee56f96947512d3943226e5c79f4edd" title=" " alt="" coords="269,69,468,109"/>
-<area shape="rect" id="node4" href="$classrecommendation__system_1_1raters_1_1_efficient_rater.html#a14e8b5809f3c911f6cb4c3d4d06f18b7" title=" " alt="" coords="516,69,725,109"/>
+<area shape="rect" id="node1" title=" " alt="" coords="5,61,221,101"/>
+<area shape="rect" id="node2" href="$classrecommendation__system_1_1_first_ratings.html#a61ad159dc91fae7c18350fab315e913f" title=" " alt="" coords="269,29,468,69"/>
+<area shape="rect" id="node4" href="$classrecommendation__system_1_1_first_ratings.html#adee56f96947512d3943226e5c79f4edd" title=" " alt="" coords="269,93,468,133"/>
+<area shape="rect" id="node3" href="$classrecommendation__system_1_1edu_1_1duke_1_1_file_resource.html#a05860992c8309d5ecc09b6911281a2bf" title=" " alt="" coords="516,29,745,69"/>
+<area shape="rect" id="node5" href="$classrecommendation__system_1_1raters_1_1_efficient_rater.html#a14e8b5809f3c911f6cb4c3d4d06f18b7" title=" " alt="" coords="526,93,735,133"/>
 </map>

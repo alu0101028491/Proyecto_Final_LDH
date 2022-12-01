@@ -1,6 +1,8 @@
 <map id="recommendation_system.FourthRatings.getSimilarRatings" name="recommendation_system.FourthRatings.getSimilarRatings">
-<area shape="rect" id="node1" title=" " alt="" coords="523,41,732,81"/>
-<area shape="rect" id="node2" href="$classrecommendation__system_1_1_fourth_ratings.html#aca8e174c07b6ce34364799033cdf751a" title=" " alt="" coords="262,5,471,45"/>
-<area shape="rect" id="node3" href="$classrecommendation__system_1_1_movie_runner_similar_ratings.html#af98fd7bd3dcd7348a7228faa534cbad9" title=" " alt="" coords="259,70,475,125"/>
-<area shape="rect" id="node4" href="$classrecommendation__system_1_1_movie_runner_similar_ratings.html#ac1dd5e2044c7a31d02c5c62b3a1667b5" title=" " alt="" coords="5,77,211,117"/>
+<area shape="rect" id="node1" title=" " alt="" coords="684,69,893,109"/>
+<area shape="rect" id="node2" href="$classrecommendation__system_1_1_fourth_ratings.html#aca8e174c07b6ce34364799033cdf751a" title=" " alt="" coords="371,5,581,45"/>
+<area shape="rect" id="node3" href="$classrecommendation__system_1_1recommenders_1_1_recommendation_runner.html#aeac38552a75d2d16ea077bf4a6f7e798" title=" " alt="" coords="316,69,636,109"/>
+<area shape="rect" id="node5" href="$classrecommendation__system_1_1_movie_runner_similar_ratings.html#af98fd7bd3dcd7348a7228faa534cbad9" title=" " alt="" coords="368,134,584,189"/>
+<area shape="rect" id="node4" href="$classrecommendation__system_1_1recommenders_1_1_recommendation_runner.html#a7d0b51866a0b356e6bc7d2b475c5e386" title=" " alt="" coords="5,69,268,109"/>
+<area shape="rect" id="node6" href="$classrecommendation__system_1_1_movie_runner_similar_ratings.html#ac1dd5e2044c7a31d02c5c62b3a1667b5" title=" " alt="" coords="34,141,239,181"/>
 </map>

@@ -1,8 +1,9 @@
 <map id="recommendation_system.FirstRatings.main" name="recommendation_system.FirstRatings.main">
-<area shape="rect" id="node1" title=" " alt="" coords="5,37,204,77"/>
-<area shape="rect" id="node2" href="$classrecommendation__system_1_1_first_ratings.html#ae2b04735f99bd28517c82abb302e37ca" title=" " alt="" coords="252,5,451,45"/>
-<area shape="rect" id="node4" href="$classrecommendation__system_1_1_first_ratings.html#ab9fba68942691d0046645c1d648eb957" title=" " alt="" coords="252,69,451,109"/>
-<area shape="rect" id="node3" href="$classrecommendation__system_1_1_first_ratings.html#a61ad159dc91fae7c18350fab315e913f" title=" " alt="" coords="499,5,697,45"/>
-<area shape="rect" id="node5" href="$classrecommendation__system_1_1_first_ratings.html#adee56f96947512d3943226e5c79f4edd" title=" " alt="" coords="499,69,697,109"/>
-<area shape="rect" id="node6" href="$classrecommendation__system_1_1raters_1_1_efficient_rater.html#a14e8b5809f3c911f6cb4c3d4d06f18b7" title=" " alt="" coords="745,69,955,109"/>
+<area shape="rect" id="node1" title=" " alt="" coords="5,61,204,101"/>
+<area shape="rect" id="node2" href="$classrecommendation__system_1_1_first_ratings.html#ae2b04735f99bd28517c82abb302e37ca" title=" " alt="" coords="252,29,451,69"/>
+<area shape="rect" id="node5" href="$classrecommendation__system_1_1_first_ratings.html#ab9fba68942691d0046645c1d648eb957" title=" " alt="" coords="252,93,451,133"/>
+<area shape="rect" id="node3" href="$classrecommendation__system_1_1_first_ratings.html#a61ad159dc91fae7c18350fab315e913f" title=" " alt="" coords="499,29,697,69"/>
+<area shape="rect" id="node4" href="$classrecommendation__system_1_1edu_1_1duke_1_1_file_resource.html#a05860992c8309d5ecc09b6911281a2bf" title=" " alt="" coords="745,29,975,69"/>
+<area shape="rect" id="node6" href="$classrecommendation__system_1_1_first_ratings.html#adee56f96947512d3943226e5c79f4edd" title=" " alt="" coords="499,93,697,133"/>
+<area shape="rect" id="node7" href="$classrecommendation__system_1_1raters_1_1_efficient_rater.html#a14e8b5809f3c911f6cb4c3d4d06f18b7" title=" " alt="" coords="755,93,965,133"/>
 </map>

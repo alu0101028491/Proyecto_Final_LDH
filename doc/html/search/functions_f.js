@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['yearafterfilter_0',['YearAfterFilter',['../classrecommendation__system_1_1filters_1_1_year_after_filter.html#a43893b2b45f8bf01b10ce2364870950e',1,'recommendation_system::filters::YearAfterFilter']]]
+  ['urlresource_0',['URLResource',['../classrecommendation__system_1_1edu_1_1duke_1_1_u_r_l_resource.html#ac2b6b694e33a555c07e7a6617ad4529d',1,'recommendation_system::edu::duke::URLResource']]]
 ];

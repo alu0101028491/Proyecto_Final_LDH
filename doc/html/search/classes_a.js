@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['yearafterfilter_0',['YearAfterFilter',['../classrecommendation__system_1_1filters_1_1_year_after_filter.html',1,'recommendation_system::filters']]]
+  ['thirdratings_0',['ThirdRatings',['../classrecommendation__system_1_1_third_ratings.html',1,'recommendation_system']]],
+  ['truefilter_1',['TrueFilter',['../classrecommendation__system_1_1filters_1_1_true_filter.html',1,'recommendation_system::filters']]]
 ];

@@ -1,7 +1,9 @@
 var searchData=
 [
-  ['filter_2ejava_0',['Filter.java',['../_filter_8java.html',1,'']]],
-  ['firstratings_2ejava_1',['FirstRatings.java',['../_first_ratings_8java.html',1,'']]],
-  ['fourthratings_2ejava_2',['FourthRatings.java',['../_fourth_ratings_8java.html',1,'']]],
-  ['fourthratingsoptimizedbyweixu_2ejava_3',['FourthRatingsOptimizedByWeiXu.java',['../_fourth_ratings_optimized_by_wei_xu_8java.html',1,'']]]
+  ['fileresource_2ejava_0',['FileResource.java',['../_file_resource_8java.html',1,'']]],
+  ['fileselector_2ejava_1',['FileSelector.java',['../_file_selector_8java.html',1,'']]],
+  ['filter_2ejava_2',['Filter.java',['../_filter_8java.html',1,'']]],
+  ['firstratings_2ejava_3',['FirstRatings.java',['../_first_ratings_8java.html',1,'']]],
+  ['fourthratings_2ejava_4',['FourthRatings.java',['../_fourth_ratings_8java.html',1,'']]],
+  ['fourthratingsoptimizedbyweixu_2ejava_5',['FourthRatingsOptimizedByWeiXu.java',['../_fourth_ratings_optimized_by_wei_xu_8java.html',1,'']]]
 ];
