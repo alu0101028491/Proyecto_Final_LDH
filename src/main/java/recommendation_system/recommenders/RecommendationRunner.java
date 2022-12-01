@@ -1,14 +1,11 @@
 package recommendation_system.recommenders;
 
-<<<<<<< HEAD
 import recommendation_system.*;
-=======
 import recommendation_system.FourthRatings;
 import recommendation_system.FourthRatingsOptimizedByWeiXu;
 import recommendation_system.MovieDatabase;
 import recommendation_system.RaterDatabase;
 import recommendation_system.Rating;
->>>>>>> 7e9ba2b8053919e181f9de0c593ff18043083535
 import recommendation_system.filters.TrueFilter;
 
 import java.util.ArrayList;
@@ -65,10 +62,7 @@ public class RecommendationRunner implements Recommender {
     public void printRecommendationsFor(String webRaterID) {
         MovieDatabase.initialize("ratedmoviesfull.csv");
         RaterDatabase.initialize("ratings.csv");
-<<<<<<< HEAD
         //FourthRatingsOptimizedByWeiXu fr = new FourthRatingsOptimizedByWeiXu();
-=======
->>>>>>> 7e9ba2b8053919e181f9de0c593ff18043083535
         FourthRatings fr = new FourthRatings();
         ArrayList<Rating> ratingList = fr.getSimilarRatings(webRaterID, 20, 5);
         //System.out.println("Found ratings for movies : " + ratingList.size());
@@ -171,22 +165,11 @@ public class RecommendationRunner implements Recommender {
         System.out.println("</table>");
         System.out.println("<h3>*The rank of movies is based on other raters who have the most similar rating to yours. Enjoy!^^</h3>");
     }
-<<<<<<< HEAD
-    
-    
-=======
 
-
->>>>>>> 7e9ba2b8053919e181f9de0c593ff18043083535
         public static void main(String[] args) {
             RecommendationRunner a = new RecommendationRunner();
             a.getItemsToRate();
             a.printRecommendationsFor("30");
 
         }
-<<<<<<< HEAD
-    
-=======
-
->>>>>>> 7e9ba2b8053919e181f9de0c593ff18043083535
 }
