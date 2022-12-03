@@ -20,19 +20,39 @@ class FileSelector {
     }
 
     public static File selectFile() {
-        return FileSelector.selectFiles(null, false, true)[0];
+        try {
+            return FileSelector.selectFiles(null, false, true)[0];
+        } catch( NullPointerException e)
+        {
+            throw e;
+        }
     }
 
     public static File selectFile(String[] extensionAccepted) {
-        return FileSelector.selectFiles(extensionAccepted, false, true)[0];
+        try {
+            return FileSelector.selectFiles(extensionAccepted, false, true)[0];
+        } catch( NullPointerException e)
+        {
+            throw e;
+        }
     }
 
     public static File[] selectFiles() {
-        return FileSelector.selectFiles(null, true, true);
+        try {
+            return FileSelector.selectFiles(null, true, true);
+        } catch( NullPointerException e)
+        {
+            throw e;
+        }
     }
 
     public static File[] selectFiles(String[] extensionAccepted) {
-        return FileSelector.selectFiles(extensionAccepted, true, true);
+        try {
+            return FileSelector.selectFiles(extensionAccepted, true, true);
+        } catch( NullPointerException e)
+        {
+            throw e;
+        }
     }
 
     public static File saveFile() {
@@ -72,9 +92,13 @@ class FileSelector {
             });
             return ourFiles;
         }
+        catch (InterruptedException ie) {
+            Thread.currentThread().interrupt();
+        }
         catch (Exception e) {
             throw new RuntimeException(e);
         }
+        return ourFiles;
     }
 
     static class ChooserFilter
