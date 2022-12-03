@@ -20,39 +20,19 @@ class FileSelector {
     }
 
     public static File selectFile() {
-        try {
-            return FileSelector.selectFiles(null, false, true)[0];
-        } catch( NullPointerException e)
-        {
-            throw e;
-        }
+        return FileSelector.selectFiles(null, false, true)[0];
     }
 
     public static File selectFile(String[] extensionAccepted) {
-        try {
-            return FileSelector.selectFiles(extensionAccepted, false, true)[0];
-        } catch( NullPointerException e)
-        {
-            throw e;
-        }
+        return FileSelector.selectFiles(extensionAccepted, false, true)[0];
     }
 
     public static File[] selectFiles() {
-        try {
-            return FileSelector.selectFiles(null, true, true);
-        } catch( NullPointerException e)
-        {
-            throw e;
-        }
+        return FileSelector.selectFiles(null, true, true);
     }
 
     public static File[] selectFiles(String[] extensionAccepted) {
-        try {
-            return FileSelector.selectFiles(extensionAccepted, true, true);
-        } catch( NullPointerException e)
-        {
-            throw e;
-        }
+        return FileSelector.selectFiles(extensionAccepted, true, true);
     }
 
     public static File saveFile() {
