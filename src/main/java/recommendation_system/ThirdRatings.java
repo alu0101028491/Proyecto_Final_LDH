@@ -62,7 +62,7 @@ public class ThirdRatings {
         }
         if(count > 0)
         	System.out.printf("Movie ID : Count : Total : Rating = %-10s%-5d%-7.2f%-7.2f%n", movieID, count, total, total / count);
-        if (count >= minimalRaters) return total / count;
+        if (count >= minimalRaters && count > 0) return total / count;
         return 0.0;
     }
 

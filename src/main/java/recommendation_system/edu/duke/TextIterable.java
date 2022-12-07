@@ -1,6 +1,7 @@
 package recommendation_system.edu.duke;
 
 import java.util.Iterator;
+import java.util.NoSuchElementException;
 
 class TextIterable
 implements Iterable<String> {
@@ -21,7 +22,7 @@ implements Iterable<String> {
             }
 
             @Override
-            public String next() {
+            public String next() throws NoSuchElementException {
                 String s = TextIterable.this.myStrings[this.myCount];
                 ++this.myCount;
                 return s;

@@ -120,7 +120,8 @@ public class FirstRatings {
         //System.out.println("The director who produce the most movie is : " + maxDirector + " : " + maxNumMovieByDirector);
         for (String key : mapDirector.keySet()) {
             if (mapDirector.get(key).size() == maxNumMovieByDirector) {
-                System.out.println("The director who produce the most movie is : " + maxNumMovieByDirector + " : " + key);
+            	logger.info("The director who produce the most movie is : " + maxNumMovieByDirector + " : " + key);
+                //System.out.println("The director who produce the most movie is : " + maxNumMovieByDirector + " : " + key);
             }
         }
     }
@@ -164,13 +165,18 @@ public class FirstRatings {
 
     public void testLoadRaters() {
         ArrayList<Rater> raters = loadRaters("data/ratings_short.csv");
-        System.out.println("The size of rater list is = " + raters.size());
+        logger.info("The size of rater list is = " + raters.size());
+        //System.out.println("The size of rater list is = " + raters.size());
+
         //Add code to find the number of ratings for a particular rater
         // you specify in your code. For example, if you run this code
         // on the rater whose rater_id is 2
         for (Rater i : raters) {
             if (i.getID().equals("2")) {
-                System.out.println("USER # " + i.getID() + " : " + i.numRatings() + " ratings");
+
+            	logger.info("USER # " + i.getID() + " : " + i.numRatings() + " ratings");
+            	//System.out.println("USER # " + i.getID() + " : " + i.numRatings() + " ratings");
+
                 //             System.out.println(i.getItemsRated());
                 //            System.out.println(i.getRating());
 
@@ -209,7 +215,10 @@ public class FirstRatings {
                 System.out.println(count + " : " + "id = " + i.getID() + rating);
             }
         }
-        System.out.println("The total # of " + movie_id + " that been rated is " + count);
+
+        logger.info("The total # of " + movie_id + " that been rated is " + count);
+        //System.out.println("The total # of " + movie_id + " that been rated is " + count);
+
         //- Add code to determine how many different movies have been rated
         // by all these raters. If you run this code on the file ratings_short.csv,
         // you will see there were four movies
@@ -222,7 +231,8 @@ public class FirstRatings {
                 }
             }
         }
-        System.out.println("The total # of movie is " + differentMovie.size());
+        logger.info("The total # of movie is " + differentMovie.size());
+        //System.out.println("The total # of movie is " + differentMovie.size());
     }
 
     public static void main(String[] args) {
