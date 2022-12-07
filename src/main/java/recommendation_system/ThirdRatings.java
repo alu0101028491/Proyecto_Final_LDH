@@ -31,22 +31,22 @@ public class ThirdRatings {
      **/
     //private ArrayList<Movie> myMovies;
     private ArrayList<Rater> myRaters;
-    
+
     public ThirdRatings() {
         // default constructor
         this("ratings.csv");
     }
     //---------------todo: why only above won't compile???-------------
-    
+
     public ThirdRatings(String ratingFile) {
         FirstRatings a = new FirstRatings();
         myRaters = a.loadRaters(ratingFile);
     }
-    
+
     public int getRaterSize() {
         return myRaters.size();
     }
-    
+
     //private helper method
     private double getAverageByID(String movieID, int minimalRaters) {
         int count = 0;
@@ -60,11 +60,12 @@ public class ThirdRatings {
                 // System.out.println(count + " : " + "id = " + i.getID() + " rating " + rating + " ave " + total);
             }
         }
-        System.out.printf("Movie ID : Count : Total : Rating = %-10s%-5d%-7.2f%-7.2f%n", movieID, count, total, total / count);
+        if(count > 0)
+        	System.out.printf("Movie ID : Count : Total : Rating = %-10s%-5d%-7.2f%-7.2f%n", movieID, count, total, total / count);
         if (count >= minimalRaters) return total / count;
         return 0.0;
     }
-    
+
     /**
      * Note that myMovies no longer exists. Instead, you’ll need to get all the movies
      * from the MovieDatabase class and store them in an ArrayList of movie IDs.
@@ -82,7 +83,7 @@ public class ThirdRatings {
         }
         return ratingList;
     }
-    
+
     /**
      * write a public helper method named getAverageRatingsByFilter that has
      * two parameters, an int named minimalRaters for the minimum number of
@@ -97,7 +98,7 @@ public class ThirdRatings {
         //must initialize the filter first.
         Filter trueFilter = new TrueFilter();
         ArrayList<String> movieID = MovieDatabase.filterBy(trueFilter);
-        
+
         //        for (String i : movieID) {
         //            double ave = getAverageByID(i, minimalRaters);
         //            if (ave > 0)
@@ -112,7 +113,7 @@ public class ThirdRatings {
         }
         return ratingList;
     }
-    
+
     //
     //    public String getTitle(String movieID) {
     //        for (Movie i : myMovies) {
@@ -150,5 +151,5 @@ public class ThirdRatings {
          * [[1798709, 8.25], [0068646, 9.0]]
          * */
     }
-    
+
 }

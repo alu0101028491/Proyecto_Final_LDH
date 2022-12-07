@@ -8,6 +8,7 @@ import recommendation_system.RaterDatabase;
 import recommendation_system.Rating;
 import recommendation_system.filters.TrueFilter;
 
+import java.security.SecureRandom;
 import java.util.ArrayList;
 import java.util.Random;
 
@@ -40,6 +41,8 @@ import java.util.Random;
  ****************************************************************/
 
 public class RecommendationRunner implements Recommender {
+
+	private Random rand = new SecureRandom();
     /**
      * randomly pick 10 movie to let the user to rate.
      * will optimize soon to rate the most popular movie.
@@ -50,8 +53,10 @@ public class RecommendationRunner implements Recommender {
         ArrayList<String> movieToBeRate = new ArrayList<>();
         ArrayList<String> movieID = MovieDatabase.filterBy(new TrueFilter());
         for (int i = 0; movieToBeRate.size() < 10; i++) {
-            Random ran = new Random();
-            int random = ran.nextInt(movieID.size());
+        	//SecureRandom ran = new SecureRandom();
+        	byte bytes[] = new byte[20];
+        	this.rand.nextBytes(bytes);
+            int random = rand.nextInt(movieID.size());
             if (!movieToBeRate.contains(movieID.get(random)))
                 movieToBeRate.add(movieID.get(random));
         }

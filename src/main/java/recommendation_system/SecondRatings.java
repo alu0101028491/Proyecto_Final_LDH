@@ -22,30 +22,30 @@ import java.util.ArrayList;
  *
  ****************************************************************/
 public class SecondRatings {
-    
+
     private ArrayList<Movie> myMovies;
     private ArrayList<Rater> myRaters;
-    
+
     public SecondRatings() {
         // default constructor
         this("ratedmoviesfull.csv", "ratings.csv");
     }
     //---------------todo: why only above won't compile???-------------
-    
+
     public SecondRatings(String movieFile, String ratingFile) {
         FirstRatings a = new FirstRatings();
         myMovies = a.loadMovies(movieFile);
         myRaters = a.loadRaters(ratingFile);
     }
-    
+
     public int getMovieSize() {
         return myMovies.size();
     }
-    
+
     public int getRaterSize() {
         return myRaters.size();
     }
-    
+
     //private helper method
     private double getAverageByID(String movieID, int minimalRaters) {
         int count = 0;
@@ -60,10 +60,10 @@ public class SecondRatings {
             }
         }
         //System.out.println("Movie ID = " + movieID + " : " + count + " : " + total + " : " + total / count);
-        if (count >= minimalRaters) return total / count;
+        if (count >= minimalRaters && count > 0) return total / count;
         return 0.0;
     }
-    
+
     public ArrayList<Rating> getAverageRatings(int minimalRaters) {
         ArrayList<Rating> ratingList = new ArrayList<>();
         for (Movie i : myMovies) {
@@ -73,7 +73,7 @@ public class SecondRatings {
         }
         return ratingList;
     }
-    
+
     public String getTitle(String movieID) {
         for (Movie i : myMovies) {
             if (i.getID().equals(movieID)) {
@@ -82,7 +82,7 @@ public class SecondRatings {
         }
         return "The Movie ID was not found!";
     }
-    
+
     public String getID(String title) {
         for (Movie i : myMovies) {
             if (i.getTitle().equals(title)) {
@@ -91,7 +91,7 @@ public class SecondRatings {
         }
         return "NO SUCH TITLE";
     }
-    
+
     public static void main(String[] args) {
         SecondRatings sr = new SecondRatings("data/ratedmovies_short.csv", "data/ratings_short.csv");
         //System.out.println(sr.getAverageByID("0790636", 2));
@@ -99,5 +99,5 @@ public class SecondRatings {
         System.out.println(sr.getAverageRatings(2));
         //[[6414, 0.0], [68646, 0.0], [113277, 0.0], [1798709, 8.25], [790636, 0.0]]
     }
-    
+
 }

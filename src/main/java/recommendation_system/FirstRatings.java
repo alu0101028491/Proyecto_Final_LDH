@@ -9,6 +9,9 @@ import recommendation_system.raters.Rater;
 import java.util.ArrayList;
 import java.util.HashMap;
 
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 /***************************************************************
  *  Name:    Wei Xu
  *
@@ -22,7 +25,11 @@ import java.util.HashMap;
  *                 about both movies and ratings.
  *
  ****************************************************************/
+
 public class FirstRatings {
+
+    private static Logger logger = Logger.getLogger(FirstRatings.class.getName());
+
     //This method should process every record from the CSV file
     // whose name is filename, a file of movie information,
     // and return an ArrayList of type Movie with all of the
@@ -45,15 +52,16 @@ public class FirstRatings {
         }
         return movies;
     }
-    
+
     public void testLoadMovies() {
-        
+
         ArrayList<Movie> movies = loadMovies("data/ratedmovies_short.csv");
         for (Movie i : movies) {
             //System.out.println(" ++ " + i);
         }
-        System.out.println("The size of movie list is = " + movies.size());
-        
+        logger.info("The size of movie list is = " + movies.size());
+        //System.out.println("The size of movie list is = " + movies.size());
+
         //        for (Movie i : movies) {
         //            if (i.getGenres().contains("Comedy")) {
         //                System.out.println("Comedy = : " + i);
@@ -64,7 +72,7 @@ public class FirstRatings {
         //                System.out.println("MIN >= 150 : " + i);
         //            }
         //        }
-        
+
         //Add code to determine the maximum number of movies by any director,
         // and who the directors are that directed that many movies.
         // Remember that some movies may have more than one director.
@@ -82,7 +90,7 @@ public class FirstRatings {
             String director = i.getDirector();
             //make a list of directos' name split into a string array
             String[] directors = director.split(", ");
-            
+
             for (String j : directors) {
                 //System.out.println("movie " + i.getID() + " : " + j);
                 if (!mapDirector.containsKey(j)) {
@@ -100,7 +108,7 @@ public class FirstRatings {
         //        for (String i : directorList.keySet()) {
         //            System.out.println(i + " : " + directorList.get(i).size() + " : " + directorList.get(i));
         //        }
-        
+
         int maxNumMovieByDirector = 0;
         String maxDirector = "";
         for (String key : mapDirector.keySet()) {
@@ -116,7 +124,7 @@ public class FirstRatings {
             }
         }
     }
-    
+
     //rater 1:(rater id 1, movielist 1)
     //rater 1:(rater id 1, movielist 1)
     //.........
@@ -153,7 +161,7 @@ public class FirstRatings {
         }
         return raters;
     }
-    
+
     public void testLoadRaters() {
         ArrayList<Rater> raters = loadRaters("data/ratings_short.csv");
         System.out.println("The size of rater list is = " + raters.size());
@@ -165,7 +173,7 @@ public class FirstRatings {
                 System.out.println("USER # " + i.getID() + " : " + i.numRatings() + " ratings");
                 //             System.out.println(i.getItemsRated());
                 //            System.out.println(i.getRating());
-                
+
                 ArrayList<String> rating = i.getItemsRated();
                 for (String j : rating) {
                     System.out.print("movie_id: " + j + " ");
@@ -216,7 +224,7 @@ public class FirstRatings {
         }
         System.out.println("The total # of movie is " + differentMovie.size());
     }
-    
+
     public static void main(String[] args) {
         FirstRatings a = new FirstRatings();
         System.out.println("-------------------MOVIES-------------------");
