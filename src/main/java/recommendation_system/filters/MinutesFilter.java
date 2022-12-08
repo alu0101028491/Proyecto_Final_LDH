@@ -14,6 +14,10 @@ import recommendation_system.movies.MovieDatabase;
  *
  ****************************************************************/
 public class MinutesFilter implements Filter {
+    /**
+     * Implement minutes filter.
+     * This filter will be used to filter the movies of a specific duration that the user wants to watch.
+     */
     private int min;
     private int max;
     
@@ -22,9 +26,15 @@ public class MinutesFilter implements Filter {
         this.min = min;
         this.max = max;
     }
-    
+    /**
+     * Minimum and maximum of minutes that the movie should have
+     */
     @Override
     public boolean satisfies(String id) {
         return MovieDatabase.getMinutes(id) >= min && MovieDatabase.getMinutes(id) <= max;
     }
+    /**
+     * Returns True if the movie has more of the minimum and less than the maximum of the minutes that the user wants to filter.
+     * Returns false if the movie does not meet the criteria of minutes that the user wants.
+     */
 }

@@ -18,4 +18,8 @@ package recommendation_system.filters;
 
 public interface Filter {
     public boolean satisfies(String id);
+    /**
+     * This method returns true if the movie meets the criteria in the specific method (Director, Genre,...).
+     * Returns false if the movie does not meet the criteria on the method.
+     */
 }
