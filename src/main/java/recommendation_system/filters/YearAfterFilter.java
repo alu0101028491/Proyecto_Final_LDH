@@ -1,6 +1,6 @@
 package recommendation_system.filters;
 
-import recommendation_system.MovieDatabase;
+import recommendation_system.movies.MovieDatabase;
 
 public class YearAfterFilter implements Filter {
     private int myYear;

@@ -1,6 +1,6 @@
 package recommendation_system.filters;
 
-import recommendation_system.MovieDatabase;
+import recommendation_system.movies.MovieDatabase;
 
 /***************************************************************
  *  Name:    Wei Xu

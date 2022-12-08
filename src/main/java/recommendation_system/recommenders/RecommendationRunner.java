@@ -1,11 +1,9 @@
 package recommendation_system.recommenders;
 
-import recommendation_system.*;
-import recommendation_system.FourthRatings;
-import recommendation_system.FourthRatingsOptimizedByWeiXu;
-import recommendation_system.MovieDatabase;
-import recommendation_system.RaterDatabase;
-import recommendation_system.Rating;
+import recommendation_system.ratings.FourthRatings;
+import recommendation_system.movies.MovieDatabase;
+import recommendation_system.raters.RaterDatabase;
+import recommendation_system.ratings.Rating;
 import recommendation_system.filters.TrueFilter;
 
 import java.security.SecureRandom;

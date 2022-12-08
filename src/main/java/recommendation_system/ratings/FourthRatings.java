@@ -1,6 +1,9 @@
-package recommendation_system;
+package recommendation_system.ratings;
 
+import recommendation_system.movies.MovieDatabase;
+import recommendation_system.raters.RaterDatabase;
 import recommendation_system.filters.Filter;
+import recommendation_system.filters.TrueFilter;
 import recommendation_system.raters.Rater;
 
 import java.util.ArrayList;
@@ -9,12 +12,14 @@ import java.util.Collections;
 /***************************************************************
  *  Name:    Wei Xu
  *
- *  Date: Dec 15th, 2019
+ *  Date: Dec 13-14th, 2019
  *
- *  Description:  -------------------STEP FOUR Optimized by Wei Xu--------
- *                 Compare to FourthRating, instead of iterate all movie in the
- *                 MovieDataBase, i use the movie list that only the topSimilarRater's movie.
- *                 Greatly reduce the time.
+ *  Description:  -------------------STEP FOUR--------
+ *                 You should not copy, nor should you have any instance variables
+ *                 in FourthRatings— you'll use RaterDatabase and MovieDatabase
+ *                 static methods in place of instance variables—so where you have
+ *                 code with "myRaters", you need to replace the code with calls to
+ *                 methods in the RaterDatabase class.
  *
  *  * IMPORTANT NOTICE:
  *      * Weighted average algorithm optimized by WEI XU
@@ -23,7 +28,14 @@ import java.util.Collections;
  *
  ****************************************************************/
 
-public class FourthRatingsOptimizedByWeiXu {
+public class FourthRatings {
+    /**
+     * This method should first translate a rating from the scale 0 to 10
+     * to the scale -5 to 5 and return the dot product of the ratings of
+     * movies that they both rated.
+     * This method will be called by getSimilarities.
+     **/
+    // is this rater = efficientRater ?
     private double dotProduct(Rater me, Rater r) {
         double dp = 0;
         ArrayList<String> memovieid = me.getItemsRated();
@@ -130,35 +142,11 @@ public class FourthRatingsOptimizedByWeiXu {
      * (9*31+10*20)/2 = 479/2 = 239.5
      */
     // combine getAverageByID and getAverageRatings;
-    // HashMap<MovieID, ArrayList<Rater>> from top numSimilarRaters.
-    //or
-    // Arraylist<movieID> from top numSimilarRaters.
     public ArrayList<Rating> getSimilarRatings(String raterID, int numSimilarRaters, int minimalRaters) {
         ArrayList<Rating> ratingList = new ArrayList<>();
-        // get Arraylist<movieID> from top numSimilarRaters.
-        ArrayList<String> movidIDByTopSimilar = new ArrayList<>();
-        ArrayList<Rating> simiList1 = getSimilarities(raterID);
-        //System.out.println("Total number of similar raters : " + simiList1.size());
-        int num = simiList1.size();
-        if (numSimilarRaters > num) {
-            numSimilarRaters = num;
-        }
-        for (int i = 0; i < numSimilarRaters; i++) {
-            String raterID1 = simiList1.get(i).getItem();
-            ArrayList<String> movieRated1 = RaterDatabase.getRater(raterID1).getItemsRated();
-            for (String movieID : movieRated1) {
-                if (!movidIDByTopSimilar.contains(movieID)) {
-                    movidIDByTopSimilar.add(movieID);
-                    //System.out.println("Movie id = " + movieID + " Rater id = " + raterID1);
-                }
-            }
-        }
-        //System.out.println("MoviebyTopSimilar Size = " + movidIDByTopSimilar.size());
-        //for (String i:)
-
-        //rating for movies in the movieIDByTopSimilar list;
-        //Filter trueFilter = new TrueFilter();
-        for (String j : movidIDByTopSimilar) {
+        //rating for all movie
+        Filter trueFilter = new TrueFilter();
+        for (String j : MovieDatabase.filterBy(trueFilter)) {
             // rating for one movie
             double ave = 0;
             ArrayList<Rating> simiList = getSimilarities(raterID);
@@ -180,9 +168,9 @@ public class FourthRatingsOptimizedByWeiXu {
 
                 }
             }
-            if (count >= minimalRaters && simiweighttotal > 0)
-                ave = total / simiweighttotal;
-            //ave = total / count;
+            if (count >= minimalRaters && count > 0)
+                //ave = total / simiweighttotal;
+                ave = total / count;
             //System.out.println("Movie id = " + j + " count " + count + " : " + " rating " + ave + " total/count " + total / count);
             //(9*31+10*20)/50=279+200=479/50=9.58
             //(9*31+10*20)/2 = 479/2 = 239.5
@@ -200,19 +188,17 @@ public class FourthRatingsOptimizedByWeiXu {
     public ArrayList<Rating> getSimilarRatingsByFilter(String raterID, int numSimilarRaters, int minimalRaters, Filter f) {
         ArrayList<Rating> ratingList = new ArrayList<>();
         //rating for all movie
-        ArrayList<String> movidIDByTopSimilar = new ArrayList<>();
-        ArrayList<Rating> simiList1 = getSimilarities(raterID);
-        for (int i = 0; i < numSimilarRaters; i++) {
-            String raterID1 = simiList1.get(i).getItem();
-            ArrayList<String> movieRated1 = RaterDatabase.getRater(raterID1).getItemsRated();
-            for (String movieID : movieRated1) {
-                if (!movidIDByTopSimilar.contains(movieID)) {
-                    movidIDByTopSimilar.add(movieID);
-                }
-            }
-        }
+        Filter trueFilter = new TrueFilter();
+        //print similarList
+        ArrayList<Rating> simiListTest = getSimilarities(raterID);
+        //print out  top 20 similar rater id and their dot product.
+        //        for (int i = 0; i < numSimilarRaters; i++) {
+        //            double simirating = simiListTest.get(i).getValue();
+        //
+        //            System.out.println("id = " + simiListTest.get(i).getItem() + " rating " + simirating);
+        //        }
 
-        for (String j : movidIDByTopSimilar) {
+        for (String j : MovieDatabase.filterBy(trueFilter)) {
             if (f.satisfies(j)) {
                 // rating for one movie
                 double ave = 0;
@@ -232,9 +218,9 @@ public class FourthRatingsOptimizedByWeiXu {
 
                     }
                 }
-                if (count >= minimalRaters && simiweighttotal > 0)
-                    ave = total / simiweighttotal;
-                //ave = total / count;
+                if (count >= minimalRaters && count > 0)
+                    //ave = total / simiweighttotal;
+                    ave = total / count;
 
                 // rating for one movie end
                 if (ave > 0)
@@ -251,7 +237,7 @@ public class FourthRatingsOptimizedByWeiXu {
     public static void main(String[] args) {
         MovieDatabase.initialize("ratedmovies_short.csv");
         RaterDatabase.initialize("ratings_short.csv");
-        FourthRatingsOptimizedByWeiXu sr = new FourthRatingsOptimizedByWeiXu();
+        FourthRatings sr = new FourthRatings();
         System.out.println("---------------test-------------");
         System.out.println(sr.getSimilarRatings("2", 3, 0));
 

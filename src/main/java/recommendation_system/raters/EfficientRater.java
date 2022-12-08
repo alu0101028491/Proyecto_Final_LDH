@@ -1,6 +1,6 @@
 package recommendation_system.raters;
 
-import recommendation_system.Rating;
+import recommendation_system.ratings.Rating;
 import java.util.ArrayList;
 import java.util.HashMap;
 

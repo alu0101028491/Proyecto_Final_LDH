@@ -1,4 +1,7 @@
-package recommendation_system;
+package recommendation_system.movierunner;
+
+import recommendation_system.ratings.Rating;
+import recommendation_system.ratings.SecondRatings;
 
 import java.util.ArrayList;
 import java.util.Collections;

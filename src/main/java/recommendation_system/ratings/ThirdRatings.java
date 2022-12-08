@@ -1,5 +1,6 @@
-package recommendation_system;
+package recommendation_system.ratings;
 
+import recommendation_system.movies.MovieDatabase;
 import recommendation_system.filters.Filter;
 import recommendation_system.filters.TrueFilter;
 import recommendation_system.raters.Rater;

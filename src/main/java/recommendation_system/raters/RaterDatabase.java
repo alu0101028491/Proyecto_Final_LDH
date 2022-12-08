@@ -1,4 +1,4 @@
-package recommendation_system; /***************************************************************
+package recommendation_system.raters; /***************************************************************
  *  Name:    Wei Xu
  *
  *  Date: Dec 13th, 2019

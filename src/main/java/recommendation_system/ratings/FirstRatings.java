@@ -1,5 +1,6 @@
-package recommendation_system;
+package recommendation_system.ratings;
 
+import recommendation_system.movies.Movie;
 import recommendation_system.edu.duke.FileResource;
 import org.apache.commons.csv.CSVParser;
 import org.apache.commons.csv.CSVRecord;
@@ -8,9 +9,6 @@ import recommendation_system.raters.Rater;
 
 import java.util.ArrayList;
 import java.util.HashMap;
-
-//import java.util.logging.Level;
-//import java.util.logging.Logger;
 import java.lang.System.Logger;
 
 /***************************************************************

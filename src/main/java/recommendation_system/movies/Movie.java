@@ -1,4 +1,4 @@
-package recommendation_system;
+package recommendation_system.movies;
 
 /**
  * <p>

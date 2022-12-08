@@ -1,6 +1,7 @@
-package recommendation_system;
+package recommendation_system.movies;
 
 import recommendation_system.filters.Filter;
+import recommendation_system.ratings.FirstRatings;
 
 import java.util.ArrayList;
 import java.util.HashMap;

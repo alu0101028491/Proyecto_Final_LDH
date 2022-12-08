@@ -1,5 +1,6 @@
-package recommendation_system;
+package recommendation_system.ratings;
 
+import recommendation_system.movies.Movie;
 import recommendation_system.raters.Rater;
 
 import java.util.ArrayList;
