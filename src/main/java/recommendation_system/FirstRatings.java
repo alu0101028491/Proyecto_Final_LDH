@@ -9,8 +9,9 @@ import recommendation_system.raters.Rater;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-import java.util.logging.Level;
-import java.util.logging.Logger;
+//import java.util.logging.Level;
+//import java.util.logging.Logger;
+import java.lang.System.Logger;
 
 /***************************************************************
  *  Name:    Wei Xu
@@ -28,40 +29,42 @@ import java.util.logging.Logger;
 
 public class FirstRatings {
 
-    private static Logger logger = Logger.getLogger(FirstRatings.class.getName());
+    //private static Logger logger = Logger.getLogger(FirstRatings.class.getName());
+    private Logger logger = System.getLogger(FirstRatings.class.getName());
 
-    //This method should process every record from the CSV file
-    // whose name is filename, a file of movie information,
-    // and return an ArrayList of type Movie with all of the
-    // movie data from the file.
+    /**
+     * This method process every record from the CSV file
+     * and return an ArrayList of type Movie with all of the movie data from the file.
+     * @param fileName A file of movie information
+     * @return ArrayList of type Movie with all of the movie data from the file
+     */
     public ArrayList<Movie> loadMovies(String fileName) {
         ArrayList<Movie> movies = new ArrayList<>();
         FileResource fr = new FileResource(fileName);
         CSVParser parser = fr.getCSVParser();
         for (CSVRecord i : parser) {
-            String id = i.get("id");
-            String title = i.get("title");
-            String year = i.get("year");
-            String country = i.get("country");
-            String genre = i.get("genre");
-            String director = i.get("director");
-            int minutes = Integer.parseInt(i.get("minutes"));
-            String poster = i.get("poster");
-            Movie m = new Movie(id, title, year, genre, director, country, poster, minutes);
+
+            Movie m = new Movie(i.get("id"), i.get("title"), i.get("year"),
+                    i.get("genre"), i.get("director"), i.get("country"),
+                    i.get("poster"), Integer.parseInt(i.get("minutes")));
+
             movies.add(m);
         }
         return movies;
     }
 
+    /**
+     * Determine the maximum number of movies by any director,
+     * and who the directors are that directed that many movies.
+     * Remember that some movies may have more than one director.
+     */
     public void testLoadMovies() {
 
         ArrayList<Movie> movies = loadMovies("data/ratedmovies_short.csv");
-        for (Movie i : movies) {
-            //System.out.println(" ++ " + i);
-        }
-        logger.info("The size of movie list is = " + movies.size());
-        //System.out.println("The size of movie list is = " + movies.size());
 
+        logger.log(Logger.Level.INFO, "The size of movie list is = " + movies.size());
+
+        //System.out.println("The size of movie list is = " + movies.size());
         //        for (Movie i : movies) {
         //            if (i.getGenres().contains("Comedy")) {
         //                System.out.println("Comedy = : " + i);
@@ -73,20 +76,9 @@ public class FirstRatings {
         //            }
         //        }
 
-        //Add code to determine the maximum number of movies by any director,
-        // and who the directors are that directed that many movies.
-        // Remember that some movies may have more than one director.
         HashMap<String, ArrayList<Movie>> mapDirector = new HashMap<>();
         for (Movie i : movies) {
             //One movie may have many directors.
-            //            J.D. Chakravarthi, Manish Gupta, Sajid Khan, Jijy Philip, Prawaal Raman, Vivek Shah, Ram Gopal Varma
-            //            movie 0476649 : J.D. Chakravarthi
-            //            movie 0476649 : Manish Gupta
-            //            movie 0476649 : Sajid Khan
-            //            movie 0476649 : Jijy Philip
-            //            movie 0476649 : Prawaal Raman
-            //            movie 0476649 : Vivek Shah
-            //            movie 0476649 : Ram Gopal Varma
             String director = i.getDirector();
             //make a list of directos' name split into a string array
             String[] directors = director.split(", ");
@@ -110,63 +102,55 @@ public class FirstRatings {
         //        }
 
         int maxNumMovieByDirector = 0;
-        String maxDirector = "";
         for (String key : mapDirector.keySet()) {
             if (mapDirector.get(key).size() > maxNumMovieByDirector) {
                 maxNumMovieByDirector = mapDirector.get(key).size();
-                //maxDirector = key;
             }
         }
-        //System.out.println("The director who produce the most movie is : " + maxDirector + " : " + maxNumMovieByDirector);
+
         for (String key : mapDirector.keySet()) {
             if (mapDirector.get(key).size() == maxNumMovieByDirector) {
-            	logger.info("The director who produce the most movie is : " + maxNumMovieByDirector + " : " + key);
-                //System.out.println("The director who produce the most movie is : " + maxNumMovieByDirector + " : " + key);
+                logger.log(Logger.Level.INFO, "The director who produce the most movie is : "
+                        + maxNumMovieByDirector + " : " + key);
             }
         }
     }
 
-    //rater 1:(rater id 1, movielist 1)
-    //rater 1:(rater id 1, movielist 1)
-    //.........
+    /**
+     * Load Raters - Raters is class for storing the data about one rating of an item.
+     * @param fileName Ratings file
+     * @return ArrayList of Raters
+     */
     public ArrayList<Rater> loadRaters(String fileName) {
         ArrayList<Rater> raters = new ArrayList<>();// why no need <PlainRater>?
         FileResource fr = new FileResource(fileName);
         CSVParser parser = fr.getCSVParser();
         for (CSVRecord i : parser) {
-            String rater_id = i.get("rater_id");
-            String movie_id = i.get("movie_id");
+
             double rating = Double.parseDouble(i.get("rating"));
-            //-------TODO: CAN WE simplify line 129-146 ???------------
-            //      simplified in RaterDataBase line 52-62.
+
             int count = 0;
             for (Rater j : raters) {
-                if (j.getID().contains(rater_id)) {
-                    //Rater m = new Rater(rater_id);
-                    j.addRating(movie_id, rating);
+                if (j.getID().contains(i.get("rater_id"))) {
+                    j.addRating(i.get("movie_id"), rating);
                     count++;
-                    //System.out.println("count = " + count);
-                    //System.out.println("Existing rater updated! " + j.getID() + "\t" + movie_id + "\t" + rating);
-                    //raters.add(m);
                     break;
                 }
             }
             if (count == 0) {
                 // HERE IS THE ONLY CHANGE I MADE FOR THE INTERFACE
                 // WHY NO NEED CHANGE OTHERS SUCH AS LINE 120.
-                EfficientRater m = new EfficientRater(rater_id);
-                m.addRating(movie_id, rating);
+                EfficientRater m = new EfficientRater(i.get("rater_id"));
+                m.addRating(i.get("movie_id"), rating);
                 raters.add(m);// here is not correct when i did not write implement the rater interface in EfficientRater
-                //System.out.println("New rater added!        " + rater_id + "\t" + movie_id + "\t" + rating);
             }
         }
         return raters;
     }
 
-    public void testLoadRaters() {
-        ArrayList<Rater> raters = loadRaters("data/ratings_short.csv");
-        logger.info("The size of rater list is = " + raters.size());
-        //System.out.println("The size of rater list is = " + raters.size());
+    public void testLoadRaters(String filename) {
+        ArrayList<Rater> raters = loadRaters(filename);
+        logger.log(Logger.Level.INFO, "The size of rater list is = " + raters.size());
 
         //Add code to find the number of ratings for a particular rater
         // you specify in your code. For example, if you run this code
@@ -174,16 +158,13 @@ public class FirstRatings {
         for (Rater i : raters) {
             if (i.getID().equals("2")) {
 
-            	logger.info("USER # " + i.getID() + " : " + i.numRatings() + " ratings");
-            	//System.out.println("USER # " + i.getID() + " : " + i.numRatings() + " ratings");
-
-                //             System.out.println(i.getItemsRated());
-                //            System.out.println(i.getRating());
+                logger.log(Logger.Level.INFO, "USER # " + i.getID() + " : "
+                        + i.numRatings() + " ratings");
 
                 ArrayList<String> rating = i.getItemsRated();
                 for (String j : rating) {
-                    System.out.print("movie_id: " + j + " ");
-                    System.out.println(i.getRating(j) + " rating");
+                    logger.log(Logger.Level.INFO, "movie_id: " + j + " ");
+                    logger.log(Logger.Level.INFO, i.getRating(j) + " rating");
                 }
             }
         }
@@ -200,26 +181,24 @@ public class FirstRatings {
         }
         for (Rater i : raters) {
             if (i.numRatings() == max) {
-                System.out.println("The maximum rate is from USER # " + i.getID() + " : " + i.numRatings() + " ratings");
+                logger.log(Logger.Level.INFO, "The maximum rate is from USER # " +
+                        i.getID() + " : " + i.numRatings() + " ratings");
             }
         }
-        //- Add code to find the number of ratings a particular movie has.
+        // Add code to find the number of ratings a particular movie has.
         // If you run this code on the file ratings_short.csv for the movie “1798709”,
         // you will see it was rated by four raters.
         int count = 0;
-        String movie_id = "1798709";
         for (Rater i : raters) {
             ArrayList<String> rating = i.getItemsRated();
-            if (rating.contains(movie_id)) {
+            if (rating.contains("1798709")) {
                 count++;
-                System.out.println(count + " : " + "id = " + i.getID() + rating);
+                logger.log(Logger.Level.INFO, count + " : " + "id = " + i.getID() + rating);
             }
         }
+        logger.log(Logger.Level.INFO, "The total # of " + "1798709" + " that been rated is " + count);
 
-        logger.info("The total # of " + movie_id + " that been rated is " + count);
-        //System.out.println("The total # of " + movie_id + " that been rated is " + count);
-
-        //- Add code to determine how many different movies have been rated
+        // Add code to determine how many different movies have been rated
         // by all these raters. If you run this code on the file ratings_short.csv,
         // you will see there were four movies
         ArrayList<String> differentMovie = new ArrayList<>();
@@ -231,8 +210,7 @@ public class FirstRatings {
                 }
             }
         }
-        logger.info("The total # of movie is " + differentMovie.size());
-        //System.out.println("The total # of movie is " + differentMovie.size());
+        logger.log(Logger.Level.INFO, "The total # of movie is " + differentMovie.size());
     }
 
     public static void main(String[] args) {
@@ -242,6 +220,6 @@ public class FirstRatings {
         System.out.println();
         System.out.println();
         System.out.println("-------------------RATERS-------------------");
-        a.testLoadRaters();
+        a.testLoadRaters("data/ratings_short.csv");
     }
 }
