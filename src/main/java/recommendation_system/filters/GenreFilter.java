@@ -16,23 +16,25 @@ import recommendation_system.movies.MovieDatabase;
  *
  ****************************************************************/
 
+/**
+ * Implement Genre filter.
+ * This filter will be used to filter the movies of a specific genre that the user wants to watch.
+ */
 public class GenreFilter implements Filter {
-    /**
-     * Implement Genre filter.
-     * This filter will be used to filter the movies of a specific genre that the user wants to watch.
-     */
+
     private String genre;
     
     public GenreFilter(String genre) {
         this.genre = genre;
     }
-    
-    @Override
-    public boolean satisfies(String id) {
-        return MovieDatabase.getGenres(id).contains(genre);
-    }
+
     /**
      * Returns True if the movie has the specific genre the user wants to filter.
      * Returns false if the movie does not contain the genre that the user wants.
      */
+    @Override
+    public boolean satisfies(String id) {
+        return MovieDatabase.getGenres(id).contains(genre);
+    }
+
 }

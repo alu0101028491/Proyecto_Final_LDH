@@ -18,17 +18,23 @@ import recommendation_system.movies.MovieDatabase;
  *                Note that each movie may have several directors.
  *
  ****************************************************************/
+
+/**
+ *Implements Directors filter.
+ *This filter will be used to filter the movies directed by the specific directors that the user wants to watch.
+ */
 public class DirectorsFilter implements Filter {
-    /**
-     * Implements Directors filter.
-     * This filter will be used to filter the movies directed by the specific directors that the user wants to watch.
-     */
+
     private String directors;
     
     public DirectorsFilter(String directors) {
         this.directors = directors;
     }
-    
+
+    /**
+     * Returns True if the movie has at least one of the directors the user wants to filter.
+     * Returns false if the movie has none of them.
+     */
     @Override
     public boolean satisfies(String id) {
         String[] dir = directors.split(",");
@@ -42,8 +48,5 @@ public class DirectorsFilter implements Filter {
         }
         return false;
     }
-    /**
-     * Returns True if the movie has at least one of the directors the user wants to filter.
-     * Returns false if the movie has none of them.
-     */
+
 }

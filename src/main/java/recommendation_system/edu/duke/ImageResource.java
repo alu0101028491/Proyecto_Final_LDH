@@ -141,7 +141,7 @@ public class ImageResource {
 
     private Pixel[] intsToPixels(int[] pixels, int width, int height) {
         if (pixels == null) {
-            throw new ResourceException(String.format("ImageResource: no pixels for %d %d %n", width, height));
+            throw new ResourceException(String.format("ImageResource: no pixels for %d %d\n", width, height));
         }
         Pixel[] pix = new Pixel[pixels.length];
         for (int i = 0; i < pixels.length; ++i) {
