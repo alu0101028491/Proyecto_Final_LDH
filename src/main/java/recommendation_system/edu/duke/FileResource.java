@@ -102,7 +102,7 @@ public class FileResource {
     }
 
     public void write(String s) {
-        ArrayList<String> list = new ArrayList<String>();
+        ArrayList<String> list = new ArrayList<>();
         list.add(s);
         this.write(list);
     }
@@ -112,7 +112,7 @@ public class FileResource {
     }
 
     public void write(String[] list) {
-        this.write(new ArrayList<String>(Arrays.asList(list)));
+        this.write(new ArrayList<>(Arrays.asList(list)));
     }
 
     public void write(ArrayList<String> list) {

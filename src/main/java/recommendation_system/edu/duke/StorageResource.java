@@ -8,15 +8,15 @@ public class StorageResource {
     private List<String> myStrings;
 
     public StorageResource() {
-        this.myStrings = new ArrayList<String>();
+        this.myStrings = new ArrayList<>();
     }
 
     StorageResource(String ... data) {
-        this.myStrings = new ArrayList<String>(Arrays.asList(data));
+        this.myStrings = new ArrayList<>(Arrays.asList(data));
     }
 
     public StorageResource(StorageResource other) {
-        this.myStrings = new ArrayList<String>(other.myStrings);
+        this.myStrings = new ArrayList<>(other.myStrings);
     }
 
     public void clear() {

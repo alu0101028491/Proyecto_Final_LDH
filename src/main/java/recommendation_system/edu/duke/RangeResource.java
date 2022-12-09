@@ -47,7 +47,7 @@ public class RangeResource {
     }
 
     private List<Integer> makeValues(int start, int end, int increment) {
-        ArrayList<Integer> result = new ArrayList<Integer>();
+        ArrayList<Integer> result = new ArrayList<>();
         while (!(increment > 0 && start >= end || increment < 0 && start <= end)) {
             result.add(start);
             start += increment;
