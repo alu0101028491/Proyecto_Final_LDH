@@ -15,7 +15,7 @@ package recommendation_system.movies;
  *  </ul>
  *  </p>
  *
- *  @since 30/11/22
+ *  @since 09/12/22
  *  @version 1.0
  */
 public class Movie {
@@ -99,24 +99,43 @@ public class Movie {
     public String getGenres() {
         return genres;
     }
-    
+
+    /**
+     * Returns one or more countries the film was made in, separated by commas
+     * @return Countries the film was made in, separated by commas
+     */
     public String getCountry() {
         return country;
     }
-    
+
+    /**
+     * Returns one or more directors of the movie separated by commas
+     * @return Directors of the movie separated by commas
+     */
     public String getDirector() {
         return director;
     }
-    
+
+    /**
+     * Returns a link to an image of the movie poster if one exists, or “N/A”
+     * @return A link to an image of the movie poster if one exists, or “N/A”
+     */
     public String getPoster() {
         return poster;
     }
-    
+
+    /**
+     * Returns an integer for the length of the movie
+     * @return An integer for the length of the movie
+     */
     public int getMinutes() {
         return minutes;
     }
-    
-    // Returns a string of the item's information
+
+    /**
+     * Returns a string of the item's information
+     * @return String of the item's information
+     */
     public String toString() {
         String result = "Movie [id=" + id + ", title=" + title + ", year=" + year;
         result += ", genres= " + genres + "]";

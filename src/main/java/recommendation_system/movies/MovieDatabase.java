@@ -6,22 +6,22 @@ import recommendation_system.ratings.FirstRatings;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-/***************************************************************
- *  Name:    Wei Xu
+/**
+ * <p>
+ *  This class is an efficient way to get information about movies.
+ *  It stores movie information in a HashMap for fast lookup of movie information given a movie ID.
+ *  </p>
  *
- *  Date: Dec 12th, 2019
+ *  <p>
+ *  The class contains the necessary methods for:
+ *  <ul>
+ *  <li> Filtering movies based on queries </li>
+ *  </ul>
+ *  </p>
  *
- *  Description:  -------------------STEP THREE--------
- *                 The class MovieDatabase—This class is an efficient way to get
- *                 information about movies. It stores movie information in a HashMap
- *                 for fast lookup of movie information given a movie ID.
- *                 The class also allows filtering movies based on queries. All methods
- *                 and fields in the class are static.
- *                 This means you'll be able to access methods in MovieDatabase
- *                 without using new to create objects, but by calling methods like
- *                 MovieDatabase.getMovie("0120915").
- *
- ****************************************************************/
+ *  @since 09/12/22
+ *  @version 1.0
+ */
 public class MovieDatabase {
     private static HashMap<String, Movie> ourMovies;
     //before it's an Arraylist<Movie>
