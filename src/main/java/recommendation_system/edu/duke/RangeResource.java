@@ -1,6 +1,5 @@
 package recommendation_system.edu.duke;
 
-import recommendation_system.edu.duke.ResourceException;
 import java.util.ArrayList;
 import java.util.List;
 

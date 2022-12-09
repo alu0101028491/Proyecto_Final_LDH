@@ -1,7 +1,5 @@
 package recommendation_system.edu.duke;
 
-import recommendation_system.edu.duke.ResourceException;
-import recommendation_system.edu.duke.TextIterable;
 import java.io.BufferedReader;
 import java.io.InputStream;
 import java.io.InputStreamReader;

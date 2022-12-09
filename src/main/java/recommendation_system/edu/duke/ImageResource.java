@@ -1,9 +1,5 @@
 package recommendation_system.edu.duke;
 
-import recommendation_system.edu.duke.FileSelector;
-import recommendation_system.edu.duke.ImageFrame;
-import recommendation_system.edu.duke.Pixel;
-import recommendation_system.edu.duke.ResourceException;
 import java.awt.Image;
 import java.awt.image.BufferedImage;
 import java.awt.image.PixelGrabber;

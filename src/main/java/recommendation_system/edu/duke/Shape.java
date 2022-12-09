@@ -1,7 +1,5 @@
 package recommendation_system.edu.duke;
 
-import recommendation_system.edu.duke.FileResource;
-import recommendation_system.edu.duke.Point;
 import java.util.ArrayList;
 
 public class Shape {

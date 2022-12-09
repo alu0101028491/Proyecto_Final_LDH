@@ -1,9 +1,5 @@
 package recommendation_system.edu.duke;
 
-import recommendation_system.edu.duke.FileSelector;
-import recommendation_system.edu.duke.ResourceException;
-import recommendation_system.edu.duke.StorageResource;
-import recommendation_system.edu.duke.TextIterable;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileInputStream;
