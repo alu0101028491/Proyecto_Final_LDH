@@ -29,7 +29,9 @@ import java.lang.System.Logger;
 
 public class MovieRunnerSimilarRatings {
 
-	final String foundRatingsPrint = "Found ratings for movies : ";
+	private final String foundRatingsPrint = "Found ratings for movies : ";
+
+	private static String[] durationInfo = {"---------------Duration = ", "s-------------"};
 
 	private Logger logger = System.getLogger(MovieRunnerSimilarRatings.class.getName());
 
@@ -137,29 +139,29 @@ public class MovieRunnerSimilarRatings {
         double start1 = System.nanoTime();
         mra.printSimilarRatings();
         double duration1 = (System.nanoTime() - start1) / 1000000000;
-        loggerStatic.log(Logger.Level.INFO, "---------------Duration = " + duration1 + "s-------------");
+        loggerStatic.log(Logger.Level.INFO, durationInfo[0] + duration1 + durationInfo[1]);
         loggerStatic.log(Logger.Level.INFO, "---------------Test: printSimilarRatingsByGenre()----------------");
         double start2 = System.nanoTime();
         mra.printSimilarRatingsByGenre();
         double duration2 = (System.nanoTime() - start2) / 1000000000;
-        loggerStatic.log(Logger.Level.INFO, "---------------Duration = " + duration2 + "s-------------");
+        loggerStatic.log(Logger.Level.INFO, durationInfo[0] + duration2 + durationInfo[1]);
         loggerStatic.log(Logger.Level.INFO, "---------------Test: printSimilarRatingsDirector()----------------");
         double start3 = System.nanoTime();
         mra.printSimilarRatingsByDirector();
         double duration3 = (System.nanoTime() - start3) / 1000000000;
-        loggerStatic.log(Logger.Level.INFO, "---------------Duration = " + duration3 + "s-------------");
+        loggerStatic.log(Logger.Level.INFO, durationInfo[0] + duration3 + durationInfo[1]);
         loggerStatic.log(Logger.Level.INFO, "---------------Test: printSimilarRatingsByGenreAndMinutes()----------------");
         double start4 = System.nanoTime();
         mra.printSimilarRatingsByGenreAndMinutes();
         double duration4 = (System.nanoTime() - start4) / 1000000000;
 
-        loggerStatic.log(Logger.Level.INFO, "---------------Duration = " + duration4 + "s-------------");
+        loggerStatic.log(Logger.Level.INFO, durationInfo[0] + duration4 + durationInfo[1]);
         loggerStatic.log(Logger.Level.INFO, "---------------Test: printSimilarRatingsByYearAfterAndMinutes()----------------");
         double start5 = System.nanoTime();
         mra.printSimilarRatingsByYearAfterAndMinutes();
         double duration5 = (System.nanoTime() - start5) / 1000000000;
 
-        loggerStatic.log(Logger.Level.INFO, "---------------Duration = " + duration5 + "s-------------");
+        loggerStatic.log(Logger.Level.INFO, durationInfo[0] + duration5 + durationInfo[1]);
     }
 
 }
