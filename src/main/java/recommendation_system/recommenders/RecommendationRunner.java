@@ -6,6 +6,7 @@ import recommendation_system.movies.MovieDatabase;
 import recommendation_system.raters.RaterDatabase;
 import recommendation_system.ratings.Rating;
 import recommendation_system.filters.TrueFilter;
+import recommendation_system.movierunner.MovieRunnerAverage;
 
 import java.security.SecureRandom;
 import java.util.ArrayList;
@@ -17,6 +18,8 @@ import java.nio.file.Paths;
 import java.nio.file.StandardOpenOption;
 import java.io.File;
 import java.io.IOException;
+
+import java.lang.System.Logger;
 
 /***************************************************************
  *  Name:    Wei Xu
@@ -47,6 +50,8 @@ import java.io.IOException;
  ****************************************************************/
 
 public class RecommendationRunner implements Recommender {
+
+	private Logger logger = System.getLogger(MovieRunnerAverage.class.getName());
 
 	private Random rand = new SecureRandom();
 
@@ -272,7 +277,7 @@ public class RecommendationRunner implements Recommender {
             	writeCss();
             	writeBody(outID);
     		} catch (IOException e) {
-    			e.printStackTrace();
+    			logger.log(Logger.Level.ERROR, e);
     		}
         }
         System.out.println("</table>");
