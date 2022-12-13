@@ -1,26 +1,30 @@
 package recommendation_system.filters;
 
-/***************************************************************
- *  Name:    Wei Xu
+/**
+ * <p>
+ *  The interface Filter has only one signature for the method satisfies. Any filters that implements
+ *  this interface must also have this method.
+ *  </p>
  *
- *  Date: Dec 12th, 2019
+ *  <p>
+ *  The Interface contains:
+ *  <ul>
+ *  <li> The method satisfies with one String parameter representing a movie ID </li>
+ *  <li> This method returns true if the movie satisfies the criteria in the method and returns false otherwise. </li>
+ *  </ul>
+ *  </p>
  *
- *  Description:  -------------------STEP THREE--------
- *                 The interface Filter has only one signature for
- *                 the method satisfies. Any filters that implement
- *                 this interface must also have this method.
- *                 The method satisfies has one String parameter
- *                 named id representing a movie ID. This method returns
- *                 true if the movie satisfies the criteria in the method
- *                 and returns false otherwise.
- *
- ****************************************************************/
+ *  @since 12/12/22
+ *  @version 1.0
+ */
 
 public interface Filter {
 
     /**
-     * This method returns true if the movie meets the criteria in the specific method (Director, Genre,...).
-     * Returns false if the movie does not meet the criteria on the method.
+     * Builder override
+     * @param id a string variable representing the ID of the movie
+     * Returns a boolean to prove if the movie meets a specific criteria
+     * @return a boolean to prove if the movie meets a specific criteria
      */
     public boolean satisfies(String id);
 }

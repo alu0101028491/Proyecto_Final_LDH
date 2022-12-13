@@ -2,35 +2,39 @@ package recommendation_system.filters;
 
 import recommendation_system.movies.MovieDatabase;
 
-/***************************************************************
- *  Name:    Wei Xu
- *
- *  Date: Dec 12th, 2019
- *
- *  Description:  -------------------STEP THREE-------------------------
- *                 Create a new class named GenreFilter that implements Filter.
- *                 The constructor should have one parameter named genre
- *                 representing one genre, and the satisfies method should
- *                 return true if a movie has this genre. Note that movies
- *                 may have several genres.
- *
- ****************************************************************/
-
 /**
- * Implement Genre filter.
- * This filter will be used to filter the movies of a specific genre that the user wants to watch.
+ * <p>
+ *  This class is an efficient way to filter movies.
+ *  It filters the movies based on the specific genres that the user wants to watch.
+ *  </p>
+ *
+ *  <p>
+ *  The class contains the necessary methods for:
+ *  <ul>
+ *  <li> Filtering movies based on their genres </li>
+ *  </ul>
+ *  </p>
+ *
+ *  @since 12/12/22
+ *  @version 1.0
  */
 public class GenreFilter implements Filter {
 
     private String genre;
-    
+
+    /**
+     * Builder overload
+     * @param genre A string variable that represents the genre of the movies
+     */
     public GenreFilter(String genre) {
         this.genre = genre;
     }
 
     /**
-     * Returns True if the movie has the specific genre the user wants to filter.
-     * Returns false if the movie does not contain the genre that the user wants.
+     * Builder overload
+     * @param id A string variable representing the genre of the movies
+     * Returns a boolean to prove if the criteria (The movie has at least one of the genres that the user wants to filter) is fulfilled
+     * @return a boolean to prove if the criteria (The movie has at least one of the genres that the user wants to filter) is fulfilled
      */
     @Override
     public boolean satisfies(String id) {

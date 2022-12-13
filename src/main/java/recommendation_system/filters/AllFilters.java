@@ -2,17 +2,21 @@ package recommendation_system.filters;
 
 import java.util.ArrayList;
 
-/***************************************************************
- *  Name:    Wei Xu
+/**
+ * <p>
+ *  Allfilters class asks about average ratings by genre and films on or after a particular year.
+ *  </p>
  *
- *  Date: Dec 12th, 2019
+ *  <p>
+ *  The class contains the necessary methods for:
+ *  <ul>
+ *  <li> Add different types of filters </li>
+ *  </ul>
+ *  </p>
  *
- *  Description:  -------------------STEP THREE-------------------------
- *                Now use the AllFilters class to combine asking questions
- *                about average ratings by genre and films on or after a
- *                particular year.
- *
- ****************************************************************/
+ *  @since 12/12/22
+ *  @version 1.0
+ */
 
 public class AllFilters implements Filter {
     ArrayList<Filter> filters;
@@ -21,10 +25,20 @@ public class AllFilters implements Filter {
         filters = new ArrayList<>();
     }
 
+    /**
+     * builder override
+     * @param f represents the filters
+     */
     public void addFilter(Filter f) {
         filters.add(f);
     }
 
+    /**
+     * Builder override
+     * @param id a string variable representing the ID of the movie
+     * Returns a boolean to prove if the movie meets a specific criteria
+     * @return a boolean to prove if the movie meets a specific criteria
+     */
     @Override
     public boolean satisfies(String id) {
         for (Filter f : filters) {

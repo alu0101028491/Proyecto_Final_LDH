@@ -2,38 +2,40 @@ package recommendation_system.filters;
 
 import recommendation_system.movies.MovieDatabase;
 
-/***************************************************************
- *  Name:    Wei Xu
- *
- *  Date: Dec 12th, 2019
- *
- *  Description:  -------------------STEP THREE-------------------------
- *                Create a new class named DirectorsFilter that implements Filter.
- *                The constructor should have one parameter named directors
- *                representing a list of directors separated by commas.
- *
- *                (Example: "Charles Chaplin,Michael Mann,Spike Jonze",
- *                and its satisfies method should return true if a movie has
- *                at least one of these directors as one of its directors.
- *                Note that each movie may have several directors.
- *
- ****************************************************************/
-
 /**
- *Implements Directors filter.
- *This filter will be used to filter the movies directed by the specific directors that the user wants to watch.
+ * <p>
+ *  This class is an efficient way to filter movies.
+ *  It filters the movies directed by the specific directors that the user wants to watch.
+ *  </p>
+ *
+ *  <p>
+ *  The class contains the necessary methods for:
+ *  <ul>
+ *  <li> Filtering movies based on the directors who directed them </li>
+ *  </ul>
+ *  </p>
+ *
+ *  @since 12/12/22
+ *  @version 1.0
  */
+
 public class DirectorsFilter implements Filter {
 
     private String directors;
-    
+
+    /**
+     * Builder overload
+     * @param directors A string variable representing the directors of the movie
+     */
     public DirectorsFilter(String directors) {
         this.directors = directors;
     }
 
     /**
-     * Returns True if the movie has at least one of the directors the user wants to filter.
-     * Returns false if the movie has none of them.
+     * Builder overload
+     * @param id A string variable representing the ID
+     * Returns a boolean to prove if the criteria (The movie has at least one of the directors that the user wants to filter) is fulfilled
+     * @return a boolean to prove if the criteria (The movie has at least one of the directors that the user wants to filter) is fulfilled
      */
     @Override
     public boolean satisfies(String id) {
