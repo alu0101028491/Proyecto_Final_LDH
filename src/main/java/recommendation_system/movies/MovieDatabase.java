@@ -2,7 +2,6 @@ package recommendation_system.movies;
 
 import recommendation_system.filters.Filter;
 import recommendation_system.ratings.FirstRatings;
-
 import java.util.ArrayList;
 import java.util.HashMap;
 
@@ -19,20 +18,27 @@ import java.util.HashMap;
  *  </ul>
  *  </p>
  *
- *  @since 09/12/22
+ *  @since 13/12/22
  *  @version 1.0
  */
 public class MovieDatabase {
     private static HashMap<String, Movie> ourMovies;
     //before it's an Arraylist<Movie>
-    
+
+    /**
+     * Static builder overload
+     * @param moviefile File of movies to load
+     */
     public static void initialize(String moviefile) {
         if (ourMovies == null) {
             ourMovies = new HashMap<String, Movie>();
             loadMovies("data/" + moviefile);
         }
     }
-    
+
+    /**
+     * Static default builder - It uses a default moviefile
+     */
     private static void initialize() {
         if (ourMovies == null) {
             ourMovies = new HashMap<String, Movie>();

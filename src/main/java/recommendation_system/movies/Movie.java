@@ -15,7 +15,7 @@ package recommendation_system.movies;
  *  </ul>
  *  </p>
  *
- *  @since 09/12/22
+ *  @since 13/12/22
  *  @version 1.0
  */
 public class Movie {
@@ -69,72 +69,63 @@ public class Movie {
     }
 
     /**
-     * Returns ID associated with this item
-     * @return ID associated with this item
+     * @return String - ID associated with this item
      */
     public String getID() {
         return id;
     }
 
     /**
-     * Returns title of this item
-     * @return title of this item
+     * @return String - Title of this item
      */
     public String getTitle() {
         return title;
     }
 
     /**
-     * Returns year in which this item was published
-     * @return year in which this item was published
+     * @return int - Year in which this item was published
      */
     public int getYear() {
         return year;
     }
 
     /**
-     * Returns genres associated with this item
-     * @return genres associated with this item
+     * @return String - Genres associated with this item
      */
     public String getGenres() {
         return genres;
     }
 
     /**
-     * Returns one or more countries the film was made in, separated by commas
-     * @return Countries the film was made in, separated by commas
+     * @return String - Countries the film was made in, separated by commas
      */
     public String getCountry() {
         return country;
     }
 
     /**
-     * Returns one or more directors of the movie separated by commas
-     * @return Directors of the movie separated by commas
+     * @return String - Directors of the movie separated by commas
      */
     public String getDirector() {
         return director;
     }
 
     /**
-     * Returns a link to an image of the movie poster if one exists, or “N/A”
-     * @return A link to an image of the movie poster if one exists, or “N/A”
+     * @return String - A link to an image of the movie poster if one exists, or “N/A”
      */
     public String getPoster() {
         return poster;
     }
 
     /**
-     * Returns an integer for the length of the movie
-     * @return An integer for the length of the movie
+     * @return int - An integer for the length of the movie
      */
     public int getMinutes() {
         return minutes;
     }
 
     /**
-     * Returns a string of the item's information
-     * @return String of the item's information
+     * @return String - Item's information
      */
     public String toString() {
         String result = "Movie [id=" + id + ", title=" + title + ", year=" + year;
