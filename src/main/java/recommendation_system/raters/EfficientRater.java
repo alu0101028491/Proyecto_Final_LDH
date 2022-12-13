@@ -50,11 +50,6 @@ public class EfficientRater implements Rater {
     }
     
     public double getRating(String item) {
-        //        for (int k = 0; k < myRatings.size(); k++) {
-        //            if (myRatings.get(k).getItem().equals(item)) {
-        //                return myRatings.get(k).getValue();
-        //            }
-        //        }
         if (myRatings.containsKey(item)) {
             return myRatings.get(item).getValue();
         }
@@ -67,10 +62,7 @@ public class EfficientRater implements Rater {
     
     public ArrayList<String> getItemsRated() {
         ArrayList<String> list = new ArrayList<>(myRatings.keySet());
-        //        for (int k = 0; k < myRatings.size(); k++) {
-        //            list.add(myRatings.get(k).getItem());
-        //        }
-        //
-        return list;//arrayList of item;
+
+        return list;
     }
 }

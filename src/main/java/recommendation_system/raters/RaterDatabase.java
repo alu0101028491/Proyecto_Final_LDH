@@ -1,4 +1,6 @@
-package recommendation_system.raters; /***************************************************************
+package recommendation_system.raters;
+
+/***************************************************************
  *  Name:    Wei Xu
  *
  *  Date: Dec 13th, 2019
@@ -12,14 +14,15 @@ package recommendation_system.raters; /*****************************************
 import recommendation_system.edu.duke.FileResource;
 import org.apache.commons.csv.CSVParser;
 import org.apache.commons.csv.CSVRecord;
-import recommendation_system.raters.EfficientRater;
-import recommendation_system.raters.Rater;
-
 import java.util.ArrayList;
 import java.util.HashMap;
 
 public class RaterDatabase {
     private static HashMap<String, Rater> ourRaters;//key:rater id, value: rater object
+
+    private RaterDatabase() {
+        throw new IllegalStateException("RaterDatabase class");
+    }
     
     /**
      * A private initialize method with no parameters that initializes
@@ -28,13 +31,13 @@ public class RaterDatabase {
     private static void initialize() {
         // this method is only called from addRatings
         if (ourRaters == null) {
-            ourRaters = new HashMap<String, Rater>();
+            ourRaters = new HashMap<>();
         }
     }
     
     public static void initialize(String filename) {
         if (ourRaters == null) {
-            ourRaters = new HashMap<String, Rater>();
+            ourRaters = new HashMap<>();
             addRatings("data/" + filename);
         }
     }
@@ -71,7 +74,7 @@ public class RaterDatabase {
     
     public static ArrayList<Rater> getRaters() {
         initialize();
-        ArrayList<Rater> list = new ArrayList<Rater>(ourRaters.values());
+        ArrayList<Rater> list = new ArrayList<>(ourRaters.values());
         
         return list;
     }

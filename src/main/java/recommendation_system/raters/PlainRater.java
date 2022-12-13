@@ -30,7 +30,7 @@ public class PlainRater implements Rater {
     
     public PlainRater(String id) {
         myID = id;
-        myRatings = new ArrayList<Rating>();
+        myRatings = new ArrayList<>();
     }
     
     public void addRating(String item, double rating) {
@@ -66,11 +66,11 @@ public class PlainRater implements Rater {
     }
     
     public ArrayList<String> getItemsRated() {
-        ArrayList<String> list = new ArrayList<String>();
+        ArrayList<String> list = new ArrayList<>();
         for (int k = 0; k < myRatings.size(); k++) {
             list.add(myRatings.get(k).getItem());
         }
         
-        return list;//arrayList of item;
+        return list;
     }
 }
