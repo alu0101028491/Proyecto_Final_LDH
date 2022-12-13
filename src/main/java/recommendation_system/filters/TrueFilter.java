@@ -8,21 +8,18 @@ package recommendation_system.filters;
  *  <p>
  *  The class contains the necessary methods for:
  *  <ul>
- *  <li> select every movie from the movie database </li>
+ *  <li> Select every movie from the movie database </li>
  *  </ul>
  *  </p>
  *
- *  @since 12/12/22
+ *  @since 13/12/22
  *  @version 1.0
  */
-
 public class TrueFilter implements Filter {
 
     /**
-     * Builder overload
-     * @param id a string variable representing the ID of the movie
-     * Returns True since it filters every movie from the database
-     * @return True since it filters every movie from the database
+     * @param id A string variable representing the ID of the movie
+     * @return Boolean - It’s satisfies method always returns true.
      */
     @Override
     public boolean satisfies(String id) {

@@ -4,8 +4,7 @@ import recommendation_system.movies.MovieDatabase;
 
 /**
  * <p>
- *  This class is an efficient way to filter movies.
- *  It filters the movies released after or on the specific year that the user wants.
+ *  This class filters the movies released after or on the specific year that the user wants.
  *  </p>
  *
  *  <p>
@@ -15,27 +14,24 @@ import recommendation_system.movies.MovieDatabase;
  *  </ul>
  *  </p>
  *
- *  @since 12/12/22
+ *  @since 13/12/22
  *  @version 1.0
  */
-
 public class YearAfterFilter implements Filter {
 
     private int myYear;
 
     /**
      * Builder overload
-     * @param year an integer variable representing the release year
+     * @param year An integer variable representing the release year
      */
     public YearAfterFilter(int year) {
         myYear = year;
     }
 
     /**
-     * Builder overload
-     * @param id an string variable representing the ID of the movie
-     * Returns a boolean to prove if the criteria (The movie was released after or on the specific year that the user wants to filter) is fulfilled
-     * @return a boolean to prove if the criteria (The movie was released after or on the specific year that the user wants to filter) is fulfilled
+     * @param id A string variable representing the ID of the movie
+     * @return Boolean - True if movie was released after or on the year that the user wants to filter - False otherwise
      */
     @Override
     public boolean satisfies(String id) {

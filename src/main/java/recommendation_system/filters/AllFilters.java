@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 /**
  * <p>
- *  Allfilters class asks about average ratings by genre and films on or after a particular year.
+ *  This class asks about average ratings by genre and films on or after a particular year.
  *  </p>
  *
  *  <p>
@@ -14,30 +14,30 @@ import java.util.ArrayList;
  *  </ul>
  *  </p>
  *
- *  @since 12/12/22
+ *  @since 13/12/22
  *  @version 1.0
  */
-
 public class AllFilters implements Filter {
     ArrayList<Filter> filters;
 
+    /**
+     * Default builder
+     */
     public AllFilters() {
         filters = new ArrayList<>();
     }
 
     /**
-     * builder overload
-     * @param f represents the filters
+     * Add a filter to our filter collection
+     * @param f Filter to be added
      */
     public void addFilter(Filter f) {
         filters.add(f);
     }
 
     /**
-     * Builder overload
-     * @param id a string variable representing the ID of the movie
-     * Returns a boolean to prove if the movie meets a specific criteria
-     * @return a boolean to prove if the movie meets a specific criteria
+     * @param id A string variable representing the ID of the movie
+     * @return Boolean - True if the movie satisfies the criteria in the method - False otherwise
      */
     @Override
     public boolean satisfies(String id) {

@@ -4,8 +4,8 @@ import recommendation_system.movies.MovieDatabase;
 
 /**
  * <p>
- *  This class is an efficient way to filter movies.
- *  It filters the movies based on the specific genres that the user wants to watch.
+ *  This class filters the movies based on the specific genres that the user wants to watch.
+ *  Note that movies may have several genres.
  *  </p>
  *
  *  <p>
@@ -15,7 +15,7 @@ import recommendation_system.movies.MovieDatabase;
  *  </ul>
  *  </p>
  *
- *  @since 12/12/22
+ *  @since 13/12/22
  *  @version 1.0
  */
 public class GenreFilter implements Filter {
@@ -31,10 +31,8 @@ public class GenreFilter implements Filter {
     }
 
     /**
-     * Builder overload
-     * @param id A string variable representing the genre of the movies
-     * Returns a boolean to prove if the criteria (The movie has at least one of the genres that the user wants to filter) is fulfilled
-     * @return a boolean to prove if the criteria (The movie has at least one of the genres that the user wants to filter) is fulfilled
+     * @param id A string variable representing the ID of the movie
+     * @return Boolean - True if movie has one of the genres that the user wants to filter - False otherwise
      */
     @Override
     public boolean satisfies(String id) {

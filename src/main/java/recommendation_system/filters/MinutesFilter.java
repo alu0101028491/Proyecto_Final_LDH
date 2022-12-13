@@ -4,8 +4,7 @@ import recommendation_system.movies.MovieDatabase;
 
 /**
  * <p>
- *  This class is an efficient way to filter movies.
- *  It filters the movies based on the specific duration that the user wants.
+ *  This class filters the movies based on the specific duration that the user wants.
  *  </p>
  *
  *  <p>
@@ -15,7 +14,7 @@ import recommendation_system.movies.MovieDatabase;
  *  </ul>
  *  </p>
  *
- *  @since 12/12/22
+ *  @since 13/12/22
  *  @version 1.0
  */
 public class MinutesFilter implements Filter {
@@ -25,8 +24,8 @@ public class MinutesFilter implements Filter {
 
     /**
      * Builder overload
-     * @param min an integer variable representing the Minimum of minutes that the movie should have
-     * @param max an integer variable representing the Maximum of minutes that the movie should have
+     * @param min An integer variable representing the Minimum of minutes that the movie should have
+     * @param max An integer variable representing the Maximum of minutes that the movie should have
      */
     public MinutesFilter(int min, int max) {
         this.min = min;
@@ -34,10 +33,8 @@ public class MinutesFilter implements Filter {
     }
 
     /**
-     * Builder overload
-     * @param id a string variable representing the ID of the movie
-     * Returns a boolean to prove if the criteria (the movie has more of the minimum and less than the maximum of the minutes that the user wants to filter) is fulfilled
-     * @return a boolean to prove if the criteria (the movie has more of the minimum and less than the maximum of the minutes that the user wants to filter) is fulfilled
+     * @param id A string variable representing the ID of the movie
+     * @return Boolean - True if movie is within the minutes that the user wants to filter - False otherwise
      */
     @Override
     public boolean satisfies(String id) {
