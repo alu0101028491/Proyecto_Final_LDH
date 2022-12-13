@@ -19,7 +19,7 @@ package recommendation_system.filters;
 public class TrueFilter implements Filter {
 
     /**
-     * Builder override
+     * Builder overload
      * @param id a string variable representing the ID of the movie
      * Returns True since it filters every movie from the database
      * @return True since it filters every movie from the database

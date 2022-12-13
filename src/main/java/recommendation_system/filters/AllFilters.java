@@ -26,7 +26,7 @@ public class AllFilters implements Filter {
     }
 
     /**
-     * builder override
+     * builder overload
      * @param f represents the filters
      */
     public void addFilter(Filter f) {
@@ -34,7 +34,7 @@ public class AllFilters implements Filter {
     }
 
     /**
-     * Builder override
+     * Builder overload
      * @param id a string variable representing the ID of the movie
      * Returns a boolean to prove if the movie meets a specific criteria
      * @return a boolean to prove if the movie meets a specific criteria

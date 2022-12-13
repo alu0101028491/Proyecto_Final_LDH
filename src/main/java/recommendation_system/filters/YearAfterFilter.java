@@ -24,7 +24,7 @@ public class YearAfterFilter implements Filter {
     private int myYear;
 
     /**
-     * Builder override
+     * Builder overload
      * @param year an integer variable representing the release year
      */
     public YearAfterFilter(int year) {
@@ -32,7 +32,7 @@ public class YearAfterFilter implements Filter {
     }
 
     /**
-     * Builder override
+     * Builder overload
      * @param id an string variable representing the ID of the movie
      * Returns a boolean to prove if the criteria (The movie was released after or on the specific year that the user wants to filter) is fulfilled
      * @return a boolean to prove if the criteria (The movie was released after or on the specific year that the user wants to filter) is fulfilled

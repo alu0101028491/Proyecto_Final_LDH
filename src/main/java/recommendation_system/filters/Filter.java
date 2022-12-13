@@ -21,7 +21,7 @@ package recommendation_system.filters;
 public interface Filter {
 
     /**
-     * Builder override
+     * Builder overload
      * @param id a string variable representing the ID of the movie
      * Returns a boolean to prove if the movie meets a specific criteria
      * @return a boolean to prove if the movie meets a specific criteria
