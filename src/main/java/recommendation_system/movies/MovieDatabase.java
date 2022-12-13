@@ -25,13 +25,17 @@ public class MovieDatabase {
     private static HashMap<String, Movie> ourMovies;
     //before it's an Arraylist<Movie>
 
+    private MovieDatabase() {
+        throw new IllegalStateException("MovieDatabase class");
+    }
+
     /**
      * Static builder overload
      * @param moviefile File of movies to load
      */
     public static void initialize(String moviefile) {
         if (ourMovies == null) {
-            ourMovies = new HashMap<String, Movie>();
+            ourMovies = new HashMap<>();
             loadMovies("data/" + moviefile);
         }
     }
@@ -106,7 +110,7 @@ public class MovieDatabase {
     // why no need implement filter?
     public static ArrayList<String> filterBy(Filter f) {
         initialize();
-        ArrayList<String> list = new ArrayList<String>();
+        ArrayList<String> list = new ArrayList<>();
         for (String id : ourMovies.keySet()) {
             if (f.satisfies(id)) {
                 list.add(id);
