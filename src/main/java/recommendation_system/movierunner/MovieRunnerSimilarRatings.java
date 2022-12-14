@@ -29,7 +29,7 @@ import java.lang.System.Logger;
 
 public class MovieRunnerSimilarRatings {
 
-	private final String foundRatingsPrint = "Found ratings for movies : ";
+	private final static String foundRatingsPrint = "Found ratings for movies : ";
 
 	private static String[] durationInfo = {"---------------Duration = ", "s-------------"};
 
@@ -69,7 +69,8 @@ public class MovieRunnerSimilarRatings {
         logger.log(Logger.Level.INFO, foundRatingsPrint + ratingList.size());
 
         for (int i = 0; i < 3; i++) {
-            logger.log(Logger.Level.INFO, "%-10.2f%s%n", ratingList.get(i).getValue(), MovieDatabase.getTitle(ratingList.get(i).getItem()));
+            logger.log(Logger.Level.INFO, ratingList.get(i).getValue() + " " +
+                    MovieDatabase.getTitle(ratingList.get(i).getItem()));
         }
     }
 
@@ -78,7 +79,9 @@ public class MovieRunnerSimilarRatings {
         ArrayList<Rating> ratingList = tr4.getSimilarRatingsByFilter("65", 20, 5, new GenreFilter("Action"));
         logger.log(Logger.Level.INFO, foundRatingsPrint + ratingList.size());
         for (int i = 0; i < 3; i++) {
-        	logger.log(Logger.Level.INFO, "%-10.2f%-16s%-5s%n", ratingList.get(i).getValue(), MovieDatabase.getTitle(ratingList.get(i).getItem()), MovieDatabase.getGenres(ratingList.get(i).getItem()));
+        	logger.log(Logger.Level.INFO, ratingList.get(i).getValue() + " " +
+                    MovieDatabase.getTitle(ratingList.get(i).getItem()) + " " +
+                    MovieDatabase.getGenres(ratingList.get(i).getItem()));
         }
 
     }
@@ -90,7 +93,10 @@ public class MovieRunnerSimilarRatings {
         int printNum = ratingList.size();
         if (printNum >= 3) printNum = 3;
         for (int i = 0; i < printNum; i++) {
-        	logger.log(Logger.Level.INFO, "%-10.2f%-5d%-16s%-5s%n", ratingList.get(i).getValue(), MovieDatabase.getMinutes(ratingList.get(i).getItem()), MovieDatabase.getTitle(ratingList.get(i).getItem()), MovieDatabase.getGenres(ratingList.get(i).getItem()));
+        	logger.log(Logger.Level.INFO, ratingList.get(i).getValue() + " "  +
+                    MovieDatabase.getMinutes(ratingList.get(i).getItem()) + " " +
+                    MovieDatabase.getTitle(ratingList.get(i).getItem()) + " " +
+                    MovieDatabase.getGenres(ratingList.get(i).getItem()));
         }
 
     }
@@ -105,7 +111,10 @@ public class MovieRunnerSimilarRatings {
         int printNum = ratingList.size();
         if (printNum >= 3) printNum = 3;
         for (int i = 0; i < printNum; i++) {
-            logger.log(Logger.Level.INFO, "%-10.2f%-5d%-16s%-5s%n", ratingList.get(i).getValue(), MovieDatabase.getMinutes(ratingList.get(i).getItem()), MovieDatabase.getTitle(ratingList.get(i).getItem()), MovieDatabase.getGenres(ratingList.get(i).getItem()));
+            logger.log(Logger.Level.INFO, ratingList.get(i).getValue() + " " +
+                    MovieDatabase.getMinutes(ratingList.get(i).getItem()) + " " +
+                    MovieDatabase.getTitle(ratingList.get(i).getItem()) + " " +
+                    MovieDatabase.getGenres(ratingList.get(i).getItem()));
         }
 
     }
@@ -117,11 +126,12 @@ public class MovieRunnerSimilarRatings {
         a.addFilter(new MinutesFilter(80, 100));
         ArrayList<Rating> ratingList = tr4.getSimilarRatingsByFilter("65", 10, 5, a);
         logger.log(Logger.Level.INFO, foundRatingsPrint + ratingList.size());
-        //Collections.sort(ratingList);
+
         int printNum = ratingList.size();
         if (printNum >= 3) printNum = 3;
         for (int i = 0; i < printNum; i++) {
-            logger.log(Logger.Level.INFO, "%-10.2f%-5s%n", ratingList.get(i).getValue(), MovieDatabase.getMovie(ratingList.get(i).getItem()).toString());
+            logger.log(Logger.Level.INFO, ratingList.get(i).getValue() + " " +
+                    MovieDatabase.getMovie(ratingList.get(i).getItem()).toString());
         }
     }
 

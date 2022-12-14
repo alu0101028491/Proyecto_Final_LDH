@@ -4,9 +4,9 @@ import recommendation_system.filters.*;
 import recommendation_system.movies.MovieDatabase;
 import recommendation_system.ratings.Rating;
 import recommendation_system.ratings.ThirdRatings;
-
 import java.util.ArrayList;
 import java.util.Collections;
+import java.lang.System.Logger;
 
 /***************************************************************
  *  Name:    Wei Xu
@@ -23,149 +23,157 @@ import java.util.Collections;
  ****************************************************************/
 
 public class MovieRunnerWithFilters {
+
+    private Logger logger = System.getLogger(MovieRunnerWithFilters.class.getName());
+    private static Logger staticLogger  = System.getLogger(MovieRunnerWithFilters.class.getName());
+    static final String MOVIESIZE = "Movie size (# of movie in list) : ";
+    static final  String RATERSIZE = "Rater size (# of ppl who rates) : ";
+    static final String FOUNDRATINGS = "Found ratings for movies : ";
+    static final String RATINGSHORT = "data/ratings_short.csv";
+    static final String RATEDMOVIES = "ratedmovies_short.csv";
+
     public void printAverageRatings() {
-        ThirdRatings tr = new ThirdRatings("data/ratings_short.csv");//do i need put filename here?
-        MovieDatabase.initialize("ratedmovies_short.csv");
-        System.out.println("Movie size (# of movie in list) : " + MovieDatabase.size());// need initialize first.
-        System.out.println("Rater size (# of ppl who rates) : " + tr.getRaterSize());
+        ThirdRatings tr = new ThirdRatings(RATINGSHORT);//do i need put filename here?
+        MovieDatabase.initialize(RATEDMOVIES);
+        logger.log(Logger.Level.INFO, MOVIESIZE + MovieDatabase.size());
+        logger.log(Logger.Level.INFO, RATERSIZE + tr.getRaterSize());
         ArrayList<Rating> ratingList = tr.getAverageRatings(1);
-        System.out.println("Found ratings for movies : " + ratingList.size());
+        logger.log(Logger.Level.INFO, FOUNDRATINGS + ratingList.size());
         Collections.sort(ratingList);
         for (Rating i : ratingList) {
-            System.out.printf("%-10.2f%s%n", i.getValue(), MovieDatabase.getTitle(i.getItem()));
+            logger.log(Logger.Level.INFO, i.getValue() + " " + MovieDatabase.getTitle(i.getItem()));
         }
     }
-    
+
     public void getAverageRatingOneMovie() {
-        ThirdRatings sr = new ThirdRatings("data/ratings_short.csv");//do i need put filename here?
+        ThirdRatings sr = new ThirdRatings(RATINGSHORT);//do i need put filename here?
         ArrayList<Rating> ratingList = sr.getAverageRatings(1);
         String movieTitle = "The Godfather";
         boolean exist = false;
-        for (Rating i : ratingList) {  //i.getItem() is it's movie id;
+        for (Rating i : ratingList) {
             if (MovieDatabase.getTitle(i.getItem()).equals(movieTitle)) {
-                System.out.printf("%-10.2f%s%n", i.getValue(), movieTitle);
+                logger.log(Logger.Level.INFO, i.getValue() + " " + movieTitle);
                 exist = true;
             }
         }
         if (!exist) {
-            System.out.println("MOVIE TITLE NOT FOUND!");
-            
+            logger.log(Logger.Level.INFO, "MOVIE TITLE NOT FOUND!");
         }
     }
-    
+
     public void printAverageRatingsByYear() {
-        ThirdRatings tr3 = new ThirdRatings("data/ratings_short.csv");//do i need put filename here?
-        MovieDatabase.initialize("ratedmovies_short.csv");
-        System.out.println("Movie size (# of movie in list) : " + MovieDatabase.size());// need initialize first.
-        System.out.println("Rater size (# of ppl who rates) : " + tr3.getRaterSize());
+        ThirdRatings tr3 = new ThirdRatings(RATINGSHORT);//do i need put filename here?
+        MovieDatabase.initialize(RATEDMOVIES);
+        logger.log(Logger.Level.INFO, MOVIESIZE + MovieDatabase.size());
+        logger.log(Logger.Level.INFO, RATERSIZE + tr3.getRaterSize());
         ArrayList<Rating> ratingList = tr3.getAverageRatingsByFilter(1, new YearAfterFilter(2000));
-        System.out.println("Found ratings for movies : " + ratingList.size());
+        logger.log(Logger.Level.INFO, FOUNDRATINGS + ratingList.size());
         Collections.sort(ratingList);
         for (Rating i : ratingList) {
-            System.out.printf("%-10.2f%-10s%-5s%n", i.getValue(), MovieDatabase.getYear(i.getItem()), MovieDatabase.getTitle(i.getItem()));
+            logger.log(Logger.Level.INFO, i.getValue() + " " + MovieDatabase.getYear(i.getItem()) +
+                    " " + MovieDatabase.getTitle(i.getItem()));
         }
     }
-    
+
     public void printAverageRatingsByGenre() {
-        ThirdRatings tr4 = new ThirdRatings("data/ratings_short.csv");//do i need put filename here?
-        MovieDatabase.initialize("ratedmovies_short.csv");
-        System.out.println("Movie size (# of movie in list) : " + MovieDatabase.size());// need initialize first.
-        System.out.println("Rater size (# of ppl who rates) : " + tr4.getRaterSize());
+        ThirdRatings tr4 = new ThirdRatings(RATINGSHORT);//do i need put filename here?
+        MovieDatabase.initialize(RATEDMOVIES);
+        logger.log(Logger.Level.INFO, MOVIESIZE + MovieDatabase.size());
+        logger.log(Logger.Level.INFO, RATERSIZE + tr4.getRaterSize());
         ArrayList<Rating> ratingList = tr4.getAverageRatingsByFilter(1, new GenreFilter("Crime"));
-        System.out.println("Found ratings for movies : " + ratingList.size());
+        logger.log(Logger.Level.INFO, FOUNDRATINGS + ratingList.size());
         Collections.sort(ratingList);
         for (Rating i : ratingList) {
-            System.out.printf("%-10.2f%-16s%-5s%n", i.getValue(), MovieDatabase.getTitle(i.getItem()), MovieDatabase.getGenres(i.getItem()));
+            logger.log(Logger.Level.INFO, i.getValue() + " " + MovieDatabase.getTitle(i.getItem()) +
+                    " " + MovieDatabase.getGenres(i.getItem()));
         }
     }
-    
+
     public void printAverageRatingsByMinutes() {
-        ThirdRatings tr5 = new ThirdRatings("data/ratings_short.csv");//do i need put filename here?
-        MovieDatabase.initialize("ratedmovies_short.csv");
-        System.out.println("Movie size (# of movie in list) : " + MovieDatabase.size());// need initialize first.
-        System.out.println("Rater size (# of ppl who rates) : " + tr5.getRaterSize());
+        ThirdRatings tr5 = new ThirdRatings(RATINGSHORT);//do i need put filename here?
+        MovieDatabase.initialize(RATEDMOVIES);
+        logger.log(Logger.Level.INFO, MOVIESIZE + MovieDatabase.size());
+        logger.log(Logger.Level.INFO, RATERSIZE + tr5.getRaterSize());
         ArrayList<Rating> ratingList = tr5.getAverageRatingsByFilter(1, new MinutesFilter(110, 170));
-        System.out.println("Found ratings for movies : " + ratingList.size());
+        logger.log(Logger.Level.INFO, FOUNDRATINGS + ratingList.size());
         Collections.sort(ratingList);
         for (Rating i : ratingList) {
-            System.out.printf("%-10.2f%-16s%-5s%n", i.getValue(), MovieDatabase.getMinutes(i.getItem()), MovieDatabase.getTitle(i.getItem()));
+            logger.log(Logger.Level.INFO, i.getValue() + " " + MovieDatabase.getMinutes(i.getItem()) +
+                    " " + MovieDatabase.getTitle(i.getItem()));
         }
     }
-    
+
     public void printAverageRatingsByDirectors() {
-        ThirdRatings tr5 = new ThirdRatings("data/ratings_short.csv");//do i need put filename here?
-        MovieDatabase.initialize("ratedmovies_short.csv");
-        System.out.println("Movie size (# of movie in list) : " + MovieDatabase.size());// need initialize first.
-        System.out.println("Rater size (# of ppl who rates) : " + tr5.getRaterSize());
+        ThirdRatings tr5 = new ThirdRatings(RATINGSHORT);//do i need put filename here?
+        MovieDatabase.initialize(RATEDMOVIES);
+        logger.log(Logger.Level.INFO, MOVIESIZE + MovieDatabase.size());
+        logger.log(Logger.Level.INFO, RATERSIZE + tr5.getRaterSize());
         //what if i use DirectorsFilter d instead of Filter?
         Filter d = new DirectorsFilter("Charles Chaplin,Michael Mann,Spike Jonze");
         ArrayList<Rating> ratingList = tr5.getAverageRatingsByFilter(1, d);
-        System.out.println("Found ratings for movies : " + ratingList.size());
+        logger.log(Logger.Level.INFO, FOUNDRATINGS + ratingList.size());
         Collections.sort(ratingList);
         for (Rating i : ratingList) {
-            System.out.printf("%-10.2f%-16s%-5s%n", i.getValue(), MovieDatabase.getTitle(i.getItem()), MovieDatabase.getDirector(i.getItem()));
+            logger.log(Logger.Level.INFO, i.getValue() + " " +  MovieDatabase.getTitle(i.getItem()) +
+                    " " + MovieDatabase.getDirector(i.getItem()));
         }
     }
-    
+
     public void printAverageRatingsByYearAfterAndGenre() {
-        ThirdRatings tr5 = new ThirdRatings("data/ratings_short.csv");//do i need put filename here?
-        MovieDatabase.initialize("ratedmovies_short.csv");
-        System.out.println("Movie size (# of movie in list) : " + MovieDatabase.size());// need initialize first.
-        System.out.println("Rater size (# of ppl who rates) : " + tr5.getRaterSize());
+        ThirdRatings tr5 = new ThirdRatings(RATINGSHORT);//do i need put filename here?
+        MovieDatabase.initialize(RATEDMOVIES);
+        logger.log(Logger.Level.INFO, MOVIESIZE + MovieDatabase.size());
+        logger.log(Logger.Level.INFO, RATERSIZE + tr5.getRaterSize());
         //why here must use AllFilters instead of Filter?
         AllFilters all = new AllFilters();
         all.addFilter(new GenreFilter("Romance"));
         all.addFilter(new YearAfterFilter(1980));
-        
+
         ArrayList<Rating> ratingList = tr5.getAverageRatingsByFilter(1, all);
-        System.out.println("Found ratings for movies : " + ratingList.size());
+        logger.log(Logger.Level.INFO, FOUNDRATINGS + ratingList.size());
         Collections.sort(ratingList);
         for (Rating i : ratingList) {
-            System.out.printf("%-10.2f%-10d%-16s%-5s%n", i.getValue(), MovieDatabase.getYear(i.getItem()), MovieDatabase.getTitle(i.getItem()), MovieDatabase.getGenres(i.getItem()));
+            logger.log(Logger.Level.INFO, i.getValue() + " " + MovieDatabase.getYear(i.getItem()) +
+                    " " + MovieDatabase.getTitle(i.getItem()) + " " + MovieDatabase.getGenres(i.getItem()));
         }
     }
-    
+
     public void printAverageRatingsByDirectorsAndMinutes() {
-        ThirdRatings tr5 = new ThirdRatings("data/ratings_short.csv");//do i need put filename here?
-        MovieDatabase.initialize("ratedmovies_short.csv");
-        System.out.println("Movie size (# of movie in list) : " + MovieDatabase.size());// need initialize first.
-        System.out.println("Rater size (# of ppl who rates) : " + tr5.getRaterSize());
+        ThirdRatings tr5 = new ThirdRatings(RATINGSHORT);//do i need put filename here?
+        MovieDatabase.initialize(RATEDMOVIES);
+        logger.log(Logger.Level.INFO, MOVIESIZE + MovieDatabase.size());
+        logger.log(Logger.Level.INFO, RATERSIZE + tr5.getRaterSize());
         //why here must use AllFilters instead of Filter?
         AllFilters all = new AllFilters();
         all.addFilter(new MinutesFilter(30, 170));
         all.addFilter(new DirectorsFilter("Spike Jonze,Michael Mann,Charles Chaplin,Francis Ford Coppola"));
-        
+
         ArrayList<Rating> ratingList = tr5.getAverageRatingsByFilter(1, all);
-        System.out.println("Found ratings for movies : " + ratingList.size());
+        logger.log(Logger.Level.INFO, FOUNDRATINGS + ratingList.size());
         Collections.sort(ratingList);
         for (Rating i : ratingList) {
-            System.out.printf("%-10.2fTime:%-10s%-16s%-5s%n", i.getValue(), MovieDatabase.getMinutes(i.getItem()), MovieDatabase.getTitle(i.getItem()), MovieDatabase.getDirector(i.getItem()));
+            logger.log(Logger.Level.INFO, i.getValue() + " " + MovieDatabase.getMinutes(i.getItem()) +
+                    " " + MovieDatabase.getTitle(i.getItem()) + " " + MovieDatabase.getDirector(i.getItem()));
         }
     }
-    
+
     public static void main(String[] args) {
         MovieRunnerWithFilters mra = new MovieRunnerWithFilters();
-        System.out.println("---------------Test: printAverageRatings()----------------");
+        staticLogger.log(Logger.Level.INFO, "++TEST: printAverageRatings()");
         mra.printAverageRatings();
-        System.out.println("---------------Test: getAverageRatingOneMovie() ----------------");
+        staticLogger.log(Logger.Level.INFO, "++TEST: getAverageRatingOneMovie()");
         mra.getAverageRatingOneMovie();
-        System.out.println("---------------Test: printAverageRatingsByYear() ----------------");
+        staticLogger.log(Logger.Level.INFO, "++TEST: printAverageRatingsByYear()");
         mra.printAverageRatingsByYear();
-        System.out.println("---------------Test: printAverageRatingsByGenre() ----------------");
+        staticLogger.log(Logger.Level.INFO, "++TEST: printAverageRatingsByGenre()");
         mra.printAverageRatingsByGenre();
-        System.out.println("---------------Test: printAverageRatingsByMinutes() ----------------");
+        staticLogger.log(Logger.Level.INFO, "++TEST: printAverageRatingsByMinutes()");
         mra.printAverageRatingsByMinutes();
-        System.out.println("---------------Test: printAverageRatingsByDirectors() ----------------");
+        staticLogger.log(Logger.Level.INFO, "++TEST: printAverageRatingsByDirectors()");
         mra.printAverageRatingsByDirectors();
-        System.out.println("---------------Test: printAverageRatingsByYearAfterAndGenre() ----------------");
+        staticLogger.log(Logger.Level.INFO, "++TEST: printAverageRatingsByYearAfterAndGenre()");
         mra.printAverageRatingsByYearAfterAndGenre();
-        System.out.println("---------------Test: printAverageRatingsByDirectorsAndMinutes() ----------------");
+        staticLogger.log(Logger.Level.INFO, "++TEST: printAverageRatingsByDirectorsAndMinutes()");
         mra.printAverageRatingsByDirectorsAndMinutes();
-        //why cannot print the default value;
-        //        boolean a;
-        //        String b;
-        //        System.out.println(a);
-        //        System.out.println(b);
-        
     }
 }
