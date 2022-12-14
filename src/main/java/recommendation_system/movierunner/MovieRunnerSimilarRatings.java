@@ -29,7 +29,7 @@ import java.lang.System.Logger;
 
 public class MovieRunnerSimilarRatings {
 
-	private final static String foundRatingsPrint = "Found ratings for movies : ";
+	private static final String foundRatingsPrint = "Found ratings for movies : ";
 
 	private static String[] durationInfo = {"---------------Duration = ", "s-------------"};
 
