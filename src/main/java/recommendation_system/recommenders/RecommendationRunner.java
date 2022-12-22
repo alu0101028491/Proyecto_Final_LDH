@@ -144,7 +144,7 @@ public class RecommendationRunner implements Recommender {
     public void writeBody(ArrayList<Rating> outID) throws IOException {
 
     	String textBody = "<body>\n"
-    			+ "  <h2>Wei Xu Brings Best Movies for You! Enjoy!^^</h2>\n"
+    			+ "  <h2>Wei Xu, Samir, Dario y Kevin le recomendamos las mejores peliculas</h2>\n"
     			+ "  <table id = \"rater\">\n"
     			+ "  <tr>\n"
     			+ "  <th>Rank</th>\n"
@@ -281,7 +281,7 @@ public class RecommendationRunner implements Recommender {
     		}
         }
         System.out.println("</table>");
-        System.out.println("<h3>*The rank of movies is based on other raters who have the most similar rating to yours. Enjoy!^^</h3>");
+        System.out.println("<h3>*El Rango de las peliculas está basado en otras calificaciones similares. Disfruta.</h3>");
 
     }
         public static void main(String[] args) {
