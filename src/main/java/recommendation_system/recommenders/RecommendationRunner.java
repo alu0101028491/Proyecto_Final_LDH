@@ -55,7 +55,7 @@ public class RecommendationRunner implements Recommender {
 
 	private Random rand = new SecureRandom();
 
-	private String filename = "index.html";
+	private String filename = "simulation/index.html";
 	private Path pathToFile = Paths.get(filename);
 
     /**
@@ -170,7 +170,8 @@ public class RecommendationRunner implements Recommender {
                 }
 
     		textBody += "  </table>\n"
-    				+ "  <h3>*The rank of movies is based on other raters who have the most similar rating to yours. Enjoy!^^</h3>";
+
+    				+ "  <h3>*El Rango de las peliculas está basado en otras calificaciones similares. Disfrute.*</h3>";
     		Files.writeString(pathToFile, textBody, StandardOpenOption.APPEND);
 
     }
@@ -281,7 +282,7 @@ public class RecommendationRunner implements Recommender {
     		}
         }
         System.out.println("</table>");
-        System.out.println("<h3>*El Rango de las peliculas está basado en otras calificaciones similares. Disfruta.</h3>");
+        System.out.println("<h3>*The rank of movies is based on other raters who have the most similar rating to yours. Enjoy!^^</h3>");
 
     }
         public static void main(String[] args) {
