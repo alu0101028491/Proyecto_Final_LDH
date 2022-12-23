@@ -4,6 +4,7 @@ import recommendation_system.movies.Movie;
 import recommendation_system.raters.Rater;
 
 import java.util.ArrayList;
+import java.lang.System.Logger;
 
 /***************************************************************
  *  Name:    Wei Xu
@@ -26,6 +27,7 @@ public class SecondRatings {
 
     private ArrayList<Movie> myMovies;
     private ArrayList<Rater> myRaters;
+    private static System.Logger staticLogger = System.getLogger(SecondRatings.class.getName());
 
     public SecondRatings() {
         // default constructor
@@ -52,16 +54,15 @@ public class SecondRatings {
         int count = 0;
         double total = 0;
         for (Rater i : myRaters) {
-            // if (i.hasRating(movieID)) {
             double rating = i.getRating(movieID);
             if (rating != -1) {
                 count++;
                 total += rating;
-                // System.out.println(count + " : " + "id = " + i.getID() + " rating " + rating + " ave " + total);
             }
         }
-        //System.out.println("Movie ID = " + movieID + " : " + count + " : " + total + " : " + total / count);
-        if (count >= minimalRaters && count > 0) return total / count;
+        if (count >= minimalRaters && count > 0)
+            return total / count;
+
         return 0.0;
     }
 
@@ -94,10 +95,11 @@ public class SecondRatings {
     }
 
     public static void main(String[] args) {
-        SecondRatings sr = new SecondRatings("data/ratedmovies_short.csv", "data/ratings_short.csv");
+        SecondRatings secondRatings = new SecondRatings("data/ratedmovies_short.csv",
+                "data/ratings_short.csv");
         //System.out.println(sr.getAverageByID("0790636", 2));
-        System.out.println("---------------test-------------");
-        System.out.println(sr.getAverageRatings(2));
+        staticLogger.log(Logger.Level.INFO, "---TEST---");
+        staticLogger.log(Logger.Level.INFO, secondRatings.getAverageRatings(2));
         //[[6414, 0.0], [68646, 0.0], [113277, 0.0], [1798709, 8.25], [790636, 0.0]]
     }
 

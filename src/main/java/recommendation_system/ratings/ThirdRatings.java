@@ -30,8 +30,9 @@ public class ThirdRatings {
      * in the instance variable myMovies,
      * so you will want to remove the private variable myMovies
      **/
-    //private ArrayList<Movie> myMovies;
     private ArrayList<Rater> myRaters;
+    private System.Logger logger = System.getLogger(ThirdRatings.class.getName());
+    private static System.Logger staticLogger = System.getLogger(ThirdRatings.class.getName());
 
     public ThirdRatings() {
         // default constructor
@@ -40,8 +41,8 @@ public class ThirdRatings {
     //---------------todo: why only above won't compile???-------------
 
     public ThirdRatings(String ratingFile) {
-        FirstRatings a = new FirstRatings();
-        myRaters = a.loadRaters(ratingFile);
+        FirstRatings firstRatings = new FirstRatings();
+        myRaters = firstRatings.loadRaters(ratingFile);
     }
 
     public int getRaterSize() {
@@ -53,17 +54,18 @@ public class ThirdRatings {
         int count = 0;
         double total = 0;
         for (Rater i : myRaters) {
-            // if (i.hasRating(movieID)) {
             double rating = i.getRating(movieID);
             if (rating != -1) {
                 count++;
                 total += rating;
-                // System.out.println(count + " : " + "id = " + i.getID() + " rating " + rating + " ave " + total);
             }
         }
         if(count > 0)
-        	System.out.printf("Movie ID : Count : Total : Rating = %-10s%-5d%-7.2f%-7.2f%n", movieID, count, total, total / count);
-        if (count >= minimalRaters && count > 0) return total / count;
+            logger.log(System.Logger.Level.INFO, "Movie ID : Count : Total : Rating = " + movieID +
+                    " " + count + " " + total + " " + (total/count));
+        if (count >= minimalRaters && count > 0)
+            return total / count;
+
         return 0.0;
     }
 
@@ -100,11 +102,6 @@ public class ThirdRatings {
         Filter trueFilter = new TrueFilter();
         ArrayList<String> movieID = MovieDatabase.filterBy(trueFilter);
 
-        //        for (String i : movieID) {
-        //            double ave = getAverageByID(i, minimalRaters);
-        //            if (ave > 0)
-        //                ratingList.add(new Rating(i, ave));
-        //        }
         for (String i : movieID) {
             if (f.satisfies(i)) {
                 double ave = getAverageByID(i, minimalRaters);
@@ -135,11 +132,10 @@ public class ThirdRatings {
     //    }
     //
     public static void main(String[] args) {
-        ThirdRatings sr = new ThirdRatings("data/ratings_short.csv");
+        ThirdRatings thirdRatings = new ThirdRatings("data/ratings_short.csv");
         //System.out.println(sr.getAverageByID("0790636", 2));
-        System.out.println("---------------test-------------");
-        System.out.println(sr.getAverageRatings(2));
-        // System.out.println(a);
+        staticLogger.log(System.Logger.Level.INFO, "---TEST---");
+        staticLogger.log(System.Logger.Level.INFO, thirdRatings.getAverageRatings(2));
         /** movie from "full.csv", raters from "short.csv"
          * ................
          * Movie ID = 0430922 : 0 : 0.0 : NaN

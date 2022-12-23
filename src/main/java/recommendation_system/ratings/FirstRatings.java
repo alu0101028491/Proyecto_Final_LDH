@@ -27,8 +27,8 @@ import java.lang.System.Logger;
 
 public class FirstRatings {
 
-    //private static Logger logger = Logger.getLogger(FirstRatings.class.getName());
     private Logger logger = System.getLogger(FirstRatings.class.getName());
+    private static Logger staticLogger = System.getLogger(FirstRatings.class.getName());
 
     /**
      * This method process every record from the CSV file
@@ -62,18 +62,6 @@ public class FirstRatings {
 
         logger.log(Logger.Level.INFO, "The size of movie list is = " + movies.size());
 
-        //System.out.println("The size of movie list is = " + movies.size());
-        //        for (Movie i : movies) {
-        //            if (i.getGenres().contains("Comedy")) {
-        //                System.out.println("Comedy = : " + i);
-        //            }
-        //        }
-        //        for (Movie i : movies) {
-        //            if (i.getMinutes() >= 150) {
-        //                System.out.println("MIN >= 150 : " + i);
-        //            }
-        //        }
-
         HashMap<String, ArrayList<Movie>> mapDirector = new HashMap<>();
         for (Movie i : movies) {
             //One movie may have many directors.
@@ -82,7 +70,6 @@ public class FirstRatings {
             String[] directors = director.split(", ");
 
             for (String j : directors) {
-                //System.out.println("movie " + i.getID() + " : " + j);
                 if (!mapDirector.containsKey(j)) {
                     ArrayList<Movie> a = new ArrayList<>();
                     a.add(i);
@@ -94,10 +81,6 @@ public class FirstRatings {
                 }
             }
         }
-        //        System.out.println("Print HashMap--directorList");
-        //        for (String i : directorList.keySet()) {
-        //            System.out.println(i + " : " + directorList.get(i).size() + " : " + directorList.get(i));
-        //        }
 
         int maxNumMovieByDirector = 0;
         for (String key : mapDirector.keySet()) {
@@ -212,12 +195,10 @@ public class FirstRatings {
     }
 
     public static void main(String[] args) {
-        FirstRatings a = new FirstRatings();
-        System.out.println("-------------------MOVIES-------------------");
-        a.testLoadMovies();
-        System.out.println();
-        System.out.println();
-        System.out.println("-------------------RATERS-------------------");
-        a.testLoadRaters("data/ratings_short.csv");
+        FirstRatings firstRatings = new FirstRatings();
+        staticLogger.log(Logger.Level.INFO, "---MOVIES---");
+        firstRatings.testLoadMovies();
+        staticLogger.log(Logger.Level.INFO, "---RATERS---");
+        firstRatings.testLoadRaters("data/ratings_short.csv");
     }
 }
