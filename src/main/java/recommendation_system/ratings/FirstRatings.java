@@ -6,25 +6,31 @@ import org.apache.commons.csv.CSVParser;
 import org.apache.commons.csv.CSVRecord;
 import recommendation_system.raters.EfficientRater;
 import recommendation_system.raters.Rater;
-
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.lang.System.Logger;
 
-/***************************************************************
- *  Name:    Wei Xu
+/**
+ * <p>
+ *  Class to answer simple questions about movies and ratings. - Phase 1
+ *  </p>
  *
- *  Date: Dec 9th, 2019
+ *  <p>
+ *  The class contains the necessary methods for:
+ *  <ul>
+ *  <li> Process every record from the CSV file and return an ArrayList of type Movie. </li>
+ *  <li> Determine the maximum number of movies by any director. </li>
+ *  <li> Load Raters. </li>
+ *  <li> Get the number of ratings for a particular rater. </li>
+ *  <li> Find the maximum number of ratings by any rater. </li>
+ *  <li> Find the number of ratings a particular movie has. </li>
+ *  <li> Determine how many movies have been rated. </li>
+ *  </ul>
+ *  </p>
  *
- *  Description:  -------------------STEP ONE--------
- *                 In this exercise, you will use the provided classes
- *                 Movie.java, Rating.java, and Rater.java and read in
- *                 and store information about movies and ratings of movies
- *                 by different movie raters to answer simple questions
- *                 about both movies and ratings.
- *
- ****************************************************************/
-
+ *  @since 26/12/22
+ *  @version 1.0
+ */
 public class FirstRatings {
 
     private Logger logger = System.getLogger(FirstRatings.class.getName());
@@ -32,7 +38,7 @@ public class FirstRatings {
 
     /**
      * This method process every record from the CSV file
-     * and return an ArrayList of type Movie with all of the movie data from the file.
+     * and return an ArrayList of type Movie with all of the movie data from the file
      * @param fileName A file of movie information
      * @return ArrayList of type Movie with all of the movie data from the file
      */
@@ -64,9 +70,8 @@ public class FirstRatings {
 
         HashMap<String, ArrayList<Movie>> mapDirector = new HashMap<>();
         for (Movie i : movies) {
-            //One movie may have many directors.
+
             String director = i.getDirector();
-            //make a list of directos' name split into a string array
             String[] directors = director.split(", ");
 
             for (String j : directors) {
@@ -103,7 +108,7 @@ public class FirstRatings {
      * @return ArrayList of Raters
      */
     public ArrayList<Rater> loadRaters(String fileName) {
-        ArrayList<Rater> raters = new ArrayList<>();// why no need <PlainRater>?
+        ArrayList<Rater> raters = new ArrayList<>();
         FileResource fr = new FileResource(fileName);
         CSVParser parser = fr.getCSVParser();
         for (CSVRecord i : parser) {
@@ -133,9 +138,7 @@ public class FirstRatings {
         ArrayList<Rater> raters = loadRaters(filename);
         logger.log(Logger.Level.INFO, "The size of rater list is = " + raters.size());
 
-        //Add code to find the number of ratings for a particular rater
-        // you specify in your code. For example, if you run this code
-        // on the rater whose rater_id is 2
+        // Number of ratings for a particular rater
         for (Rater i : raters) {
             if (i.getID().equals("2")) {
 
@@ -149,11 +152,7 @@ public class FirstRatings {
                 }
             }
         }
-        //Add code to find the maximum number of ratings by any rater.
-        // Determine how many raters have this maximum number of ratings
-        // and who those raters are.If you run this code on the file ratings_short.csv,
-        // you will see rater 2 has three ratings, the maximum number of ratings of
-        // all the raters,and that there is only one rater with three ratings.
+        //Find the maximum number of ratings by any rater.
         int max = 0;
         for (Rater i : raters) {
             if (i.numRatings() > max) {
@@ -166,9 +165,7 @@ public class FirstRatings {
                         i.getID() + " : " + i.numRatings() + " ratings");
             }
         }
-        // Add code to find the number of ratings a particular movie has.
-        // If you run this code on the file ratings_short.csv for the movie “1798709”,
-        // you will see it was rated by four raters.
+        // Find the number of ratings a particular movie has.
         int count = 0;
         for (Rater i : raters) {
             ArrayList<String> rating = i.getItemsRated();
@@ -179,9 +176,7 @@ public class FirstRatings {
         }
         logger.log(Logger.Level.INFO, "The total # of " + "1798709" + " that been rated is " + count);
 
-        // Add code to determine how many different movies have been rated
-        // by all these raters. If you run this code on the file ratings_short.csv,
-        // you will see there were four movies
+        // Determine how many movies have been rated
         ArrayList<String> differentMovie = new ArrayList<>();
         for (Rater i : raters) {
             ArrayList<String> rating = i.getItemsRated();
