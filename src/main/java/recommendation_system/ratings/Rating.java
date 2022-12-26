@@ -16,36 +16,53 @@ package recommendation_system.ratings;
  *  </ul>
  *  </p>
  *
- *  @since 30/11/22
+ *  @since 26/12/22
  *  @version 1.0
  */
 public class Rating implements Comparable<Rating> {
     private String item;
     private double value;
-    
+
+    /**
+     * Builder overload
+     * @param anItem A String variable representing the IMDB ID of the movie
+     * @param aValue A double variable representing the rating of the movie
+     */
     public Rating(String anItem, double aValue) {
         item = anItem;//IMDB id
         value = aValue;
     }
-    
-    // Returns item being rated
+
+    /**
+     * @return String - IMDB ID of the movie
+     */
     public String getItem() {
         return item;
     }
-    
-    // Returns the value of this rating (as a number so it can be used in calculations)
+
+    /**
+     * @return double - Rating of the movie (it can be used in calculations)
+     */
     public double getValue() {
         return value;
     }
-    
-    // Returns a string of all the rating information
+
+    /**
+     * @return String - All the rating information
+     */
     public String toString() {
         return "[" + getItem() + ", " + getValue() + "]";
     }
-    
+
+    /**
+     * Compare two ratings by their values
+     * @param other the object to be compared.
+     * @return int - -1 lower, 1 higher, 0 equal
+     */
+    @Override
     public int compareTo(Rating other) {
-        if (value < other.value) return -1;
-        if (value > other.value) return 1;
+        if (this.value < other.value) return -1;
+        if (this.value > other.value) return 1;
         
         return 0;
     }
