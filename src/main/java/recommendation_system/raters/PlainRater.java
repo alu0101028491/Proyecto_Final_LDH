@@ -21,54 +21,82 @@ import java.util.ArrayList;
  *  </ul>
  *  </p>
  *
- *  @since 30/11/22
+ *  @since 26/12/22
  *  @version 1.0
  */
 public class PlainRater implements Rater {
     private String myID;
     private ArrayList<Rating> myRatings;
-    
+
+    /**
+     * Builder overload
+     * @param id ID for the rater
+     */
     public PlainRater(String id) {
         myID = id;
         myRatings = new ArrayList<>();
     }
-    
+
+    /**
+     * Adds a rating to the ArrayList of ratings associated with a user
+     * @param item A String variable representing the ID of the movie
+     * @param rating A double variable representing the rating of the movie
+     */
     public void addRating(String item, double rating) {
-        myRatings.add(new Rating(item, rating));//item is string id?
+        myRatings.add(new Rating(item, rating));
     }
-    
+
+    /**
+     * Verify if a user has rated a particular movie
+     * @param item A String variable representing the ID of the movie
+     * @return Boolean - True if the user has rated the movie - False otherwise
+     */
     public boolean hasRating(String item) {
-        for (int k = 0; k < myRatings.size(); k++) {
-            if (myRatings.get(k).getItem().equals(item)) {
+        for (Rating myRating : myRatings) {
+            if (myRating.getItem().equals(item)) {
                 return true;
             }
         }
-        
+
         return false;
     }
-    
+
+    /**
+     * @return String - ID of the rater
+     */
     public String getID() {
         return myID;
     }
-    
+
+    /**
+     * @param item A String variable representing the ID of the movie
+     * @return double - Value associated with a specific movie rating - If there is no rating -1
+     */
     public double getRating(String item) {
-        for (int k = 0; k < myRatings.size(); k++) {
-            if (myRatings.get(k).getItem().equals(item)) {
-                return myRatings.get(k).getValue();
+        for (Rating myRating : myRatings) {
+            if (myRating.getItem().equals(item)) {
+                return myRating.getValue();
             }
         }
         
         return -1;
     }
-    
+
+    /**
+     * @return int - Size of the ratings ArrayList
+     */
     public int numRatings() {
         return myRatings.size();
     }
-    
+
+    /**
+     * @return ArrayList<String> - ID of all movies rated by a user
+     */
     public ArrayList<String> getItemsRated() {
         ArrayList<String> list = new ArrayList<>();
-        for (int k = 0; k < myRatings.size(); k++) {
-            list.add(myRatings.get(k).getItem());
+
+        for (Rating myRating : myRatings) {
+            list.add(myRating.getItem());
         }
         
         return list;
