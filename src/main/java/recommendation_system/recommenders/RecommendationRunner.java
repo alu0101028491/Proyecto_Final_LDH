@@ -55,7 +55,7 @@ public class RecommendationRunner implements Recommender {
 
 	private Random rand = new SecureRandom();
 
-	private String filename = "simulation/index.html";
+	private String filename = "index.html";
 	private Path pathToFile = Paths.get(filename);
 
     /**
@@ -181,8 +181,8 @@ public class RecommendationRunner implements Recommender {
     public void printRecommendationsFor(String webRaterID) {
         MovieDatabase.initialize("ratedmoviesfull.csv");
         RaterDatabase.initialize("ratings.csv");
-        //FourthRatingsOptimizedByWeiXu fr = new FourthRatingsOptimizedByWeiXu();
-        FourthRatings fr = new FourthRatings();
+        FourthRatingsOptimizedByWeiXu fr = new FourthRatingsOptimizedByWeiXu();
+        //FourthRatings fr = new FourthRatings();
         ArrayList<Rating> ratingList = fr.getSimilarRatings(webRaterID, 20, 5);
         if (ratingList.size() == 0) {
             System.out.println("<h2>Sorry, there are no movie recommend for you based on your rating!</h2>");
@@ -288,6 +288,6 @@ public class RecommendationRunner implements Recommender {
         public static void main(String[] args) {
             RecommendationRunner a = new RecommendationRunner();
             a.getItemsToRate();
-            a.printRecommendationsFor("30");
+            a.printRecommendationsFor("65");
         }
 }
