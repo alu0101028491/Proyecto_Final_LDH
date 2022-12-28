@@ -25,7 +25,7 @@ import java.util.Collections;
  *
  ****************************************************************/
 
-public class FourthRatingsOptimizedByWeiXu {
+public class FourthRatingsOptimized {
     private double dotProduct(Rater me, Rater r) {
         double dp = 0;
         ArrayList<String> memovieid = me.getItemsRated();
@@ -253,7 +253,7 @@ public class FourthRatingsOptimizedByWeiXu {
     public static void main(String[] args) {
         MovieDatabase.initialize("ratedmovies_short.csv");
         RaterDatabase.initialize("ratings_short.csv");
-        FourthRatingsOptimizedByWeiXu sr = new FourthRatingsOptimizedByWeiXu();
+        FourthRatingsOptimized sr = new FourthRatingsOptimized();
         System.out.println("---------------test-------------");
         System.out.println(sr.getSimilarRatings("2", 3, 0));
 

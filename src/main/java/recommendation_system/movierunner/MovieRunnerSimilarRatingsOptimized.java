@@ -2,7 +2,7 @@ package recommendation_system.movierunner;
 
 import recommendation_system.movies.MovieDatabase;
 import recommendation_system.raters.RaterDatabase;
-import recommendation_system.ratings.FourthRatingsOptimizedByWeiXu;
+import recommendation_system.ratings.FourthRatingsOptimized;
 import recommendation_system.ratings.Rating;
 
 import java.lang.System.Logger;
@@ -25,15 +25,15 @@ import java.util.ArrayList;
  *
  ****************************************************************/
 
-public class MovieRunnerSimilarRatingsOptimizedByWeiXu {
+public class MovieRunnerSimilarRatingsOptimized {
 	
-	private Logger logger = System.getLogger(MovieRunnerSimilarRatingsOptimizedByWeiXu.class.getName());
+	private Logger logger = System.getLogger(MovieRunnerSimilarRatingsOptimized.class.getName());
 	
-	private static Logger loggerStatic = System.getLogger(MovieRunnerSimilarRatingsOptimizedByWeiXu.class.getName());
+	private static Logger loggerStatic = System.getLogger(MovieRunnerSimilarRatingsOptimized.class.getName());
 
 	
     public void printSimilarRatings() {
-        FourthRatingsOptimizedByWeiXu tr = new FourthRatingsOptimizedByWeiXu();//do i need put filename here?
+        FourthRatingsOptimized tr = new FourthRatingsOptimized();//do i need put filename here?
         ArrayList<Rating> ratingList = tr.getSimilarRatings("65", 20, 5);
         logger.log(Logger.Level.ALL, "Found ratings for movies : " + ratingList.size());
         
@@ -101,16 +101,16 @@ public class MovieRunnerSimilarRatingsOptimizedByWeiXu {
     //    }
     //
     public static void main(String[] args) {
-        MovieRunnerSimilarRatingsOptimizedByWeiXu mra = new MovieRunnerSimilarRatingsOptimizedByWeiXu();
-        
+        MovieRunnerSimilarRatingsOptimized mra = new MovieRunnerSimilarRatingsOptimized();
+
         loggerStatic.log(Logger.Level.ALL, "----------Weighted average algorithm optimized by WEI XU DECEMBER 14 2019------------");
         loggerStatic.log(Logger.Level.ALL, "DUKE:   \"sum of (similar rating(i) *rating of the movie(i))/count of the raters\"");
         loggerStatic.log(Logger.Level.ALL, "WEI XU: \"sum of (similar rating(i) *rating of the movie(i))/ sum of the similar rating(i)\", will achieve better results.");
-        
+
         loggerStatic.log(Logger.Level.ALL, "-----------The FOLLOWING RESULTS are Algorithm by DUKE -------------");
         MovieDatabase.initialize("ratedmoviesfull.csv");
         RaterDatabase.initialize("ratings.csv");
-        
+
         loggerStatic.log(Logger.Level.ALL, "Movie size (# of movie in list) : " + MovieDatabase.size());// need initialize first.
         loggerStatic.log(Logger.Level.ALL, "Rater size (# of ppl who rates) : " + RaterDatabase.size());
         loggerStatic.log(Logger.Level.ALL, "---------------Test: printSimilarRatings()----------------");

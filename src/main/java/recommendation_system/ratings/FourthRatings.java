@@ -4,7 +4,6 @@ import recommendation_system.movies.MovieDatabase;
 import recommendation_system.raters.RaterDatabase;
 import recommendation_system.filters.Filter;
 import recommendation_system.filters.TrueFilter;
-import recommendation_system.movierunner.MovieRunnerSimilarRatingsOptimizedByWeiXu;
 import recommendation_system.raters.Rater;
 
 import java.lang.System.Logger;

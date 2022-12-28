@@ -1,7 +1,6 @@
 package recommendation_system.recommenders;
 
-import recommendation_system.ratings.FourthRatings;
-import recommendation_system.ratings.FourthRatingsOptimizedByWeiXu;
+import recommendation_system.ratings.FourthRatingsOptimized;
 import recommendation_system.movies.MovieDatabase;
 import recommendation_system.raters.RaterDatabase;
 import recommendation_system.ratings.Rating;
@@ -16,7 +15,6 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.StandardOpenOption;
-import java.io.File;
 import java.io.IOException;
 
 import java.lang.System.Logger;
@@ -181,8 +179,7 @@ public class RecommendationRunner implements Recommender {
     public void printRecommendationsFor(String webRaterID) {
         MovieDatabase.initialize("ratedmoviesfull.csv");
         RaterDatabase.initialize("ratings.csv");
-        FourthRatingsOptimizedByWeiXu fr = new FourthRatingsOptimizedByWeiXu();
-        //FourthRatings fr = new FourthRatings();
+        FourthRatingsOptimized fr = new FourthRatingsOptimized();
         ArrayList<Rating> ratingList = fr.getSimilarRatings(webRaterID, 20, 5);
         if (ratingList.size() == 0) {
             System.out.println("<h2>Sorry, there are no movie recommend for you based on your rating!</h2>");
