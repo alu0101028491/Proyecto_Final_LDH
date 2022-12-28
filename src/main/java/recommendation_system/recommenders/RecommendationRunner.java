@@ -288,6 +288,6 @@ public class RecommendationRunner implements Recommender {
         public static void main(String[] args) {
             RecommendationRunner a = new RecommendationRunner();
             a.getItemsToRate();
-            a.printRecommendationsFor("65");
+            a.printRecommendationsFor("67");
         }
 }

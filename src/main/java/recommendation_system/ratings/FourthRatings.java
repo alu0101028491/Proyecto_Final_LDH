@@ -4,10 +4,13 @@ import recommendation_system.movies.MovieDatabase;
 import recommendation_system.raters.RaterDatabase;
 import recommendation_system.filters.Filter;
 import recommendation_system.filters.TrueFilter;
+import recommendation_system.movierunner.MovieRunnerSimilarRatingsOptimizedByWeiXu;
 import recommendation_system.raters.Rater;
 
+import java.lang.System.Logger;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.List;
 
 /***************************************************************
  *  Name:    Wei Xu
@@ -29,6 +32,9 @@ import java.util.Collections;
  ****************************************************************/
 
 public class FourthRatings {
+	
+	private static Logger loggerStatic = System.getLogger(FourthRatings.class.getName());
+
     /**
      * This method should first translate a rating from the scale 0 to 10
      * to the scale -5 to 5 and return the dot product of the ratings of
@@ -142,7 +148,7 @@ public class FourthRatings {
      * (9*31+10*20)/2 = 479/2 = 239.5
      */
     // combine getAverageByID and getAverageRatings;
-    public ArrayList<Rating> getSimilarRatings(String raterID, int numSimilarRaters, int minimalRaters) {
+    public List<Rating> getSimilarRatings(String raterID, int numSimilarRaters, int minimalRaters) {
         ArrayList<Rating> ratingList = new ArrayList<>();
         //rating for all movie
         Filter trueFilter = new TrueFilter();
@@ -153,7 +159,7 @@ public class FourthRatings {
             // List<Rating> topsimiList = simiList.subList(0, numSimilarRaters);
             int count = 0;
             double total = 0;
-            int simiweighttotal = 0;
+            //int simiweighttotal = 0;
             // System.out.println("total");
             for (int i = 0; i < numSimilarRaters; i++) {
                 //   System.out.println("i=" + i);
@@ -163,7 +169,7 @@ public class FourthRatings {
                 if (rating != -1) {
                     count++;
                     total += rating * simiList.get(i).getValue();
-                    simiweighttotal += simiList.get(i).getValue();
+                    //simiweighttotal += simiList.get(i).getValue();
                     //System.out.println("Movie id = " + j + " count " + count + " : " + "id = " + simiList.get(i).getItem() + " rating " + rating + " ave " + total);
 
                 }
@@ -185,12 +191,12 @@ public class FourthRatings {
         return ratingList;
     }
 
-    public ArrayList<Rating> getSimilarRatingsByFilter(String raterID, int numSimilarRaters, int minimalRaters, Filter f) {
+    public List<Rating> getSimilarRatingsByFilter(String raterID, int numSimilarRaters, int minimalRaters, Filter f) {
         ArrayList<Rating> ratingList = new ArrayList<>();
         //rating for all movie
         Filter trueFilter = new TrueFilter();
         //print similarList
-        ArrayList<Rating> simiListTest = getSimilarities(raterID);
+        //ArrayList<Rating> simiListTest = getSimilarities(raterID);
         //print out  top 20 similar rater id and their dot product.
         //        for (int i = 0; i < numSimilarRaters; i++) {
         //            double simirating = simiListTest.get(i).getValue();
@@ -206,13 +212,13 @@ public class FourthRatings {
                 // List<Rating> topsimiList = simiList.subList(0, numSimilarRaters);
                 int count = 0;
                 double total = 0;
-                double simiweighttotal = 0;
+                //double simiweighttotal = 0;
                 for (int i = 0; i < numSimilarRaters; i++) {
                     double rating = RaterDatabase.getRater(simiList.get(i).getItem()).getRating(j);
                     if (rating != -1) {
                         count++;
                         total += rating * simiList.get(i).getValue();
-                        simiweighttotal += simiList.get(i).getValue();
+                        //simiweighttotal += simiList.get(i).getValue();
 
                         //System.out.println(count + " : " + "id = " + simiList.get(i).getItem() + " rating " + rating + " ave " + total);
 
@@ -238,8 +244,7 @@ public class FourthRatings {
         MovieDatabase.initialize("ratedmovies_short.csv");
         RaterDatabase.initialize("ratings_short.csv");
         FourthRatings sr = new FourthRatings();
-        System.out.println("---------------test-------------");
-        System.out.println(sr.getSimilarRatings("2", 3, 0));
-
+        loggerStatic.log(Logger.Level.ALL, "---------------test-------------");
+        loggerStatic.log(Logger.Level.ALL, sr.getSimilarRatings("2", 3, 0));
     }
 }

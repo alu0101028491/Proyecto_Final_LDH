@@ -65,7 +65,7 @@ public class MovieRunnerSimilarRatings {
      */
     public void printSimilarRatings() {
         FourthRatings tr = new FourthRatings();
-        ArrayList<Rating> ratingList = tr.getSimilarRatings("65", 20, 5);
+        ArrayList<Rating> ratingList = (ArrayList<Rating>) tr.getSimilarRatings("65", 20, 5);
         logger.log(Logger.Level.INFO, foundRatingsPrint + ratingList.size());
 
         for (int i = 0; i < 3; i++) {
@@ -76,7 +76,7 @@ public class MovieRunnerSimilarRatings {
 
     public void printSimilarRatingsByGenre() {
         FourthRatings tr4 = new FourthRatings();
-        ArrayList<Rating> ratingList = tr4.getSimilarRatingsByFilter("65", 20, 5, new GenreFilter("Action"));
+        ArrayList<Rating> ratingList = (ArrayList<Rating>) tr4.getSimilarRatingsByFilter("65", 20, 5, new GenreFilter("Action"));
         logger.log(Logger.Level.INFO, foundRatingsPrint + ratingList.size());
         for (int i = 0; i < 3; i++) {
         	logger.log(Logger.Level.INFO, ratingList.get(i).getValue() + " " +
@@ -88,7 +88,7 @@ public class MovieRunnerSimilarRatings {
 
     public void printSimilarRatingsByDirector() {
         FourthRatings tr4 = new FourthRatings();//do i need put filename here?
-        ArrayList<Rating> ratingList = tr4.getSimilarRatingsByFilter("1034", 10, 3, new DirectorsFilter("Clint Eastwood,Sydney Pollack,David Cronenberg,Oliver Stone"));
+        ArrayList<Rating> ratingList = (ArrayList<Rating>) tr4.getSimilarRatingsByFilter("1034", 10, 3, new DirectorsFilter("Clint Eastwood,Sydney Pollack,David Cronenberg,Oliver Stone"));
         logger.log(Logger.Level.INFO, foundRatingsPrint + ratingList.size());
         int printNum = ratingList.size();
         if (printNum >= 3) printNum = 3;
@@ -106,7 +106,7 @@ public class MovieRunnerSimilarRatings {
         AllFilters a = new AllFilters();
         a.addFilter(new GenreFilter("Adventure"));
         a.addFilter(new MinutesFilter(100, 200));
-        ArrayList<Rating> ratingList = tr4.getSimilarRatingsByFilter("65", 10, 5, a);
+        ArrayList<Rating> ratingList = (ArrayList<Rating>) tr4.getSimilarRatingsByFilter("65", 10, 5, a);
         logger.log(Logger.Level.INFO, foundRatingsPrint + ratingList.size());
         int printNum = ratingList.size();
         if (printNum >= 3) printNum = 3;
@@ -124,7 +124,7 @@ public class MovieRunnerSimilarRatings {
         AllFilters a = new AllFilters();
         a.addFilter(new YearAfterFilter(2000));
         a.addFilter(new MinutesFilter(80, 100));
-        ArrayList<Rating> ratingList = tr4.getSimilarRatingsByFilter("65", 10, 5, a);
+        ArrayList<Rating> ratingList = (ArrayList<Rating>) tr4.getSimilarRatingsByFilter("65", 10, 5, a);
         logger.log(Logger.Level.INFO, foundRatingsPrint + ratingList.size());
 
         int printNum = ratingList.size();
