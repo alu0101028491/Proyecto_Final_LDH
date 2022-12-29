@@ -29,7 +29,7 @@ import java.util.Collections;
 
 public class FourthRatingsOptimized {
 	
-	private static Logger loggerStatic = System.getLogger(FourthRatingsOptimized.class.getName());
+	private static Logger loggerStaticFourthRatingsOptimized = System.getLogger(FourthRatingsOptimized.class.getName());
 	
     private double dotProduct(Rater me, Rater r) {
         double dp = 0;
@@ -259,7 +259,7 @@ public class FourthRatingsOptimized {
         MovieDatabase.initialize("ratedmovies_short.csv");
         RaterDatabase.initialize("ratings_short.csv");
         FourthRatingsOptimized sr = new FourthRatingsOptimized();
-        loggerStatic.log(Logger.Level.INFO, "---------------test-------------");
-        loggerStatic.log(Logger.Level.INFO, sr.getSimilarRatings("2", 3, 0));
+        loggerStaticFourthRatingsOptimized.log(Logger.Level.INFO, "---------------test-------------");
+        loggerStaticFourthRatingsOptimized.log(Logger.Level.INFO, sr.getSimilarRatings("2", 3, 0));
     }
 }

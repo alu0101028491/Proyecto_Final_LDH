@@ -32,7 +32,7 @@ import java.util.List;
 
 public class FourthRatings {
 	
-	private static Logger loggerStatic = System.getLogger(FourthRatings.class.getName());
+	private static Logger loggerStaticFourthRatings = System.getLogger(FourthRatings.class.getName());
 
     /**
      * This method should first translate a rating from the scale 0 to 10
@@ -243,7 +243,7 @@ public class FourthRatings {
         MovieDatabase.initialize("ratedmovies_short.csv");
         RaterDatabase.initialize("ratings_short.csv");
         FourthRatings sr = new FourthRatings();
-        loggerStatic.log(Logger.Level.INFO, "---------------test-------------");
-        loggerStatic.log(Logger.Level.INFO, sr.getSimilarRatings("2", 3, 0));
+        loggerStaticFourthRatings.log(Logger.Level.INFO, "---------------test-------------");
+        loggerStaticFourthRatings.log(Logger.Level.INFO, sr.getSimilarRatings("2", 3, 0));
     }
 }

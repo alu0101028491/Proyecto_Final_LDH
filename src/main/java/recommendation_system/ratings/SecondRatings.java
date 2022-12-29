@@ -28,7 +28,7 @@ public class SecondRatings {
 
     private ArrayList<Movie> myMovies;
     private ArrayList<Rater> myRaters;
-    private static System.Logger staticLogger = System.getLogger(SecondRatings.class.getName());
+    private static System.Logger staticLoggerSecondRatings = System.getLogger(SecondRatings.class.getName());
 
 
     /**
@@ -128,8 +128,8 @@ public class SecondRatings {
         SecondRatings secondRatings = new SecondRatings("data/ratedmovies_short.csv",
                 "data/ratings_short.csv");
         //System.out.println(sr.getAverageByID("0068646", 2));
-        staticLogger.log(Logger.Level.INFO, "---TEST---");
-        staticLogger.log(Logger.Level.INFO, secondRatings.getAverageRatings(2));
+        staticLoggerSecondRatings.log(Logger.Level.INFO, "---TEST---");
+        staticLoggerSecondRatings.log(Logger.Level.INFO, secondRatings.getAverageRatings(2));
         //[[6414, 0.0], [68646, 0.0], [113277, 0.0], [1798709, 8.25], [790636, 0.0]]
     }
 

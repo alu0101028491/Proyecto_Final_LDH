@@ -33,9 +33,9 @@ public class MovieRunnerSimilarRatings {
 
 	private static String[] durationInfo = {"---------------Duration = ", "s-------------"};
 
-	private Logger logger = System.getLogger(MovieRunnerSimilarRatings.class.getName());
+	private Logger loggerMovieRunnerSimilarRatings = System.getLogger(MovieRunnerSimilarRatings.class.getName());
 
-	private static Logger loggerStatic = System.getLogger(MovieRunnerSimilarRatings.class.getName());
+	private static Logger loggerStaticMovieRunnerSimilarRatings = System.getLogger(MovieRunnerSimilarRatings.class.getName());
 
 
     /**
@@ -66,10 +66,10 @@ public class MovieRunnerSimilarRatings {
     public void printSimilarRatings() {
         FourthRatings tr = new FourthRatings();
         ArrayList<Rating> ratingList = (ArrayList<Rating>) tr.getSimilarRatings("65", 20, 5);
-        logger.log(Logger.Level.INFO, foundRatingsPrint + ratingList.size());
+        loggerMovieRunnerSimilarRatings.log(Logger.Level.INFO, foundRatingsPrint + ratingList.size());
 
         for (int i = 0; i < 3; i++) {
-            logger.log(Logger.Level.INFO, ratingList.get(i).getValue() + " " +
+            loggerMovieRunnerSimilarRatings.log(Logger.Level.INFO, ratingList.get(i).getValue() + " " +
                     MovieDatabase.getTitle(ratingList.get(i).getItem()));
         }
     }
@@ -77,9 +77,9 @@ public class MovieRunnerSimilarRatings {
     public void printSimilarRatingsByGenre() {
         FourthRatings tr4 = new FourthRatings();
         ArrayList<Rating> ratingList = (ArrayList<Rating>) tr4.getSimilarRatingsByFilter("65", 20, 5, new GenreFilter("Action"));
-        logger.log(Logger.Level.INFO, foundRatingsPrint + ratingList.size());
+        loggerMovieRunnerSimilarRatings.log(Logger.Level.INFO, foundRatingsPrint + ratingList.size());
         for (int i = 0; i < 3; i++) {
-        	logger.log(Logger.Level.INFO, ratingList.get(i).getValue() + " " +
+        	loggerMovieRunnerSimilarRatings.log(Logger.Level.INFO, ratingList.get(i).getValue() + " " +
                     MovieDatabase.getTitle(ratingList.get(i).getItem()) + " " +
                     MovieDatabase.getGenres(ratingList.get(i).getItem()));
         }
@@ -89,11 +89,11 @@ public class MovieRunnerSimilarRatings {
     public void printSimilarRatingsByDirector() {
         FourthRatings tr4 = new FourthRatings();//do i need put filename here?
         ArrayList<Rating> ratingList = (ArrayList<Rating>) tr4.getSimilarRatingsByFilter("1034", 10, 3, new DirectorsFilter("Clint Eastwood,Sydney Pollack,David Cronenberg,Oliver Stone"));
-        logger.log(Logger.Level.INFO, foundRatingsPrint + ratingList.size());
+        loggerMovieRunnerSimilarRatings.log(Logger.Level.INFO, foundRatingsPrint + ratingList.size());
         int printNum = ratingList.size();
         if (printNum >= 3) printNum = 3;
         for (int i = 0; i < printNum; i++) {
-        	logger.log(Logger.Level.INFO, ratingList.get(i).getValue() + " "  +
+        	loggerMovieRunnerSimilarRatings.log(Logger.Level.INFO, ratingList.get(i).getValue() + " "  +
                     MovieDatabase.getMinutes(ratingList.get(i).getItem()) + " " +
                     MovieDatabase.getTitle(ratingList.get(i).getItem()) + " " +
                     MovieDatabase.getGenres(ratingList.get(i).getItem()));
@@ -107,11 +107,11 @@ public class MovieRunnerSimilarRatings {
         a.addFilter(new GenreFilter("Adventure"));
         a.addFilter(new MinutesFilter(100, 200));
         ArrayList<Rating> ratingList = (ArrayList<Rating>) tr4.getSimilarRatingsByFilter("65", 10, 5, a);
-        logger.log(Logger.Level.INFO, foundRatingsPrint + ratingList.size());
+        loggerMovieRunnerSimilarRatings.log(Logger.Level.INFO, foundRatingsPrint + ratingList.size());
         int printNum = ratingList.size();
         if (printNum >= 3) printNum = 3;
         for (int i = 0; i < printNum; i++) {
-            logger.log(Logger.Level.INFO, ratingList.get(i).getValue() + " " +
+            loggerMovieRunnerSimilarRatings.log(Logger.Level.INFO, ratingList.get(i).getValue() + " " +
                     MovieDatabase.getMinutes(ratingList.get(i).getItem()) + " " +
                     MovieDatabase.getTitle(ratingList.get(i).getItem()) + " " +
                     MovieDatabase.getGenres(ratingList.get(i).getItem()));
@@ -125,53 +125,53 @@ public class MovieRunnerSimilarRatings {
         a.addFilter(new YearAfterFilter(2000));
         a.addFilter(new MinutesFilter(80, 100));
         ArrayList<Rating> ratingList = (ArrayList<Rating>) tr4.getSimilarRatingsByFilter("65", 10, 5, a);
-        logger.log(Logger.Level.INFO, foundRatingsPrint + ratingList.size());
+        loggerMovieRunnerSimilarRatings.log(Logger.Level.INFO, foundRatingsPrint + ratingList.size());
 
         int printNum = ratingList.size();
         if (printNum >= 3) printNum = 3;
         for (int i = 0; i < printNum; i++) {
-            logger.log(Logger.Level.INFO, ratingList.get(i).getValue() + " " +
+            loggerMovieRunnerSimilarRatings.log(Logger.Level.INFO, ratingList.get(i).getValue() + " " +
                     MovieDatabase.getMovie(ratingList.get(i).getItem()).toString());
         }
     }
 
     public static void main(String[] args) {
         MovieRunnerSimilarRatings mra = new MovieRunnerSimilarRatings();
-        loggerStatic.log(Logger.Level.INFO, "----------Weighted average algorithm optimized by WEI XU DECEMBER 14 2019------------");
-        loggerStatic.log(Logger.Level.INFO, "DUKE:   \"sum of (similar rating(i) *rating of the movie(i))/count of the raters\"");
-        loggerStatic.log(Logger.Level.INFO, "WEI XU: \"sum of (similar rating(i) *rating of the movie(i))/ sum of the similar rating(i)\", will achieve better results.");
-        loggerStatic.log(Logger.Level.INFO, "-----------The FOLLOWING RESULTS are Algorithm by DUKE -------------");
+        loggerStaticMovieRunnerSimilarRatings.log(Logger.Level.INFO, "----------Weighted average algorithm optimized by WEI XU DECEMBER 14 2019------------");
+        loggerStaticMovieRunnerSimilarRatings.log(Logger.Level.INFO, "DUKE:   \"sum of (similar rating(i) *rating of the movie(i))/count of the raters\"");
+        loggerStaticMovieRunnerSimilarRatings.log(Logger.Level.INFO, "WEI XU: \"sum of (similar rating(i) *rating of the movie(i))/ sum of the similar rating(i)\", will achieve better results.");
+        loggerStaticMovieRunnerSimilarRatings.log(Logger.Level.INFO, "-----------The FOLLOWING RESULTS are Algorithm by DUKE -------------");
         MovieDatabase.initialize("ratedmoviesfull.csv");
         RaterDatabase.initialize("ratings.csv");
-        loggerStatic.log(Logger.Level.INFO, "Movie size (# of movie in list) : " + MovieDatabase.size());
-        loggerStatic.log(Logger.Level.INFO, "Rater size (# of ppl who rates) : " + RaterDatabase.size());
-        loggerStatic.log(Logger.Level.INFO, "---------------Test: printSimilarRatings()----------------");
+        loggerStaticMovieRunnerSimilarRatings.log(Logger.Level.INFO, "Movie size (# of movie in list) : " + MovieDatabase.size());
+        loggerStaticMovieRunnerSimilarRatings.log(Logger.Level.INFO, "Rater size (# of ppl who rates) : " + RaterDatabase.size());
+        loggerStaticMovieRunnerSimilarRatings.log(Logger.Level.INFO, "---------------Test: printSimilarRatings()----------------");
         double start1 = System.nanoTime();
         mra.printSimilarRatings();
         double duration1 = (System.nanoTime() - start1) / 1000000000;
-        loggerStatic.log(Logger.Level.INFO, durationInfo[0] + duration1 + durationInfo[1]);
-        loggerStatic.log(Logger.Level.INFO, "---------------Test: printSimilarRatingsByGenre()----------------");
+        loggerStaticMovieRunnerSimilarRatings.log(Logger.Level.INFO, durationInfo[0] + duration1 + durationInfo[1]);
+        loggerStaticMovieRunnerSimilarRatings.log(Logger.Level.INFO, "---------------Test: printSimilarRatingsByGenre()----------------");
         double start2 = System.nanoTime();
         mra.printSimilarRatingsByGenre();
         double duration2 = (System.nanoTime() - start2) / 1000000000;
-        loggerStatic.log(Logger.Level.INFO, durationInfo[0] + duration2 + durationInfo[1]);
-        loggerStatic.log(Logger.Level.INFO, "---------------Test: printSimilarRatingsDirector()----------------");
+        loggerStaticMovieRunnerSimilarRatings.log(Logger.Level.INFO, durationInfo[0] + duration2 + durationInfo[1]);
+        loggerStaticMovieRunnerSimilarRatings.log(Logger.Level.INFO, "---------------Test: printSimilarRatingsDirector()----------------");
         double start3 = System.nanoTime();
         mra.printSimilarRatingsByDirector();
         double duration3 = (System.nanoTime() - start3) / 1000000000;
-        loggerStatic.log(Logger.Level.INFO, durationInfo[0] + duration3 + durationInfo[1]);
-        loggerStatic.log(Logger.Level.INFO, "---------------Test: printSimilarRatingsByGenreAndMinutes()----------------");
+        loggerStaticMovieRunnerSimilarRatings.log(Logger.Level.INFO, durationInfo[0] + duration3 + durationInfo[1]);
+        loggerStaticMovieRunnerSimilarRatings.log(Logger.Level.INFO, "---------------Test: printSimilarRatingsByGenreAndMinutes()----------------");
         double start4 = System.nanoTime();
         mra.printSimilarRatingsByGenreAndMinutes();
         double duration4 = (System.nanoTime() - start4) / 1000000000;
 
-        loggerStatic.log(Logger.Level.INFO, durationInfo[0] + duration4 + durationInfo[1]);
-        loggerStatic.log(Logger.Level.INFO, "---------------Test: printSimilarRatingsByYearAfterAndMinutes()----------------");
+        loggerStaticMovieRunnerSimilarRatings.log(Logger.Level.INFO, durationInfo[0] + duration4 + durationInfo[1]);
+        loggerStaticMovieRunnerSimilarRatings.log(Logger.Level.INFO, "---------------Test: printSimilarRatingsByYearAfterAndMinutes()----------------");
         double start5 = System.nanoTime();
         mra.printSimilarRatingsByYearAfterAndMinutes();
         double duration5 = (System.nanoTime() - start5) / 1000000000;
 
-        loggerStatic.log(Logger.Level.INFO, durationInfo[0] + duration5 + durationInfo[1]);
+        loggerStaticMovieRunnerSimilarRatings.log(Logger.Level.INFO, durationInfo[0] + duration5 + durationInfo[1]);
     }
 
 }
