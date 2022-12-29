@@ -5,8 +5,10 @@ import recommendation_system.raters.RaterDatabase;
 import recommendation_system.filters.Filter;
 import recommendation_system.raters.Rater;
 
+import java.lang.System.Logger;
 import java.util.ArrayList;
 import java.util.Collections;
+
 
 /***************************************************************
  *  Name:    Wei Xu
@@ -26,6 +28,9 @@ import java.util.Collections;
  ****************************************************************/
 
 public class FourthRatingsOptimized {
+	
+	private static Logger loggerStatic = System.getLogger(FourthRatingsOptimized.class.getName());
+	
     private double dotProduct(Rater me, Rater r) {
         double dp = 0;
         ArrayList<String> memovieid = me.getItemsRated();
@@ -254,8 +259,7 @@ public class FourthRatingsOptimized {
         MovieDatabase.initialize("ratedmovies_short.csv");
         RaterDatabase.initialize("ratings_short.csv");
         FourthRatingsOptimized sr = new FourthRatingsOptimized();
-        System.out.println("---------------test-------------");
-        System.out.println(sr.getSimilarRatings("2", 3, 0));
-
+        loggerStatic.log(Logger.Level.INFO, "---------------test-------------");
+        loggerStatic.log(Logger.Level.INFO, sr.getSimilarRatings("2", 3, 0));
     }
 }

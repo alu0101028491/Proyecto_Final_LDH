@@ -257,7 +257,7 @@ public class RecommendationRunner implements Recommender {
 
             int rank = 1;
             for (Rating i : outID) {
-                System.out.println("<tr><td>" + rank + tdEnd +
+            	logger.log(Logger.Level.INFO,"<tr><td>" + rank + tdEnd +
 
                         "<td><img src = \"" + MovieDatabase.getPoster(i.getItem()).replace("http", "https") + "\" width=\"50\" height=\"70\"></td> " +
                         "<td>" + MovieDatabase.getYear(i.getItem()) + "&ensp;&ensp; <a href=\"https://www.imdb.com/title/tt" +
