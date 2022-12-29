@@ -243,7 +243,7 @@ public class FourthRatings {
         MovieDatabase.initialize("ratedmovies_short.csv");
         RaterDatabase.initialize("ratings_short.csv");
         FourthRatings sr = new FourthRatings();
-        loggerStatic.log(Logger.Level.ALL, "---------------test-------------");
-        loggerStatic.log(Logger.Level.ALL, sr.getSimilarRatings("2", 3, 0));
+        loggerStatic.log(Logger.Level.INFO, "---------------test-------------");
+        loggerStatic.log(Logger.Level.INFO, sr.getSimilarRatings("2", 3, 0));
     }
 }

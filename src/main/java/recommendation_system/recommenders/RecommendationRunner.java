@@ -5,7 +5,6 @@ import recommendation_system.movies.MovieDatabase;
 import recommendation_system.raters.RaterDatabase;
 import recommendation_system.ratings.Rating;
 import recommendation_system.filters.TrueFilter;
-import recommendation_system.movierunner.MovieRunnerAverage;
 
 import java.security.SecureRandom;
 import java.util.ArrayList;
@@ -49,12 +48,13 @@ import java.lang.System.Logger;
 
 public class RecommendationRunner implements Recommender {
 
-	private Logger logger = System.getLogger(MovieRunnerAverage.class.getName());
+	private Logger logger = System.getLogger(RecommendationRunner.class.getName());
 
 	private Random rand = new SecureRandom();
 
 	private String filename = "index.html";
 	private Path pathToFile = Paths.get(filename);
+	private String tdEnd = "</td>";
 
     /**
      * randomly pick 10 movie to let the user to rate.
@@ -65,9 +65,8 @@ public class RecommendationRunner implements Recommender {
     public ArrayList<String> getItemsToRate() {
         ArrayList<String> movieToBeRate = new ArrayList<>();
         ArrayList<String> movieID = MovieDatabase.filterBy(new TrueFilter());
-        for (int i = 0; movieToBeRate.size() < 10; i++) {
-        	//SecureRandom ran = new SecureRandom();
-        	byte bytes[] = new byte[20];
+        while(movieToBeRate.iterator().hasNext()) {
+        	byte[] bytes = new byte[20];
         	this.rand.nextBytes(bytes);
             int random = rand.nextInt(movieID.size());
             if (!movieToBeRate.contains(movieID.get(random)))
@@ -140,8 +139,9 @@ public class RecommendationRunner implements Recommender {
     }
 
     public void writeBody(ArrayList<Rating> outID) throws IOException {
-
-    	String textBody = "<body>\n"
+    	
+    	StringBuilder stringBuilderBody = new StringBuilder();
+    	stringBuilderBody.append("<body>\n"
     			+ "  <h2>Wei Xu, Samir, Dario y Kevin le recomendamos las mejores peliculas</h2>\n"
     			+ "  <table id = \"rater\">\n"
     			+ "  <tr>\n"
@@ -151,26 +151,24 @@ public class RecommendationRunner implements Recommender {
     			+ "  <th>Genre</th>\n"
     			+ "  <th>Country</th>\n"
     			+ "  </tr>\n"
-    			+ "  <tr>\n";
-
+    			+ "  <tr>\n");
 
     			int rank = 1;
                 for (Rating i : outID) {
-                	textBody += "      <tr><td>" + rank + "</td>" +
+                	stringBuilderBody.append("      <tr><td>" + rank + tdEnd +
                             "<td><img src = \"" + MovieDatabase.getPoster(i.getItem()).replace("http", "https") + "\" width=\"50\" height=\"70\"></td> " +
                             "<td>" + MovieDatabase.getYear(i.getItem()) + "&ensp;&ensp; <a href=\"https://www.imdb.com/title/tt" +
                             i.getItem() + "\">" + MovieDatabase.getTitle(i.getItem()) + "</a><br><div class = \"rating\">&starf; &ensp;&ensp;&ensp;"
                             + String.format("%.1f", i.getValue()) + "/10</td>" +
-                            "<td>" + MovieDatabase.getGenres(i.getItem()) + "</td>" +
-                            "<td>" + MovieDatabase.getCountry(i.getItem()) + "</td>" +
-                            "</tr>\n";
+                            "<td>" + MovieDatabase.getGenres(i.getItem()) + tdEnd +
+                            "<td>" + MovieDatabase.getCountry(i.getItem()) + tdEnd +
+                            "</tr>\n");
                     rank++;
                 }
 
-    		textBody += "  </table>\n"
-
-    				+ "  <h3>*El Rango de las peliculas está basado en otras calificaciones similares. Disfrute.*</h3>";
-    		Files.writeString(pathToFile, textBody, StandardOpenOption.APPEND);
+    		stringBuilderBody.append("  </table>\n" +
+    				"  <h3>*El Rango de las peliculas está basado en otras calificaciones similares. Disfrute.*</h3>");
+    		Files.writeString(pathToFile, stringBuilderBody, StandardOpenOption.APPEND);
 
     }
 
@@ -181,8 +179,8 @@ public class RecommendationRunner implements Recommender {
         RaterDatabase.initialize("ratings.csv");
         FourthRatingsOptimized fr = new FourthRatingsOptimized();
         ArrayList<Rating> ratingList = fr.getSimilarRatings(webRaterID, 20, 5);
-        if (ratingList.size() == 0) {
-            System.out.println("<h2>Sorry, there are no movie recommend for you based on your rating!</h2>");
+        if (ratingList.isEmpty()) {
+        	logger.log(Logger.Level.INFO, "<h2>Sorry, there are no movie recommend for you based on your rating!</h2>"); 
         } else {
             ArrayList<String> movieToBeRate = getItemsToRate();
             ArrayList<Rating> outID = new ArrayList<>();
@@ -259,14 +257,14 @@ public class RecommendationRunner implements Recommender {
 
             int rank = 1;
             for (Rating i : outID) {
-                System.out.println("<tr><td>" + rank + "</td>" +
+                System.out.println("<tr><td>" + rank + tdEnd +
 
                         "<td><img src = \"" + MovieDatabase.getPoster(i.getItem()).replace("http", "https") + "\" width=\"50\" height=\"70\"></td> " +
                         "<td>" + MovieDatabase.getYear(i.getItem()) + "&ensp;&ensp; <a href=\"https://www.imdb.com/title/tt" +
                         i.getItem() + "\">" + MovieDatabase.getTitle(i.getItem()) + "</a><br><div class = \"rating\">&starf; &ensp;&ensp;&ensp;"
                         + String.format("%.1f", i.getValue()) + "/10</td>" +
-                        "<td>" + MovieDatabase.getGenres(i.getItem()) + "</td>" +
-                        "<td>" + MovieDatabase.getCountry(i.getItem()) + "</td>" +
+                        "<td>" + MovieDatabase.getGenres(i.getItem()) + tdEnd +
+                        "<td>" + MovieDatabase.getCountry(i.getItem()) + tdEnd +
                         "</tr> ");
                 rank++;
             }

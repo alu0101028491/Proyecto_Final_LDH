@@ -35,10 +35,10 @@ public class MovieRunnerSimilarRatingsOptimized {
     public void printSimilarRatings() {
         FourthRatingsOptimized tr = new FourthRatingsOptimized();//do i need put filename here?
         ArrayList<Rating> ratingList = tr.getSimilarRatings("65", 20, 5);
-        logger.log(Logger.Level.ALL, "Found ratings for movies : " + ratingList.size());
+        logger.log(Logger.Level.INFO, "Found ratings for movies : " + ratingList.size());
         
         for (int i = 0; i < 3; i++) {
-        	logger.log(Logger.Level.ALL, "%-10.2f%s%n", ratingList.get(i).getValue(), MovieDatabase.getTitle(ratingList.get(i).getItem()));
+        	logger.log(Logger.Level.INFO, "%-10.2f%s%n", ratingList.get(i).getValue(), MovieDatabase.getTitle(ratingList.get(i).getItem()));
         }
     }
     
@@ -103,21 +103,21 @@ public class MovieRunnerSimilarRatingsOptimized {
     public static void main(String[] args) {
         MovieRunnerSimilarRatingsOptimized mra = new MovieRunnerSimilarRatingsOptimized();
 
-        loggerStatic.log(Logger.Level.ALL, "----------Weighted average algorithm optimized by WEI XU DECEMBER 14 2019------------");
-        loggerStatic.log(Logger.Level.ALL, "DUKE:   \"sum of (similar rating(i) *rating of the movie(i))/count of the raters\"");
-        loggerStatic.log(Logger.Level.ALL, "WEI XU: \"sum of (similar rating(i) *rating of the movie(i))/ sum of the similar rating(i)\", will achieve better results.");
+        loggerStatic.log(Logger.Level.INFO, "----------Weighted average algorithm optimized by WEI XU DECEMBER 14 2019------------");
+        loggerStatic.log(Logger.Level.INFO, "DUKE:   \"sum of (similar rating(i) *rating of the movie(i))/count of the raters\"");
+        loggerStatic.log(Logger.Level.INFO, "WEI XU: \"sum of (similar rating(i) *rating of the movie(i))/ sum of the similar rating(i)\", will achieve better results.");
 
-        loggerStatic.log(Logger.Level.ALL, "-----------The FOLLOWING RESULTS are Algorithm by DUKE -------------");
+        loggerStatic.log(Logger.Level.INFO, "-----------The FOLLOWING RESULTS are Algorithm by DUKE -------------");
         MovieDatabase.initialize("ratedmoviesfull.csv");
         RaterDatabase.initialize("ratings.csv");
 
-        loggerStatic.log(Logger.Level.ALL, "Movie size (# of movie in list) : " + MovieDatabase.size());// need initialize first.
-        loggerStatic.log(Logger.Level.ALL, "Rater size (# of ppl who rates) : " + RaterDatabase.size());
-        loggerStatic.log(Logger.Level.ALL, "---------------Test: printSimilarRatings()----------------");
+        loggerStatic.log(Logger.Level.INFO, "Movie size (# of movie in list) : " + MovieDatabase.size());// need initialize first.
+        loggerStatic.log(Logger.Level.INFO, "Rater size (# of ppl who rates) : " + RaterDatabase.size());
+        loggerStatic.log(Logger.Level.INFO, "---------------Test: printSimilarRatings()----------------");
         double start1 = System.nanoTime();
         mra.printSimilarRatings();
         double duration1 = (System.nanoTime() - start1) / 1000000000;
-        loggerStatic.log(Logger.Level.ALL, "---------------Duration = " + duration1 + "s-------------");
+        loggerStatic.log(Logger.Level.INFO, "---------------Duration = " + duration1 + "s-------------");
         // MovieRunnerSimilarRatings duration                  : 66.2
         // MovieRunnerSimilarRatingsOptimizedByWeiXu: duration : 17.6
         
