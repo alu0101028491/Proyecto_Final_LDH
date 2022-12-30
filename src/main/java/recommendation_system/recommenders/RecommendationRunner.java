@@ -48,6 +48,7 @@ import java.lang.System.Logger;
 
 public class RecommendationRunner implements Recommender {
 
+	
 	private Logger logger = System.getLogger(RecommendationRunner.class.getName());
 
 	private Random rand = new SecureRandom();
@@ -55,6 +56,36 @@ public class RecommendationRunner implements Recommender {
 	private String filename = "index.html";
 	private Path pathToFile = Paths.get(filename);
 	private String tdEnd = "</td>";
+	
+	/**
+	 * @return the filename
+	 */
+	public String getFilename() {
+		return filename;
+	}
+
+	/**
+	 * set File name to Resulting html 
+	 * @param filename the filename to set
+	 */
+	public void setFilename(String filename) {
+		this.filename = filename;
+	}
+
+	/**
+	 * @return the pathToFile
+	 */
+	public Path getPathToFile() {
+		return pathToFile;
+	}
+
+	/**
+	 * set path to write Resulting html 
+	 * @param pathToFile set the path To write File
+	 */
+	public void setPathToFile(Path pathToFile) {
+		this.pathToFile = pathToFile;
+	}
 
     /**
      * randomly pick 10 movie to let the user to rate.
@@ -257,7 +288,7 @@ public class RecommendationRunner implements Recommender {
 
             int rank = 1;
             for (Rating i : outID) {
-            	logger.log(Logger.Level.INFO,"<tr><td>" + rank + tdEnd +
+            	System.out.println("<tr><td>" + rank + tdEnd +
 
                         "<td><img src = \"" + MovieDatabase.getPoster(i.getItem()).replace("http", "https") + "\" width=\"50\" height=\"70\"></td> " +
                         "<td>" + MovieDatabase.getYear(i.getItem()) + "&ensp;&ensp; <a href=\"https://www.imdb.com/title/tt" +
