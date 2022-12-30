@@ -29,6 +29,11 @@ public class MovieRunnerAverage {
 	private  static Logger loggerStatic = System.getLogger(MovieRunnerAverage.class.getName());
 
 
+    /**
+     *
+     * @param ratedMovies - A String varable representing the rated movies
+     * @param ratings - A String variable representing the ratings of the movies
+     */
     public void printAverageRatings(String ratedMovies, String ratings) {
         SecondRatings sr = new SecondRatings(ratedMovies, ratings);
         logger.log(Logger.Level.INFO, "Movie size = " + sr.getMovieSize());
@@ -40,6 +45,12 @@ public class MovieRunnerAverage {
         }
     }
 
+    /**
+     *
+     * @param movieTitle - A String variable representing the title of the movies
+     * @param ratedMovies - A String variable representing the rated movies
+     * @param ratings - A String variable representing the ratings of the movies
+     */
     public void getAverageRatingOneMovie(String movieTitle, String ratedMovies, String ratings) {
         SecondRatings sr = new SecondRatings(ratedMovies, ratings);
         ArrayList<Rating> ratingList = sr.getAverageRatings(2);

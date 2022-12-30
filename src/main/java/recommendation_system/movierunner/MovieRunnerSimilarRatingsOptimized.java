@@ -25,6 +25,22 @@ import java.util.ArrayList;
  *
  ****************************************************************/
 
+/**
+ * <p>
+ *  Class to test the methods on FourthRatings
+ *  </p>
+ *
+ *  <p>
+ *  The class contains the necessary methods for:
+ *  <ul>
+ *  <li> Print similar ratings </li>
+ *  </ul>
+ *  </p>
+ *
+ *  @since 30/12/22
+ *  @version 1.0
+ */
+
 public class MovieRunnerSimilarRatingsOptimized {
 	
 	private Logger logger = System.getLogger(MovieRunnerSimilarRatingsOptimized.class.getName());

@@ -31,35 +31,66 @@ public class EfficientRater implements Rater {
         its value is a rating associated with this movie.*/
     //private HashMap<String, ArrayList<Rating>> myRatings;//why not this one?
     private HashMap<String, Rating> myRatings;
-    
+
+    /**
+     *
+     * @param id - A String variable representing the ID
+     */
     public EfficientRater(String id) {
         myID = id;
         myRatings = new HashMap<>();
     }
-    
+
+    /**
+     *
+     * @param item - A String variable
+     * @param rating - A variable representing the rating
+     */
     public void addRating(String item, double rating) {
         myRatings.put(item, new Rating(item, rating));//item is string id?
     }
-    
+
+    /**
+     *
+     * @param item
+     * @return
+     */
     public boolean hasRating(String item) {
         return myRatings.containsKey(item);
     }
-    
+
+    /**
+     *
+     * @return
+     */
     public String getID() {
         return myID;
     }
-    
+
+    /**
+     *
+     * @param item
+     * @return
+     */
     public double getRating(String item) {
         if (myRatings.containsKey(item)) {
             return myRatings.get(item).getValue();
         }
         return -1;
     }
-    
+
+    /**
+     *
+     * @return
+     */
     public int numRatings() {
         return myRatings.size();
     }
-    
+
+    /**
+     *
+     * @return
+     */
     public ArrayList<String> getItemsRated() {
         ArrayList<String> list = new ArrayList<>(myRatings.keySet());
 

@@ -27,6 +27,26 @@ import java.lang.System.Logger;
  *
  ****************************************************************/
 
+/**
+ * <p>
+ *  Class to test the methods on FourthRatings
+ *  </p>
+ *
+ *  <p>
+ *  The class contains the necessary methods for:
+ *  <ul>
+ *  <li> Print similar ratings </li>
+ *  <li> Print similar ratings by genre </li>
+ *  <li> Print similar ratings by directors </li>
+ *  <li> Print similar ratings by genre and minutes </li>
+ *  <li> Print similar ratings by year and minutes </li>
+ *  </ul>
+ *  </p>
+ *
+ *  @since 30/12/22
+ *  @version 1.0
+ */
+
 public class MovieRunnerSimilarRatings {
 
 	private static final String foundRatingsPrint = "Found ratings for movies : ";
