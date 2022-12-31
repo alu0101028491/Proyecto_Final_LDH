@@ -9,7 +9,6 @@ import recommendation_system.filters.TrueFilter;
 import java.security.SecureRandom;
 import java.util.ArrayList;
 import java.util.Random;
-
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -211,7 +210,14 @@ public class RecommendationRunner implements Recommender {
         FourthRatingsOptimized fr = new FourthRatingsOptimized();
         ArrayList<Rating> ratingList = fr.getSimilarRatings(webRaterID, 20, 5);
         if (ratingList.isEmpty()) {
-        	logger.log(Logger.Level.INFO, "<h2>Sorry, there are no movie recommend for you based on your rating!</h2>"); 
+        	try {
+        		System.out.println("<h2>Sorry, there are no movie recommend for you based on your rating!</h2>");
+            	writeHtmlHead();
+            	writeCss();
+            	Files.writeString(pathToFile, "<h2>Sorry, there are no movie recommend for you based on your rating!</h2>", StandardOpenOption.APPEND);
+    		} catch (IOException e) {
+    			logger.log(Logger.Level.ERROR, e);
+    		} 
         } else {
             ArrayList<String> movieToBeRate = getItemsToRate();
             ArrayList<Rating> outID = new ArrayList<>();
@@ -306,9 +312,10 @@ public class RecommendationRunner implements Recommender {
     		} catch (IOException e) {
     			logger.log(Logger.Level.ERROR, e);
     		}
+            System.out.println("</table>");
+            System.out.println("<h3>*The rank of movies is based on other raters who have the most similar rating to yours. Enjoy!^^</h3>");
         }
-        System.out.println("</table>");
-        System.out.println("<h3>*The rank of movies is based on other raters who have the most similar rating to yours. Enjoy!^^</h3>");
+        
 
     }
         public static void main(String[] args) {
