@@ -11,6 +11,27 @@ package recommendation_system.raters;
  *
  ****************************************************************/
 
+/**
+ * <p>
+ *  Class to store all information about raters
+ *  </p>
+ *
+ *  <p>
+ *  The class contains the necessary methods for:
+ *  <ul>
+ *  <li> Initialize hashmap ourRaters </li>
+ *  <li> Add ratings </li>
+ *  <li> Add rater ratings </li>
+ *  <li> Get a rater </li>
+ *  <li> Get the list of the raters </li>
+ *  <li> Get the number of the raters </li>
+ *  </ul>
+ *  </p>
+ *
+ *  @since 30/12/22
+ *  @version 1.0
+ */
+
 import recommendation_system.edu.duke.FileResource;
 import org.apache.commons.csv.CSVParser;
 import org.apache.commons.csv.CSVRecord;

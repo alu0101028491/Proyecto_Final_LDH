@@ -22,6 +22,30 @@ import java.lang.System.Logger;
  *
  ****************************************************************/
 
+/**
+ * <p>
+ *  Class to test the methods on ThirdRatings
+ *  </p>
+ *
+ *  <p>
+ *  The class contains the necessary methods for:
+ *  <ul>
+ *  <li> Print average ratings </li>
+ *  <li> Get average ratings of the movies </li>
+ *  <li> Print average ratings by year </li>
+ *  <li> Print average ratings by genre </li>
+ *  <li> Print average ratings by minutes </li>
+ *  <li> Print average ratings by directors </li>
+ *  <li> Print average ratings by year and genre </li>
+ *  <li> Print average ratings by directors and minutes </li>
+ *  </ul>
+ *  </p>
+ *
+ *  @since 30/12/22
+ *  @version 1.0
+ */
+
+
 public class MovieRunnerWithFilters {
 
     private Logger logger = System.getLogger(MovieRunnerWithFilters.class.getName());

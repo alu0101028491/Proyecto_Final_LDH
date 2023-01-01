@@ -24,6 +24,28 @@ import java.util.HashMap;
  *                More method need change.......
  *
  ***************************************************************************/
+
+/**
+ * <p>
+ *  This class uses a HashMap to store all the information about the ratings associated with a rater
+ *  </p>
+ *
+ *  <p>
+ *  The class contains the necessary methods for:
+ *  <ul>
+ *  <li> Add ratings </li>
+ *  <li> Get ID of the movies </li>
+ *  <li> Get ratings of the movies </li>
+ *  <li> Prove if the movie has a rating </li>
+ *  <li> Get the number of the rated movies </li>
+ *  <li> Get rated movies </li>
+ *  </ul>
+ *  </p>
+ *
+ *  @since 30/12/22
+ *  @version 1.0
+ */
+
 public class EfficientRater implements Rater {
     private String myID;
     /* Change the ArrayList of type Rating private variable to a HashMap<String,Rating>.
