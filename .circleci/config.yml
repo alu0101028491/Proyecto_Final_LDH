@@ -13,10 +13,16 @@ jobs:
           name: Build
           command: mvn -B -DskipTests clean package
       - run:
-          name: Test
-          command: mvn test
+          name: Verify
+          command: mvn -B verify
+      - run:
+          name: Save test results
+          command: |
+            mkdir -p ~/test-results/junit/
+            find . -type f -regex ".*/target/surefire-reports/.*xml" -exec cp {} ~/test-results/junit/ \;
+          when: always
       - store_test_results:
-          path: target/surefire-reports
+          path: ~/test-results
 
 
 workflows:
