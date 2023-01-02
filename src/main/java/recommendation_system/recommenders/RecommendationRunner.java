@@ -5,7 +5,6 @@ import recommendation_system.movies.MovieDatabase;
 import recommendation_system.raters.RaterDatabase;
 import recommendation_system.ratings.Rating;
 import recommendation_system.filters.TrueFilter;
-
 import java.security.SecureRandom;
 import java.util.ArrayList;
 import java.util.Random;
@@ -14,8 +13,11 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.StandardOpenOption;
 import java.io.IOException;
-
 import java.lang.System.Logger;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 
 /**
  * <p>
@@ -330,9 +332,17 @@ public class RecommendationRunner implements Recommender {
         
 
     }
-        public static void main(String[] args) {
+        public static void main(String[] args) throws IOException {
             RecommendationRunner a = new RecommendationRunner();
             a.getItemsToRate();
-            a.printRecommendationsFor("67");
+
+			BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+			System.out.println("Enter the rater to be analyzed - Range:1 - 1048");
+			System.out.print("Enter the rater ID: ");
+			try {
+				a.printRecommendationsFor(br.readLine());
+			} catch(NullPointerException npe) {
+				System.err.println("This Rater does not exist!");
+			}
         }
 }
