@@ -33,6 +33,7 @@ public class MinutesFilter implements Filter {
     }
 
     /**
+     * This method proves if the movie is within the minutes that the user wants
      * @param id A string variable representing the ID of the movie
      * @return Boolean - True if movie is within the minutes that the user wants to filter - False otherwise
      */

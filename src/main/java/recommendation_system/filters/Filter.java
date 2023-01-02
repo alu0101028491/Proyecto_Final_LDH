@@ -16,9 +16,11 @@ package recommendation_system.filters;
  *  @since 13/12/22
  *  @version 1.0
  */
+
 public interface Filter {
 
     /**
+     * This method prove if the movie satisfies certain criteria
      * @param id A string variable representing the ID of the movie
      * @return Boolean - True if the movie satisfies the criteria in the method - False otherwise
      */

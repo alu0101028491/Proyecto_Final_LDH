@@ -31,6 +31,7 @@ public class DirectorsFilter implements Filter {
     }
 
     /**
+     * This method proves if the movie has any of the directors that the user want
      * @param id A string variable representing the ID of the movie
      * @return Boolean - True if movie has one of the directors the user wants to filter - False otherwise
      */

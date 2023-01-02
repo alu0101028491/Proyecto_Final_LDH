@@ -28,7 +28,7 @@ public class AllFilters implements Filter {
     }
 
     /**
-     * Add a filter to our filter collection
+     * This method add a filter to our filter collection
      * @param f Filter to be added
      */
     public void addFilter(Filter f) {
@@ -36,6 +36,7 @@ public class AllFilters implements Filter {
     }
 
     /**
+     * This method proves if the movie satisfies the criteria
      * @param id A string variable representing the ID of the movie
      * @return Boolean - True if the movie satisfies the criteria in the method - False otherwise
      */

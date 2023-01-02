@@ -31,6 +31,7 @@ public class GenreFilter implements Filter {
     }
 
     /**
+     * This method proves if the movie has the genres that the user want
      * @param id A string variable representing the ID of the movie
      * @return Boolean - True if movie has one of the genres that the user wants to filter - False otherwise
      */

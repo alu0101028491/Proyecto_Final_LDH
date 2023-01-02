@@ -30,6 +30,7 @@ public class YearAfterFilter implements Filter {
     }
 
     /**
+     * This method proves if the movie was released after or on a certain year
      * @param id A string variable representing the ID of the movie
      * @return Boolean - True if movie was released after or on the year that the user wants to filter - False otherwise
      */
