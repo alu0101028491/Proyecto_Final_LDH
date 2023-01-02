@@ -38,7 +38,7 @@ public class PlainRater implements Rater {
     }
 
     /**
-     * Adds a rating to the ArrayList of ratings associated with a user
+     * This method adds a rating to the ArrayList of ratings associated with a user
      * @param item A String variable representing the ID of the movie
      * @param rating A double variable representing the rating of the movie
      */
@@ -47,7 +47,7 @@ public class PlainRater implements Rater {
     }
 
     /**
-     * Verify if a user has rated a particular movie
+     * This method verify if a user has rated a particular movie
      * @param item A String variable representing the ID of the movie
      * @return Boolean - True if the user has rated the movie - False otherwise
      */
@@ -62,6 +62,7 @@ public class PlainRater implements Rater {
     }
 
     /**
+     * This method gets the ID of the raters
      * @return String - ID of the rater
      */
     public String getID() {
@@ -69,6 +70,7 @@ public class PlainRater implements Rater {
     }
 
     /**
+     * This method gets the rating of the movie
      * @param item A String variable representing the ID of the movie
      * @return double - Value associated with a specific movie rating - If there is no rating -1
      */
@@ -83,6 +85,7 @@ public class PlainRater implements Rater {
     }
 
     /**
+     * This method gets the number of the ratings in the list
      * @return int - Size of the ratings ArrayList
      */
     public int numRatings() {
@@ -90,6 +93,7 @@ public class PlainRater implements Rater {
     }
 
     /**
+     * This method gets list of the movies rated
      * @return ArrayList<String> - ID of all movies rated by a user
      */
     public ArrayList<String> getItemsRated() {

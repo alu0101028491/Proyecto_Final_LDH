@@ -1,16 +1,5 @@
 package recommendation_system.raters;
 
-/***************************************************************
- *  Name:    Wei Xu
- *
- *  Date: Dec 13th, 2019
- *
- *  Description:  -------------------STEP FOUR--------
- *                 The class RaterDatabase—This class is an efficient way to get
- *                 information about raters.
- *
- ****************************************************************/
-
 /**
  * <p>
  *  Class to store all information about raters
@@ -50,19 +39,27 @@ public class RaterDatabase {
      * the HashMap ourRaters if it does not exist.
      **/
     private static void initialize() {
-        // this method is only called from addRatings
+        // This method is only called from addRatings
         if (ourRaters == null) {
             ourRaters = new HashMap<>();
         }
     }
-    
+
+    /**
+     * This method initialize the hashmap ourRaters
+     * @param filename - A String variable representing the filename
+     */
     public static void initialize(String filename) {
         if (ourRaters == null) {
             ourRaters = new HashMap<>();
             addRatings("data/" + filename);
         }
     }
-    
+
+    /**
+     * This method add the ratings
+     * @param filename - A String variable representing de filename
+     */
     public static void addRatings(String filename) {
         initialize();
         FileResource fr = new FileResource(filename);
@@ -74,7 +71,13 @@ public class RaterDatabase {
             addRaterRating(id, item, Double.parseDouble(rating));
         }
     }
-    
+
+    /**
+     * This method add the raters
+     * @param raterID - A String variable representing the ID of the rater
+     * @param movieID - A String variable representing the ID of the movie
+     * @param rating - A double variable representing the rating
+     */
     public static void addRaterRating(String raterID, String movieID, double rating) {
         initialize();
         Rater rater = null;
@@ -84,22 +87,35 @@ public class RaterDatabase {
             rater = new EfficientRater(raterID);
             ourRaters.put(raterID, rater);
         }
-        rater.addRating(movieID, rating);//this is the method in EfficientRater class
+        rater.addRating(movieID, rating);//This is the method in EfficientRater class
     }
-    
+
+    /**
+     * This method gets raters ID
+     * @param id - A String variable representing the ID of the rater
+     * @return ID of the rater
+     */
     public static Rater getRater(String id) {
         initialize();
         
         return ourRaters.get(id);
     }
-    
+
+    /**
+     * This method get the list of raters
+     * @return Arraylist<Rater> of raters
+     */
     public static ArrayList<Rater> getRaters() {
         initialize();
         ArrayList<Rater> list = new ArrayList<>(ourRaters.values());
         
         return list;
     }
-    
+
+    /**
+     * This method gets the number of raters
+     * @return Integer - Number of raters
+     */
     public static int size() {
         return ourRaters.size();
     }

@@ -4,27 +4,6 @@ import recommendation_system.ratings.Rating;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-/***************************************************************************
- *  Name:    Wei Xu
- *
- *  Date: Dec 12th, 2019
- *
- *  Description:  -------------------STEP Three----------------------------
- *                Create a new class named EfficientRater, and copy the
- *                PlainRater class into this class. You will make several
- *                changes to this class, including:
- *
- *                Change the ArrayList of type Rating private variable to a
- *                HashMap<String,Rating>. The key in the HashMap is a movie ID,
- *                and its value is a rating associated with this movie.
- *                You will need to change addRating to instead add a new Rating
- *                to the HashMap with the value associated with the movie ID
- *                String item as the key in the HashMap. The method hasRating
- *                should now be much shorter; it no longer needs a loop.
- *                More method need change.......
- *
- ***************************************************************************/
-
 /**
  * <p>
  *  This class uses a HashMap to store all the information about the ratings associated with a rater
@@ -48,15 +27,11 @@ import java.util.HashMap;
 
 public class EfficientRater implements Rater {
     private String myID;
-    /* Change the ArrayList of type Rating private variable to a HashMap<String,Rating>.
-       The key in the HashMap is a movie ID, and
-        its value is a rating associated with this movie.*/
-    //private HashMap<String, ArrayList<Rating>> myRatings;//why not this one?
     private HashMap<String, Rating> myRatings;
 
     /**
      *
-     * @param id - A String variable representing the ID
+     * @param id - A String variable representing the IMDB ID of the movie
      */
     public EfficientRater(String id) {
         myID = id;
@@ -64,35 +39,35 @@ public class EfficientRater implements Rater {
     }
 
     /**
-     *
-     * @param item - A String variable
+     * This method adds ratings to the list
+     * @param item - A String variable representing IMDB ID of the movie
      * @param rating - A variable representing the rating
      */
     public void addRating(String item, double rating) {
-        myRatings.put(item, new Rating(item, rating));//item is string id?
+        myRatings.put(item, new Rating(item, rating));
     }
 
     /**
-     *
-     * @param item
-     * @return
+     * This method proves if the list contains the ID of the movie
+     * @param item - A String variable representing IMDB ID of the movie
+     * @return Boolean - True if the list contains the ID of the movie - False otherwise
      */
     public boolean hasRating(String item) {
         return myRatings.containsKey(item);
     }
 
     /**
-     *
-     * @return
+     * This method gets the ID of the movie
+     * @return Integer - ID of the movie
      */
     public String getID() {
         return myID;
     }
 
     /**
-     *
-     * @param item
-     * @return
+     * This method gets the rating of the movie
+     * @param item - A String variable representing ID
+     * @return Double - Rating of the movie
      */
     public double getRating(String item) {
         if (myRatings.containsKey(item)) {
@@ -102,16 +77,16 @@ public class EfficientRater implements Rater {
     }
 
     /**
-     *
-     * @return
+     * This method gets the number of ratings on the list
+     * @return Integer - Number of ratings on the list
      */
     public int numRatings() {
         return myRatings.size();
     }
 
     /**
-     *
-     * @return
+     * This method gets the list of the rated movies
+     * @return Arraylist<String> of ratings
      */
     public ArrayList<String> getItemsRated() {
         ArrayList<String> list = new ArrayList<>(myRatings.keySet());
