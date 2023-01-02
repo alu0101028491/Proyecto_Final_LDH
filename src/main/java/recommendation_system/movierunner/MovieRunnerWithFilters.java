@@ -8,20 +8,6 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.lang.System.Logger;
 
-/***************************************************************
- *  Name:    Wei Xu
- *
- *  Date: Dec 12th, 2019
- *
- *  Description:  -------------------STEP THREE--------
- *                 Create a new class named MovieRunnerWithFilters that
- *                 you will use to find the average rating of movies using
- *                 different filters.
- *                 Copy the printAverageRatings method from the MovieRunnerAverage
- *                 class into this class. You will make several changes to this method:
- *
- ****************************************************************/
-
 /**
  * <p>
  *  Class to test the methods on ThirdRatings
@@ -56,8 +42,12 @@ public class MovieRunnerWithFilters {
     static final String RATINGSHORT = "data/ratings_short.csv";
     static final String RATEDMOVIES = "ratedmovies_short.csv";
 
+
+    /**
+     * This method prints average ratings
+     */
     public void printAverageRatings() {
-        ThirdRatings tr = new ThirdRatings(RATINGSHORT);//do i need put filename here?
+        ThirdRatings tr = new ThirdRatings(RATINGSHORT);
         MovieDatabase.initialize(RATEDMOVIES);
         logger.log(Logger.Level.INFO, MOVIESIZE + MovieDatabase.size());
         logger.log(Logger.Level.INFO, RATERSIZE + tr.getRaterSize());
@@ -69,8 +59,11 @@ public class MovieRunnerWithFilters {
         }
     }
 
+    /**
+     * This method gets the average rating of one movie
+     */
     public void getAverageRatingOneMovie() {
-        ThirdRatings sr = new ThirdRatings(RATINGSHORT);//do i need put filename here?
+        ThirdRatings sr = new ThirdRatings(RATINGSHORT);
         ArrayList<Rating> ratingList = sr.getAverageRatings(1);
         String movieTitle = "The Godfather";
         boolean exist = false;
@@ -85,8 +78,11 @@ public class MovieRunnerWithFilters {
         }
     }
 
+    /**
+     * This method prints average ratings by year
+     */
     public void printAverageRatingsByYear() {
-        ThirdRatings tr3 = new ThirdRatings(RATINGSHORT);//do i need put filename here?
+        ThirdRatings tr3 = new ThirdRatings(RATINGSHORT);
         MovieDatabase.initialize(RATEDMOVIES);
         logger.log(Logger.Level.INFO, MOVIESIZE + MovieDatabase.size());
         logger.log(Logger.Level.INFO, RATERSIZE + tr3.getRaterSize());
@@ -99,8 +95,11 @@ public class MovieRunnerWithFilters {
         }
     }
 
+    /**
+     * This method prints average ratings by genre
+     */
     public void printAverageRatingsByGenre() {
-        ThirdRatings tr4 = new ThirdRatings(RATINGSHORT);//do i need put filename here?
+        ThirdRatings tr4 = new ThirdRatings(RATINGSHORT);
         MovieDatabase.initialize(RATEDMOVIES);
         logger.log(Logger.Level.INFO, MOVIESIZE + MovieDatabase.size());
         logger.log(Logger.Level.INFO, RATERSIZE + tr4.getRaterSize());
@@ -113,8 +112,11 @@ public class MovieRunnerWithFilters {
         }
     }
 
+    /**
+     * This method prints average ratings by minutes
+     */
     public void printAverageRatingsByMinutes() {
-        ThirdRatings tr5 = new ThirdRatings(RATINGSHORT);//do i need put filename here?
+        ThirdRatings tr5 = new ThirdRatings(RATINGSHORT);
         MovieDatabase.initialize(RATEDMOVIES);
         logger.log(Logger.Level.INFO, MOVIESIZE + MovieDatabase.size());
         logger.log(Logger.Level.INFO, RATERSIZE + tr5.getRaterSize());
@@ -127,12 +129,14 @@ public class MovieRunnerWithFilters {
         }
     }
 
+    /**
+     * This method prints average ratings by directors
+     */
     public void printAverageRatingsByDirectors() {
-        ThirdRatings tr5 = new ThirdRatings(RATINGSHORT);//do i need put filename here?
+        ThirdRatings tr5 = new ThirdRatings(RATINGSHORT);
         MovieDatabase.initialize(RATEDMOVIES);
         logger.log(Logger.Level.INFO, MOVIESIZE + MovieDatabase.size());
         logger.log(Logger.Level.INFO, RATERSIZE + tr5.getRaterSize());
-        //what if i use DirectorsFilter d instead of Filter?
         Filter d = new DirectorsFilter("Charles Chaplin,Michael Mann,Spike Jonze");
         ArrayList<Rating> ratingList = tr5.getAverageRatingsByFilter(1, d);
         logger.log(Logger.Level.INFO, FOUNDRATINGS + ratingList.size());
@@ -143,12 +147,14 @@ public class MovieRunnerWithFilters {
         }
     }
 
+    /**
+     * This method prints average ratings by year and genre
+     */
     public void printAverageRatingsByYearAfterAndGenre() {
-        ThirdRatings tr5 = new ThirdRatings(RATINGSHORT);//do i need put filename here?
+        ThirdRatings tr5 = new ThirdRatings(RATINGSHORT);
         MovieDatabase.initialize(RATEDMOVIES);
         logger.log(Logger.Level.INFO, MOVIESIZE + MovieDatabase.size());
         logger.log(Logger.Level.INFO, RATERSIZE + tr5.getRaterSize());
-        //why here must use AllFilters instead of Filter?
         AllFilters all = new AllFilters();
         all.addFilter(new GenreFilter("Romance"));
         all.addFilter(new YearAfterFilter(1980));
@@ -162,12 +168,14 @@ public class MovieRunnerWithFilters {
         }
     }
 
+    /**
+     * This method prints average ratings by directors and minutes
+     */
     public void printAverageRatingsByDirectorsAndMinutes() {
-        ThirdRatings tr5 = new ThirdRatings(RATINGSHORT);//do i need put filename here?
+        ThirdRatings tr5 = new ThirdRatings(RATINGSHORT);
         MovieDatabase.initialize(RATEDMOVIES);
         logger.log(Logger.Level.INFO, MOVIESIZE + MovieDatabase.size());
         logger.log(Logger.Level.INFO, RATERSIZE + tr5.getRaterSize());
-        //why here must use AllFilters instead of Filter?
         AllFilters all = new AllFilters();
         all.addFilter(new MinutesFilter(30, 170));
         all.addFilter(new DirectorsFilter("Spike Jonze,Michael Mann,Charles Chaplin,Francis Ford Coppola"));

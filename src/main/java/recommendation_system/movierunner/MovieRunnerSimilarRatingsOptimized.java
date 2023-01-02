@@ -8,23 +8,6 @@ import recommendation_system.ratings.Rating;
 import java.lang.System.Logger;
 import java.util.ArrayList;
 
-/***************************************************************
- *  Name:    Wei Xu
- *
- *  Date: Dec 15th, 2019
- *
- *  Description:  -------------------STEP FOUR Optimized by Wei Xu--------
- *                 Compare to FourthRating, instead of iterate all movie in the
- *                 MovieDataBase, i use the movie list that only the topSimilarRater's movie.
- *                 Greatly reduce the time.
- *
- *  * IMPORTANT NOTICE:
- *      * Weighted average algorithm optimized by WEI XU
- *      * Instead of  "sum of (similar rating(i) *rating of the movie(i))/count of the raters"
- *      * !!!!!I use  "sum of (similar rating(i) *rating of the movie(i))/ sum of the similar rating(i)", will achieve better results.
- *
- ****************************************************************/
-
 /**
  * <p>
  *  Class to test the methods on FourthRatings
@@ -33,7 +16,7 @@ import java.util.ArrayList;
  *  <p>
  *  The class contains the necessary methods for:
  *  <ul>
- *  <li> Print similar ratings </li>
+ *  <li> Find and print similar ratings </li>
  *  </ul>
  *  </p>
  *
@@ -47,9 +30,11 @@ public class MovieRunnerSimilarRatingsOptimized {
 	
 	private static Logger loggerStatic = System.getLogger(MovieRunnerSimilarRatingsOptimized.class.getName());
 
-	
+    /**
+     * This method finds and prints similar ratings
+     */
     public void printSimilarRatings() {
-        FourthRatingsOptimized tr = new FourthRatingsOptimized();//do i need put filename here?
+        FourthRatingsOptimized tr = new FourthRatingsOptimized();
         ArrayList<Rating> ratingList = tr.getSimilarRatings("65", 20, 5);
         logger.log(Logger.Level.INFO, "Found ratings for movies : " + ratingList.size());
         
@@ -57,7 +42,7 @@ public class MovieRunnerSimilarRatingsOptimized {
         	logger.log(Logger.Level.INFO, "%-10.2f%s%n", ratingList.get(i).getValue(), MovieDatabase.getTitle(ratingList.get(i).getItem()));
         }
     }
-    
+
     //    public void printSimilarRatingsByGenre() {
     //        FourthRatingsOptimizedByWeiXu tr4 = new FourthRatingsOptimizedByWeiXu();//do i need put filename here?
     //        ArrayList<Rating> ratingList = tr4.getSimilarRatingsByFilter("65", 20, 5, new GenreFilter("Action"));
@@ -116,6 +101,7 @@ public class MovieRunnerSimilarRatingsOptimized {
     //        }
     //    }
     //
+
     public static void main(String[] args) {
         MovieRunnerSimilarRatingsOptimized mra = new MovieRunnerSimilarRatingsOptimized();
 
@@ -127,16 +113,14 @@ public class MovieRunnerSimilarRatingsOptimized {
         MovieDatabase.initialize("ratedmoviesfull.csv");
         RaterDatabase.initialize("ratings.csv");
 
-        loggerStatic.log(Logger.Level.INFO, "Movie size (# of movie in list) : " + MovieDatabase.size());// need initialize first.
+        loggerStatic.log(Logger.Level.INFO, "Movie size (# of movie in list) : " + MovieDatabase.size());
         loggerStatic.log(Logger.Level.INFO, "Rater size (# of ppl who rates) : " + RaterDatabase.size());
         loggerStatic.log(Logger.Level.INFO, "---------------Test: printSimilarRatings()----------------");
         double start1 = System.nanoTime();
         mra.printSimilarRatings();
         double duration1 = (System.nanoTime() - start1) / 1000000000;
         loggerStatic.log(Logger.Level.INFO, "---------------Duration = " + duration1 + "s-------------");
-        // MovieRunnerSimilarRatings duration                  : 66.2
-        // MovieRunnerSimilarRatingsOptimizedByWeiXu: duration : 17.6
-        
+
         //        System.out.println("---------------Test: printSimilarRatingsByGenre()----------------");
         //        double start2 = System.nanoTime();
         //        mra.printSimilarRatingsByGenre();

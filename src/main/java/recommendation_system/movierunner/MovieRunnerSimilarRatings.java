@@ -9,24 +9,6 @@ import recommendation_system.ratings.Rating;
 import java.util.ArrayList;
 import java.lang.System.Logger;
 
-/***************************************************************
- *  Name:    Wei Xu
- *
- *  Date: Dec 13-14th, 2019
- *
- *  Description:  -------------------STEP FOUR--------
- *                 similar to the MovieRunnerWithFilters class in step three.
- *                 however, i applied two algorithm for calculating the weighted average ranking.
- *                 that's why my output of WEI XU algorithm is different from the DUKE algorithm.
- *                 mine is more accurate for the movie ranking and recommendations.
- *
- *  * IMPORTANT NOTICE:
- *      * Weighted average algorithm optimized by WEI XU
- *      * Instead of  "sum of (similar rating(i) *rating of the movie(i))/count of the raters"
- *      * !!!!!I use  "sum of (similar rating(i) *rating of the movie(i))/ sum of the similar rating(i)", will achieve better results.
- *
- ****************************************************************/
-
 /**
  * <p>
  *  Class to test the methods on FourthRatings
@@ -57,31 +39,8 @@ public class MovieRunnerSimilarRatings {
 
 	private static Logger loggerStaticMovieRunnerSimilarRatings = System.getLogger(MovieRunnerSimilarRatings.class.getName());
 
-
     /**
-     * top 0-10 similar rater id:
-     * id = 512 rating 182.0
-     * id = 1040 rating 176.0
-     * id = 146 rating 160.0
-     * id = 934 rating 143.0
-     * id = 735 rating 126.0
-     * id = 855 rating 120.0
-     * id = 769 rating 116.0
-     * id = 431 rating 105.0
-     * id = 76 rating 99.0
-     * id = 168 rating 99.0
-     * <p>
-     * top 10-20 rater id
-     * id = 463 rating 99.0
-     * id = 570 rating 98.0
-     * id = 678 rating 97.0
-     * id = 882 rating 96.0
-     * id = 846 rating 96.0
-     * id = 124 rating 91.0
-     * id = 555 rating 91.0
-     * id = 590 rating 82.0
-     * id = 25 rating 80.0
-     * id = 88 rating 79.0
+     * Method to print similar ratings
      */
     public void printSimilarRatings() {
         FourthRatings tr = new FourthRatings();
@@ -94,6 +53,9 @@ public class MovieRunnerSimilarRatings {
         }
     }
 
+    /**
+     * Method to print similar ratings by genre
+     */
     public void printSimilarRatingsByGenre() {
         FourthRatings tr4 = new FourthRatings();
         ArrayList<Rating> ratingList = (ArrayList<Rating>) tr4.getSimilarRatingsByFilter("65", 20, 5, new GenreFilter("Action"));
@@ -106,8 +68,11 @@ public class MovieRunnerSimilarRatings {
 
     }
 
+    /**
+     * Method to print similar ratings by director
+     */
     public void printSimilarRatingsByDirector() {
-        FourthRatings tr4 = new FourthRatings();//do i need put filename here?
+        FourthRatings tr4 = new FourthRatings();
         ArrayList<Rating> ratingList = (ArrayList<Rating>) tr4.getSimilarRatingsByFilter("1034", 10, 3, new DirectorsFilter("Clint Eastwood,Sydney Pollack,David Cronenberg,Oliver Stone"));
         loggerMovieRunnerSimilarRatings.log(Logger.Level.INFO, foundRatingsPrint + ratingList.size());
         int printNum = ratingList.size();
@@ -121,8 +86,11 @@ public class MovieRunnerSimilarRatings {
 
     }
 
+    /**
+     * Method to print similar ratings by genre and minutes
+     */
     public void printSimilarRatingsByGenreAndMinutes() {
-        FourthRatings tr4 = new FourthRatings();//do i need put filename here?
+        FourthRatings tr4 = new FourthRatings();
         AllFilters a = new AllFilters();
         a.addFilter(new GenreFilter("Adventure"));
         a.addFilter(new MinutesFilter(100, 200));
@@ -139,6 +107,9 @@ public class MovieRunnerSimilarRatings {
 
     }
 
+    /**
+     * Method to print similar ratings by year and minutes
+     */
     public void printSimilarRatingsByYearAfterAndMinutes() {
         FourthRatings tr4 = new FourthRatings();
         AllFilters a = new AllFilters();

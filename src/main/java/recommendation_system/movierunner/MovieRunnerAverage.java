@@ -30,8 +30,8 @@ public class MovieRunnerAverage {
 
 
     /**
-     *
-     * @param ratedMovies - A String varable representing the rated movies
+     * This method prints the average ratings
+     * @param ratedMovies - A String variable representing the rated movies
      * @param ratings - A String variable representing the ratings of the movies
      */
     public void printAverageRatings(String ratedMovies, String ratings) {
@@ -46,7 +46,7 @@ public class MovieRunnerAverage {
     }
 
     /**
-     *
+     * This method gets the average rating of one movie
      * @param movieTitle - A String variable representing the title of the movies
      * @param ratedMovies - A String variable representing the rated movies
      * @param ratings - A String variable representing the ratings of the movies
