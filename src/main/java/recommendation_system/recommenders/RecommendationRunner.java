@@ -17,33 +17,29 @@ import java.io.IOException;
 
 import java.lang.System.Logger;
 
-/***************************************************************
- *  Name:    Wei Xu
+/**
+ * <p>
+ *  Class to run the methods on the recommender interface and write the HTML
+ *  </p>
  *
- *  Date: Dec 16th, 2019
+ *  <p>
+ *  The class contains the necessary methods for:
+ *  <ul>
+ *  <li> Get the file name </li>
+ *  <li> Set the file name </li>
+ *  <li> Get the path to file </li>
+ *  <li> Set the path to file </li>
+ *  <li> Get the movies to rate </li>
+ *  <li> Write HTMLHead </li>
+ *  <li> Write CSS </li>
+ *  <li> Write HTMLBody </li>
+ *  <li> Print recommendations </li>
+ *  </ul>
+ *  </p>
  *
- *  Description:  -------------------STEP FIVE--------
- *                 a class RecommendationRunner that implements Recommender.
- *                 The two methods you will need to implement are:
- *                • getItemsToRate()
- *                • printRecommendationsFor()
- *
- *                When the user first visits the recommender site, our code
- *                will call the method getItemsToRate() to get a list of movies
- *                to display on the web page for users to rate.
- *                After the user submits their ratings, our code will call the
- *                method printRecommendationsFor() to get your recommendations
- *                based on the user's ratings and display them.
- *
- *               Style the CSS take a long time to design and debug on CodePen.
- *                https://codepen.io/wei-paradox-xu/pen/XWJjyKV?editors=1100
- *
- *  * IMPORTANT NOTICE:
- *      * Weighted average algorithm optimized by WEI XU
- *      * Instead of  "sum of (similar rating(i) *rating of the movie(i))/count of the raters"
- *      * !!!!!I use  "sum of (similar rating(i) *rating of the movie(i))/ sum of the similar rating(i)", will achieve better results.
- *
- ****************************************************************/
+ *  @since 1/1/23
+ *  @version 1.0
+ */
 
 public class RecommendationRunner implements Recommender {
 
@@ -57,21 +53,23 @@ public class RecommendationRunner implements Recommender {
 	private String tdEnd = "</td>";
 	
 	/**
-	 * @return the filename
+	 * This method gets the file name of the resulting HTML
+	 * @return String - filename
 	 */
 	public String getFilename() {
 		return filename;
 	}
 
 	/**
-	 * set File name to Resulting html 
-	 * @param filename the filename to set
+	 * This method Sets the File name to resulting HTML
+	 * @param filename The filename to set
 	 */
 	public void setFilename(String filename) {
 		this.filename = filename;
 	}
 
 	/**
+	 * This method gets the path to the resulting HTML
 	 * @return the pathToFile
 	 */
 	public Path getPathToFile() {
@@ -79,18 +77,18 @@ public class RecommendationRunner implements Recommender {
 	}
 
 	/**
-	 * set path to write Resulting html 
+	 * This method set the path to write resulting HTML
 	 * @param pathToFile set the path To write File
 	 */
 	public void setPathToFile(Path pathToFile) {
 		this.pathToFile = pathToFile;
 	}
 
-    /**
-     * randomly pick 10 movie to let the user to rate.
-     * will optimize soon to rate the most popular movie.
-     * Because the most movies i met for rating that i'm not familiar with.
-     */
+	/**
+	 * This method randomly pick 10 movie to let the user to rate
+	 * @return Arraylist<String> of the movies to be rate
+	 */
+
     @Override
     public ArrayList<String> getItemsToRate() {
         ArrayList<String> movieToBeRate = new ArrayList<>();
@@ -105,6 +103,9 @@ public class RecommendationRunner implements Recommender {
         return movieToBeRate;
     }
 
+	/**
+	 * This method writes HTML Head
+	 */
     public void writeHtmlHead() throws IOException {
 
     	String textHead = "<!DOCTYPE html>\n"
@@ -119,6 +120,9 @@ public class RecommendationRunner implements Recommender {
 
     }
 
+	/**
+	 * This method writes CSS
+	 */
     public void writeCss() throws IOException {
 
 
@@ -168,6 +172,10 @@ public class RecommendationRunner implements Recommender {
     	Files.writeString(pathToFile, textCss, StandardOpenOption.APPEND);
     }
 
+	/**
+	 * This method writes HTML Body
+	 * @param outID - Arraylist<Rating> of the movies
+	 */
     public void writeBody(ArrayList<Rating> outID) throws IOException {
     	
     	StringBuilder stringBuilderBody = new StringBuilder();
@@ -203,6 +211,10 @@ public class RecommendationRunner implements Recommender {
     }
 
 
+	/**
+	 * This method prints the recommendations
+	 * @param webRaterID - A String parameter representing a new rater
+	 */
     @Override
     public void printRecommendationsFor(String webRaterID) {
         MovieDatabase.initialize("ratedmoviesfull.csv");
