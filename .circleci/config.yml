@@ -1,0 +1,22 @@
+version: 2.1
+orbs:
+  maven: circleci/maven@1.4.0
+jobs:
+  maven_test_storing:
+    docker:
+      - image: cimg/openjdk:11.0
+    steps:
+      - checkout
+      - run:
+          name: Build
+          command: mvn -B -DskipTests clean package
+      - run:
+          name: Verify
+          command: mvn -B verify
+      - store_test_results:
+          path: target/surefire-reports
+
+workflows:
+  maven_test:
+    jobs:
+      - maven_test_storing
