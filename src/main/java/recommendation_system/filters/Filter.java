@@ -16,7 +16,6 @@ package recommendation_system.filters;
  *  @since 13/12/22
  *  @version 1.0
  */
-
 public interface Filter {
 
     /**

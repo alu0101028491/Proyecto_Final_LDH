@@ -37,8 +37,6 @@ public class FirstRatings {
     private static Logger staticLogger = System.getLogger(FirstRatings.class.getName());
 
     /**
-     * This method process every record from the CSV file
-     * and return an ArrayList of type Movie with all of the movie data from the file
      * @param fileName A file of movie information
      * @return ArrayList<Movie> with all of the movie data from the file
      */

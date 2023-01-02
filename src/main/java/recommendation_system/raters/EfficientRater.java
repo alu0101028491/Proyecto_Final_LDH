@@ -30,7 +30,7 @@ public class EfficientRater implements Rater {
     private HashMap<String, Rating> myRatings;
 
     /**
-     *
+     * Builder overload
      * @param id - A String variable representing the IMDB ID of the movie
      */
     public EfficientRater(String id) {
@@ -39,7 +39,7 @@ public class EfficientRater implements Rater {
     }
 
     /**
-     * This method adds ratings to the list
+     * This method adds ratings to the HashMap
      * @param item - A String variable representing IMDB ID of the movie
      * @param rating - A variable representing the rating
      */
@@ -48,7 +48,7 @@ public class EfficientRater implements Rater {
     }
 
     /**
-     * This method proves if the list contains the ID of the movie
+     * This method proves if the HashMap contains the ID of the movie
      * @param item - A String variable representing IMDB ID of the movie
      * @return Boolean - True if the list contains the ID of the movie - False otherwise
      */
@@ -77,7 +77,7 @@ public class EfficientRater implements Rater {
     }
 
     /**
-     * This method gets the number of ratings on the list
+     * This method gets the number of ratings on the HashMap
      * @return Integer - Number of ratings on the list
      */
     public int numRatings() {

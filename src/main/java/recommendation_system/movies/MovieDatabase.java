@@ -61,9 +61,9 @@ public class MovieDatabase {
     }
 
     /**
-     * This method prove if the list contains the ID of the movie
+     * This method prove if the HashMap contains the ID of the movie
      * @param id - A String variable representing the ID of the movie
-     * @return Boolean - True if the list contains the ID - False otherwise
+     * @return Boolean - True if the HashMap contains the ID - False otherwise
      */
     public static boolean containsID(String id) {
         initialize();
@@ -102,7 +102,7 @@ public class MovieDatabase {
 
     /**
      * @param id - A String variable representing the ID of the movie
-     * @return ID of the movie
+     * @return Movie - Film object to be analyzed
      */
     public static Movie getMovie(String id) {
         initialize();
@@ -151,7 +151,7 @@ public class MovieDatabase {
 
     /**
      * This method gets the number of movies stored on the list
-     * @return Int - Number of movies stored on the list
+     * @return Int - Number of movies stored on the HashMap
      */
     public static int size() {
         return ourMovies.size();

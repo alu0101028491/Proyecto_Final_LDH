@@ -4,7 +4,6 @@ import recommendation_system.movies.MovieDatabase;
 import recommendation_system.raters.RaterDatabase;
 import recommendation_system.ratings.FourthRatingsOptimized;
 import recommendation_system.ratings.Rating;
-
 import java.lang.System.Logger;
 import java.util.ArrayList;
 
@@ -16,7 +15,11 @@ import java.util.ArrayList;
  *  <p>
  *  The class contains the necessary methods for:
  *  <ul>
- *  <li> Find and print similar ratings </li>
+ *  <li> Print similar ratings </li>
+ *  <li> Print similar ratings by genre </li>
+ *  <li> Print similar ratings by directors </li>
+ *  <li> Print similar ratings by genre and minutes </li>
+ *  <li> Print similar ratings by year and minutes </li>
  *  </ul>
  *  </p>
  *
@@ -39,7 +42,8 @@ public class MovieRunnerSimilarRatingsOptimized {
         logger.log(Logger.Level.INFO, "Found ratings for movies : " + ratingList.size());
         
         for (int i = 0; i < 3; i++) {
-        	logger.log(Logger.Level.INFO, "%-10.2f%s%n", ratingList.get(i).getValue(), MovieDatabase.getTitle(ratingList.get(i).getItem()));
+        	logger.log(Logger.Level.INFO, ratingList.get(i).getValue() + " " +
+                    MovieDatabase.getTitle(ratingList.get(i).getItem()));
         }
     }
 

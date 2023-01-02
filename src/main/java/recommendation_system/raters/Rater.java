@@ -22,7 +22,6 @@ import java.util.ArrayList;
  *  @since 1/1/23
  *  @version 1.0
  */
-
 public interface Rater {
 
     /**

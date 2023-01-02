@@ -4,7 +4,6 @@ import recommendation_system.movies.MovieDatabase;
 import recommendation_system.filters.Filter;
 import recommendation_system.filters.TrueFilter;
 import recommendation_system.raters.Rater;
-
 import java.util.ArrayList;
 
 /**
@@ -24,7 +23,6 @@ import java.util.ArrayList;
  *  @since 1/1/23
  *  @version 1.0
  */
-
 public class ThirdRatings {
 
     private ArrayList<Rater> myRaters;
@@ -40,7 +38,7 @@ public class ThirdRatings {
 
     /**
      * Builder overload
-     * @param ratingFile - A String variable representing the rating file
+     * @param ratingFile A String variable representing the rating file
      */
     public ThirdRatings(String ratingFile) {
         FirstRatings firstRatings = new FirstRatings();
@@ -57,9 +55,9 @@ public class ThirdRatings {
 
     /**
      * This method gets the average rating by ID
-     * @param movieID - A String variable representing the ID of the movie
-     * @param minimalRaters - An integer variable representing the minimal number of raters
-     * @return Double - Average rating
+     * @param movieID A String variable representing the IMDB ID of the movie
+     * @param minimalRaters Minimum number of raters required to make an average
+     * @return Double - Average rating given to a movie by its raters
      */
     private double getAverageByID(String movieID, int minimalRaters) {
         int count = 0;
@@ -82,8 +80,8 @@ public class ThirdRatings {
 
     /**
      * This method gets the average ratings
-     * @param minimalRaters - An integer variable representing the minimal number of raters
-     * @return Arraylist<Rating> of average ratings
+     * @param minimalRaters - Minimum number of raters required to make an average
+     * @return ArrayList<Rating> - Rating of movies with their average
      */
     public ArrayList<Rating> getAverageRatings(int minimalRaters) {
         ArrayList<Rating> ratingList = new ArrayList<>();
@@ -97,10 +95,11 @@ public class ThirdRatings {
     }
 
     /**
-     * This method creates a list of all the movies that have at least minimalRaters ratings and satisfies the filter criteria
-     * @param minimalRaters - An integer variable representing the minimal number of raters
-     * @param f - Represents filters
-     * @return Arraylist<Rating> of average ratings
+     * This method creates a list of all the movies that have at least minimalRaters ratings
+     * and satisfies the filter criteria
+     * @param minimalRaters Minimum number of raters required to make an average
+     * @param f Represents filters
+     * @return ArrayList<Rating> - Rating of movies with their average
      */
     public ArrayList<Rating> getAverageRatingsByFilter(int minimalRaters, Filter f) {
         ArrayList<Rating> ratingList = new ArrayList<>();
@@ -117,25 +116,6 @@ public class ThirdRatings {
         return ratingList;
     }
 
-    //
-    //    public String getTitle(String movieID) {
-    //        for (Movie i : myMovies) {
-    //            if (i.getID().equals(movieID)) {
-    //                return i.getTitle();
-    //            }
-    //        }
-    //        return "The Movie ID was not found!";
-    //    }
-    //
-    //    public String getID(String title) {
-    //        for (Movie i : myMovies) {
-    //            if (i.getTitle().equals(title)) {
-    //                return i.getID();
-    //            }
-    //        }
-    //        return "NO SUCH TITLE";
-    //    }
-    //
 
     public static void main(String[] args) {
         ThirdRatings thirdRatings = new ThirdRatings("data/ratings_short.csv");

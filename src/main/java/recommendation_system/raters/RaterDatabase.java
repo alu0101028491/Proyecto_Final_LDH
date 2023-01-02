@@ -1,5 +1,11 @@
 package recommendation_system.raters;
 
+import recommendation_system.edu.duke.FileResource;
+import org.apache.commons.csv.CSVParser;
+import org.apache.commons.csv.CSVRecord;
+import java.util.ArrayList;
+import java.util.HashMap;
+
 /**
  * <p>
  *  Class to store all information about raters
@@ -8,7 +14,7 @@ package recommendation_system.raters;
  *  <p>
  *  The class contains the necessary methods for:
  *  <ul>
- *  <li> Initialize hashmap ourRaters </li>
+ *  <li> Initialize HashMap ourRaters </li>
  *  <li> Add ratings </li>
  *  <li> Add rater ratings </li>
  *  <li> Get a rater </li>
@@ -21,14 +27,8 @@ package recommendation_system.raters;
  *  @version 1.0
  */
 
-import recommendation_system.edu.duke.FileResource;
-import org.apache.commons.csv.CSVParser;
-import org.apache.commons.csv.CSVRecord;
-import java.util.ArrayList;
-import java.util.HashMap;
-
 public class RaterDatabase {
-    private static HashMap<String, Rater> ourRaters;//key:rater id, value: rater object
+    private static HashMap<String, Rater> ourRaters; //key:rater id, value: rater object
 
     private RaterDatabase() {
         throw new IllegalStateException("RaterDatabase class");
@@ -46,7 +46,7 @@ public class RaterDatabase {
     }
 
     /**
-     * This method initialize the hashmap ourRaters
+     * This method initialize the HashMap ourRaters
      * @param filename - A String variable representing the filename
      */
     public static void initialize(String filename) {
@@ -58,7 +58,7 @@ public class RaterDatabase {
 
     /**
      * This method add the ratings
-     * @param filename - A String variable representing de filename
+     * @param filename - A String variable representing the filename
      */
     public static void addRatings(String filename) {
         initialize();
@@ -93,7 +93,7 @@ public class RaterDatabase {
     /**
      * This method gets raters ID
      * @param id - A String variable representing the ID of the rater
-     * @return ID of the rater
+     * @return Rater - Rater to be analyzed
      */
     public static Rater getRater(String id) {
         initialize();
