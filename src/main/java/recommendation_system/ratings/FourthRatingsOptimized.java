@@ -4,7 +4,6 @@ import recommendation_system.movies.MovieDatabase;
 import recommendation_system.raters.RaterDatabase;
 import recommendation_system.filters.Filter;
 import recommendation_system.raters.Rater;
-
 import java.lang.System.Logger;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -12,6 +11,10 @@ import java.util.Collections;
 /**
  * <p>
  *  Class to get similar ratings - Phase 4 (Optimized)
+ *  Instead of iterate all movie in the MovieDataBase, we use the movie list
+ *  that only the topSimilarRater's movie. Greatly reduce the time.
+ *  DUKE: "sum of (similar rating(i) *rating of the movie(i))/count of the raters"
+ *  WEIXU: "sum of (similar rating(i) *rating of the movie(i))/ sum of the similar rating(i)"
  *  </p>
  *
  *  <p>
@@ -26,11 +29,15 @@ import java.util.Collections;
  *  @since 1/1/23
  *  @version 1.0
  */
-
 public class FourthRatingsOptimized {
 	
 	private static Logger loggerStaticFourthRatingsOptimized = System.getLogger(FourthRatingsOptimized.class.getName());
 
+    /**
+     * @param me Rater being analyzed
+     * @param r Rater used as external reference (from RaterDatabase)
+     * @return double - Scalar product of ratings between two users
+     */
     private double dotProduct(Rater me, Rater r) {
         double dp = 0;
         ArrayList<String> memovieid = me.getItemsRated();
@@ -43,10 +50,11 @@ public class FourthRatingsOptimized {
     }
 
     /**
-     * This method computes a similarity rating for each rater in the RaterDatabase to see
-     * how similar they are to the Rater whose ID is the parameter to getSimilarities.
-     * @param raterId - A String variable representing the ID of the rater
-     * @return Arraylist<Rating> of the similarities
+     * Computes a similarity rating for each rater in the RaterDatabase
+     * to see how similar they are to the Rater. It shows us the affinity
+     * of a user with other raters.
+     * @param raterId Rater to analyze (not included into the analysis)
+     * @return ArrayList - Ratings sorted from highest to lowest
      */
     private ArrayList<Rating> getSimilarities(String raterId) {
         ArrayList<Rating> simiList = new ArrayList<>();
@@ -56,91 +64,70 @@ public class FourthRatingsOptimized {
                 double dotProduct = dotProduct(RaterDatabase.getRater(raterId), r);
                 if (dotProduct > 0) {
                     simiList.add(new Rating(r.getID(), dotProduct));
-                    // System.out.println("rater id = " + r.getID() + " dotProduct " + dotProduct);
                 }
             }
         }
         Collections.sort(simiList);
         Collections.reverse(simiList);
 
-        //
-        //        for (Rating i : simiList) {
-        //            System.out.println("rater id = " + i.getItem() + " dotProduct " + i.getValue());
-        //
-        //        }
-        //
         return simiList;
     }
 
-    // combine getAverageByID and getAverageRatings;
-    // HashMap<MovieID, ArrayList<Rater>> from top numSimilarRaters.
-    //or
-    // Arraylist<movieID> from top numSimilarRaters.
-
     /**
-     * This method calculate a weighted average movie rating
-     * @param raterID - A String variable representing the ID of the raters
-     * @param numSimilarRaters - An Integer variable representing the number of similar raters
-     * @param minimalRaters - An Integer variable representing the minimal number of raters
-     * @return Arraylist<Rating> of the movies and their average ratings
+     * This method obtains the movies and their weighted average ratings using
+     * only the top numSimilarRaters with positive ratings and including only
+     * those movies that have at least minimalRaters ratings from those most
+     * similar raters (not just minimalRaters ratings overall).
+     * @param raterID Rater to analyze (not included into the analysis)
+     * @param numSimilarRaters Raters to be analyzed within the set recommended to the user
+     * @param minimalRaters Minimum number of Raters to have recommended a movie
+     * @return ArrayList - Movies and their weighted average ratings
      */
     public ArrayList<Rating> getSimilarRatings(String raterID, int numSimilarRaters, int minimalRaters) {
         ArrayList<Rating> ratingList = new ArrayList<>();
-        // Get Arraylist<movieID> from top numSimilarRaters.
+        // get Arraylist<movieID> from top numSimilarRaters.
         ArrayList<String> movidIDByTopSimilar = new ArrayList<>();
         ArrayList<Rating> simiList1 = getSimilarities(raterID);
-        //System.out.println("Total number of similar raters : " + simiList1.size());
+        // Verified number of Raters related to the user
         int num = simiList1.size();
         if (numSimilarRaters > num) {
             numSimilarRaters = num;
         }
+        // Get IDs of movies recommended by simiList1 top Raters
         for (int i = 0; i < numSimilarRaters; i++) {
             String raterID1 = simiList1.get(i).getItem();
             ArrayList<String> movieRated1 = RaterDatabase.getRater(raterID1).getItemsRated();
             for (String movieID : movieRated1) {
                 if (!movidIDByTopSimilar.contains(movieID)) {
                     movidIDByTopSimilar.add(movieID);
-                    //System.out.println("Movie id = " + movieID + " Rater id = " + raterID1);
                 }
             }
         }
-        //System.out.println("MoviebyTopSimilar Size = " + movidIDByTopSimilar.size());
-        //for (String i:)
 
-        //rating for movies in the movieIDByTopSimilar list;
-        //Filter trueFilter = new TrueFilter();
+        // Rating for movies in the movieIDByTopSimilar list;
         for (String j : movidIDByTopSimilar) {
             // Rating for one movie
             double ave = 0;
             ArrayList<Rating> simiList = getSimilarities(raterID);
-            // List<Rating> topsimiList = simiList.subList(0, numSimilarRaters);
             int count = 0;
             double total = 0;
             int simiweighttotal = 0;
-            // System.out.println("total");
+
+            // Based on the ratings of our top Raters we obtain an affinity for each film.
             for (int i = 0; i < numSimilarRaters; i++) {
-                //   System.out.println("i=" + i);
 
                 double rating = RaterDatabase.getRater(simiList.get(i).getItem()).getRating(j);
-                //System.out.println(count + " : " + "id = " + simiList.get(i).getItem() + " rating " + rating + " ave " + total);
+
                 if (rating != -1) {
                     count++;
                     total += rating * simiList.get(i).getValue();
                     simiweighttotal += simiList.get(i).getValue();
-                    //System.out.println("Movie id = " + j + " count " + count + " : " + "id = " + simiList.get(i).getItem() + " rating " + rating + " ave " + total);
-
                 }
             }
             if (count >= minimalRaters && simiweighttotal > 0)
                 ave = total / simiweighttotal;
-            //ave = total / count;
-            //System.out.println("Movie id = " + j + " count " + count + " : " + " rating " + ave + " total/count " + total / count);
-            //(9*31+10*20)/50=279+200=479/50=9.58
-            //(9*31+10*20)/2 = 479/2 = 239.5
-            // Rating for one movie end
             if (ave > 0)
                 ratingList.add(new Rating(j, ave));
-            // Rating for all movie end
         }
         Collections.sort(ratingList);
         Collections.reverse(ratingList);
@@ -150,11 +137,11 @@ public class FourthRatingsOptimized {
 
     /**
      * This method gets similar ratings following a certain criteria
-     * @param raterID - A String variable representing the ID of the raters
-     * @param numSimilarRaters - An Integer variable representing the number of similar raters
-     * @param minimalRaters minimalRaters - An Integer variable representing the minimal number of raters
+     * @param raterID Rater to analyze (not included into the analysis)
+     * @param numSimilarRaters Raters to be analyzed within the set recommended to the user
+     * @param minimalRaters Minimum number of Raters to have recommended a movie
      * @param f - Represents the filters
-     * @return Arraylist<Rating> of ratings
+     * @return ArrayList - Movies and their weighted average ratings
      */
     public ArrayList<Rating> getSimilarRatingsByFilter(String raterID, int numSimilarRaters, int minimalRaters, Filter f) {
         ArrayList<Rating> ratingList = new ArrayList<>();
@@ -176,30 +163,23 @@ public class FourthRatingsOptimized {
                 // Rating for one movie
                 double ave = 0;
                 ArrayList<Rating> simiList = getSimilarities(raterID);
-                // List<Rating> topsimiList = simiList.subList(0, numSimilarRaters);
                 int count = 0;
                 double total = 0;
                 double simiweighttotal = 0;
+
                 for (int i = 0; i < numSimilarRaters; i++) {
                     double rating = RaterDatabase.getRater(simiList.get(i).getItem()).getRating(j);
                     if (rating != -1) {
                         count++;
                         total += rating * simiList.get(i).getValue();
                         simiweighttotal += simiList.get(i).getValue();
-
-                        //System.out.println(count + " : " + "id = " + simiList.get(i).getItem() + " rating " + rating + " ave " + total);
-
                     }
                 }
                 if (count >= minimalRaters && simiweighttotal > 0)
                     ave = total / simiweighttotal;
-                //ave = total / count;
-
-                // Rating for one movie end
                 if (ave > 0)
                     ratingList.add(new Rating(j, ave));
             }
-            // Rating for all movie end
         }
         Collections.sort(ratingList);
         Collections.reverse(ratingList);
