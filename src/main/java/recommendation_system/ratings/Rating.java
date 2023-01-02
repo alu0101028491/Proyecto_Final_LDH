@@ -34,6 +34,7 @@ public class Rating implements Comparable<Rating> {
     }
 
     /**
+     * This method gets the IMDB ID of the movie
      * @return String - IMDB ID of the movie
      */
     public String getItem() {
@@ -41,6 +42,7 @@ public class Rating implements Comparable<Rating> {
     }
 
     /**
+     * This method gets the value (rating) of the movie
      * @return double - Rating of the movie (it can be used in calculations)
      */
     public double getValue() {
@@ -48,6 +50,7 @@ public class Rating implements Comparable<Rating> {
     }
 
     /**
+     * This method gets all the rating information
      * @return String - All the rating information
      */
     public String toString() {
@@ -55,7 +58,7 @@ public class Rating implements Comparable<Rating> {
     }
 
     /**
-     * Compare two ratings by their values
+     * This method compare two ratings by their values
      * @param other the object to be compared.
      * @return int - -1 lower, 1 higher, 0 equal
      */

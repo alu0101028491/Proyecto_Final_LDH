@@ -9,28 +9,28 @@ import java.lang.System.Logger;
 import java.util.ArrayList;
 import java.util.Collections;
 
-
-/***************************************************************
- *  Name:    Wei Xu
+/**
+ * <p>
+ *  Class to get similar ratings - Phase 4 (Optimized)
+ *  </p>
  *
- *  Date: Dec 15th, 2019
+ *  <p>
+ *  The class contains the necessary methods for:
+ *  <ul>
+ *  <li> Get a similarity rating for each rater </li>
+ *  <li> Get a similar ratings </li>
+ *  <li> Get a similar ratings by filter </li>
+ *  </ul>
+ *  </p>
  *
- *  Description:  -------------------STEP FOUR Optimized by Wei Xu--------
- *                 Compare to FourthRating, instead of iterate all movie in the
- *                 MovieDataBase, i use the movie list that only the topSimilarRater's movie.
- *                 Greatly reduce the time.
- *
- *  * IMPORTANT NOTICE:
- *      * Weighted average algorithm optimized by WEI XU
- *      * Instead of  "sum of (similar rating(i) *rating of the movie(i))/count of the raters"
- *      * !!!!!I use  "sum of (similar rating(i) *rating of the movie(i))/ sum of the similar rating(i)", will achieve better results.
- *
- ****************************************************************/
+ *  @since 1/1/23
+ *  @version 1.0
+ */
 
 public class FourthRatingsOptimized {
 	
 	private static Logger loggerStaticFourthRatingsOptimized = System.getLogger(FourthRatingsOptimized.class.getName());
-	
+
     private double dotProduct(Rater me, Rater r) {
         double dp = 0;
         ArrayList<String> memovieid = me.getItemsRated();
@@ -43,20 +43,11 @@ public class FourthRatingsOptimized {
     }
 
     /**
-     * Write the private method named getSimilarities, which has one String parameter
-     * named id—this method computes a similarity rating for each rater in the
-     * RaterDatabase (except the rater with the ID given by the parameter) to see
+     * This method computes a similarity rating for each rater in the RaterDatabase to see
      * how similar they are to the Rater whose ID is the parameter to getSimilarities.
-     * <p>
-     * This method returns an ArrayList of type Rating sorted by ratings from highest to
-     * lowest rating with the highest rating first and only including those raters who have a
-     * positive similarity rating since those with negative values are not similar in any way.
-     * Note that in each Rating object the "item field is a rater’s ID, and the value field
-     * is the dot product" comparison between that rater and the rater whose ID is the
-     * parameter to getSimilarities.
-     * <p>
-     * Be sure not to use the dotProduct method with parameter id and itself!
-     */////////////////////String id is the target user id;
+     * @param raterId - A String variable representing the ID of the rater
+     * @return Arraylist<Rating> of the similarities
+     */
     private ArrayList<Rating> getSimilarities(String raterId) {
         ArrayList<Rating> simiList = new ArrayList<>();
         ArrayList<Rater> raters = RaterDatabase.getRaters();
@@ -71,27 +62,7 @@ public class FourthRatingsOptimized {
         }
         Collections.sort(simiList);
         Collections.reverse(simiList);
-        /**
-         * 1	68646	10
-         * 1	113277	10
-         * 2	1798709	10
-         * 2	790636	7
-         * 2	68646	9
-         * 3	1798709	9
-         * 4	68646	8
-         * 4	1798709	6
-         * 5	68646	9
-         * 5	1798709	8
-         *
-         * id = 2;
-         * rater id = 1; ((10-5)*(9-5) = 20
-         * rater id = 5; 4*4+5*3 = 31
-         * ////output
-         * rater id = 5 dotProduct 31.0
-         * rater id = 3 dotProduct 20.0
-         * rater id = 1 dotProduct 20.0
-         * rater id = 4 dotProduct 17.0
-         * */
+
         //
         //        for (Rating i : simiList) {
         //            System.out.println("rater id = " + i.getItem() + " dotProduct " + i.getValue());
@@ -101,48 +72,21 @@ public class FourthRatingsOptimized {
         return simiList;
     }
 
-    /**
-     * This method should return an ArrayList of type Rating, of movies and
-     * their weighted average ratings using only the top numSimilarRaters with
-     * positive ratings and including only those movies that have at least minimalRaters
-     * ratings from those most similar raters (not just minimalRaters ratings overall).
-     * <p>
-     * For example, if minimalRaters is 3 and a movie has 4 ratings but only 2 of
-     * those ratings were made by raters in the top numSimilarRaters, that movie
-     * should not be included.
-     * <p>
-     * For each movie, calculate a weighted average movie rating based on:
-     * Use only the top (largest) numSimilarRaters raters.
-     * For each of these raters, multiply their similarity rating by the rating
-     * they gave that movie. This will emphasize those raters who are closer to the rater id,
-     * since they have greater weights. The weighted average movie rating for a
-     * particular movie is the sum of these weighted average rating
-     * (for each rater multiply their similarity rating by their rating for the movie), divided by the total number of such ratings.
-     * <p>
-     * IMPORTANT NOTICE:
-     * Weighted average algorithm optimized by WEI XU
-     * Instead of  "sum of (similar rating(i) *rating of the movie(i))/count of the raters"
-     * !!!!!I use  "sum of (similar rating(i) *rating of the movie(i))/ sum of the similar rating(i), will get more good results.
-     * <p>
-     * For example: in short movie and short rating csv
-     * RaterID = 2;
-     * //     * rater id = 5 dotProduct 31.0
-     * //     * rater id = 3 dotProduct 20.0
-     * //     * rater id = 1 dotProduct 20.0
-     * //     * rater id = 4 dotProduct 17.0
-     * Movie id = 0068646 id = 5 rating 9.0 ave 279.0
-     * Movie id = 0068646 id = 1 rating 10.0 ave 479.0
-     * Movie id = 0068646 count 2 :  WEI XU Algorithm 9.392156862745098 DUKE ALGORITHM: 239.5
-     * (9*31+10*20)/50=279+200=479/51=9.39
-     * (9*31+10*20)/2 = 479/2 = 239.5
-     */
     // combine getAverageByID and getAverageRatings;
     // HashMap<MovieID, ArrayList<Rater>> from top numSimilarRaters.
     //or
     // Arraylist<movieID> from top numSimilarRaters.
+
+    /**
+     * This method calculate a weighted average movie rating
+     * @param raterID - A String variable representing the ID of the raters
+     * @param numSimilarRaters - An Integer variable representing the number of similar raters
+     * @param minimalRaters - An Integer variable representing the minimal number of raters
+     * @return Arraylist<Rating> of the movies and their average ratings
+     */
     public ArrayList<Rating> getSimilarRatings(String raterID, int numSimilarRaters, int minimalRaters) {
         ArrayList<Rating> ratingList = new ArrayList<>();
-        // get Arraylist<movieID> from top numSimilarRaters.
+        // Get Arraylist<movieID> from top numSimilarRaters.
         ArrayList<String> movidIDByTopSimilar = new ArrayList<>();
         ArrayList<Rating> simiList1 = getSimilarities(raterID);
         //System.out.println("Total number of similar raters : " + simiList1.size());
@@ -166,7 +110,7 @@ public class FourthRatingsOptimized {
         //rating for movies in the movieIDByTopSimilar list;
         //Filter trueFilter = new TrueFilter();
         for (String j : movidIDByTopSimilar) {
-            // rating for one movie
+            // Rating for one movie
             double ave = 0;
             ArrayList<Rating> simiList = getSimilarities(raterID);
             // List<Rating> topsimiList = simiList.subList(0, numSimilarRaters);
@@ -193,10 +137,10 @@ public class FourthRatingsOptimized {
             //System.out.println("Movie id = " + j + " count " + count + " : " + " rating " + ave + " total/count " + total / count);
             //(9*31+10*20)/50=279+200=479/50=9.58
             //(9*31+10*20)/2 = 479/2 = 239.5
-            // rating for one movie end
+            // Rating for one movie end
             if (ave > 0)
                 ratingList.add(new Rating(j, ave));
-            // rating for all movie end
+            // Rating for all movie end
         }
         Collections.sort(ratingList);
         Collections.reverse(ratingList);
@@ -204,9 +148,17 @@ public class FourthRatingsOptimized {
         return ratingList;
     }
 
+    /**
+     * This method gets similar ratings following a certain criteria
+     * @param raterID - A String variable representing the ID of the raters
+     * @param numSimilarRaters - An Integer variable representing the number of similar raters
+     * @param minimalRaters minimalRaters - An Integer variable representing the minimal number of raters
+     * @param f - Represents the filters
+     * @return Arraylist<Rating> of ratings
+     */
     public ArrayList<Rating> getSimilarRatingsByFilter(String raterID, int numSimilarRaters, int minimalRaters, Filter f) {
         ArrayList<Rating> ratingList = new ArrayList<>();
-        //rating for all movie
+        //Rating for all movie
         ArrayList<String> movidIDByTopSimilar = new ArrayList<>();
         ArrayList<Rating> simiList1 = getSimilarities(raterID);
         for (int i = 0; i < numSimilarRaters; i++) {
@@ -221,7 +173,7 @@ public class FourthRatingsOptimized {
 
         for (String j : movidIDByTopSimilar) {
             if (f.satisfies(j)) {
-                // rating for one movie
+                // Rating for one movie
                 double ave = 0;
                 ArrayList<Rating> simiList = getSimilarities(raterID);
                 // List<Rating> topsimiList = simiList.subList(0, numSimilarRaters);
@@ -243,11 +195,11 @@ public class FourthRatingsOptimized {
                     ave = total / simiweighttotal;
                 //ave = total / count;
 
-                // rating for one movie end
+                // Rating for one movie end
                 if (ave > 0)
                     ratingList.add(new Rating(j, ave));
             }
-            // rating for all movie end
+            // Rating for all movie end
         }
         Collections.sort(ratingList);
         Collections.reverse(ratingList);

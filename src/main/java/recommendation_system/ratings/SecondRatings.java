@@ -50,6 +50,7 @@ public class SecondRatings {
     }
 
     /**
+     * This method gets the number of films to analyze
      * @return int - Number of films to analyze
      */
     public int getMovieSize() {
@@ -57,6 +58,7 @@ public class SecondRatings {
     }
 
     /**
+     * This method gets the number of the raters to analyze
      * @return int - Number of Raters to analyze
      */
     public int getRaterSize() {
@@ -64,6 +66,7 @@ public class SecondRatings {
     }
 
     /**
+     * This method gets the average by ID
      * @param movieID A String variable representing the IMDB ID of the movie
      * @param minimalRaters Minimum number of raters required to make an average
      * @return double - Average rating given to a movie by its raters
@@ -85,6 +88,7 @@ public class SecondRatings {
     }
 
     /**
+     * This method gets the average ratings
      * @param minimalRaters Minimum number of raters required to make an average
      * @return ArrayList<Rating> - Rating of movies with their average
      */
@@ -99,6 +103,7 @@ public class SecondRatings {
     }
 
     /**
+     * This method gets the title of the movies
      * @param movieID A String variable representing the IMDB ID of the movie
      * @return String - Movie’s title
      */
@@ -112,6 +117,7 @@ public class SecondRatings {
     }
 
     /**
+     * This method gets the ID of the movies
      * @param title A String variable for the movie’s title
      * @return String - Variable representing the IMDB ID of the movie
      */

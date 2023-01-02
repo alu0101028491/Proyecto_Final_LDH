@@ -30,6 +30,24 @@ import java.util.List;
  *
  ****************************************************************/
 
+/**
+ * <p>
+ *   - Phase 4
+ *  </p>
+ *
+ *  <p>
+ *  The class contains the necessary methods for:
+ *  <ul>
+ *  <li> Get a similarity rating for each rater </li>
+ *  <li> Get a similar ratings </li>
+ *  <li> Get a similar ratings by filter </li>
+ *  </ul>
+ *  </p>
+ *
+ *  @since 31/12/22
+ *  @version 1.0
+ */
+
 public class FourthRatings {
 	
 	private static Logger loggerStaticFourthRatings = System.getLogger(FourthRatings.class.getName());

@@ -7,49 +7,60 @@ import recommendation_system.raters.Rater;
 
 import java.util.ArrayList;
 
-/***************************************************************
- *  Name:    Wei Xu
+/**
+ * <p>
+ *  Class to find the average rating of movies using different filters - Phase 3
+ *  </p>
  *
- *  Date: Dec 12th, 2019
+ *  <p>
+ *  The class contains the necessary methods for:
+ *  <ul>
+ *  <li> Get a similarity rating for each rater </li>
+ *  <li> Get a average ratings </li>
+ *  <li> Get a average ratings by filters </li>
+ *  </ul>
+ *  </p>
  *
- *  Description:  -------------------STEP THREE--------
- *                 The class MovieDatabase—This class is an efficient way to get
- *                 information about movies. It stores movie information in a HashMap
- *                 for fast lookup of movie information given a movie ID.
- *                 The class also allows filtering movies based on queries. All methods
- *                 and fields in the class are static.
- *                 This means you'll be able to access methods in MovieDatabase
- *                 without using new to create objects, but by calling methods like
- *                 MovieDatabase.getMovie("0120915").
- *
- ****************************************************************/
+ *  @since 1/1/23
+ *  @version 1.0
+ */
 
 public class ThirdRatings {
-    /**
-     * Movies will now be stored in the MovieDatabase instead of
-     * in the instance variable myMovies,
-     * so you will want to remove the private variable myMovies
-     **/
+
     private ArrayList<Rater> myRaters;
     private System.Logger logger = System.getLogger(ThirdRatings.class.getName());
     private static System.Logger staticLogger = System.getLogger(ThirdRatings.class.getName());
 
+    /**
+     * Default Builder
+     */
     public ThirdRatings() {
-        // default constructor
         this("ratings.csv");
     }
-    //---------------todo: why only above won't compile???-------------
 
+    /**
+     * Builder overload
+     * @param ratingFile - A String variable representing the rating file
+     */
     public ThirdRatings(String ratingFile) {
         FirstRatings firstRatings = new FirstRatings();
         myRaters = firstRatings.loadRaters(ratingFile);
     }
 
+    /**
+     * This method gets the number of the raters
+     * @return Integer - Number of raters
+     */
     public int getRaterSize() {
         return myRaters.size();
     }
 
-    //private helper method
+    /**
+     * This method gets the average rating by ID
+     * @param movieID - A String variable representing the ID of the movie
+     * @param minimalRaters - An integer variable representing the minimal number of raters
+     * @return Double - Average rating
+     */
     private double getAverageByID(String movieID, int minimalRaters) {
         int count = 0;
         double total = 0;
@@ -70,35 +81,29 @@ public class ThirdRatings {
     }
 
     /**
-     * Note that myMovies no longer exists. Instead, you’ll need to get all the movies
-     * from the MovieDatabase class and store them in an ArrayList of movie IDs.
-     * Thus, you will need to modify getAverageRatings to call MovieDatabase
-     * with a filter, and in this case you can use the TrueFilter to get every movie.
-     **/
+     * This method gets the average ratings
+     * @param minimalRaters - An integer variable representing the minimal number of raters
+     * @return Arraylist<Rating> of average ratings
+     */
     public ArrayList<Rating> getAverageRatings(int minimalRaters) {
         ArrayList<Rating> ratingList = new ArrayList<>();
-        //must initialize the filter first.
         Filter trueFilter = new TrueFilter();
         for (String i : MovieDatabase.filterBy(trueFilter)) {
             double ave = getAverageByID(i, minimalRaters);
             if (ave > 0)
-                ratingList.add(new Rating(i, ave));//item is string id?
+                ratingList.add(new Rating(i, ave));
         }
         return ratingList;
     }
 
     /**
-     * write a public helper method named getAverageRatingsByFilter that has
-     * two parameters, an int named minimalRaters for the minimum number of
-     * ratings a movie must have and a Filter named filterCriteria. This method
-     * should create and return an ArrayList of type Rating of all the movies
-     * that have at least minimalRaters ratings and satisfies the filter criteria.
-     * This method will need to create the ArrayList of type String of movie IDs
-     * from the MovieDatabase using the filterBy method before calculating those averages.
+     * This method creates a list of all the movies that have at least minimalRaters ratings and satisfies the filter criteria
+     * @param minimalRaters - An integer variable representing the minimal number of raters
+     * @param f - Represents filters
+     * @return Arraylist<Rating> of average ratings
      */
     public ArrayList<Rating> getAverageRatingsByFilter(int minimalRaters, Filter f) {
         ArrayList<Rating> ratingList = new ArrayList<>();
-        //must initialize the filter first.
         Filter trueFilter = new TrueFilter();
         ArrayList<String> movieID = MovieDatabase.filterBy(trueFilter);
 
@@ -131,22 +136,12 @@ public class ThirdRatings {
     //        return "NO SUCH TITLE";
     //    }
     //
+
     public static void main(String[] args) {
         ThirdRatings thirdRatings = new ThirdRatings("data/ratings_short.csv");
         //System.out.println(sr.getAverageByID("0790636", 2));
         staticLogger.log(System.Logger.Level.INFO, "---TEST---");
         staticLogger.log(System.Logger.Level.INFO, thirdRatings.getAverageRatings(2));
-        /** movie from "full.csv", raters from "short.csv"
-         * ................
-         * Movie ID = 0430922 : 0 : 0.0 : NaN
-         * Movie ID = 0060176 : 0 : 0.0 : NaN
-         * Movie ID = 1270262 : 0 : 0.0 : NaN
-         * Movie ID = 3007512 : 0 : 0.0 : NaN
-         * Movie ID = 0043618 : 0 : 0.0 : NaN
-         * Movie ID = 1621039 : 0 : 0.0 : NaN
-         * Movie ID = 2713180 : 0 : 0.0 : NaN
-         * [[1798709, 8.25], [0068646, 9.0]]
-         * */
     }
 
 }

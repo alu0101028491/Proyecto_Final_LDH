@@ -40,7 +40,7 @@ public class FirstRatings {
      * This method process every record from the CSV file
      * and return an ArrayList of type Movie with all of the movie data from the file
      * @param fileName A file of movie information
-     * @return ArrayList of type Movie with all of the movie data from the file
+     * @return ArrayList<Movie> with all of the movie data from the file
      */
     public ArrayList<Movie> loadMovies(String fileName) {
         ArrayList<Movie> movies = new ArrayList<>();
@@ -58,7 +58,7 @@ public class FirstRatings {
     }
 
     /**
-     * Determine the maximum number of movies by any director,
+     * This method determine the maximum number of movies by any director,
      * and who the directors are that directed that many movies.
      * Remember that some movies may have more than one director.
      */
@@ -105,7 +105,7 @@ public class FirstRatings {
     /**
      * Load Raters - Raters is class for storing the data about one rating of an item.
      * @param fileName Ratings file
-     * @return ArrayList of Raters
+     * @return ArrayList<Rater> of Raters
      */
     public ArrayList<Rater> loadRaters(String fileName) {
         ArrayList<Rater> raters = new ArrayList<>();
@@ -124,16 +124,19 @@ public class FirstRatings {
                 }
             }
             if (count == 0) {
-                // HERE IS THE ONLY CHANGE I MADE FOR THE INTERFACE
-                // WHY NO NEED CHANGE OTHERS SUCH AS LINE 120.
                 EfficientRater m = new EfficientRater(i.get("rater_id"));
                 m.addRating(i.get("movie_id"), rating);
-                raters.add(m);// here is not correct when i did not write implement the rater interface in EfficientRater
+                raters.add(m);
             }
         }
         return raters;
     }
 
+    /**
+     * This method find the number of ratings by rater, the number of ratings by movie
+     * and determine how many movies have been rated
+     * @param filename - A String variable representing the filename
+     */
     public void testLoadRaters(String filename) {
         ArrayList<Rater> raters = loadRaters(filename);
         logger.log(Logger.Level.INFO, "The size of rater list is = " + raters.size());
@@ -152,7 +155,7 @@ public class FirstRatings {
                 }
             }
         }
-        //Find the maximum number of ratings by any rater.
+        // Find the maximum number of ratings by any rater.
         int max = 0;
         for (Rater i : raters) {
             if (i.numRatings() > max) {
