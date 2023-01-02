@@ -36,7 +36,6 @@ public class Movie {
      * @param theGenres String of one or more genres separated by commas
      */
     public Movie(String anID, String aTitle, String aYear, String theGenres) {
-        // just in case data file contains extra whitespace
         id = anID.trim();
         title = aTitle.trim();
         year = Integer.parseInt(aYear.trim());
@@ -57,7 +56,6 @@ public class Movie {
      */
     public Movie(String anID, String aTitle, String aYear, String theGenres, String aDirector,
                  String aCountry, String aPoster, int theMinutes) {
-        // just in case data file contains extra whitespace
         id = anID.trim();
         title = aTitle.trim();
         year = Integer.parseInt(aYear.trim());
@@ -69,6 +67,7 @@ public class Movie {
     }
 
     /**
+     * This method gets the ID of the movie
      * @return String - ID associated with this item
      */
     public String getID() {
@@ -76,6 +75,7 @@ public class Movie {
     }
 
     /**
+     * This method gets the title of the movie
      * @return String - Title of this item
      */
     public String getTitle() {
@@ -83,6 +83,7 @@ public class Movie {
     }
 
     /**
+     * This method gets the year of the movie
      * @return int - Year in which this item was published
      */
     public int getYear() {
@@ -90,6 +91,7 @@ public class Movie {
     }
 
     /**
+     * This method gets the genres of the movie
      * @return String - Genres associated with this item
      */
     public String getGenres() {
@@ -97,6 +99,7 @@ public class Movie {
     }
 
     /**
+     * This method gets the country of the movie
      * @return String - Countries the film was made in, separated by commas
      */
     public String getCountry() {
@@ -104,6 +107,7 @@ public class Movie {
     }
 
     /**
+     * This methods gets the directors of the movie
      * @return String - Directors of the movie separated by commas
      */
     public String getDirector() {
@@ -111,6 +115,7 @@ public class Movie {
     }
 
     /**
+     * This method get the poster of the movie
      * @return String - A link to an image of the movie poster if one exists, or “N/A”
      */
     public String getPoster() {
@@ -118,6 +123,7 @@ public class Movie {
     }
 
     /**
+     * This method get the minutes of the movie
      * @return int - An integer for the length of the movie
      */
     public int getMinutes() {
@@ -125,6 +131,7 @@ public class Movie {
     }
 
     /**
+     * This method gets the movie´s information
      * @return String - Item's information
      */
     public String toString() {
