@@ -2,6 +2,7 @@ version: 2.1
 
 orbs:
   maven: circleci/maven@1.4.0
+  
 jobs:
   build-and-test:
     docker:
@@ -21,4 +22,4 @@ jobs:
 workflows:
   maven_test:
     jobs:
-      - maven_test_storing
+      - build-and-test
