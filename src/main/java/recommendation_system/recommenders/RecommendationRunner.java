@@ -12,9 +12,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.StandardOpenOption;
-import java.io.IOException;
 import java.lang.System.Logger;
-
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -88,9 +86,9 @@ public class RecommendationRunner implements Recommender {
 
 	/**
 	 * This method randomly pick 10 movie to let the user to rate
+	 * Modified for our simulation - Now returns zero
 	 * @return Arraylist<String> of the movies to be rate
 	 */
-
     @Override
     public ArrayList<String> getItemsToRate() {
         ArrayList<String> movieToBeRate = new ArrayList<>();
@@ -107,6 +105,7 @@ public class RecommendationRunner implements Recommender {
 
 	/**
 	 * This method writes HTML Head
+	 * @throws IOException
 	 */
     public void writeHtmlHead() throws IOException {
 
@@ -124,6 +123,7 @@ public class RecommendationRunner implements Recommender {
 
 	/**
 	 * This method writes CSS
+	 * @throws IOException
 	 */
     public void writeCss() throws IOException {
 
@@ -177,6 +177,7 @@ public class RecommendationRunner implements Recommender {
 	/**
 	 * This method writes HTML Body
 	 * @param outID - Arraylist<Rating> of the movies
+	 * @throws IOException
 	 */
     public void writeBody(ArrayList<Rating> outID) throws IOException {
     	

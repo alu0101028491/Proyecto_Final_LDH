@@ -18,11 +18,14 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
 
+import recommendation_system.movies.MovieDatabase;
+import recommendation_system.raters.RaterDatabase;
+import recommendation_system.ratings.FourthRatingsOptimized;
 import recommendation_system.recommenders.RecommendationRunner;
 
 @DisplayName("Tests for RecomendationRunner")
 @Nested
-public class RecommendationRunnerTest {
+class RecommendationRunnerTest {
 
         private RecommendationRunner recommenderTest;
         
@@ -52,6 +55,23 @@ public class RecommendationRunnerTest {
             		() -> assertEquals(Paths.get("src/test/resources/indexTestSetter.html"), recommenderTest.getPathToFile())
             );
         }
+
+		@Test
+		@DisplayName("Movies to be rated by the user - Modified")
+		void testgetItemsToRate()
+		{
+			assertEquals(0, recommenderTest.getItemsToRate().size());
+		}
+
+		@Test
+		@DisplayName("Correct list of recommended films")
+		void printRecommendationsFor()
+		{
+			MovieDatabase.initialize("ratedmoviesfull.csv");
+			RaterDatabase.initialize("ratings.csv");
+			FourthRatingsOptimized fourthRatings = new FourthRatingsOptimized();
+			assertEquals(11, fourthRatings.getSimilarRatings("1", 10, 3).size());
+		}
         
         @Test
         @DisplayName("Correct Output print recommendations")
