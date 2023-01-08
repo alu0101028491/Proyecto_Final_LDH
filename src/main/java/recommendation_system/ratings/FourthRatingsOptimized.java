@@ -13,7 +13,11 @@ import java.util.Collections;
  *  Class to get similar ratings - Phase 4 (Optimized)
  *  Instead of iterate all movie in the MovieDataBase, we use the movie list
  *  that only the topSimilarRater's movie. Greatly reduce the time.
+ *  </p>
+ *  <p>
  *  DUKE: "sum of (similar rating(i) *rating of the movie(i))/count of the raters"
+ *  </p>
+ *  <p>
  *  WEIXU: "sum of (similar rating(i) *rating of the movie(i))/ sum of the similar rating(i)"
  *  </p>
  *
