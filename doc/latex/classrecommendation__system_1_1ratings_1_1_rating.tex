@@ -1,0 +1,143 @@
+\hypertarget{classrecommendation__system_1_1ratings_1_1_rating}{}\doxysection{recommendation\+\_\+system.\+ratings.\+Rating Class Reference}
+\label{classrecommendation__system_1_1ratings_1_1_rating}\index{recommendation\_system.ratings.Rating@{recommendation\_system.ratings.Rating}}
+
+
+Inheritance diagram for recommendation\+\_\+system.\+ratings.\+Rating\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=241pt]{classrecommendation__system_1_1ratings_1_1_rating__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for recommendation\+\_\+system.\+ratings.\+Rating\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=241pt]{classrecommendation__system_1_1ratings_1_1_rating__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classrecommendation__system_1_1ratings_1_1_rating_a2057bf5aed23b6ba5b696b6380f0e5e4}{Rating}} (String an\+Item, double a\+Value)
+\item 
+String \mbox{\hyperlink{classrecommendation__system_1_1ratings_1_1_rating_a91c01768c20f66d8b062a173f33bac12}{get\+Item}} ()
+\item 
+double \mbox{\hyperlink{classrecommendation__system_1_1ratings_1_1_rating_ab6f5fade9389e4d9734da5b6d681ac42}{get\+Value}} ()
+\item 
+String \mbox{\hyperlink{classrecommendation__system_1_1ratings_1_1_rating_a7a3670207ff5a08b052f39466f5a9c63}{to\+String}} ()
+\item 
+int \mbox{\hyperlink{classrecommendation__system_1_1ratings_1_1_rating_ae144864465e992e2d7a80ee175124be0}{compare\+To}} (\mbox{\hyperlink{classrecommendation__system_1_1ratings_1_1_rating}{Rating}} other)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Plain Old Java Object (POJO) class for storing the data about one rating of an item An immutable passive data object (PDO) to represent the rating data 
+
+The class contains the necessary methods for\+: 
+\begin{DoxyItemize}
+\item A constructor with two parameters to initialize the private variables.  
+\item Two getter methods get\+Item and get\+Value.  
+\item A to\+String method to represent rating information as a String.  
+\item A compare\+To method to compare this rating with another rating.  
+\end{DoxyItemize}
+
+\begin{DoxySince}{Since}
+26/12/22 
+\end{DoxySince}
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classrecommendation__system_1_1ratings_1_1_rating_a2057bf5aed23b6ba5b696b6380f0e5e4}\label{classrecommendation__system_1_1ratings_1_1_rating_a2057bf5aed23b6ba5b696b6380f0e5e4}} 
+\index{recommendation\_system.ratings.Rating@{recommendation\_system.ratings.Rating}!Rating@{Rating}}
+\index{Rating@{Rating}!recommendation\_system.ratings.Rating@{recommendation\_system.ratings.Rating}}
+\doxysubsubsection{\texorpdfstring{Rating()}{Rating()}}
+{\footnotesize\ttfamily recommendation\+\_\+system.\+ratings.\+Rating.\+Rating (\begin{DoxyParamCaption}\item[{String}]{an\+Item,  }\item[{double}]{a\+Value }\end{DoxyParamCaption})}
+
+Builder overload 
+\begin{DoxyParams}{Parameters}
+{\em an\+Item} & A String variable representing the IMDB ID of the movie \\
+\hline
+{\em a\+Value} & A double variable representing the rating of the movie \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classrecommendation__system_1_1ratings_1_1_rating_ae144864465e992e2d7a80ee175124be0}\label{classrecommendation__system_1_1ratings_1_1_rating_ae144864465e992e2d7a80ee175124be0}} 
+\index{recommendation\_system.ratings.Rating@{recommendation\_system.ratings.Rating}!compareTo@{compareTo}}
+\index{compareTo@{compareTo}!recommendation\_system.ratings.Rating@{recommendation\_system.ratings.Rating}}
+\doxysubsubsection{\texorpdfstring{compareTo()}{compareTo()}}
+{\footnotesize\ttfamily int recommendation\+\_\+system.\+ratings.\+Rating.\+compare\+To (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classrecommendation__system_1_1ratings_1_1_rating}{Rating}}}]{other }\end{DoxyParamCaption})}
+
+This method compare two ratings by their values 
+\begin{DoxyParams}{Parameters}
+{\em other} & the object to be compared. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int -\/ -\/1 lower, 1 higher, 0 equal 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classrecommendation__system_1_1ratings_1_1_rating_a91c01768c20f66d8b062a173f33bac12}\label{classrecommendation__system_1_1ratings_1_1_rating_a91c01768c20f66d8b062a173f33bac12}} 
+\index{recommendation\_system.ratings.Rating@{recommendation\_system.ratings.Rating}!getItem@{getItem}}
+\index{getItem@{getItem}!recommendation\_system.ratings.Rating@{recommendation\_system.ratings.Rating}}
+\doxysubsubsection{\texorpdfstring{getItem()}{getItem()}}
+{\footnotesize\ttfamily String recommendation\+\_\+system.\+ratings.\+Rating.\+get\+Item (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+This method gets the IMDB ID of the movie \begin{DoxyReturn}{Returns}
+String -\/ IMDB ID of the movie 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classrecommendation__system_1_1ratings_1_1_rating_a91c01768c20f66d8b062a173f33bac12_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classrecommendation__system_1_1ratings_1_1_rating_ab6f5fade9389e4d9734da5b6d681ac42}\label{classrecommendation__system_1_1ratings_1_1_rating_ab6f5fade9389e4d9734da5b6d681ac42}} 
+\index{recommendation\_system.ratings.Rating@{recommendation\_system.ratings.Rating}!getValue@{getValue}}
+\index{getValue@{getValue}!recommendation\_system.ratings.Rating@{recommendation\_system.ratings.Rating}}
+\doxysubsubsection{\texorpdfstring{getValue()}{getValue()}}
+{\footnotesize\ttfamily double recommendation\+\_\+system.\+ratings.\+Rating.\+get\+Value (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+This method gets the value (rating) of the movie \begin{DoxyReturn}{Returns}
+double -\/ \mbox{\hyperlink{classrecommendation__system_1_1ratings_1_1_rating}{Rating}} of the movie (it can be used in calculations) 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classrecommendation__system_1_1ratings_1_1_rating_ab6f5fade9389e4d9734da5b6d681ac42_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classrecommendation__system_1_1ratings_1_1_rating_a7a3670207ff5a08b052f39466f5a9c63}\label{classrecommendation__system_1_1ratings_1_1_rating_a7a3670207ff5a08b052f39466f5a9c63}} 
+\index{recommendation\_system.ratings.Rating@{recommendation\_system.ratings.Rating}!toString@{toString}}
+\index{toString@{toString}!recommendation\_system.ratings.Rating@{recommendation\_system.ratings.Rating}}
+\doxysubsubsection{\texorpdfstring{toString()}{toString()}}
+{\footnotesize\ttfamily String recommendation\+\_\+system.\+ratings.\+Rating.\+to\+String (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+This method gets all the rating information \begin{DoxyReturn}{Returns}
+String -\/ All the rating information 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classrecommendation__system_1_1ratings_1_1_rating_a7a3670207ff5a08b052f39466f5a9c63_cgraph}
+\end{center}
+\end{figure}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/main/java/recommendation\+\_\+system/ratings/\mbox{\hyperlink{_rating_8java}{Rating.\+java}}\end{DoxyCompactItemize}

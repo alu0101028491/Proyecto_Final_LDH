@@ -1,0 +1,10 @@
+<map id="recommendation_system.movies.MovieDatabase.getYear" name="recommendation_system.movies.MovieDatabase.getYear">
+<area shape="rect" id="node1" title=" " alt="" coords="995,157,1211,197"/>
+<area shape="rect" id="node2" href="$classrecommendation__system_1_1movierunner_1_1_movie_runner_with_filters.html#ada0fd036c842e7aab2e3eaf3445575a2" title=" " alt="" coords="693,5,938,60"/>
+<area shape="rect" id="node4" href="$classrecommendation__system_1_1movierunner_1_1_movie_runner_with_filters.html#ae5a4f2f57f905a9a4330c2028783a290" title=" " alt="" coords="693,84,938,139"/>
+<area shape="rect" id="node5" href="$classrecommendation__system_1_1recommenders_1_1_recommendation_runner.html#aeac38552a75d2d16ea077bf4a6f7e798" title=" " alt="" coords="316,217,636,257"/>
+<area shape="rect" id="node7" href="$classrecommendation__system_1_1filters_1_1_year_after_filter.html#a86fadfe3003a031f0110f9967ceff91a" title=" " alt="" coords="712,214,919,254"/>
+<area shape="rect" id="node8" href="$classrecommendation__system_1_1recommenders_1_1_recommendation_runner.html#a3340ec45f9ff47cac301db2a0192c8f7" title=" " alt="" coords="684,278,947,318"/>
+<area shape="rect" id="node3" href="$classrecommendation__system_1_1movierunner_1_1_movie_runner_with_filters.html#aed7084f4618674571bef781e4cf1aac5" title=" " alt="" coords="353,53,599,93"/>
+<area shape="rect" id="node6" href="$classrecommendation__system_1_1recommenders_1_1_recommendation_runner.html#a7d0b51866a0b356e6bc7d2b475c5e386" title=" " alt="" coords="5,217,268,257"/>
+</map>

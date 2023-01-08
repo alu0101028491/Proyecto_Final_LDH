@@ -1,0 +1,171 @@
+\hypertarget{classrecommendation__system_1_1raters_1_1_rater_database}{}\doxysection{recommendation\+\_\+system.\+raters.\+Rater\+Database Class Reference}
+\label{classrecommendation__system_1_1raters_1_1_rater_database}\index{recommendation\_system.raters.RaterDatabase@{recommendation\_system.raters.RaterDatabase}}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{classrecommendation__system_1_1raters_1_1_rater_database_a641bbb68b66de945dbedeabd1dca9392}{initialize}} (String filename)
+\item 
+static void \mbox{\hyperlink{classrecommendation__system_1_1raters_1_1_rater_database_ae7f196529d164873ae71cd7b8f2ab0c5}{add\+Ratings}} (String filename)
+\item 
+static void \mbox{\hyperlink{classrecommendation__system_1_1raters_1_1_rater_database_acd266bdd73ff7699b55f20e5cfc1605d}{add\+Rater\+Rating}} (String rater\+ID, String movie\+ID, double rating)
+\item 
+static \mbox{\hyperlink{interfacerecommendation__system_1_1raters_1_1_rater}{Rater}} \mbox{\hyperlink{classrecommendation__system_1_1raters_1_1_rater_database_a4fe36e9de8bd24b592fe4e3df56c432d}{get\+Rater}} (String id)
+\item 
+static Array\+List$<$ \mbox{\hyperlink{interfacerecommendation__system_1_1raters_1_1_rater}{Rater}} $>$ \mbox{\hyperlink{classrecommendation__system_1_1raters_1_1_rater_database_ad083d903f72010fbd923847b4c8e47b7}{get\+Raters}} ()
+\item 
+static int \mbox{\hyperlink{classrecommendation__system_1_1raters_1_1_rater_database_adc7c109f26376a5456f1735a8cf71cbe}{size}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Class to store all information about raters 
+
+The class contains the necessary methods for\+: 
+\begin{DoxyItemize}
+\item Initialize Hash\+Map our\+Raters  
+\item Add ratings  
+\item Add rater ratings  
+\item Get a rater  
+\item Get the list of the raters  
+\item Get the number of the raters  
+\end{DoxyItemize}
+
+\begin{DoxySince}{Since}
+30/12/22 
+\end{DoxySince}
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classrecommendation__system_1_1raters_1_1_rater_database_acd266bdd73ff7699b55f20e5cfc1605d}\label{classrecommendation__system_1_1raters_1_1_rater_database_acd266bdd73ff7699b55f20e5cfc1605d}} 
+\index{recommendation\_system.raters.RaterDatabase@{recommendation\_system.raters.RaterDatabase}!addRaterRating@{addRaterRating}}
+\index{addRaterRating@{addRaterRating}!recommendation\_system.raters.RaterDatabase@{recommendation\_system.raters.RaterDatabase}}
+\doxysubsubsection{\texorpdfstring{addRaterRating()}{addRaterRating()}}
+{\footnotesize\ttfamily static void recommendation\+\_\+system.\+raters.\+Rater\+Database.\+add\+Rater\+Rating (\begin{DoxyParamCaption}\item[{String}]{rater\+ID,  }\item[{String}]{movie\+ID,  }\item[{double}]{rating }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+This method add the raters 
+\begin{DoxyParams}{Parameters}
+{\em rater\+ID} & -\/ A String variable representing the ID of the rater \\
+\hline
+{\em movie\+ID} & -\/ A String variable representing the ID of the movie \\
+\hline
+{\em rating} & -\/ A double variable representing the rating \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classrecommendation__system_1_1raters_1_1_rater_database_acd266bdd73ff7699b55f20e5cfc1605d_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classrecommendation__system_1_1raters_1_1_rater_database_acd266bdd73ff7699b55f20e5cfc1605d_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classrecommendation__system_1_1raters_1_1_rater_database_ae7f196529d164873ae71cd7b8f2ab0c5}\label{classrecommendation__system_1_1raters_1_1_rater_database_ae7f196529d164873ae71cd7b8f2ab0c5}} 
+\index{recommendation\_system.raters.RaterDatabase@{recommendation\_system.raters.RaterDatabase}!addRatings@{addRatings}}
+\index{addRatings@{addRatings}!recommendation\_system.raters.RaterDatabase@{recommendation\_system.raters.RaterDatabase}}
+\doxysubsubsection{\texorpdfstring{addRatings()}{addRatings()}}
+{\footnotesize\ttfamily static void recommendation\+\_\+system.\+raters.\+Rater\+Database.\+add\+Ratings (\begin{DoxyParamCaption}\item[{String}]{filename }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+This method add the ratings 
+\begin{DoxyParams}{Parameters}
+{\em filename} & -\/ A String variable representing the filename \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classrecommendation__system_1_1raters_1_1_rater_database_ae7f196529d164873ae71cd7b8f2ab0c5_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classrecommendation__system_1_1raters_1_1_rater_database_ae7f196529d164873ae71cd7b8f2ab0c5_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classrecommendation__system_1_1raters_1_1_rater_database_a4fe36e9de8bd24b592fe4e3df56c432d}\label{classrecommendation__system_1_1raters_1_1_rater_database_a4fe36e9de8bd24b592fe4e3df56c432d}} 
+\index{recommendation\_system.raters.RaterDatabase@{recommendation\_system.raters.RaterDatabase}!getRater@{getRater}}
+\index{getRater@{getRater}!recommendation\_system.raters.RaterDatabase@{recommendation\_system.raters.RaterDatabase}}
+\doxysubsubsection{\texorpdfstring{getRater()}{getRater()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{interfacerecommendation__system_1_1raters_1_1_rater}{Rater}} recommendation\+\_\+system.\+raters.\+Rater\+Database.\+get\+Rater (\begin{DoxyParamCaption}\item[{String}]{id }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+This method gets raters ID 
+\begin{DoxyParams}{Parameters}
+{\em id} & -\/ A String variable representing the ID of the rater \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{interfacerecommendation__system_1_1raters_1_1_rater}{Rater}} -\/ \mbox{\hyperlink{interfacerecommendation__system_1_1raters_1_1_rater}{Rater}} to be analyzed 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classrecommendation__system_1_1raters_1_1_rater_database_a4fe36e9de8bd24b592fe4e3df56c432d_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classrecommendation__system_1_1raters_1_1_rater_database_ad083d903f72010fbd923847b4c8e47b7}\label{classrecommendation__system_1_1raters_1_1_rater_database_ad083d903f72010fbd923847b4c8e47b7}} 
+\index{recommendation\_system.raters.RaterDatabase@{recommendation\_system.raters.RaterDatabase}!getRaters@{getRaters}}
+\index{getRaters@{getRaters}!recommendation\_system.raters.RaterDatabase@{recommendation\_system.raters.RaterDatabase}}
+\doxysubsubsection{\texorpdfstring{getRaters()}{getRaters()}}
+{\footnotesize\ttfamily static Array\+List$<$ \mbox{\hyperlink{interfacerecommendation__system_1_1raters_1_1_rater}{Rater}} $>$ recommendation\+\_\+system.\+raters.\+Rater\+Database.\+get\+Raters (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+This method get the list of raters \begin{DoxyReturn}{Returns}
+Arraylist$<$\+Rater$>$ of raters 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classrecommendation__system_1_1raters_1_1_rater_database_a641bbb68b66de945dbedeabd1dca9392}\label{classrecommendation__system_1_1raters_1_1_rater_database_a641bbb68b66de945dbedeabd1dca9392}} 
+\index{recommendation\_system.raters.RaterDatabase@{recommendation\_system.raters.RaterDatabase}!initialize@{initialize}}
+\index{initialize@{initialize}!recommendation\_system.raters.RaterDatabase@{recommendation\_system.raters.RaterDatabase}}
+\doxysubsubsection{\texorpdfstring{initialize()}{initialize()}}
+{\footnotesize\ttfamily static void recommendation\+\_\+system.\+raters.\+Rater\+Database.\+initialize (\begin{DoxyParamCaption}\item[{String}]{filename }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+This method initialize the Hash\+Map our\+Raters 
+\begin{DoxyParams}{Parameters}
+{\em filename} & -\/ A String variable representing the filename \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classrecommendation__system_1_1raters_1_1_rater_database_a641bbb68b66de945dbedeabd1dca9392_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classrecommendation__system_1_1raters_1_1_rater_database_adc7c109f26376a5456f1735a8cf71cbe}\label{classrecommendation__system_1_1raters_1_1_rater_database_adc7c109f26376a5456f1735a8cf71cbe}} 
+\index{recommendation\_system.raters.RaterDatabase@{recommendation\_system.raters.RaterDatabase}!size@{size}}
+\index{size@{size}!recommendation\_system.raters.RaterDatabase@{recommendation\_system.raters.RaterDatabase}}
+\doxysubsubsection{\texorpdfstring{size()}{size()}}
+{\footnotesize\ttfamily static int recommendation\+\_\+system.\+raters.\+Rater\+Database.\+size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+This method gets the number of raters \begin{DoxyReturn}{Returns}
+Integer -\/ Number of raters 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classrecommendation__system_1_1raters_1_1_rater_database_adc7c109f26376a5456f1735a8cf71cbe_icgraph}
+\end{center}
+\end{figure}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/main/java/recommendation\+\_\+system/raters/\mbox{\hyperlink{_rater_database_8java}{Rater\+Database.\+java}}\end{DoxyCompactItemize}

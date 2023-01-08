@@ -1,0 +1,373 @@
+\hypertarget{classrecommendation__system_1_1movies_1_1_movie_database}{}\doxysection{recommendation\+\_\+system.\+movies.\+Movie\+Database Class Reference}
+\label{classrecommendation__system_1_1movies_1_1_movie_database}\index{recommendation\_system.movies.MovieDatabase@{recommendation\_system.movies.MovieDatabase}}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{classrecommendation__system_1_1movies_1_1_movie_database_aa0d9c60c8adeb7f1f50be7d12b4e1f6c}{initialize}} (String moviefile)
+\item 
+static boolean \mbox{\hyperlink{classrecommendation__system_1_1movies_1_1_movie_database_ac40581f06a09317ee1affe3d6cada93e}{contains\+ID}} (String id)
+\item 
+static int \mbox{\hyperlink{classrecommendation__system_1_1movies_1_1_movie_database_a526224137d69b58d27058bd46d90da3a}{get\+Year}} (String id)
+\item 
+static String \mbox{\hyperlink{classrecommendation__system_1_1movies_1_1_movie_database_ab4f66942db2b2ed2d53be97c3b4f3942}{get\+Genres}} (String id)
+\item 
+static String \mbox{\hyperlink{classrecommendation__system_1_1movies_1_1_movie_database_a128f1a06e573c01416e2f47cdf841973}{get\+Title}} (String id)
+\item 
+static \mbox{\hyperlink{classrecommendation__system_1_1movies_1_1_movie}{Movie}} \mbox{\hyperlink{classrecommendation__system_1_1movies_1_1_movie_database_ac1c171668938a1499a11740acec794a5}{get\+Movie}} (String id)
+\item 
+static String \mbox{\hyperlink{classrecommendation__system_1_1movies_1_1_movie_database_a1c163bca34d0bd93b9986fd9476d81a1}{get\+Poster}} (String id)
+\item 
+static int \mbox{\hyperlink{classrecommendation__system_1_1movies_1_1_movie_database_ab984a9fe4840eb66d21b767a5ddf3bf8}{get\+Minutes}} (String id)
+\item 
+static String \mbox{\hyperlink{classrecommendation__system_1_1movies_1_1_movie_database_a045c14cf456966d2b5273f5bb882d67e}{get\+Country}} (String id)
+\item 
+static String \mbox{\hyperlink{classrecommendation__system_1_1movies_1_1_movie_database_aaf116797a4d9da1beb9a0f795c0c1b47}{get\+Director}} (String id)
+\item 
+static int \mbox{\hyperlink{classrecommendation__system_1_1movies_1_1_movie_database_a188d2c68be4a027357288b92bafcf816}{size}} ()
+\item 
+static Array\+List$<$ String $>$ \mbox{\hyperlink{classrecommendation__system_1_1movies_1_1_movie_database_a5a0f4e80f68e4552b3117b58c73357ba}{filter\+By}} (\mbox{\hyperlink{interfacerecommendation__system_1_1filters_1_1_filter}{Filter}} f)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This class is an efficient way to get information about movies. It stores movie information in a Hash\+Map for fast lookup of movie information given a movie ID. 
+
+The class contains the necessary methods for\+: 
+\begin{DoxyItemize}
+\item Filtering movies based on queries  
+\end{DoxyItemize}
+
+\begin{DoxySince}{Since}
+13/12/22 
+\end{DoxySince}
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classrecommendation__system_1_1movies_1_1_movie_database_ac40581f06a09317ee1affe3d6cada93e}\label{classrecommendation__system_1_1movies_1_1_movie_database_ac40581f06a09317ee1affe3d6cada93e}} 
+\index{recommendation\_system.movies.MovieDatabase@{recommendation\_system.movies.MovieDatabase}!containsID@{containsID}}
+\index{containsID@{containsID}!recommendation\_system.movies.MovieDatabase@{recommendation\_system.movies.MovieDatabase}}
+\doxysubsubsection{\texorpdfstring{containsID()}{containsID()}}
+{\footnotesize\ttfamily static boolean recommendation\+\_\+system.\+movies.\+Movie\+Database.\+contains\+ID (\begin{DoxyParamCaption}\item[{String}]{id }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+This method prove if the Hash\+Map contains the ID of the movie 
+\begin{DoxyParams}{Parameters}
+{\em id} & -\/ A String variable representing the ID of the movie \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Boolean -\/ True if the Hash\+Map contains the ID -\/ False otherwise 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classrecommendation__system_1_1movies_1_1_movie_database_ac40581f06a09317ee1affe3d6cada93e_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classrecommendation__system_1_1movies_1_1_movie_database_a5a0f4e80f68e4552b3117b58c73357ba}\label{classrecommendation__system_1_1movies_1_1_movie_database_a5a0f4e80f68e4552b3117b58c73357ba}} 
+\index{recommendation\_system.movies.MovieDatabase@{recommendation\_system.movies.MovieDatabase}!filterBy@{filterBy}}
+\index{filterBy@{filterBy}!recommendation\_system.movies.MovieDatabase@{recommendation\_system.movies.MovieDatabase}}
+\doxysubsubsection{\texorpdfstring{filterBy()}{filterBy()}}
+{\footnotesize\ttfamily static Array\+List$<$ String $>$ recommendation\+\_\+system.\+movies.\+Movie\+Database.\+filter\+By (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{interfacerecommendation__system_1_1filters_1_1_filter}{Filter}}}]{f }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+This method adds to the list the movies that follow certain criteria 
+\begin{DoxyParams}{Parameters}
+{\em f} & Represents the filter \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Arraylist$<$\+String$>$ of movie IDs 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classrecommendation__system_1_1movies_1_1_movie_database_a5a0f4e80f68e4552b3117b58c73357ba_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classrecommendation__system_1_1movies_1_1_movie_database_a5a0f4e80f68e4552b3117b58c73357ba_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classrecommendation__system_1_1movies_1_1_movie_database_a045c14cf456966d2b5273f5bb882d67e}\label{classrecommendation__system_1_1movies_1_1_movie_database_a045c14cf456966d2b5273f5bb882d67e}} 
+\index{recommendation\_system.movies.MovieDatabase@{recommendation\_system.movies.MovieDatabase}!getCountry@{getCountry}}
+\index{getCountry@{getCountry}!recommendation\_system.movies.MovieDatabase@{recommendation\_system.movies.MovieDatabase}}
+\doxysubsubsection{\texorpdfstring{getCountry()}{getCountry()}}
+{\footnotesize\ttfamily static String recommendation\+\_\+system.\+movies.\+Movie\+Database.\+get\+Country (\begin{DoxyParamCaption}\item[{String}]{id }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+This method gets the country of the movie 
+\begin{DoxyParams}{Parameters}
+{\em id} & -\/ A String variable representing the ID of the movie \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+String -\/ Country of the movie 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classrecommendation__system_1_1movies_1_1_movie_database_a045c14cf456966d2b5273f5bb882d67e_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classrecommendation__system_1_1movies_1_1_movie_database_a045c14cf456966d2b5273f5bb882d67e_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classrecommendation__system_1_1movies_1_1_movie_database_aaf116797a4d9da1beb9a0f795c0c1b47}\label{classrecommendation__system_1_1movies_1_1_movie_database_aaf116797a4d9da1beb9a0f795c0c1b47}} 
+\index{recommendation\_system.movies.MovieDatabase@{recommendation\_system.movies.MovieDatabase}!getDirector@{getDirector}}
+\index{getDirector@{getDirector}!recommendation\_system.movies.MovieDatabase@{recommendation\_system.movies.MovieDatabase}}
+\doxysubsubsection{\texorpdfstring{getDirector()}{getDirector()}}
+{\footnotesize\ttfamily static String recommendation\+\_\+system.\+movies.\+Movie\+Database.\+get\+Director (\begin{DoxyParamCaption}\item[{String}]{id }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+This method gets the director of the movie 
+\begin{DoxyParams}{Parameters}
+{\em id} & -\/ A String variable representing the ID of the movie \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+String -\/ Directors of the movie 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classrecommendation__system_1_1movies_1_1_movie_database_aaf116797a4d9da1beb9a0f795c0c1b47_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classrecommendation__system_1_1movies_1_1_movie_database_aaf116797a4d9da1beb9a0f795c0c1b47_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classrecommendation__system_1_1movies_1_1_movie_database_ab4f66942db2b2ed2d53be97c3b4f3942}\label{classrecommendation__system_1_1movies_1_1_movie_database_ab4f66942db2b2ed2d53be97c3b4f3942}} 
+\index{recommendation\_system.movies.MovieDatabase@{recommendation\_system.movies.MovieDatabase}!getGenres@{getGenres}}
+\index{getGenres@{getGenres}!recommendation\_system.movies.MovieDatabase@{recommendation\_system.movies.MovieDatabase}}
+\doxysubsubsection{\texorpdfstring{getGenres()}{getGenres()}}
+{\footnotesize\ttfamily static String recommendation\+\_\+system.\+movies.\+Movie\+Database.\+get\+Genres (\begin{DoxyParamCaption}\item[{String}]{id }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+This method gets the genres of the movie 
+\begin{DoxyParams}{Parameters}
+{\em id} & -\/ A String variable representing the ID of the movie \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+String -\/ Genres of the movie 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classrecommendation__system_1_1movies_1_1_movie_database_ab4f66942db2b2ed2d53be97c3b4f3942_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classrecommendation__system_1_1movies_1_1_movie_database_ab4f66942db2b2ed2d53be97c3b4f3942_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classrecommendation__system_1_1movies_1_1_movie_database_ab984a9fe4840eb66d21b767a5ddf3bf8}\label{classrecommendation__system_1_1movies_1_1_movie_database_ab984a9fe4840eb66d21b767a5ddf3bf8}} 
+\index{recommendation\_system.movies.MovieDatabase@{recommendation\_system.movies.MovieDatabase}!getMinutes@{getMinutes}}
+\index{getMinutes@{getMinutes}!recommendation\_system.movies.MovieDatabase@{recommendation\_system.movies.MovieDatabase}}
+\doxysubsubsection{\texorpdfstring{getMinutes()}{getMinutes()}}
+{\footnotesize\ttfamily static int recommendation\+\_\+system.\+movies.\+Movie\+Database.\+get\+Minutes (\begin{DoxyParamCaption}\item[{String}]{id }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+This method gets the minutes of the movie 
+\begin{DoxyParams}{Parameters}
+{\em id} & -\/ A String variable representing the ID of the movie \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Int -\/ Minutes of the movie 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classrecommendation__system_1_1movies_1_1_movie_database_ab984a9fe4840eb66d21b767a5ddf3bf8_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classrecommendation__system_1_1movies_1_1_movie_database_ab984a9fe4840eb66d21b767a5ddf3bf8_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classrecommendation__system_1_1movies_1_1_movie_database_ac1c171668938a1499a11740acec794a5}\label{classrecommendation__system_1_1movies_1_1_movie_database_ac1c171668938a1499a11740acec794a5}} 
+\index{recommendation\_system.movies.MovieDatabase@{recommendation\_system.movies.MovieDatabase}!getMovie@{getMovie}}
+\index{getMovie@{getMovie}!recommendation\_system.movies.MovieDatabase@{recommendation\_system.movies.MovieDatabase}}
+\doxysubsubsection{\texorpdfstring{getMovie()}{getMovie()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{classrecommendation__system_1_1movies_1_1_movie}{Movie}} recommendation\+\_\+system.\+movies.\+Movie\+Database.\+get\+Movie (\begin{DoxyParamCaption}\item[{String}]{id }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & -\/ A String variable representing the ID of the movie \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{classrecommendation__system_1_1movies_1_1_movie}{Movie}} -\/ Film object to be analyzed 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classrecommendation__system_1_1movies_1_1_movie_database_ac1c171668938a1499a11740acec794a5_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classrecommendation__system_1_1movies_1_1_movie_database_a1c163bca34d0bd93b9986fd9476d81a1}\label{classrecommendation__system_1_1movies_1_1_movie_database_a1c163bca34d0bd93b9986fd9476d81a1}} 
+\index{recommendation\_system.movies.MovieDatabase@{recommendation\_system.movies.MovieDatabase}!getPoster@{getPoster}}
+\index{getPoster@{getPoster}!recommendation\_system.movies.MovieDatabase@{recommendation\_system.movies.MovieDatabase}}
+\doxysubsubsection{\texorpdfstring{getPoster()}{getPoster()}}
+{\footnotesize\ttfamily static String recommendation\+\_\+system.\+movies.\+Movie\+Database.\+get\+Poster (\begin{DoxyParamCaption}\item[{String}]{id }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+This method gets the poster of the movie 
+\begin{DoxyParams}{Parameters}
+{\em id} & -\/ A String variable representing the ID of the movie \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+String -\/ Poster of the movie 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classrecommendation__system_1_1movies_1_1_movie_database_a1c163bca34d0bd93b9986fd9476d81a1_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classrecommendation__system_1_1movies_1_1_movie_database_a1c163bca34d0bd93b9986fd9476d81a1_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classrecommendation__system_1_1movies_1_1_movie_database_a128f1a06e573c01416e2f47cdf841973}\label{classrecommendation__system_1_1movies_1_1_movie_database_a128f1a06e573c01416e2f47cdf841973}} 
+\index{recommendation\_system.movies.MovieDatabase@{recommendation\_system.movies.MovieDatabase}!getTitle@{getTitle}}
+\index{getTitle@{getTitle}!recommendation\_system.movies.MovieDatabase@{recommendation\_system.movies.MovieDatabase}}
+\doxysubsubsection{\texorpdfstring{getTitle()}{getTitle()}}
+{\footnotesize\ttfamily static String recommendation\+\_\+system.\+movies.\+Movie\+Database.\+get\+Title (\begin{DoxyParamCaption}\item[{String}]{id }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+This method gets the title of the movie 
+\begin{DoxyParams}{Parameters}
+{\em id} & -\/ A String variable representing the ID of the movie \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+String -\/ Title of the movie 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classrecommendation__system_1_1movies_1_1_movie_database_a128f1a06e573c01416e2f47cdf841973_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classrecommendation__system_1_1movies_1_1_movie_database_a128f1a06e573c01416e2f47cdf841973_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classrecommendation__system_1_1movies_1_1_movie_database_a526224137d69b58d27058bd46d90da3a}\label{classrecommendation__system_1_1movies_1_1_movie_database_a526224137d69b58d27058bd46d90da3a}} 
+\index{recommendation\_system.movies.MovieDatabase@{recommendation\_system.movies.MovieDatabase}!getYear@{getYear}}
+\index{getYear@{getYear}!recommendation\_system.movies.MovieDatabase@{recommendation\_system.movies.MovieDatabase}}
+\doxysubsubsection{\texorpdfstring{getYear()}{getYear()}}
+{\footnotesize\ttfamily static int recommendation\+\_\+system.\+movies.\+Movie\+Database.\+get\+Year (\begin{DoxyParamCaption}\item[{String}]{id }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+This method gets the year of the movie 
+\begin{DoxyParams}{Parameters}
+{\em id} & -\/ A String variable representing the ID of the movie \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Int -\/ Year of the movie 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classrecommendation__system_1_1movies_1_1_movie_database_a526224137d69b58d27058bd46d90da3a_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classrecommendation__system_1_1movies_1_1_movie_database_a526224137d69b58d27058bd46d90da3a_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classrecommendation__system_1_1movies_1_1_movie_database_aa0d9c60c8adeb7f1f50be7d12b4e1f6c}\label{classrecommendation__system_1_1movies_1_1_movie_database_aa0d9c60c8adeb7f1f50be7d12b4e1f6c}} 
+\index{recommendation\_system.movies.MovieDatabase@{recommendation\_system.movies.MovieDatabase}!initialize@{initialize}}
+\index{initialize@{initialize}!recommendation\_system.movies.MovieDatabase@{recommendation\_system.movies.MovieDatabase}}
+\doxysubsubsection{\texorpdfstring{initialize()}{initialize()}}
+{\footnotesize\ttfamily static void recommendation\+\_\+system.\+movies.\+Movie\+Database.\+initialize (\begin{DoxyParamCaption}\item[{String}]{moviefile }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Static builder overload 
+\begin{DoxyParams}{Parameters}
+{\em moviefile} & File of movies to load \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classrecommendation__system_1_1movies_1_1_movie_database_aa0d9c60c8adeb7f1f50be7d12b4e1f6c_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classrecommendation__system_1_1movies_1_1_movie_database_a188d2c68be4a027357288b92bafcf816}\label{classrecommendation__system_1_1movies_1_1_movie_database_a188d2c68be4a027357288b92bafcf816}} 
+\index{recommendation\_system.movies.MovieDatabase@{recommendation\_system.movies.MovieDatabase}!size@{size}}
+\index{size@{size}!recommendation\_system.movies.MovieDatabase@{recommendation\_system.movies.MovieDatabase}}
+\doxysubsubsection{\texorpdfstring{size()}{size()}}
+{\footnotesize\ttfamily static int recommendation\+\_\+system.\+movies.\+Movie\+Database.\+size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+This method gets the number of movies stored on the list \begin{DoxyReturn}{Returns}
+Int -\/ Number of movies stored on the Hash\+Map 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classrecommendation__system_1_1movies_1_1_movie_database_a188d2c68be4a027357288b92bafcf816_icgraph}
+\end{center}
+\end{figure}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/main/java/recommendation\+\_\+system/movies/\mbox{\hyperlink{_movie_database_8java}{Movie\+Database.\+java}}\end{DoxyCompactItemize}

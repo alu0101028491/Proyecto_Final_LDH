@@ -1,0 +1,175 @@
+\hypertarget{classrecommendation__system_1_1ratings_1_1_third_ratings}{}\doxysection{recommendation\+\_\+system.\+ratings.\+Third\+Ratings Class Reference}
+\label{classrecommendation__system_1_1ratings_1_1_third_ratings}\index{recommendation\_system.ratings.ThirdRatings@{recommendation\_system.ratings.ThirdRatings}}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classrecommendation__system_1_1ratings_1_1_third_ratings_a85246136c89584d1781dec48f76455d4}{Third\+Ratings}} ()
+\item 
+\mbox{\hyperlink{classrecommendation__system_1_1ratings_1_1_third_ratings_a06159acc3e3afda42996fbdbc343de33}{Third\+Ratings}} (String rating\+File)
+\item 
+int \mbox{\hyperlink{classrecommendation__system_1_1ratings_1_1_third_ratings_ad5a4c3716684c6ac3bfa27123a6d4e2b}{get\+Rater\+Size}} ()
+\item 
+Array\+List$<$ \mbox{\hyperlink{classrecommendation__system_1_1ratings_1_1_rating}{Rating}} $>$ \mbox{\hyperlink{classrecommendation__system_1_1ratings_1_1_third_ratings_a0f6486bc2627067bc3debe93028a21ec}{get\+Average\+Ratings}} (int minimal\+Raters)
+\item 
+Array\+List$<$ \mbox{\hyperlink{classrecommendation__system_1_1ratings_1_1_rating}{Rating}} $>$ \mbox{\hyperlink{classrecommendation__system_1_1ratings_1_1_third_ratings_a2555f8dcbe4feb1b9f294144fd48aefe}{get\+Average\+Ratings\+By\+Filter}} (int minimal\+Raters, \mbox{\hyperlink{interfacerecommendation__system_1_1filters_1_1_filter}{Filter}} f)
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{classrecommendation__system_1_1ratings_1_1_third_ratings_aa5a01344062dea4b3b5f78d5a37ff6d8}{main}} (String\mbox{[}$\,$\mbox{]} args)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Class to find the average rating of movies using different filters -\/ Phase 3 
+
+The class contains the necessary methods for\+: 
+\begin{DoxyItemize}
+\item Get a similarity rating for each rater  
+\item Get a average ratings  
+\item Get a average ratings by filters  
+\end{DoxyItemize}
+
+\begin{DoxySince}{Since}
+1/1/23 
+\end{DoxySince}
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classrecommendation__system_1_1ratings_1_1_third_ratings_a85246136c89584d1781dec48f76455d4}\label{classrecommendation__system_1_1ratings_1_1_third_ratings_a85246136c89584d1781dec48f76455d4}} 
+\index{recommendation\_system.ratings.ThirdRatings@{recommendation\_system.ratings.ThirdRatings}!ThirdRatings@{ThirdRatings}}
+\index{ThirdRatings@{ThirdRatings}!recommendation\_system.ratings.ThirdRatings@{recommendation\_system.ratings.ThirdRatings}}
+\doxysubsubsection{\texorpdfstring{ThirdRatings()}{ThirdRatings()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily recommendation\+\_\+system.\+ratings.\+Third\+Ratings.\+Third\+Ratings (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Default Builder Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classrecommendation__system_1_1ratings_1_1_third_ratings_a85246136c89584d1781dec48f76455d4_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classrecommendation__system_1_1ratings_1_1_third_ratings_a06159acc3e3afda42996fbdbc343de33}\label{classrecommendation__system_1_1ratings_1_1_third_ratings_a06159acc3e3afda42996fbdbc343de33}} 
+\index{recommendation\_system.ratings.ThirdRatings@{recommendation\_system.ratings.ThirdRatings}!ThirdRatings@{ThirdRatings}}
+\index{ThirdRatings@{ThirdRatings}!recommendation\_system.ratings.ThirdRatings@{recommendation\_system.ratings.ThirdRatings}}
+\doxysubsubsection{\texorpdfstring{ThirdRatings()}{ThirdRatings()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily recommendation\+\_\+system.\+ratings.\+Third\+Ratings.\+Third\+Ratings (\begin{DoxyParamCaption}\item[{String}]{rating\+File }\end{DoxyParamCaption})}
+
+Builder overload 
+\begin{DoxyParams}{Parameters}
+{\em rating\+File} & A String variable representing the rating file \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classrecommendation__system_1_1ratings_1_1_third_ratings_a06159acc3e3afda42996fbdbc343de33_cgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classrecommendation__system_1_1ratings_1_1_third_ratings_a0f6486bc2627067bc3debe93028a21ec}\label{classrecommendation__system_1_1ratings_1_1_third_ratings_a0f6486bc2627067bc3debe93028a21ec}} 
+\index{recommendation\_system.ratings.ThirdRatings@{recommendation\_system.ratings.ThirdRatings}!getAverageRatings@{getAverageRatings}}
+\index{getAverageRatings@{getAverageRatings}!recommendation\_system.ratings.ThirdRatings@{recommendation\_system.ratings.ThirdRatings}}
+\doxysubsubsection{\texorpdfstring{getAverageRatings()}{getAverageRatings()}}
+{\footnotesize\ttfamily Array\+List$<$ \mbox{\hyperlink{classrecommendation__system_1_1ratings_1_1_rating}{Rating}} $>$ recommendation\+\_\+system.\+ratings.\+Third\+Ratings.\+get\+Average\+Ratings (\begin{DoxyParamCaption}\item[{int}]{minimal\+Raters }\end{DoxyParamCaption})}
+
+This method gets the average ratings 
+\begin{DoxyParams}{Parameters}
+{\em minimal\+Raters} & -\/ Minimum number of raters required to make an average \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Array\+List$<$\+Rating$>$ -\/ \mbox{\hyperlink{classrecommendation__system_1_1ratings_1_1_rating}{Rating}} of movies with their average 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classrecommendation__system_1_1ratings_1_1_third_ratings_a0f6486bc2627067bc3debe93028a21ec_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classrecommendation__system_1_1ratings_1_1_third_ratings_a0f6486bc2627067bc3debe93028a21ec_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classrecommendation__system_1_1ratings_1_1_third_ratings_a2555f8dcbe4feb1b9f294144fd48aefe}\label{classrecommendation__system_1_1ratings_1_1_third_ratings_a2555f8dcbe4feb1b9f294144fd48aefe}} 
+\index{recommendation\_system.ratings.ThirdRatings@{recommendation\_system.ratings.ThirdRatings}!getAverageRatingsByFilter@{getAverageRatingsByFilter}}
+\index{getAverageRatingsByFilter@{getAverageRatingsByFilter}!recommendation\_system.ratings.ThirdRatings@{recommendation\_system.ratings.ThirdRatings}}
+\doxysubsubsection{\texorpdfstring{getAverageRatingsByFilter()}{getAverageRatingsByFilter()}}
+{\footnotesize\ttfamily Array\+List$<$ \mbox{\hyperlink{classrecommendation__system_1_1ratings_1_1_rating}{Rating}} $>$ recommendation\+\_\+system.\+ratings.\+Third\+Ratings.\+get\+Average\+Ratings\+By\+Filter (\begin{DoxyParamCaption}\item[{int}]{minimal\+Raters,  }\item[{\mbox{\hyperlink{interfacerecommendation__system_1_1filters_1_1_filter}{Filter}}}]{f }\end{DoxyParamCaption})}
+
+This method creates a list of all the movies that have at least minimal\+Raters ratings and satisfies the filter criteria 
+\begin{DoxyParams}{Parameters}
+{\em minimal\+Raters} & Minimum number of raters required to make an average \\
+\hline
+{\em f} & Represents filters \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Array\+List$<$\+Rating$>$ -\/ \mbox{\hyperlink{classrecommendation__system_1_1ratings_1_1_rating}{Rating}} of movies with their average 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classrecommendation__system_1_1ratings_1_1_third_ratings_a2555f8dcbe4feb1b9f294144fd48aefe_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classrecommendation__system_1_1ratings_1_1_third_ratings_a2555f8dcbe4feb1b9f294144fd48aefe_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classrecommendation__system_1_1ratings_1_1_third_ratings_ad5a4c3716684c6ac3bfa27123a6d4e2b}\label{classrecommendation__system_1_1ratings_1_1_third_ratings_ad5a4c3716684c6ac3bfa27123a6d4e2b}} 
+\index{recommendation\_system.ratings.ThirdRatings@{recommendation\_system.ratings.ThirdRatings}!getRaterSize@{getRaterSize}}
+\index{getRaterSize@{getRaterSize}!recommendation\_system.ratings.ThirdRatings@{recommendation\_system.ratings.ThirdRatings}}
+\doxysubsubsection{\texorpdfstring{getRaterSize()}{getRaterSize()}}
+{\footnotesize\ttfamily int recommendation\+\_\+system.\+ratings.\+Third\+Ratings.\+get\+Rater\+Size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+This method gets the number of the raters \begin{DoxyReturn}{Returns}
+Integer -\/ Number of raters 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classrecommendation__system_1_1ratings_1_1_third_ratings_ad5a4c3716684c6ac3bfa27123a6d4e2b_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classrecommendation__system_1_1ratings_1_1_third_ratings_aa5a01344062dea4b3b5f78d5a37ff6d8}\label{classrecommendation__system_1_1ratings_1_1_third_ratings_aa5a01344062dea4b3b5f78d5a37ff6d8}} 
+\index{recommendation\_system.ratings.ThirdRatings@{recommendation\_system.ratings.ThirdRatings}!main@{main}}
+\index{main@{main}!recommendation\_system.ratings.ThirdRatings@{recommendation\_system.ratings.ThirdRatings}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily static void recommendation\+\_\+system.\+ratings.\+Third\+Ratings.\+main (\begin{DoxyParamCaption}\item[{String\mbox{[}$\,$\mbox{]}}]{args }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classrecommendation__system_1_1ratings_1_1_third_ratings_aa5a01344062dea4b3b5f78d5a37ff6d8_cgraph}
+\end{center}
+\end{figure}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/main/java/recommendation\+\_\+system/ratings/\mbox{\hyperlink{_third_ratings_8java}{Third\+Ratings.\+java}}\end{DoxyCompactItemize}

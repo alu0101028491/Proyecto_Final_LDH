@@ -1,0 +1,72 @@
+\hypertarget{interfacerecommendation__system_1_1recommenders_1_1_recommender}{}\doxysection{recommendation\+\_\+system.\+recommenders.\+Recommender Interface Reference}
+\label{interfacerecommendation__system_1_1recommenders_1_1_recommender}\index{recommendation\_system.recommenders.Recommender@{recommendation\_system.recommenders.Recommender}}
+
+
+Inheritance diagram for recommendation\+\_\+system.\+recommenders.\+Recommender\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=277pt]{interfacerecommendation__system_1_1recommenders_1_1_recommender__inherit__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+Array\+List$<$ String $>$ \mbox{\hyperlink{interfacerecommendation__system_1_1recommenders_1_1_recommender_a117012583a1e81d4668ea6165b429bb9}{get\+Items\+To\+Rate}} ()
+\item 
+void \mbox{\hyperlink{interfacerecommendation__system_1_1recommenders_1_1_recommender_a6fb17e0049703b5cbb98e4d3673baa7e}{print\+Recommendations\+For}} (String web\+Rater\+ID)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This interface allows the code to be integrated with the web site 
+
+The Interface contains\+: 
+\begin{DoxyItemize}
+\item The method get\+Items\+To\+Rate  
+\item The method print\+Recommendations\+For with one String parameter representing a new rater  
+\end{DoxyItemize}
+
+\begin{DoxySince}{Since}
+1/1/23 
+\end{DoxySince}
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{interfacerecommendation__system_1_1recommenders_1_1_recommender_a117012583a1e81d4668ea6165b429bb9}\label{interfacerecommendation__system_1_1recommenders_1_1_recommender_a117012583a1e81d4668ea6165b429bb9}} 
+\index{recommendation\_system.recommenders.Recommender@{recommendation\_system.recommenders.Recommender}!getItemsToRate@{getItemsToRate}}
+\index{getItemsToRate@{getItemsToRate}!recommendation\_system.recommenders.Recommender@{recommendation\_system.recommenders.Recommender}}
+\doxysubsubsection{\texorpdfstring{getItemsToRate()}{getItemsToRate()}}
+{\footnotesize\ttfamily Array\+List$<$ String $>$ recommendation\+\_\+system.\+recommenders.\+Recommender.\+get\+Items\+To\+Rate (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+This method returns a list of movie IDs that will be used to look up the movies in the Movie\+Database and present them to users to rate \begin{DoxyReturn}{Returns}
+Arraylist$<$\+String$>$ of the movies to rate 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classrecommendation__system_1_1recommenders_1_1_recommendation_runner_a3b8f756f476b5418621808fb537b37e2}{recommendation\+\_\+system.\+recommenders.\+Recommendation\+Runner}}.
+
+\mbox{\Hypertarget{interfacerecommendation__system_1_1recommenders_1_1_recommender_a6fb17e0049703b5cbb98e4d3673baa7e}\label{interfacerecommendation__system_1_1recommenders_1_1_recommender_a6fb17e0049703b5cbb98e4d3673baa7e}} 
+\index{recommendation\_system.recommenders.Recommender@{recommendation\_system.recommenders.Recommender}!printRecommendationsFor@{printRecommendationsFor}}
+\index{printRecommendationsFor@{printRecommendationsFor}!recommendation\_system.recommenders.Recommender@{recommendation\_system.recommenders.Recommender}}
+\doxysubsubsection{\texorpdfstring{printRecommendationsFor()}{printRecommendationsFor()}}
+{\footnotesize\ttfamily void recommendation\+\_\+system.\+recommenders.\+Recommender.\+print\+Recommendations\+For (\begin{DoxyParamCaption}\item[{String}]{web\+Rater\+ID }\end{DoxyParamCaption})}
+
+This method prints out an HTML table of the movies recommended for the given rater 
+\begin{DoxyParams}{Parameters}
+{\em web\+Rater\+ID} & -\/ A String parameter representing a new rater \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{classrecommendation__system_1_1recommenders_1_1_recommendation_runner_aeac38552a75d2d16ea077bf4a6f7e798}{recommendation\+\_\+system.\+recommenders.\+Recommendation\+Runner}}.
+
+
+
+The documentation for this interface was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/main/java/recommendation\+\_\+system/recommenders/\mbox{\hyperlink{_recommender_8java}{Recommender.\+java}}\end{DoxyCompactItemize}

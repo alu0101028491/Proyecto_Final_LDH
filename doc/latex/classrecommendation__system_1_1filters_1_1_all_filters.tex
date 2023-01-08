@@ -1,0 +1,101 @@
+\hypertarget{classrecommendation__system_1_1filters_1_1_all_filters}{}\doxysection{recommendation\+\_\+system.\+filters.\+All\+Filters Class Reference}
+\label{classrecommendation__system_1_1filters_1_1_all_filters}\index{recommendation\_system.filters.AllFilters@{recommendation\_system.filters.AllFilters}}
+
+
+Inheritance diagram for recommendation\+\_\+system.\+filters.\+All\+Filters\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=235pt]{classrecommendation__system_1_1filters_1_1_all_filters__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for recommendation\+\_\+system.\+filters.\+All\+Filters\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classrecommendation__system_1_1filters_1_1_all_filters__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classrecommendation__system_1_1filters_1_1_all_filters_a13cfe374195d75315f8d57b867a90b65}{All\+Filters}} ()
+\item 
+void \mbox{\hyperlink{classrecommendation__system_1_1filters_1_1_all_filters_a9c7af7444bacd948ef1f479091d2cb6d}{add\+Filter}} (\mbox{\hyperlink{interfacerecommendation__system_1_1filters_1_1_filter}{Filter}} f)
+\item 
+boolean \mbox{\hyperlink{classrecommendation__system_1_1filters_1_1_all_filters_afd7895e67bdb2f727d0c472c0f19a93a}{satisfies}} (String id)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This class allows to combine all filters to pass them consecutively on an element that the user wants to filter. 
+
+The class contains the necessary methods for\+: 
+\begin{DoxyItemize}
+\item Add different types of filters  
+\end{DoxyItemize}
+
+\begin{DoxySince}{Since}
+13/12/22 
+\end{DoxySince}
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classrecommendation__system_1_1filters_1_1_all_filters_a13cfe374195d75315f8d57b867a90b65}\label{classrecommendation__system_1_1filters_1_1_all_filters_a13cfe374195d75315f8d57b867a90b65}} 
+\index{recommendation\_system.filters.AllFilters@{recommendation\_system.filters.AllFilters}!AllFilters@{AllFilters}}
+\index{AllFilters@{AllFilters}!recommendation\_system.filters.AllFilters@{recommendation\_system.filters.AllFilters}}
+\doxysubsubsection{\texorpdfstring{AllFilters()}{AllFilters()}}
+{\footnotesize\ttfamily recommendation\+\_\+system.\+filters.\+All\+Filters.\+All\+Filters (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Default builder 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classrecommendation__system_1_1filters_1_1_all_filters_a9c7af7444bacd948ef1f479091d2cb6d}\label{classrecommendation__system_1_1filters_1_1_all_filters_a9c7af7444bacd948ef1f479091d2cb6d}} 
+\index{recommendation\_system.filters.AllFilters@{recommendation\_system.filters.AllFilters}!addFilter@{addFilter}}
+\index{addFilter@{addFilter}!recommendation\_system.filters.AllFilters@{recommendation\_system.filters.AllFilters}}
+\doxysubsubsection{\texorpdfstring{addFilter()}{addFilter()}}
+{\footnotesize\ttfamily void recommendation\+\_\+system.\+filters.\+All\+Filters.\+add\+Filter (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{interfacerecommendation__system_1_1filters_1_1_filter}{Filter}}}]{f }\end{DoxyParamCaption})}
+
+This method add a filter to our filter collection 
+\begin{DoxyParams}{Parameters}
+{\em f} & \mbox{\hyperlink{interfacerecommendation__system_1_1filters_1_1_filter}{Filter}} to be added \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classrecommendation__system_1_1filters_1_1_all_filters_a9c7af7444bacd948ef1f479091d2cb6d_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classrecommendation__system_1_1filters_1_1_all_filters_afd7895e67bdb2f727d0c472c0f19a93a}\label{classrecommendation__system_1_1filters_1_1_all_filters_afd7895e67bdb2f727d0c472c0f19a93a}} 
+\index{recommendation\_system.filters.AllFilters@{recommendation\_system.filters.AllFilters}!satisfies@{satisfies}}
+\index{satisfies@{satisfies}!recommendation\_system.filters.AllFilters@{recommendation\_system.filters.AllFilters}}
+\doxysubsubsection{\texorpdfstring{satisfies()}{satisfies()}}
+{\footnotesize\ttfamily boolean recommendation\+\_\+system.\+filters.\+All\+Filters.\+satisfies (\begin{DoxyParamCaption}\item[{String}]{id }\end{DoxyParamCaption})}
+
+This method proves if the movie satisfies the criteria 
+\begin{DoxyParams}{Parameters}
+{\em id} & A string variable representing the ID of the movie \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Boolean -\/ True if the movie satisfies the criteria in the method -\/ False otherwise 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{interfacerecommendation__system_1_1filters_1_1_filter_a2f211cef0e51ea3968b42098db9e79cb}{recommendation\+\_\+system.\+filters.\+Filter}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/main/java/recommendation\+\_\+system/filters/\mbox{\hyperlink{_all_filters_8java}{All\+Filters.\+java}}\end{DoxyCompactItemize}

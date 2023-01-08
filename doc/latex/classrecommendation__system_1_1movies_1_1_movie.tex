@@ -1,0 +1,179 @@
+\hypertarget{classrecommendation__system_1_1movies_1_1_movie}{}\doxysection{recommendation\+\_\+system.\+movies.\+Movie Class Reference}
+\label{classrecommendation__system_1_1movies_1_1_movie}\index{recommendation\_system.movies.Movie@{recommendation\_system.movies.Movie}}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classrecommendation__system_1_1movies_1_1_movie_adb1d04fc364ba420baba98bf9c319487}{Movie}} (String an\+ID, String a\+Title, String a\+Year, String the\+Genres)
+\item 
+\mbox{\hyperlink{classrecommendation__system_1_1movies_1_1_movie_ad3a9bec65488eb8930b21ca3f36aed4c}{Movie}} (String an\+ID, String a\+Title, String a\+Year, String the\+Genres, String a\+Director, String a\+Country, String a\+Poster, int the\+Minutes)
+\item 
+String \mbox{\hyperlink{classrecommendation__system_1_1movies_1_1_movie_ad900d7c16bef813e52f40e284355123d}{get\+ID}} ()
+\item 
+String \mbox{\hyperlink{classrecommendation__system_1_1movies_1_1_movie_a0c6e44cbf017ed685ce57a4dd9ed9503}{get\+Title}} ()
+\item 
+int \mbox{\hyperlink{classrecommendation__system_1_1movies_1_1_movie_a7d366e15d3e214d4ca6509b9d7cdd71e}{get\+Year}} ()
+\item 
+String \mbox{\hyperlink{classrecommendation__system_1_1movies_1_1_movie_a72f0931679b7a54fb0a0c94e8aab3e28}{get\+Genres}} ()
+\item 
+String \mbox{\hyperlink{classrecommendation__system_1_1movies_1_1_movie_a68174e7f1d02427a788ffbc5d514b2ef}{get\+Country}} ()
+\item 
+String \mbox{\hyperlink{classrecommendation__system_1_1movies_1_1_movie_a41b0cb1fbe9f0356031d90c867b98541}{get\+Director}} ()
+\item 
+String \mbox{\hyperlink{classrecommendation__system_1_1movies_1_1_movie_a0a059447a6d592c8a0040f86c9ef5ba1}{get\+Poster}} ()
+\item 
+int \mbox{\hyperlink{classrecommendation__system_1_1movies_1_1_movie_af0e614a2dd43b0930ee2d9817d053081}{get\+Minutes}} ()
+\item 
+String \mbox{\hyperlink{classrecommendation__system_1_1movies_1_1_movie_aeb2b4241b6b63c0da39016e9a842fcd4}{to\+String}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Plain Old Java Object (POJO) class for storing the data about one movie An immutable passive data object (PDO) to represent item data 
+
+The class contains the necessary methods for\+: 
+\begin{DoxyItemize}
+\item A constructor with eight parameters to initialize the private variables  
+\item Eight getter methods to return the private information  
+\item A to\+String method for representing movie information as a String  
+\end{DoxyItemize}
+
+\begin{DoxySince}{Since}
+13/12/22 
+\end{DoxySince}
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classrecommendation__system_1_1movies_1_1_movie_adb1d04fc364ba420baba98bf9c319487}\label{classrecommendation__system_1_1movies_1_1_movie_adb1d04fc364ba420baba98bf9c319487}} 
+\index{recommendation\_system.movies.Movie@{recommendation\_system.movies.Movie}!Movie@{Movie}}
+\index{Movie@{Movie}!recommendation\_system.movies.Movie@{recommendation\_system.movies.Movie}}
+\doxysubsubsection{\texorpdfstring{Movie()}{Movie()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily recommendation\+\_\+system.\+movies.\+Movie.\+Movie (\begin{DoxyParamCaption}\item[{String}]{an\+ID,  }\item[{String}]{a\+Title,  }\item[{String}]{a\+Year,  }\item[{String}]{the\+Genres }\end{DoxyParamCaption})}
+
+Builder overload 
+\begin{DoxyParams}{Parameters}
+{\em an\+ID} & A String variable representing the IMDB ID of the movie \\
+\hline
+{\em a\+Title} & A String variable for the movie’s title \\
+\hline
+{\em a\+Year} & An integer representing the year \\
+\hline
+{\em the\+Genres} & String of one or more genres separated by commas \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classrecommendation__system_1_1movies_1_1_movie_ad3a9bec65488eb8930b21ca3f36aed4c}\label{classrecommendation__system_1_1movies_1_1_movie_ad3a9bec65488eb8930b21ca3f36aed4c}} 
+\index{recommendation\_system.movies.Movie@{recommendation\_system.movies.Movie}!Movie@{Movie}}
+\index{Movie@{Movie}!recommendation\_system.movies.Movie@{recommendation\_system.movies.Movie}}
+\doxysubsubsection{\texorpdfstring{Movie()}{Movie()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily recommendation\+\_\+system.\+movies.\+Movie.\+Movie (\begin{DoxyParamCaption}\item[{String}]{an\+ID,  }\item[{String}]{a\+Title,  }\item[{String}]{a\+Year,  }\item[{String}]{the\+Genres,  }\item[{String}]{a\+Director,  }\item[{String}]{a\+Country,  }\item[{String}]{a\+Poster,  }\item[{int}]{the\+Minutes }\end{DoxyParamCaption})}
+
+Builder overload 
+\begin{DoxyParams}{Parameters}
+{\em an\+ID} & A String variable representing the IMDB ID of the movie \\
+\hline
+{\em a\+Title} & A String variable for the movie’s title \\
+\hline
+{\em a\+Year} & An integer representing the year \\
+\hline
+{\em the\+Genres} & String of one or more genres separated by commas \\
+\hline
+{\em a\+Director} & String of one or more directors of the movie separated by commas \\
+\hline
+{\em a\+Country} & String of one or more countries the film was made in, separated by commas \\
+\hline
+{\em a\+Poster} & String that is a link to an image of the movie poster if one exists, or “\+N/\+A” \\
+\hline
+{\em the\+Minutes} & An integer for the length of the movie \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classrecommendation__system_1_1movies_1_1_movie_a68174e7f1d02427a788ffbc5d514b2ef}\label{classrecommendation__system_1_1movies_1_1_movie_a68174e7f1d02427a788ffbc5d514b2ef}} 
+\index{recommendation\_system.movies.Movie@{recommendation\_system.movies.Movie}!getCountry@{getCountry}}
+\index{getCountry@{getCountry}!recommendation\_system.movies.Movie@{recommendation\_system.movies.Movie}}
+\doxysubsubsection{\texorpdfstring{getCountry()}{getCountry()}}
+{\footnotesize\ttfamily String recommendation\+\_\+system.\+movies.\+Movie.\+get\+Country (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+This method gets the country of the movie \begin{DoxyReturn}{Returns}
+String -\/ Countries the film was made in, separated by commas 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classrecommendation__system_1_1movies_1_1_movie_a41b0cb1fbe9f0356031d90c867b98541}\label{classrecommendation__system_1_1movies_1_1_movie_a41b0cb1fbe9f0356031d90c867b98541}} 
+\index{recommendation\_system.movies.Movie@{recommendation\_system.movies.Movie}!getDirector@{getDirector}}
+\index{getDirector@{getDirector}!recommendation\_system.movies.Movie@{recommendation\_system.movies.Movie}}
+\doxysubsubsection{\texorpdfstring{getDirector()}{getDirector()}}
+{\footnotesize\ttfamily String recommendation\+\_\+system.\+movies.\+Movie.\+get\+Director (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+This methods gets the directors of the movie \begin{DoxyReturn}{Returns}
+String -\/ Directors of the movie separated by commas 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classrecommendation__system_1_1movies_1_1_movie_a72f0931679b7a54fb0a0c94e8aab3e28}\label{classrecommendation__system_1_1movies_1_1_movie_a72f0931679b7a54fb0a0c94e8aab3e28}} 
+\index{recommendation\_system.movies.Movie@{recommendation\_system.movies.Movie}!getGenres@{getGenres}}
+\index{getGenres@{getGenres}!recommendation\_system.movies.Movie@{recommendation\_system.movies.Movie}}
+\doxysubsubsection{\texorpdfstring{getGenres()}{getGenres()}}
+{\footnotesize\ttfamily String recommendation\+\_\+system.\+movies.\+Movie.\+get\+Genres (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+This method gets the genres of the movie \begin{DoxyReturn}{Returns}
+String -\/ Genres associated with this item 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classrecommendation__system_1_1movies_1_1_movie_ad900d7c16bef813e52f40e284355123d}\label{classrecommendation__system_1_1movies_1_1_movie_ad900d7c16bef813e52f40e284355123d}} 
+\index{recommendation\_system.movies.Movie@{recommendation\_system.movies.Movie}!getID@{getID}}
+\index{getID@{getID}!recommendation\_system.movies.Movie@{recommendation\_system.movies.Movie}}
+\doxysubsubsection{\texorpdfstring{getID()}{getID()}}
+{\footnotesize\ttfamily String recommendation\+\_\+system.\+movies.\+Movie.\+get\+ID (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+This method gets the ID of the movie \begin{DoxyReturn}{Returns}
+String -\/ ID associated with this item 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classrecommendation__system_1_1movies_1_1_movie_af0e614a2dd43b0930ee2d9817d053081}\label{classrecommendation__system_1_1movies_1_1_movie_af0e614a2dd43b0930ee2d9817d053081}} 
+\index{recommendation\_system.movies.Movie@{recommendation\_system.movies.Movie}!getMinutes@{getMinutes}}
+\index{getMinutes@{getMinutes}!recommendation\_system.movies.Movie@{recommendation\_system.movies.Movie}}
+\doxysubsubsection{\texorpdfstring{getMinutes()}{getMinutes()}}
+{\footnotesize\ttfamily int recommendation\+\_\+system.\+movies.\+Movie.\+get\+Minutes (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+This method get the minutes of the movie \begin{DoxyReturn}{Returns}
+int -\/ An integer for the length of the movie 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classrecommendation__system_1_1movies_1_1_movie_a0a059447a6d592c8a0040f86c9ef5ba1}\label{classrecommendation__system_1_1movies_1_1_movie_a0a059447a6d592c8a0040f86c9ef5ba1}} 
+\index{recommendation\_system.movies.Movie@{recommendation\_system.movies.Movie}!getPoster@{getPoster}}
+\index{getPoster@{getPoster}!recommendation\_system.movies.Movie@{recommendation\_system.movies.Movie}}
+\doxysubsubsection{\texorpdfstring{getPoster()}{getPoster()}}
+{\footnotesize\ttfamily String recommendation\+\_\+system.\+movies.\+Movie.\+get\+Poster (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+This method get the poster of the movie \begin{DoxyReturn}{Returns}
+String -\/ A link to an image of the movie poster if one exists, or “\+N/\+A” 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classrecommendation__system_1_1movies_1_1_movie_a0c6e44cbf017ed685ce57a4dd9ed9503}\label{classrecommendation__system_1_1movies_1_1_movie_a0c6e44cbf017ed685ce57a4dd9ed9503}} 
+\index{recommendation\_system.movies.Movie@{recommendation\_system.movies.Movie}!getTitle@{getTitle}}
+\index{getTitle@{getTitle}!recommendation\_system.movies.Movie@{recommendation\_system.movies.Movie}}
+\doxysubsubsection{\texorpdfstring{getTitle()}{getTitle()}}
+{\footnotesize\ttfamily String recommendation\+\_\+system.\+movies.\+Movie.\+get\+Title (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+This method gets the title of the movie \begin{DoxyReturn}{Returns}
+String -\/ Title of this item 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classrecommendation__system_1_1movies_1_1_movie_a7d366e15d3e214d4ca6509b9d7cdd71e}\label{classrecommendation__system_1_1movies_1_1_movie_a7d366e15d3e214d4ca6509b9d7cdd71e}} 
+\index{recommendation\_system.movies.Movie@{recommendation\_system.movies.Movie}!getYear@{getYear}}
+\index{getYear@{getYear}!recommendation\_system.movies.Movie@{recommendation\_system.movies.Movie}}
+\doxysubsubsection{\texorpdfstring{getYear()}{getYear()}}
+{\footnotesize\ttfamily int recommendation\+\_\+system.\+movies.\+Movie.\+get\+Year (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+This method gets the year of the movie \begin{DoxyReturn}{Returns}
+int -\/ Year in which this item was published 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classrecommendation__system_1_1movies_1_1_movie_aeb2b4241b6b63c0da39016e9a842fcd4}\label{classrecommendation__system_1_1movies_1_1_movie_aeb2b4241b6b63c0da39016e9a842fcd4}} 
+\index{recommendation\_system.movies.Movie@{recommendation\_system.movies.Movie}!toString@{toString}}
+\index{toString@{toString}!recommendation\_system.movies.Movie@{recommendation\_system.movies.Movie}}
+\doxysubsubsection{\texorpdfstring{toString()}{toString()}}
+{\footnotesize\ttfamily String recommendation\+\_\+system.\+movies.\+Movie.\+to\+String (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+This method gets the movie´s information \begin{DoxyReturn}{Returns}
+String -\/ Item\textquotesingle{}s information 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/main/java/recommendation\+\_\+system/movies/\mbox{\hyperlink{_movie_8java}{Movie.\+java}}\end{DoxyCompactItemize}

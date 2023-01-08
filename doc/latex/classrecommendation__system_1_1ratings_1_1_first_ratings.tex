@@ -1,0 +1,171 @@
+\hypertarget{classrecommendation__system_1_1ratings_1_1_first_ratings}{}\doxysection{recommendation\+\_\+system.\+ratings.\+First\+Ratings Class Reference}
+\label{classrecommendation__system_1_1ratings_1_1_first_ratings}\index{recommendation\_system.ratings.FirstRatings@{recommendation\_system.ratings.FirstRatings}}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+Array\+List$<$ \mbox{\hyperlink{classrecommendation__system_1_1movies_1_1_movie}{Movie}} $>$ \mbox{\hyperlink{classrecommendation__system_1_1ratings_1_1_first_ratings_a9b49b5d00df0677ad83992fc60cd7986}{load\+Movies}} (String file\+Name)
+\item 
+void \mbox{\hyperlink{classrecommendation__system_1_1ratings_1_1_first_ratings_adbf09d85d951ce969100ef93c05e1e3e}{test\+Load\+Movies}} ()
+\item 
+Array\+List$<$ \mbox{\hyperlink{interfacerecommendation__system_1_1raters_1_1_rater}{Rater}} $>$ \mbox{\hyperlink{classrecommendation__system_1_1ratings_1_1_first_ratings_a169b41172bd224b12fa0d75367a8012a}{load\+Raters}} (String file\+Name)
+\item 
+void \mbox{\hyperlink{classrecommendation__system_1_1ratings_1_1_first_ratings_ac680c8df6b67bcdf2974a275393c40aa}{test\+Load\+Raters}} (String filename)
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{classrecommendation__system_1_1ratings_1_1_first_ratings_a6a27d8973f9d37fb65ebdd0c4353128f}{main}} (String\mbox{[}$\,$\mbox{]} args)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Class to answer simple questions about movies and ratings. -\/ Phase 1 
+
+The class contains the necessary methods for\+: 
+\begin{DoxyItemize}
+\item Process every record from the CSV file and return an Array\+List of type Movie.  
+\item Determine the maximum number of movies by any director.  
+\item Load Raters.  
+\item Get the number of ratings for a particular rater.  
+\item Find the maximum number of ratings by any rater.  
+\item Find the number of ratings a particular movie has.  
+\item Determine how many movies have been rated.  
+\end{DoxyItemize}
+
+\begin{DoxySince}{Since}
+26/12/22 
+\end{DoxySince}
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classrecommendation__system_1_1ratings_1_1_first_ratings_a9b49b5d00df0677ad83992fc60cd7986}\label{classrecommendation__system_1_1ratings_1_1_first_ratings_a9b49b5d00df0677ad83992fc60cd7986}} 
+\index{recommendation\_system.ratings.FirstRatings@{recommendation\_system.ratings.FirstRatings}!loadMovies@{loadMovies}}
+\index{loadMovies@{loadMovies}!recommendation\_system.ratings.FirstRatings@{recommendation\_system.ratings.FirstRatings}}
+\doxysubsubsection{\texorpdfstring{loadMovies()}{loadMovies()}}
+{\footnotesize\ttfamily Array\+List$<$ \mbox{\hyperlink{classrecommendation__system_1_1movies_1_1_movie}{Movie}} $>$ recommendation\+\_\+system.\+ratings.\+First\+Ratings.\+load\+Movies (\begin{DoxyParamCaption}\item[{String}]{file\+Name }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em file\+Name} & A file of movie information \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Array\+List$<$\+Movie$>$ with all of the movie data from the file 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classrecommendation__system_1_1ratings_1_1_first_ratings_a9b49b5d00df0677ad83992fc60cd7986_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classrecommendation__system_1_1ratings_1_1_first_ratings_a9b49b5d00df0677ad83992fc60cd7986_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classrecommendation__system_1_1ratings_1_1_first_ratings_a169b41172bd224b12fa0d75367a8012a}\label{classrecommendation__system_1_1ratings_1_1_first_ratings_a169b41172bd224b12fa0d75367a8012a}} 
+\index{recommendation\_system.ratings.FirstRatings@{recommendation\_system.ratings.FirstRatings}!loadRaters@{loadRaters}}
+\index{loadRaters@{loadRaters}!recommendation\_system.ratings.FirstRatings@{recommendation\_system.ratings.FirstRatings}}
+\doxysubsubsection{\texorpdfstring{loadRaters()}{loadRaters()}}
+{\footnotesize\ttfamily Array\+List$<$ \mbox{\hyperlink{interfacerecommendation__system_1_1raters_1_1_rater}{Rater}} $>$ recommendation\+\_\+system.\+ratings.\+First\+Ratings.\+load\+Raters (\begin{DoxyParamCaption}\item[{String}]{file\+Name }\end{DoxyParamCaption})}
+
+Load Raters -\/ Raters is class for storing the data about one rating of an item. 
+\begin{DoxyParams}{Parameters}
+{\em file\+Name} & Ratings file \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Array\+List$<$\+Rater$>$ of Raters 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classrecommendation__system_1_1ratings_1_1_first_ratings_a169b41172bd224b12fa0d75367a8012a_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classrecommendation__system_1_1ratings_1_1_first_ratings_a169b41172bd224b12fa0d75367a8012a_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classrecommendation__system_1_1ratings_1_1_first_ratings_a6a27d8973f9d37fb65ebdd0c4353128f}\label{classrecommendation__system_1_1ratings_1_1_first_ratings_a6a27d8973f9d37fb65ebdd0c4353128f}} 
+\index{recommendation\_system.ratings.FirstRatings@{recommendation\_system.ratings.FirstRatings}!main@{main}}
+\index{main@{main}!recommendation\_system.ratings.FirstRatings@{recommendation\_system.ratings.FirstRatings}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily static void recommendation\+\_\+system.\+ratings.\+First\+Ratings.\+main (\begin{DoxyParamCaption}\item[{String\mbox{[}$\,$\mbox{]}}]{args }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classrecommendation__system_1_1ratings_1_1_first_ratings_a6a27d8973f9d37fb65ebdd0c4353128f_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classrecommendation__system_1_1ratings_1_1_first_ratings_adbf09d85d951ce969100ef93c05e1e3e}\label{classrecommendation__system_1_1ratings_1_1_first_ratings_adbf09d85d951ce969100ef93c05e1e3e}} 
+\index{recommendation\_system.ratings.FirstRatings@{recommendation\_system.ratings.FirstRatings}!testLoadMovies@{testLoadMovies}}
+\index{testLoadMovies@{testLoadMovies}!recommendation\_system.ratings.FirstRatings@{recommendation\_system.ratings.FirstRatings}}
+\doxysubsubsection{\texorpdfstring{testLoadMovies()}{testLoadMovies()}}
+{\footnotesize\ttfamily void recommendation\+\_\+system.\+ratings.\+First\+Ratings.\+test\+Load\+Movies (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+This method determine the maximum number of movies by any director, and who the directors are that directed that many movies. Remember that some movies may have more than one director. Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classrecommendation__system_1_1ratings_1_1_first_ratings_adbf09d85d951ce969100ef93c05e1e3e_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classrecommendation__system_1_1ratings_1_1_first_ratings_adbf09d85d951ce969100ef93c05e1e3e_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classrecommendation__system_1_1ratings_1_1_first_ratings_ac680c8df6b67bcdf2974a275393c40aa}\label{classrecommendation__system_1_1ratings_1_1_first_ratings_ac680c8df6b67bcdf2974a275393c40aa}} 
+\index{recommendation\_system.ratings.FirstRatings@{recommendation\_system.ratings.FirstRatings}!testLoadRaters@{testLoadRaters}}
+\index{testLoadRaters@{testLoadRaters}!recommendation\_system.ratings.FirstRatings@{recommendation\_system.ratings.FirstRatings}}
+\doxysubsubsection{\texorpdfstring{testLoadRaters()}{testLoadRaters()}}
+{\footnotesize\ttfamily void recommendation\+\_\+system.\+ratings.\+First\+Ratings.\+test\+Load\+Raters (\begin{DoxyParamCaption}\item[{String}]{filename }\end{DoxyParamCaption})}
+
+This method find the number of ratings by rater, the number of ratings by movie and determine how many movies have been rated 
+\begin{DoxyParams}{Parameters}
+{\em filename} & -\/ A String variable representing the filename \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classrecommendation__system_1_1ratings_1_1_first_ratings_ac680c8df6b67bcdf2974a275393c40aa_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classrecommendation__system_1_1ratings_1_1_first_ratings_ac680c8df6b67bcdf2974a275393c40aa_icgraph}
+\end{center}
+\end{figure}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/main/java/recommendation\+\_\+system/ratings/\mbox{\hyperlink{_first_ratings_8java}{First\+Ratings.\+java}}\end{DoxyCompactItemize}

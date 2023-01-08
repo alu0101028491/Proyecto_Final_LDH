@@ -1,0 +1,264 @@
+\hypertarget{classrecommendation__system_1_1recommenders_1_1_recommendation_runner}{}\doxysection{recommendation\+\_\+system.\+recommenders.\+Recommendation\+Runner Class Reference}
+\label{classrecommendation__system_1_1recommenders_1_1_recommendation_runner}\index{recommendation\_system.recommenders.RecommendationRunner@{recommendation\_system.recommenders.RecommendationRunner}}
+
+
+Inheritance diagram for recommendation\+\_\+system.\+recommenders.\+Recommendation\+Runner\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=277pt]{classrecommendation__system_1_1recommenders_1_1_recommendation_runner__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for recommendation\+\_\+system.\+recommenders.\+Recommendation\+Runner\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=277pt]{classrecommendation__system_1_1recommenders_1_1_recommendation_runner__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+String \mbox{\hyperlink{classrecommendation__system_1_1recommenders_1_1_recommendation_runner_a6aeffb4bee7310006424962a7cac1949}{get\+Filename}} ()
+\item 
+void \mbox{\hyperlink{classrecommendation__system_1_1recommenders_1_1_recommendation_runner_a56483bcfcb3093c8bc7a5190e491c6ad}{set\+Filename}} (String filename)
+\item 
+Path \mbox{\hyperlink{classrecommendation__system_1_1recommenders_1_1_recommendation_runner_ac7585e6af515c1267af738225d95ee07}{get\+Path\+To\+File}} ()
+\item 
+void \mbox{\hyperlink{classrecommendation__system_1_1recommenders_1_1_recommendation_runner_aacdb226029d8fbd775106aca520449db}{set\+Path\+To\+File}} (Path path\+To\+File)
+\item 
+Array\+List$<$ String $>$ \mbox{\hyperlink{classrecommendation__system_1_1recommenders_1_1_recommendation_runner_a3b8f756f476b5418621808fb537b37e2}{get\+Items\+To\+Rate}} ()
+\item 
+void \mbox{\hyperlink{classrecommendation__system_1_1recommenders_1_1_recommendation_runner_ac47eb2dc340b1a6c66d93d23779eed73}{write\+Html\+Head}} ()  throws IOException 
+\item 
+void \mbox{\hyperlink{classrecommendation__system_1_1recommenders_1_1_recommendation_runner_ab4348d038a2494014745b3c0eabe61e8}{write\+Css}} ()  throws IOException 
+\item 
+void \mbox{\hyperlink{classrecommendation__system_1_1recommenders_1_1_recommendation_runner_a3340ec45f9ff47cac301db2a0192c8f7}{write\+Body}} (Array\+List$<$ \mbox{\hyperlink{classrecommendation__system_1_1ratings_1_1_rating}{Rating}} $>$ out\+ID)  throws IOException 
+\item 
+void \mbox{\hyperlink{classrecommendation__system_1_1recommenders_1_1_recommendation_runner_aeac38552a75d2d16ea077bf4a6f7e798}{print\+Recommendations\+For}} (String web\+Rater\+ID)
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{classrecommendation__system_1_1recommenders_1_1_recommendation_runner_a7d0b51866a0b356e6bc7d2b475c5e386}{main}} (String\mbox{[}$\,$\mbox{]} args)  throws IOException 
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Class to run the methods on the recommender interface and write the HTML 
+
+The class contains the necessary methods for\+: 
+\begin{DoxyItemize}
+\item Get the file name  
+\item Set the file name  
+\item Get the path to file  
+\item Set the path to file  
+\item Get the movies to rate  
+\item Write HTMLHead  
+\item Write CSS  
+\item Write HTMLBody  
+\item Print recommendations  
+\end{DoxyItemize}
+
+\begin{DoxySince}{Since}
+1/1/23 
+\end{DoxySince}
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classrecommendation__system_1_1recommenders_1_1_recommendation_runner_a6aeffb4bee7310006424962a7cac1949}\label{classrecommendation__system_1_1recommenders_1_1_recommendation_runner_a6aeffb4bee7310006424962a7cac1949}} 
+\index{recommendation\_system.recommenders.RecommendationRunner@{recommendation\_system.recommenders.RecommendationRunner}!getFilename@{getFilename}}
+\index{getFilename@{getFilename}!recommendation\_system.recommenders.RecommendationRunner@{recommendation\_system.recommenders.RecommendationRunner}}
+\doxysubsubsection{\texorpdfstring{getFilename()}{getFilename()}}
+{\footnotesize\ttfamily String recommendation\+\_\+system.\+recommenders.\+Recommendation\+Runner.\+get\+Filename (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+This method gets the file name of the resulting HTML \begin{DoxyReturn}{Returns}
+String -\/ filename 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classrecommendation__system_1_1recommenders_1_1_recommendation_runner_a3b8f756f476b5418621808fb537b37e2}\label{classrecommendation__system_1_1recommenders_1_1_recommendation_runner_a3b8f756f476b5418621808fb537b37e2}} 
+\index{recommendation\_system.recommenders.RecommendationRunner@{recommendation\_system.recommenders.RecommendationRunner}!getItemsToRate@{getItemsToRate}}
+\index{getItemsToRate@{getItemsToRate}!recommendation\_system.recommenders.RecommendationRunner@{recommendation\_system.recommenders.RecommendationRunner}}
+\doxysubsubsection{\texorpdfstring{getItemsToRate()}{getItemsToRate()}}
+{\footnotesize\ttfamily Array\+List$<$ String $>$ recommendation\+\_\+system.\+recommenders.\+Recommendation\+Runner.\+get\+Items\+To\+Rate (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+This method randomly pick 10 movie to let the user to rate Modified for our simulation -\/ Now returns zero \begin{DoxyReturn}{Returns}
+Arraylist$<$\+String$>$ of the movies to be rate 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{interfacerecommendation__system_1_1recommenders_1_1_recommender_a117012583a1e81d4668ea6165b429bb9}{recommendation\+\_\+system.\+recommenders.\+Recommender}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classrecommendation__system_1_1recommenders_1_1_recommendation_runner_a3b8f756f476b5418621808fb537b37e2_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classrecommendation__system_1_1recommenders_1_1_recommendation_runner_a3b8f756f476b5418621808fb537b37e2_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classrecommendation__system_1_1recommenders_1_1_recommendation_runner_ac7585e6af515c1267af738225d95ee07}\label{classrecommendation__system_1_1recommenders_1_1_recommendation_runner_ac7585e6af515c1267af738225d95ee07}} 
+\index{recommendation\_system.recommenders.RecommendationRunner@{recommendation\_system.recommenders.RecommendationRunner}!getPathToFile@{getPathToFile}}
+\index{getPathToFile@{getPathToFile}!recommendation\_system.recommenders.RecommendationRunner@{recommendation\_system.recommenders.RecommendationRunner}}
+\doxysubsubsection{\texorpdfstring{getPathToFile()}{getPathToFile()}}
+{\footnotesize\ttfamily Path recommendation\+\_\+system.\+recommenders.\+Recommendation\+Runner.\+get\+Path\+To\+File (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+This method gets the path to the resulting HTML \begin{DoxyReturn}{Returns}
+the path\+To\+File 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classrecommendation__system_1_1recommenders_1_1_recommendation_runner_a7d0b51866a0b356e6bc7d2b475c5e386}\label{classrecommendation__system_1_1recommenders_1_1_recommendation_runner_a7d0b51866a0b356e6bc7d2b475c5e386}} 
+\index{recommendation\_system.recommenders.RecommendationRunner@{recommendation\_system.recommenders.RecommendationRunner}!main@{main}}
+\index{main@{main}!recommendation\_system.recommenders.RecommendationRunner@{recommendation\_system.recommenders.RecommendationRunner}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily static void recommendation\+\_\+system.\+recommenders.\+Recommendation\+Runner.\+main (\begin{DoxyParamCaption}\item[{String\mbox{[}$\,$\mbox{]}}]{args }\end{DoxyParamCaption}) throws IOException\hspace{0.3cm}{\ttfamily [static]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classrecommendation__system_1_1recommenders_1_1_recommendation_runner_a7d0b51866a0b356e6bc7d2b475c5e386_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classrecommendation__system_1_1recommenders_1_1_recommendation_runner_aeac38552a75d2d16ea077bf4a6f7e798}\label{classrecommendation__system_1_1recommenders_1_1_recommendation_runner_aeac38552a75d2d16ea077bf4a6f7e798}} 
+\index{recommendation\_system.recommenders.RecommendationRunner@{recommendation\_system.recommenders.RecommendationRunner}!printRecommendationsFor@{printRecommendationsFor}}
+\index{printRecommendationsFor@{printRecommendationsFor}!recommendation\_system.recommenders.RecommendationRunner@{recommendation\_system.recommenders.RecommendationRunner}}
+\doxysubsubsection{\texorpdfstring{printRecommendationsFor()}{printRecommendationsFor()}}
+{\footnotesize\ttfamily void recommendation\+\_\+system.\+recommenders.\+Recommendation\+Runner.\+print\+Recommendations\+For (\begin{DoxyParamCaption}\item[{String}]{web\+Rater\+ID }\end{DoxyParamCaption})}
+
+This method prints the recommendations 
+\begin{DoxyParams}{Parameters}
+{\em web\+Rater\+ID} & -\/ A String parameter representing a new rater \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{interfacerecommendation__system_1_1recommenders_1_1_recommender_a6fb17e0049703b5cbb98e4d3673baa7e}{recommendation\+\_\+system.\+recommenders.\+Recommender}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classrecommendation__system_1_1recommenders_1_1_recommendation_runner_aeac38552a75d2d16ea077bf4a6f7e798_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classrecommendation__system_1_1recommenders_1_1_recommendation_runner_aeac38552a75d2d16ea077bf4a6f7e798_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classrecommendation__system_1_1recommenders_1_1_recommendation_runner_a56483bcfcb3093c8bc7a5190e491c6ad}\label{classrecommendation__system_1_1recommenders_1_1_recommendation_runner_a56483bcfcb3093c8bc7a5190e491c6ad}} 
+\index{recommendation\_system.recommenders.RecommendationRunner@{recommendation\_system.recommenders.RecommendationRunner}!setFilename@{setFilename}}
+\index{setFilename@{setFilename}!recommendation\_system.recommenders.RecommendationRunner@{recommendation\_system.recommenders.RecommendationRunner}}
+\doxysubsubsection{\texorpdfstring{setFilename()}{setFilename()}}
+{\footnotesize\ttfamily void recommendation\+\_\+system.\+recommenders.\+Recommendation\+Runner.\+set\+Filename (\begin{DoxyParamCaption}\item[{String}]{filename }\end{DoxyParamCaption})}
+
+This method Sets the File name to resulting HTML 
+\begin{DoxyParams}{Parameters}
+{\em filename} & The filename to set \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classrecommendation__system_1_1recommenders_1_1_recommendation_runner_aacdb226029d8fbd775106aca520449db}\label{classrecommendation__system_1_1recommenders_1_1_recommendation_runner_aacdb226029d8fbd775106aca520449db}} 
+\index{recommendation\_system.recommenders.RecommendationRunner@{recommendation\_system.recommenders.RecommendationRunner}!setPathToFile@{setPathToFile}}
+\index{setPathToFile@{setPathToFile}!recommendation\_system.recommenders.RecommendationRunner@{recommendation\_system.recommenders.RecommendationRunner}}
+\doxysubsubsection{\texorpdfstring{setPathToFile()}{setPathToFile()}}
+{\footnotesize\ttfamily void recommendation\+\_\+system.\+recommenders.\+Recommendation\+Runner.\+set\+Path\+To\+File (\begin{DoxyParamCaption}\item[{Path}]{path\+To\+File }\end{DoxyParamCaption})}
+
+This method set the path to write resulting HTML 
+\begin{DoxyParams}{Parameters}
+{\em path\+To\+File} & set the path To write File \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classrecommendation__system_1_1recommenders_1_1_recommendation_runner_a3340ec45f9ff47cac301db2a0192c8f7}\label{classrecommendation__system_1_1recommenders_1_1_recommendation_runner_a3340ec45f9ff47cac301db2a0192c8f7}} 
+\index{recommendation\_system.recommenders.RecommendationRunner@{recommendation\_system.recommenders.RecommendationRunner}!writeBody@{writeBody}}
+\index{writeBody@{writeBody}!recommendation\_system.recommenders.RecommendationRunner@{recommendation\_system.recommenders.RecommendationRunner}}
+\doxysubsubsection{\texorpdfstring{writeBody()}{writeBody()}}
+{\footnotesize\ttfamily void recommendation\+\_\+system.\+recommenders.\+Recommendation\+Runner.\+write\+Body (\begin{DoxyParamCaption}\item[{Array\+List$<$ \mbox{\hyperlink{classrecommendation__system_1_1ratings_1_1_rating}{Rating}} $>$}]{out\+ID }\end{DoxyParamCaption}) throws IOException}
+
+This method writes HTML Body 
+\begin{DoxyParams}{Parameters}
+{\em out\+ID} & -\/ Arraylist$<$\+Rating$>$ of the movies \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em IOException} & \\
+\hline
+\end{DoxyExceptions}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classrecommendation__system_1_1recommenders_1_1_recommendation_runner_a3340ec45f9ff47cac301db2a0192c8f7_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classrecommendation__system_1_1recommenders_1_1_recommendation_runner_a3340ec45f9ff47cac301db2a0192c8f7_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classrecommendation__system_1_1recommenders_1_1_recommendation_runner_ab4348d038a2494014745b3c0eabe61e8}\label{classrecommendation__system_1_1recommenders_1_1_recommendation_runner_ab4348d038a2494014745b3c0eabe61e8}} 
+\index{recommendation\_system.recommenders.RecommendationRunner@{recommendation\_system.recommenders.RecommendationRunner}!writeCss@{writeCss}}
+\index{writeCss@{writeCss}!recommendation\_system.recommenders.RecommendationRunner@{recommendation\_system.recommenders.RecommendationRunner}}
+\doxysubsubsection{\texorpdfstring{writeCss()}{writeCss()}}
+{\footnotesize\ttfamily void recommendation\+\_\+system.\+recommenders.\+Recommendation\+Runner.\+write\+Css (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) throws IOException}
+
+This method writes CSS 
+\begin{DoxyExceptions}{Exceptions}
+{\em IOException} & \\
+\hline
+\end{DoxyExceptions}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classrecommendation__system_1_1recommenders_1_1_recommendation_runner_ab4348d038a2494014745b3c0eabe61e8_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classrecommendation__system_1_1recommenders_1_1_recommendation_runner_ac47eb2dc340b1a6c66d93d23779eed73}\label{classrecommendation__system_1_1recommenders_1_1_recommendation_runner_ac47eb2dc340b1a6c66d93d23779eed73}} 
+\index{recommendation\_system.recommenders.RecommendationRunner@{recommendation\_system.recommenders.RecommendationRunner}!writeHtmlHead@{writeHtmlHead}}
+\index{writeHtmlHead@{writeHtmlHead}!recommendation\_system.recommenders.RecommendationRunner@{recommendation\_system.recommenders.RecommendationRunner}}
+\doxysubsubsection{\texorpdfstring{writeHtmlHead()}{writeHtmlHead()}}
+{\footnotesize\ttfamily void recommendation\+\_\+system.\+recommenders.\+Recommendation\+Runner.\+write\+Html\+Head (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) throws IOException}
+
+This method writes HTML Head 
+\begin{DoxyExceptions}{Exceptions}
+{\em IOException} & \\
+\hline
+\end{DoxyExceptions}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classrecommendation__system_1_1recommenders_1_1_recommendation_runner_ac47eb2dc340b1a6c66d93d23779eed73_icgraph}
+\end{center}
+\end{figure}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/main/java/recommendation\+\_\+system/recommenders/\mbox{\hyperlink{_recommendation_runner_8java}{Recommendation\+Runner.\+java}}\end{DoxyCompactItemize}

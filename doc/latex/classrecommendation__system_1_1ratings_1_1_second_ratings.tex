@@ -1,0 +1,196 @@
+\hypertarget{classrecommendation__system_1_1ratings_1_1_second_ratings}{}\doxysection{recommendation\+\_\+system.\+ratings.\+Second\+Ratings Class Reference}
+\label{classrecommendation__system_1_1ratings_1_1_second_ratings}\index{recommendation\_system.ratings.SecondRatings@{recommendation\_system.ratings.SecondRatings}}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classrecommendation__system_1_1ratings_1_1_second_ratings_a6904d8771ba83e3224dc1701699b314c}{Second\+Ratings}} ()
+\item 
+\mbox{\hyperlink{classrecommendation__system_1_1ratings_1_1_second_ratings_a9b3cf6e01b61eea898332f55139fe231}{Second\+Ratings}} (String movie\+File, String rating\+File)
+\item 
+int \mbox{\hyperlink{classrecommendation__system_1_1ratings_1_1_second_ratings_a1450513099971ff002b77d87ec584aab}{get\+Movie\+Size}} ()
+\item 
+int \mbox{\hyperlink{classrecommendation__system_1_1ratings_1_1_second_ratings_af170936d42108915124502034531c578}{get\+Rater\+Size}} ()
+\item 
+Array\+List$<$ \mbox{\hyperlink{classrecommendation__system_1_1ratings_1_1_rating}{Rating}} $>$ \mbox{\hyperlink{classrecommendation__system_1_1ratings_1_1_second_ratings_afb8a6dcce2381eb5dcc64de8508b5a0f}{get\+Average\+Ratings}} (int minimal\+Raters)
+\item 
+String \mbox{\hyperlink{classrecommendation__system_1_1ratings_1_1_second_ratings_a25b22edb6314019fd5b6c0744eaebfe7}{get\+Title}} (String movie\+ID)
+\item 
+String \mbox{\hyperlink{classrecommendation__system_1_1ratings_1_1_second_ratings_ac9a0638d5384b8f67750c1ba64c3e106}{get\+ID}} (String title)
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{classrecommendation__system_1_1ratings_1_1_second_ratings_a85e85c49489154b1896815b6d0420eb1}{main}} (String\mbox{[}$\,$\mbox{]} args)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Class to do many of the calculations focusing on computing averages on movie ratings. -\/ Phase 2 
+
+The class contains the necessary methods for\+: 
+\begin{DoxyItemize}
+\item Get the number of films to analyze.  
+\item Get the number of raters to analyze.  
+\item Get the average rating given to a movie by its raters.  
+\item Get the rating of movies with their average.  
+\item Obtain the title of a movie by its ID and vice versa.  
+\end{DoxyItemize}
+
+\begin{DoxySince}{Since}
+26/12/22 
+\end{DoxySince}
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classrecommendation__system_1_1ratings_1_1_second_ratings_a6904d8771ba83e3224dc1701699b314c}\label{classrecommendation__system_1_1ratings_1_1_second_ratings_a6904d8771ba83e3224dc1701699b314c}} 
+\index{recommendation\_system.ratings.SecondRatings@{recommendation\_system.ratings.SecondRatings}!SecondRatings@{SecondRatings}}
+\index{SecondRatings@{SecondRatings}!recommendation\_system.ratings.SecondRatings@{recommendation\_system.ratings.SecondRatings}}
+\doxysubsubsection{\texorpdfstring{SecondRatings()}{SecondRatings()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily recommendation\+\_\+system.\+ratings.\+Second\+Ratings.\+Second\+Ratings (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Default builder Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classrecommendation__system_1_1ratings_1_1_second_ratings_a6904d8771ba83e3224dc1701699b314c_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classrecommendation__system_1_1ratings_1_1_second_ratings_a9b3cf6e01b61eea898332f55139fe231}\label{classrecommendation__system_1_1ratings_1_1_second_ratings_a9b3cf6e01b61eea898332f55139fe231}} 
+\index{recommendation\_system.ratings.SecondRatings@{recommendation\_system.ratings.SecondRatings}!SecondRatings@{SecondRatings}}
+\index{SecondRatings@{SecondRatings}!recommendation\_system.ratings.SecondRatings@{recommendation\_system.ratings.SecondRatings}}
+\doxysubsubsection{\texorpdfstring{SecondRatings()}{SecondRatings()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily recommendation\+\_\+system.\+ratings.\+Second\+Ratings.\+Second\+Ratings (\begin{DoxyParamCaption}\item[{String}]{movie\+File,  }\item[{String}]{rating\+File }\end{DoxyParamCaption})}
+
+Builder overload 
+\begin{DoxyParams}{Parameters}
+{\em movie\+File} & Database of our movies \\
+\hline
+{\em rating\+File} & Database of our ratings \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classrecommendation__system_1_1ratings_1_1_second_ratings_a9b3cf6e01b61eea898332f55139fe231_cgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classrecommendation__system_1_1ratings_1_1_second_ratings_afb8a6dcce2381eb5dcc64de8508b5a0f}\label{classrecommendation__system_1_1ratings_1_1_second_ratings_afb8a6dcce2381eb5dcc64de8508b5a0f}} 
+\index{recommendation\_system.ratings.SecondRatings@{recommendation\_system.ratings.SecondRatings}!getAverageRatings@{getAverageRatings}}
+\index{getAverageRatings@{getAverageRatings}!recommendation\_system.ratings.SecondRatings@{recommendation\_system.ratings.SecondRatings}}
+\doxysubsubsection{\texorpdfstring{getAverageRatings()}{getAverageRatings()}}
+{\footnotesize\ttfamily Array\+List$<$ \mbox{\hyperlink{classrecommendation__system_1_1ratings_1_1_rating}{Rating}} $>$ recommendation\+\_\+system.\+ratings.\+Second\+Ratings.\+get\+Average\+Ratings (\begin{DoxyParamCaption}\item[{int}]{minimal\+Raters }\end{DoxyParamCaption})}
+
+This method gets the average ratings 
+\begin{DoxyParams}{Parameters}
+{\em minimal\+Raters} & Minimum number of raters required to make an average \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Array\+List$<$\+Rating$>$ -\/ \mbox{\hyperlink{classrecommendation__system_1_1ratings_1_1_rating}{Rating}} of movies with their average 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classrecommendation__system_1_1ratings_1_1_second_ratings_afb8a6dcce2381eb5dcc64de8508b5a0f_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classrecommendation__system_1_1ratings_1_1_second_ratings_ac9a0638d5384b8f67750c1ba64c3e106}\label{classrecommendation__system_1_1ratings_1_1_second_ratings_ac9a0638d5384b8f67750c1ba64c3e106}} 
+\index{recommendation\_system.ratings.SecondRatings@{recommendation\_system.ratings.SecondRatings}!getID@{getID}}
+\index{getID@{getID}!recommendation\_system.ratings.SecondRatings@{recommendation\_system.ratings.SecondRatings}}
+\doxysubsubsection{\texorpdfstring{getID()}{getID()}}
+{\footnotesize\ttfamily String recommendation\+\_\+system.\+ratings.\+Second\+Ratings.\+get\+ID (\begin{DoxyParamCaption}\item[{String}]{title }\end{DoxyParamCaption})}
+
+This method gets the ID of the movies 
+\begin{DoxyParams}{Parameters}
+{\em title} & A String variable for the movie’s title \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+String -\/ Variable representing the IMDB ID of the movie 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classrecommendation__system_1_1ratings_1_1_second_ratings_a1450513099971ff002b77d87ec584aab}\label{classrecommendation__system_1_1ratings_1_1_second_ratings_a1450513099971ff002b77d87ec584aab}} 
+\index{recommendation\_system.ratings.SecondRatings@{recommendation\_system.ratings.SecondRatings}!getMovieSize@{getMovieSize}}
+\index{getMovieSize@{getMovieSize}!recommendation\_system.ratings.SecondRatings@{recommendation\_system.ratings.SecondRatings}}
+\doxysubsubsection{\texorpdfstring{getMovieSize()}{getMovieSize()}}
+{\footnotesize\ttfamily int recommendation\+\_\+system.\+ratings.\+Second\+Ratings.\+get\+Movie\+Size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+This method gets the number of films to analyze \begin{DoxyReturn}{Returns}
+int -\/ Number of films to analyze 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classrecommendation__system_1_1ratings_1_1_second_ratings_a1450513099971ff002b77d87ec584aab_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classrecommendation__system_1_1ratings_1_1_second_ratings_af170936d42108915124502034531c578}\label{classrecommendation__system_1_1ratings_1_1_second_ratings_af170936d42108915124502034531c578}} 
+\index{recommendation\_system.ratings.SecondRatings@{recommendation\_system.ratings.SecondRatings}!getRaterSize@{getRaterSize}}
+\index{getRaterSize@{getRaterSize}!recommendation\_system.ratings.SecondRatings@{recommendation\_system.ratings.SecondRatings}}
+\doxysubsubsection{\texorpdfstring{getRaterSize()}{getRaterSize()}}
+{\footnotesize\ttfamily int recommendation\+\_\+system.\+ratings.\+Second\+Ratings.\+get\+Rater\+Size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+This method gets the number of the raters to analyze \begin{DoxyReturn}{Returns}
+int -\/ Number of Raters to analyze 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classrecommendation__system_1_1ratings_1_1_second_ratings_af170936d42108915124502034531c578_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classrecommendation__system_1_1ratings_1_1_second_ratings_a25b22edb6314019fd5b6c0744eaebfe7}\label{classrecommendation__system_1_1ratings_1_1_second_ratings_a25b22edb6314019fd5b6c0744eaebfe7}} 
+\index{recommendation\_system.ratings.SecondRatings@{recommendation\_system.ratings.SecondRatings}!getTitle@{getTitle}}
+\index{getTitle@{getTitle}!recommendation\_system.ratings.SecondRatings@{recommendation\_system.ratings.SecondRatings}}
+\doxysubsubsection{\texorpdfstring{getTitle()}{getTitle()}}
+{\footnotesize\ttfamily String recommendation\+\_\+system.\+ratings.\+Second\+Ratings.\+get\+Title (\begin{DoxyParamCaption}\item[{String}]{movie\+ID }\end{DoxyParamCaption})}
+
+This method gets the title of the movies 
+\begin{DoxyParams}{Parameters}
+{\em movie\+ID} & A String variable representing the IMDB ID of the movie \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+String -\/ Movie’s title 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classrecommendation__system_1_1ratings_1_1_second_ratings_a25b22edb6314019fd5b6c0744eaebfe7_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classrecommendation__system_1_1ratings_1_1_second_ratings_a85e85c49489154b1896815b6d0420eb1}\label{classrecommendation__system_1_1ratings_1_1_second_ratings_a85e85c49489154b1896815b6d0420eb1}} 
+\index{recommendation\_system.ratings.SecondRatings@{recommendation\_system.ratings.SecondRatings}!main@{main}}
+\index{main@{main}!recommendation\_system.ratings.SecondRatings@{recommendation\_system.ratings.SecondRatings}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily static void recommendation\+\_\+system.\+ratings.\+Second\+Ratings.\+main (\begin{DoxyParamCaption}\item[{String\mbox{[}$\,$\mbox{]}}]{args }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classrecommendation__system_1_1ratings_1_1_second_ratings_a85e85c49489154b1896815b6d0420eb1_cgraph}
+\end{center}
+\end{figure}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/main/java/recommendation\+\_\+system/ratings/\mbox{\hyperlink{_second_ratings_8java}{Second\+Ratings.\+java}}\end{DoxyCompactItemize}

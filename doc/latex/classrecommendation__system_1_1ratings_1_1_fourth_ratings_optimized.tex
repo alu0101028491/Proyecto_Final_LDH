@@ -1,0 +1,120 @@
+\hypertarget{classrecommendation__system_1_1ratings_1_1_fourth_ratings_optimized}{}\doxysection{recommendation\+\_\+system.\+ratings.\+Fourth\+Ratings\+Optimized Class Reference}
+\label{classrecommendation__system_1_1ratings_1_1_fourth_ratings_optimized}\index{recommendation\_system.ratings.FourthRatingsOptimized@{recommendation\_system.ratings.FourthRatingsOptimized}}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+Array\+List$<$ \mbox{\hyperlink{classrecommendation__system_1_1ratings_1_1_rating}{Rating}} $>$ \mbox{\hyperlink{classrecommendation__system_1_1ratings_1_1_fourth_ratings_optimized_a816e02b398da552e8255829b57636672}{get\+Similar\+Ratings}} (String rater\+ID, int num\+Similar\+Raters, int minimal\+Raters)
+\item 
+Array\+List$<$ \mbox{\hyperlink{classrecommendation__system_1_1ratings_1_1_rating}{Rating}} $>$ \mbox{\hyperlink{classrecommendation__system_1_1ratings_1_1_fourth_ratings_optimized_ad388decfbd50ab905b9e9d112257e079}{get\+Similar\+Ratings\+By\+Filter}} (String rater\+ID, int num\+Similar\+Raters, int minimal\+Raters, \mbox{\hyperlink{interfacerecommendation__system_1_1filters_1_1_filter}{Filter}} f)
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{classrecommendation__system_1_1ratings_1_1_fourth_ratings_optimized_a49a227cda40f9663e5c6293b0164a0b6}{main}} (String\mbox{[}$\,$\mbox{]} args)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Class to get similar ratings -\/ Phase 4 (Optimized) Instead of iterate all movie in the Movie\+Data\+Base, we use the movie list that only the top\+Similar\+Rater\textquotesingle{}s movie. Greatly reduce the time. 
+
+DUKE\+: \char`\"{}sum of (similar rating(i) $\ast$rating of the movie(i))/count of the raters\char`\"{} 
+
+WEIXU\+: \char`\"{}sum of (similar rating(i) $\ast$rating of the movie(i))/ sum of the similar rating(i)\char`\"{} 
+
+The class contains the necessary methods for\+: 
+\begin{DoxyItemize}
+\item Get a similarity rating for each rater  
+\item Get a similar ratings  
+\item Get a similar ratings by filter  
+\end{DoxyItemize}
+
+\begin{DoxySince}{Since}
+1/1/23 
+\end{DoxySince}
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classrecommendation__system_1_1ratings_1_1_fourth_ratings_optimized_a816e02b398da552e8255829b57636672}\label{classrecommendation__system_1_1ratings_1_1_fourth_ratings_optimized_a816e02b398da552e8255829b57636672}} 
+\index{recommendation\_system.ratings.FourthRatingsOptimized@{recommendation\_system.ratings.FourthRatingsOptimized}!getSimilarRatings@{getSimilarRatings}}
+\index{getSimilarRatings@{getSimilarRatings}!recommendation\_system.ratings.FourthRatingsOptimized@{recommendation\_system.ratings.FourthRatingsOptimized}}
+\doxysubsubsection{\texorpdfstring{getSimilarRatings()}{getSimilarRatings()}}
+{\footnotesize\ttfamily Array\+List$<$ \mbox{\hyperlink{classrecommendation__system_1_1ratings_1_1_rating}{Rating}} $>$ recommendation\+\_\+system.\+ratings.\+Fourth\+Ratings\+Optimized.\+get\+Similar\+Ratings (\begin{DoxyParamCaption}\item[{String}]{rater\+ID,  }\item[{int}]{num\+Similar\+Raters,  }\item[{int}]{minimal\+Raters }\end{DoxyParamCaption})}
+
+This method obtains the movies and their weighted average ratings using only the top num\+Similar\+Raters with positive ratings and including only those movies that have at least minimal\+Raters ratings from those most similar raters (not just minimal\+Raters ratings overall). 
+\begin{DoxyParams}{Parameters}
+{\em rater\+ID} & Rater to analyze (not included into the analysis) \\
+\hline
+{\em num\+Similar\+Raters} & Raters to be analyzed within the set recommended to the user \\
+\hline
+{\em minimal\+Raters} & Minimum number of Raters to have recommended a movie \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Array\+List -\/ Movies and their weighted average ratings 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classrecommendation__system_1_1ratings_1_1_fourth_ratings_optimized_a816e02b398da552e8255829b57636672_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classrecommendation__system_1_1ratings_1_1_fourth_ratings_optimized_a816e02b398da552e8255829b57636672_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classrecommendation__system_1_1ratings_1_1_fourth_ratings_optimized_ad388decfbd50ab905b9e9d112257e079}\label{classrecommendation__system_1_1ratings_1_1_fourth_ratings_optimized_ad388decfbd50ab905b9e9d112257e079}} 
+\index{recommendation\_system.ratings.FourthRatingsOptimized@{recommendation\_system.ratings.FourthRatingsOptimized}!getSimilarRatingsByFilter@{getSimilarRatingsByFilter}}
+\index{getSimilarRatingsByFilter@{getSimilarRatingsByFilter}!recommendation\_system.ratings.FourthRatingsOptimized@{recommendation\_system.ratings.FourthRatingsOptimized}}
+\doxysubsubsection{\texorpdfstring{getSimilarRatingsByFilter()}{getSimilarRatingsByFilter()}}
+{\footnotesize\ttfamily Array\+List$<$ \mbox{\hyperlink{classrecommendation__system_1_1ratings_1_1_rating}{Rating}} $>$ recommendation\+\_\+system.\+ratings.\+Fourth\+Ratings\+Optimized.\+get\+Similar\+Ratings\+By\+Filter (\begin{DoxyParamCaption}\item[{String}]{rater\+ID,  }\item[{int}]{num\+Similar\+Raters,  }\item[{int}]{minimal\+Raters,  }\item[{\mbox{\hyperlink{interfacerecommendation__system_1_1filters_1_1_filter}{Filter}}}]{f }\end{DoxyParamCaption})}
+
+This method gets similar ratings following a certain criteria 
+\begin{DoxyParams}{Parameters}
+{\em rater\+ID} & Rater to analyze (not included into the analysis) \\
+\hline
+{\em num\+Similar\+Raters} & Raters to be analyzed within the set recommended to the user \\
+\hline
+{\em minimal\+Raters} & Minimum number of Raters to have recommended a movie \\
+\hline
+{\em f} & -\/ Represents the filters \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Array\+List -\/ Movies and their weighted average ratings 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classrecommendation__system_1_1ratings_1_1_fourth_ratings_optimized_ad388decfbd50ab905b9e9d112257e079_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classrecommendation__system_1_1ratings_1_1_fourth_ratings_optimized_a49a227cda40f9663e5c6293b0164a0b6}\label{classrecommendation__system_1_1ratings_1_1_fourth_ratings_optimized_a49a227cda40f9663e5c6293b0164a0b6}} 
+\index{recommendation\_system.ratings.FourthRatingsOptimized@{recommendation\_system.ratings.FourthRatingsOptimized}!main@{main}}
+\index{main@{main}!recommendation\_system.ratings.FourthRatingsOptimized@{recommendation\_system.ratings.FourthRatingsOptimized}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily static void recommendation\+\_\+system.\+ratings.\+Fourth\+Ratings\+Optimized.\+main (\begin{DoxyParamCaption}\item[{String\mbox{[}$\,$\mbox{]}}]{args }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classrecommendation__system_1_1ratings_1_1_fourth_ratings_optimized_a49a227cda40f9663e5c6293b0164a0b6_cgraph}
+\end{center}
+\end{figure}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/main/java/recommendation\+\_\+system/ratings/\mbox{\hyperlink{_fourth_ratings_optimized_8java}{Fourth\+Ratings\+Optimized.\+java}}\end{DoxyCompactItemize}

@@ -1,0 +1,4 @@
+var _movie_runner_similar_ratings_optimized_8java =
+[
+    [ "recommendation_system.movierunner.MovieRunnerSimilarRatingsOptimized", "classrecommendation__system_1_1movierunner_1_1_movie_runner_similar_ratings_optimized.html", "classrecommendation__system_1_1movierunner_1_1_movie_runner_similar_ratings_optimized" ]
+];

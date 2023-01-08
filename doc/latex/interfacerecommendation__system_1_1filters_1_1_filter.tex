@@ -1,0 +1,67 @@
+\hypertarget{interfacerecommendation__system_1_1filters_1_1_filter}{}\doxysection{recommendation\+\_\+system.\+filters.\+Filter Interface Reference}
+\label{interfacerecommendation__system_1_1filters_1_1_filter}\index{recommendation\_system.filters.Filter@{recommendation\_system.filters.Filter}}
+
+
+Inheritance diagram for recommendation\+\_\+system.\+filters.\+Filter\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{interfacerecommendation__system_1_1filters_1_1_filter__inherit__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+boolean \mbox{\hyperlink{interfacerecommendation__system_1_1filters_1_1_filter_a2f211cef0e51ea3968b42098db9e79cb}{satisfies}} (String id)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This interface has only one signature for the method satisfies. Any filters that implements this interface must also have this method. 
+
+The Interface contains\+: 
+\begin{DoxyItemize}
+\item The method satisfies with one String parameter representing a movie ID  
+\end{DoxyItemize}
+
+\begin{DoxySince}{Since}
+13/12/22 
+\end{DoxySince}
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{interfacerecommendation__system_1_1filters_1_1_filter_a2f211cef0e51ea3968b42098db9e79cb}\label{interfacerecommendation__system_1_1filters_1_1_filter_a2f211cef0e51ea3968b42098db9e79cb}} 
+\index{recommendation\_system.filters.Filter@{recommendation\_system.filters.Filter}!satisfies@{satisfies}}
+\index{satisfies@{satisfies}!recommendation\_system.filters.Filter@{recommendation\_system.filters.Filter}}
+\doxysubsubsection{\texorpdfstring{satisfies()}{satisfies()}}
+{\footnotesize\ttfamily boolean recommendation\+\_\+system.\+filters.\+Filter.\+satisfies (\begin{DoxyParamCaption}\item[{String}]{id }\end{DoxyParamCaption})}
+
+This method prove if the movie satisfies certain criteria 
+\begin{DoxyParams}{Parameters}
+{\em id} & A string variable representing the ID of the movie \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Boolean -\/ True if the movie satisfies the criteria in the method -\/ False otherwise 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classrecommendation__system_1_1filters_1_1_all_filters_afd7895e67bdb2f727d0c472c0f19a93a}{recommendation\+\_\+system.\+filters.\+All\+Filters}}, \mbox{\hyperlink{classrecommendation__system_1_1filters_1_1_directors_filter_afc020e47aa126d03b5ef7cf0cf59edc7}{recommendation\+\_\+system.\+filters.\+Directors\+Filter}}, \mbox{\hyperlink{classrecommendation__system_1_1filters_1_1_genre_filter_a6ee623873d24bab1bc67d8cf1e8239e5}{recommendation\+\_\+system.\+filters.\+Genre\+Filter}}, \mbox{\hyperlink{classrecommendation__system_1_1filters_1_1_minutes_filter_a9c880b0c9b12c0ca82972a6773567efc}{recommendation\+\_\+system.\+filters.\+Minutes\+Filter}}, \mbox{\hyperlink{classrecommendation__system_1_1filters_1_1_true_filter_a73f8b8cb917af32ddd5b7540349b9b02}{recommendation\+\_\+system.\+filters.\+True\+Filter}}, and \mbox{\hyperlink{classrecommendation__system_1_1filters_1_1_year_after_filter_a86fadfe3003a031f0110f9967ceff91a}{recommendation\+\_\+system.\+filters.\+Year\+After\+Filter}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{interfacerecommendation__system_1_1filters_1_1_filter_a2f211cef0e51ea3968b42098db9e79cb_icgraph}
+\end{center}
+\end{figure}
+
+
+The documentation for this interface was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/main/java/recommendation\+\_\+system/filters/\mbox{\hyperlink{_filter_8java}{Filter.\+java}}\end{DoxyCompactItemize}
