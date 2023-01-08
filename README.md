@@ -24,17 +24,18 @@ mvn clean install
 ```
 
 ## Build
-Tras los comandos de instalación se nos generará una archivo JAR dentro del directorio target con todas la depedencias. Se debe ejecutar el siguiente comando:
+Tras los comandos de instalación se nos generará una archivo JAR dentro del directorio target con todas la depedencias. Dentro de este directorio se debe ejecutar el siguiente comando:
 
 ```bash
 java -jar Proyecto_Final_LDH-1.0-jar-with-dependencies
 ```
 Una vez ejecutado e introducido el ID del rater a analizar se generará una salida HTML tanto por la salida estándar como en un archivo index.html en el propio directorio de ejecución.
-La ejecución se ha realizado con JDK 11, de forma que se recomienda para replicar la simulación.
+
+La ejecución se ha realizado con JDK 11, de forma que se recomienda su uso para replicar la simulación y evitar cualquier error.
 
 ## Resultados de simulación
 
-### Puede consultar el resultado de la salida HTML se la aplicación ¡[AQUÍ](https://alu0101028491.github.io/Proyecto_Final_LDH/)!
+### Puede consultar el resultado de la salida HTML de la aplicación ¡[AQUÍ](https://alu0101028491.github.io/Proyecto_Final_LDH/)!
 
 
 ## Información adicional
