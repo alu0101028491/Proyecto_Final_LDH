@@ -1,8 +1,0 @@
-<map id="recommendation_system.MovieRunnerWithFilters.getAverageRatingOneMovie" name="recommendation_system.MovieRunnerWithFilters.getAverageRatingOneMovie">
-<area shape="rect" id="node1" title=" " alt="" coords="5,31,236,86"/>
-<area shape="rect" id="node2" href="$classrecommendation__system_1_1_third_ratings.html#afc80c7938cf838584085ac7239276c45" title=" " alt="" coords="284,8,484,48"/>
-<area shape="rect" id="node6" href="$classrecommendation__system_1_1_movie_database.html#a25e6a343a1d8e57b6afad25f0ff1e5fb" title=" " alt="" coords="532,69,737,109"/>
-<area shape="rect" id="node3" href="$classrecommendation__system_1_1_movie_database.html#a360197fe699048b18c9f355c9a58b55a" title=" " alt="" coords="532,5,737,45"/>
-<area shape="rect" id="node4" href="$classrecommendation__system_1_1_movie_database.html#a2372e6d70352ba2b00ab1f393e59074a" title=" " alt="" coords="786,69,991,109"/>
-<area shape="rect" id="node5" href="$interfacerecommendation__system_1_1filters_1_1_filter.html#a2f211cef0e51ea3968b42098db9e79cb" title=" " alt="" coords="785,5,992,45"/>
-</map>

@@ -1,8 +1,0 @@
-<map id="recommendation_system.FourthRatings.getSimilarRatings" name="recommendation_system.FourthRatings.getSimilarRatings">
-<area shape="rect" id="node1" title=" " alt="" coords="5,101,215,141"/>
-<area shape="rect" id="node2" href="$classrecommendation__system_1_1_movie_database.html#a360197fe699048b18c9f355c9a58b55a" title=" " alt="" coords="265,37,470,77"/>
-<area shape="rect" id="node5" href="$classrecommendation__system_1_1_rater_database.html#a480e67eaae24e716de5f99aec4967a24" title=" " alt="" coords="266,101,469,141"/>
-<area shape="rect" id="node6" href="$interfacerecommendation__system_1_1raters_1_1_rater.html#aa3569c3f91611d471a43674cf59d61e2" title=" " alt="" coords="263,165,472,205"/>
-<area shape="rect" id="node3" href="$classrecommendation__system_1_1_movie_database.html#a2372e6d70352ba2b00ab1f393e59074a" title=" " alt="" coords="521,5,726,45"/>
-<area shape="rect" id="node4" href="$interfacerecommendation__system_1_1filters_1_1_filter.html#a2f211cef0e51ea3968b42098db9e79cb" title=" " alt="" coords="520,69,727,109"/>
-</map>

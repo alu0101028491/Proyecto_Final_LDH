@@ -4,7 +4,8 @@ import java.util.ArrayList;
 
 /**
  * <p>
- *  This class asks about average ratings by genre and films on or after a particular year.
+ *  This class allows to combine all filters to pass them consecutively on an element that the
+ *  user wants to filter.
  *  </p>
  *
  *  <p>
