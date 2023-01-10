@@ -91,15 +91,15 @@ public class FourthRatingsOptimized {
         ArrayList<Rating> ratingList = new ArrayList<>();
         // get Arraylist<movieID> from top numSimilarRaters.
         ArrayList<String> movidIDByTopSimilar = new ArrayList<>();
-        ArrayList<Rating> simiList1 = getSimilarities(raterID);
+        ArrayList<Rating> simiList = getSimilarities(raterID);
         // Verified number of Raters related to the user
-        int num = simiList1.size();
+        int num = simiList.size();
         if (numSimilarRaters > num) {
             numSimilarRaters = num;
         }
         // Get IDs of movies recommended by simiList1 top Raters
         for (int i = 0; i < numSimilarRaters; i++) {
-            String raterID1 = simiList1.get(i).getItem();
+            String raterID1 = simiList.get(i).getItem();
             ArrayList<String> movieRated1 = RaterDatabase.getRater(raterID1).getItemsRated();
             for (String movieID : movieRated1) {
                 if (!movidIDByTopSimilar.contains(movieID)) {
@@ -112,7 +112,7 @@ public class FourthRatingsOptimized {
         for (String j : movidIDByTopSimilar) {
             // Rating for one movie
             double ave = 0;
-            ArrayList<Rating> simiList = getSimilarities(raterID);
+            //ArrayList<Rating> simiList = getSimilarities(raterID);
             int count = 0;
             double total = 0;
             int simiweighttotal = 0;
@@ -151,9 +151,9 @@ public class FourthRatingsOptimized {
         ArrayList<Rating> ratingList = new ArrayList<>();
         //Rating for all movie
         ArrayList<String> movidIDByTopSimilar = new ArrayList<>();
-        ArrayList<Rating> simiList1 = getSimilarities(raterID);
+        ArrayList<Rating> simiList = getSimilarities(raterID);
         for (int i = 0; i < numSimilarRaters; i++) {
-            String raterID1 = simiList1.get(i).getItem();
+            String raterID1 = simiList.get(i).getItem();
             ArrayList<String> movieRated1 = RaterDatabase.getRater(raterID1).getItemsRated();
             for (String movieID : movieRated1) {
                 if (!movidIDByTopSimilar.contains(movieID)) {
@@ -166,7 +166,7 @@ public class FourthRatingsOptimized {
             if (f.satisfies(j)) {
                 // Rating for one movie
                 double ave = 0;
-                ArrayList<Rating> simiList = getSimilarities(raterID);
+                //ArrayList<Rating> simiList = getSimilarities(raterID);
                 int count = 0;
                 double total = 0;
                 double simiweighttotal = 0;
