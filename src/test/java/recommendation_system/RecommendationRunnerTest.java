@@ -12,6 +12,7 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Locale;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
@@ -27,13 +28,15 @@ import recommendation_system.recommenders.RecommendationRunner;
 @Nested
 class RecommendationRunnerTest {
 
+
         private RecommendationRunner recommenderTest;
-        
+
     	private Logger loggerRecommendationRunnerTest = System.getLogger(RecommendationRunner.class.getName());
 
 
         @BeforeEach
         void setUp() {
+    		Locale.setDefault(new Locale("en", "EN"));
         	recommenderTest = new RecommendationRunner();
         	recommenderTest.setFilename("indexTest.html");
         	recommenderTest.setPathToFile(Paths.get("src/test/resources/"+recommenderTest.getFilename()));
@@ -46,10 +49,10 @@ class RecommendationRunnerTest {
                     () -> assertEquals("indexTest.html", recommenderTest.getFilename()),
                     () -> assertEquals(Paths.get("src/test/resources/indexTest.html"), recommenderTest.getPathToFile())
             );
-            
+
             recommenderTest.setFilename("indexTestSetter.html");
         	recommenderTest.setPathToFile(Paths.get("src/test/resources/" + recommenderTest.getFilename()));
-            
+
             assertAll("Verify setters filePath and pathToFile",
             		() -> assertEquals("indexTestSetter.html", recommenderTest.getFilename()),
             		() -> assertEquals(Paths.get("src/test/resources/indexTestSetter.html"), recommenderTest.getPathToFile())
@@ -72,11 +75,11 @@ class RecommendationRunnerTest {
 			FourthRatingsOptimized fourthRatings = new FourthRatingsOptimized();
 			assertEquals(11, fourthRatings.getSimilarRatings("1", 10, 3).size());
 		}
-        
+
         @Test
         @DisplayName("Correct Output print recommendations")
         void testOutput() {
-        	
+
         	String testOutputNormal = "outid size = 10" + System.getProperty("line.separator")
         			+ "<style>" + System.getProperty("line.separator")
         			+ "h2,h3{" + System.getProperty("line.separator")
@@ -140,32 +143,32 @@ class RecommendationRunnerTest {
         			+ "<tr><td>10</td><td><img src = \"https://ia.media-imdb.com/images/M/MV5BMzA2NDkwODAwM15BMl5BanBnXkFtZTgwODk5MTgzMTE@._V1_SX300.jpg\" width=\"50\" height=\"70\"></td> <td>2014&ensp;&ensp; <a href=\"https://www.imdb.com/title/tt1843866\">Captain America: The Winter Soldier</a><br><div class = \"rating\">&starf; &ensp;&ensp;&ensp;8.5/10</td><td>Action, Adventure, Sci-Fi</td><td>USA</td></tr> " + System.getProperty("line.separator")
         			+ "</table>" + System.getProperty("line.separator")
         			+ "<h3>*The rank of movies is based on other raters who have the most similar rating to yours. Enjoy!^^</h3>" + System.getProperty("line.separator");
-        	
-        	
-        	
+
+
+
         	ByteArrayOutputStream baosNormal = new ByteArrayOutputStream();
         	ByteArrayOutputStream baosNoRecommendation = new ByteArrayOutputStream();
         	PrintStream ps = new PrintStream(baosNormal);
         	PrintStream old = System.out;
         	System.setOut(ps);
-        	
+
         	recommenderTest.printRecommendationsFor("67");
-        	
+
         	System.out.flush();
         	ps = new PrintStream(baosNoRecommendation);
         	System.setOut(ps);
-        	
+
         	recommenderTest.printRecommendationsFor("62");
-        	
+
         	System.out.flush();
-        	System.setOut(old);        	
-        	
-        	
+        	System.setOut(old);
+
+
             assertAll("Verify output is fine",
                     () -> assertEquals(testOutputNormal, baosNormal.toString()),
                     () -> assertTrue(baosNoRecommendation.toString().contains("Sorry, there are no movie recommend for you based on your rating!"))
             );
-            
+
             ///Delete test html file generated for output console
             try {
 				Files.delete(recommenderTest.getPathToFile());
@@ -173,24 +176,24 @@ class RecommendationRunnerTest {
 				loggerRecommendationRunnerTest.log(Logger.Level.ERROR, e);
 			}
         }
-        
+
         @Test
         @DisplayName("Correct HTML generation")
         void testHtmlFileCorrectGeneration() {
-        	
+
         	try {
 				recommenderTest.writeHtmlHead();
-				
-				
+
+
 				assertAll("Verify output is fine",
 						() -> assertTrue(Files.exists(recommenderTest.getPathToFile())),
 	                    () -> assertEquals(6, Files.lines(recommenderTest.getPathToFile()).count())
 	            );
-				
+
 				recommenderTest.writeCss();
-				
+
 				assertEquals(47, Files.lines(recommenderTest.getPathToFile()).count());
-				
+
 				String htmlFileTest = "<!DOCTYPE html>\n"
 						+ "<html lang=\"es\">\n"
 						+ "<head>\n"
@@ -260,16 +263,16 @@ class RecommendationRunnerTest {
 						+ "      <tr><td>10</td><td><img src = \"https://ia.media-imdb.com/images/M/MV5BMzA2NDkwODAwM15BMl5BanBnXkFtZTgwODk5MTgzMTE@._V1_SX300.jpg\" width=\"50\" height=\"70\"></td> <td>2014&ensp;&ensp; <a href=\"https://www.imdb.com/title/tt1843866\">Captain America: The Winter Soldier</a><br><div class = \"rating\">&starf; &ensp;&ensp;&ensp;8.5/10</td><td>Action, Adventure, Sci-Fi</td><td>USA</td></tr>\n"
 						+ "  </table>\n"
 						+ "  <h3>*El Rango de las peliculas está basado en otras calificaciones similares. Disfrute.*</h3>";
-				
+
 				List<String> htmlFileTestList = Arrays.asList(htmlFileTest.split("\n"));
-				
+
 				recommenderTest.printRecommendationsFor("67");
-				
+
 				assertAll("Verify HTML is fine",
 						() -> assertEquals(69, Files.lines(recommenderTest.getPathToFile()).count()),
 	                    () -> assertEquals(htmlFileTestList, Files.readAllLines(recommenderTest.getPathToFile()))
 	            );
-				
+
 			} catch (IOException e) {
 				loggerRecommendationRunnerTest.log(Logger.Level.ERROR, e);
 			}
