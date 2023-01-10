@@ -31,7 +31,6 @@
             <version>5.9.0</version>
             <scope>test</scope>
         </dependency>
-
         <dependency>
             <groupId>org.apache.commons</groupId>
             <artifactId>commons-csv</artifactId>
@@ -208,8 +207,6 @@
             </plugin>
         </plugins>
 
-
     </build>
-
 
 </project>
